@@ -1,7 +1,3 @@
----
-
----
-
 <script>
   import { tsParticles } from "@tsparticles/engine";
   import { loadBaseMover } from "@tsparticles/move-base";
@@ -11,15 +7,17 @@
   import { loadSizeUpdater } from "@tsparticles/updater-size";
   import { loadCircleShape } from "@tsparticles/shape-circle";
 
-  loadBaseMover(tsParticles);
-  loadColorUpdater(tsParticles);
-  loadOpacityUpdater(tsParticles);
-  loadOutModesUpdater(tsParticles);
-  loadSizeUpdater(tsParticles);
-  loadCircleShape(tsParticles);
+  await Promise.all([
+    loadBaseMover(tsParticles),
+    loadColorUpdater(tsParticles),
+    loadOpacityUpdater(tsParticles),
+    loadOutModesUpdater(tsParticles),
+    loadSizeUpdater(tsParticles),
+    loadCircleShape(tsParticles),
+  ]);
 
-  const particles = await tsParticles.load({
-    id: "particles-bg",
+  await tsParticles.load({
+    id: "tsparticles",
     options: {
       background: {
         color: {
@@ -390,28 +388,6 @@
       detectRetina: true,
     },
   });
-
-  const bgDiv = document.querySelector("div#particles-bg") as HTMLDivElement;
-
-  if (!particles) {
-    throw new Error("Could not initialize particles.");
-  }
-
-  let areParticlesPlaying = true;
-
-  const updateParticlesState = (_e: Event) => {
-    if (window.scrollY >= bgDiv.offsetHeight && areParticlesPlaying) {
-      areParticlesPlaying = false;
-      particles.pause();
-    } else if (window.scrollY < bgDiv.offsetHeight && !areParticlesPlaying) {
-      areParticlesPlaying = true;
-      particles.play();
-    }
-  };
-
-  // Pause particles when not visible
-  window.addEventListener("load", updateParticlesState);
-  window.addEventListener("scroll", updateParticlesState);
 </script>
 
-<div id="particles-bg" class="h-screen w-screen fixed -z-10"></div>
+<div id="tsparticles" class="w-100% h-100% fixed -z-10"></div>
