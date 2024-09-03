@@ -1,5 +1,5 @@
 ---
-const { name, description, url, image } = Astro.props;
+const { name, description, url } = Astro.props;
 ---
 
 <a
@@ -16,9 +16,6 @@ const { name, description, url, image } = Astro.props;
   <span
     class="relative z-30 block duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1"
   >
-    <span class="block w-full">
-      <img src={image} class="w-full h-auto rounded-lg aspect-[16/9]" />
-    </span>
     <span class="block w-full px-1 mt-5 mb-1 sm:mt-3">
       <span
         class="flex items-center mb-0 text-base font-semibold tracking-tight text-neutral-900 dark:text-neutral-100"

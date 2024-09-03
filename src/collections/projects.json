@@ -2,43 +2,36 @@
   {
     "name": "Kanjo",
     "description": "AI-Powered Sentiment Analysis Tool",
-    "image": "/assets/images/projects/kanjo.png",
     "url": "https://github.com/rxyhn/kanjo"
   },
   {
     "name": "Shusseki",
     "description": "Automated Attendance System using Facial Recognition.",
-    "image": "/assets/images/projects/shusseki.png",
     "url": "https://github.com/rxyhn/shusseki"
   },
   {
     "name": "Yoru",
     "description": "Aesthetic and Beautiful AwesomeWM Environment.",
-    "image": "/assets/images/projects/yoru.png",
     "url": "https://github.com/rxyhn/yoru"
   },
   {
     "name": "Identik",
     "description": "Indonesia Decentralized Identity Keys.",
-    "image": "/assets/images/projects/identik.png",
     "url": "https://github.com/rxyhn/identik"
   },
   {
     "name": "RAiso",
     "description": "Renowned online stationery store using a layered architecture for separation of concerns and maintainability.",
-    "image": "/assets/images/projects/RAiso.png",
     "url": "https://github.com/rxyhn/RAiso"
   },
   {
     "name": "PyQtLMS",
     "description": "Yet Another Library Management System, created using PyQt5.",
-    "image": "/assets/images/projects/PyQtLMS.png",
     "url": "https://github.com/rxyhn/PyQtLMS"
   },
   {
     "name": "Cursed",
     "description": "Calendar based appointment and todo-list, created using the low-level library (ncurses.h).",
-    "image": "/assets/images/projects/cursed.png",
     "url": "https://github.com/rxyhn/cursed"
   }
 ]

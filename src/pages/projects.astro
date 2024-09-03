@@ -9,7 +9,7 @@ import Layout from "../layouts/main.astro";
   <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
     <PageHeading
       title="My Projects"
-      description="Here are some of the current projects I've been working on. I really enjoy creating new projects and coming up with new ideas. I'm always working on something new, so check back often!"
+      description="Explore a collection of my projects here. As an open-source enthusiast and maintainer, I'm passionate about the collaborative and knowledge-sharing nature of open source. I take pride in contributing work that ultimately benefits both the community and the industry."
     />
 
     <div
@@ -21,7 +21,6 @@ import Layout from "../layouts/main.astro";
             <Project
               name={project.name}
               description={project.description}
-              image={project.image}
               url={project.url}
             />
           );
