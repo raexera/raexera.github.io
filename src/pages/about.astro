@@ -1,5 +1,9 @@
 ---
+import achievements from "../collections/achievements.json";
+import educations from "../collections/educations.json";
 import experiences from "../collections/experiences.json";
+import AboutAchievements from "../components/about-achievements.astro";
+import AboutEducation from "../components/about-education.astro";
 import AboutExperience from "../components/about-experience.astro";
 import PageHeading from "../components/page-heading.astro";
 import Layout from "../layouts/main.astro";
@@ -11,6 +15,70 @@ import Layout from "../layouts/main.astro";
       title="About Me"
       description="Hello 👋 I'm a Passionate Computer Science undergraduate and Linux enthusiast, committed to lifelong learning and developing innovative open-source projects. Experienced in software engineering, with a strong focus on back-end technologies and scripting. Continuously seeking opportunities to enhance skills and contribute to impactful projects."
     />
+
+    <h2
+      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
+    >
+      Education
+    </h2>
+    <div class="px-5 py-10">
+      {
+        educations.map((education, loop) => {
+          return (
+            <>
+              {loop == 0 || loop == 1 ? (
+                <div class="pb-10 border-l border-gray-200 dark:border-neutral-700">
+                  <AboutEducation
+                    dates={education.dates}
+                    degree={education.degree}
+                    school={education.school}
+                    description={education.description}
+                  />
+                </div>
+              ) : (
+                <AboutEducation
+                  dates={education.dates}
+                  degree={education.degree}
+                  school={education.school}
+                  description={education.description}
+                />
+              )}
+            </>
+          );
+        })
+      }
+    </div>
+
+    <h2
+      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
+    >
+      Achievements
+    </h2>
+    <div class="px-5 py-10">
+      {
+        achievements.map((achievement, loop) => {
+          return (
+            <>
+              {loop == 0 || loop == 1 ? (
+                <div class="pb-10 border-l border-gray-200 dark:border-neutral-700">
+                  <AboutAchievements
+                    dates={achievement.dates}
+                    name={achievement.name}
+                    description={achievement.description}
+                  />
+                </div>
+              ) : (
+                <AboutAchievements
+                  dates={achievement.dates}
+                  name={achievement.name}
+                  description={achievement.description}
+                />
+              )}
+            </>
+          );
+        })
+      }
+    </div>
 
     <h2
       class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
@@ -29,7 +97,6 @@ import Layout from "../layouts/main.astro";
                     role={experience.role}
                     company={experience.company}
                     description={experience.description}
-                    logo={experience.logo}
                   />
                 </div>
               ) : (
@@ -38,7 +105,6 @@ import Layout from "../layouts/main.astro";
                   role={experience.role}
                   company={experience.company}
                   description={experience.description}
-                  logo={experience.logo}
                 />
               )}
             </>
