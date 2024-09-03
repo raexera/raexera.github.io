@@ -1,5 +1,5 @@
 ---
-const { dates, name, description } = Astro.props;
+const { dates, title, subtitle, description } = Astro.props;
 ---
 
 <div class="relative flex flex-col justify-start pl-12">
@@ -9,11 +9,16 @@ const { dates, name, description } = Astro.props;
   </div>
 
   <p
-    class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest"
+    class="text-xs uppercase text-neutral-400 dark:text-neutral-500 tracking-widest"
   >
     {dates}
   </p>
-  <h3 class="my-1 text-lg font-bold dark:text-neutral-100">{name}</h3>
+  <h3 class="my-1 text-lg font-bold dark:text-neutral-100">{title}</h3>
+  {
+    subtitle && (
+      <p class="mb-1 text-sm font-medium dark:text-neutral-300">{subtitle}</p>
+    )
+  }
   <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">
     {description}
   </p>

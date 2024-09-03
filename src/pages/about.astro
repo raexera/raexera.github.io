@@ -2,9 +2,7 @@
 import achievements from "../collections/achievements.json";
 import educations from "../collections/educations.json";
 import experiences from "../collections/experiences.json";
-import AboutAchievements from "../components/about-achievements.astro";
-import AboutEducation from "../components/about-education.astro";
-import AboutExperience from "../components/about-experience.astro";
+import AboutItem from "../components/about-item.astro";
 import PageHeading from "../components/page-heading.astro";
 import Layout from "../layouts/main.astro";
 ---
@@ -23,29 +21,22 @@ import Layout from "../layouts/main.astro";
     </h2>
     <div class="px-5 py-10">
       {
-        educations.map((education, loop) => {
-          return (
-            <>
-              {loop == 0 || loop == 1 ? (
-                <div class="pb-10 border-l border-gray-200 dark:border-neutral-700">
-                  <AboutEducation
-                    dates={education.dates}
-                    degree={education.degree}
-                    school={education.school}
-                    description={education.description}
-                  />
-                </div>
-              ) : (
-                <AboutEducation
-                  dates={education.dates}
-                  degree={education.degree}
-                  school={education.school}
-                  description={education.description}
-                />
-              )}
-            </>
-          );
-        })
+        educations.map((education, loop) => (
+          <div
+            class={
+              loop <= 1
+                ? "pb-10 border-l border-gray-200 dark:border-neutral-700"
+                : ""
+            }
+          >
+            <AboutItem
+              dates={education.dates}
+              title={education.degree}
+              subtitle={education.school}
+              description={education.description}
+            />
+          </div>
+        ))
       }
     </div>
 
@@ -56,27 +47,21 @@ import Layout from "../layouts/main.astro";
     </h2>
     <div class="px-5 py-10">
       {
-        achievements.map((achievement, loop) => {
-          return (
-            <>
-              {loop == 0 || loop == 1 ? (
-                <div class="pb-10 border-l border-gray-200 dark:border-neutral-700">
-                  <AboutAchievements
-                    dates={achievement.dates}
-                    name={achievement.name}
-                    description={achievement.description}
-                  />
-                </div>
-              ) : (
-                <AboutAchievements
-                  dates={achievement.dates}
-                  name={achievement.name}
-                  description={achievement.description}
-                />
-              )}
-            </>
-          );
-        })
+        achievements.map((achievement, loop) => (
+          <div
+            class={
+              loop <= 1
+                ? "pb-10 border-l border-gray-200 dark:border-neutral-700"
+                : ""
+            }
+          >
+            <AboutItem
+              dates={achievement.dates}
+              title={achievement.name}
+              description={achievement.description}
+            />
+          </div>
+        ))
       }
     </div>
 
@@ -87,29 +72,22 @@ import Layout from "../layouts/main.astro";
     </h2>
     <div class="px-5 py-10">
       {
-        experiences.map((experience, loop) => {
-          return (
-            <>
-              {loop == 0 || loop == 1 ? (
-                <div class="pb-10 border-l border-gray-200 dark:border-neutral-700">
-                  <AboutExperience
-                    dates={experience.dates}
-                    role={experience.role}
-                    company={experience.company}
-                    description={experience.description}
-                  />
-                </div>
-              ) : (
-                <AboutExperience
-                  dates={experience.dates}
-                  role={experience.role}
-                  company={experience.company}
-                  description={experience.description}
-                />
-              )}
-            </>
-          );
-        })
+        experiences.map((experience, loop) => (
+          <div
+            class={
+              loop <= 1
+                ? "pb-10 border-l border-gray-200 dark:border-neutral-700"
+                : ""
+            }
+          >
+            <AboutItem
+              dates={experience.dates}
+              title={experience.role}
+              subtitle={experience.company}
+              description={experience.description}
+            />
+          </div>
+        ))
       }
     </div>
   </section>
