@@ -50,7 +50,7 @@ const SKILLS_ICONS: Record<string, any> = {
         const Icon = SKILLS_ICONS[iconName];
 
         return (
-          <li class="border-skin-hue/20s bg-skin-button-accent/20s borders border-solids text-skin-muted flex items-center gap-1 rounded-md px-2 py-0.5 text-xs print:border-none print:bg-transparent print:p-0 print:text-zinc-800">
+          <li class="border-skin-hue/20s bg-skin-button-accent/20s borders border-solids flex items-center gap-1 rounded-md px-2 py-0.5 text-xs dark:text-neutral-300 print:border-none print:bg-transparent print:p-0 print:text-zinc-800">
             {Icon && <Icon />} <span>{name}</span>
           </li>
         );
