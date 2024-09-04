@@ -10,7 +10,7 @@ import { education } from "@cv";
         ({ institution, startDate, endDate, area, url, summary }) => {
           const startYear = new Date(startDate).getFullYear();
           const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Actual";
+            endDate != null ? new Date(endDate).getFullYear() : "Present";
           const years = `${startYear} - ${endYear}`;
 
           return (
@@ -35,7 +35,7 @@ import { education } from "@cv";
                 <h3 class="mr-6 items-baseline gap-x-2 gap-y-0.5 font-medium dark:text-neutral-100">
                   <a
                     target="_blank"
-                    class="hover:text-skin-hue group flex items-center gap-[6px] decoration-dotted underline-offset-[5px] hover:underline"
+                    class="group flex items-center gap-[6px] decoration-dotted underline-offset-[5px] hover:underline"
                     href={url}
                   >
                     {institution}

@@ -1,7 +1,7 @@
 ---
 import Footer from "@/components/Footer.astro";
 import NavBar from "@/components/NavBar.astro";
-import Particles from "@/components/Particles.astro";
+import Starry from "@/components/Starry";
 import SquareLines from "@/components/Square.astro";
 const { title } = Astro.props;
 ---
@@ -31,10 +31,22 @@ const { title } = Astro.props;
     <script src="../styles/global.css"></script>
     <Fragment set:html={import.meta.env.HEADER_INJECT} />
   </head>
-  <body class="bg-white antialiased dark:bg-neutral-950">
+  <body
+    class="relative z-10 bg-white leading-relaxed tracking-wide text-neutral-200 antialiased selection:bg-neutral-300 selection:text-neutral-900 dark:bg-neutral-950"
+  >
     <SquareLines />
     <NavBar />
-    <Particles />
+    <Starry
+      client:idle
+      id="tsparticlesfullpage"
+      background="transparent"
+      minSize={0.6}
+      maxSize={1.4}
+      opacity={0.2}
+      particleDensity={100}
+      className="fixed z-0 h-full w-full"
+      particleColor="#FFFFFF"
+    />
     <slot />
     <Footer />
     <script src="../scripts/main.ts"></script>
