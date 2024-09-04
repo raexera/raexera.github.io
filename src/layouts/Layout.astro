@@ -31,7 +31,7 @@ const { title } = Astro.props;
       }
     </style>
     <link rel="icon" type="image/x-icon" href="../favicon.png" />
-    <script src="../assets/css/main.css"></script>
+    <script src="../styles/global.css"></script>
     <Fragment set:html={import.meta.env.HEADER_INJECT} />
   </head>
   <body class="bg-white antialiased dark:bg-neutral-950">
@@ -40,7 +40,7 @@ const { title } = Astro.props;
     <Particles />
     <slot />
     <Footer />
-    <script src="../assets/js/main.js"></script>
+    <script src="../scripts/main.ts"></script>
     <Fragment set:html={import.meta.env.FOOTER_INJECT} />
   </body>
 </html>
