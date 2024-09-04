@@ -32,35 +32,36 @@ import { education } from "@cv";
                 <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
               </svg>
               <div class="relative w-full items-baseline justify-between gap-2">
-                <h3 class="mr-6 items-baseline gap-x-2 gap-y-0.5 font-medium dark:text-neutral-100">
+                <h3 class="mr-6 items-baseline gap-x-2 gap-y-0.5 font-medium">
                   <a
                     target="_blank"
-                    class="group flex items-center gap-[6px] decoration-dotted underline-offset-[5px] hover:underline"
+                    class="hover:text-skin-hue group flex items-center gap-[6px] decoration-dotted underline-offset-[5px] hover:underline"
                     href={url}
                   >
                     {institution}
                   </a>
                 </h3>
-                <div class="mb-1 text-sm font-medium dark:text-neutral-300">
-                  {area}
+                <div class="text-skin-muted text-sm">{area}</div>
+                <div
+                  class="mt-4 flex flex-col gap-4 text-sm print:gap-0 print:text-xs"
+                  x-data="{ expanded: false }"
+                >
+                  {summary && (
+                    <div class="flex flex-col gap-1">
+                      <h4>Summary:</h4>
+                      <ul class="text-skin-muted flex list-disc flex-col gap-2 [&>li]:ml-4">
+                        {Array.isArray(summary) ? (
+                          summary.map((item) => ({ item }))
+                        ) : (
+                          <li>{summary}</li>
+                        )}
+                      </ul>
+                    </div>
+                  )}
                 </div>
-                <time class="trackign-widest relative right-0 top-0 text-xs font-semibold uppercase text-neutral-400 dark:text-neutral-500 sm:col-span-2 md:absolute md:block">
+                <time class="text-skin-muted right-0 top-0 text-xs md:absolute md:block">
                   {years}
                 </time>
-                {summary && (
-                  <div class="flex flex-col gap-1">
-                    <h4 class="mb-1 text-sm font-medium dark:text-neutral-300">
-                      Summary:
-                    </h4>
-                    <ul class="flex list-disc flex-col gap-2 text-sm font-light text-neutral-600 dark:text-neutral-400 [&>li]:ml-4">
-                      {Array.isArray(summary) ? (
-                        summary.map((item) => ({ item }))
-                      ) : (
-                        <li>{summary}</li>
-                      )}
-                    </ul>
-                  </div>
-                )}
               </div>
             </div>
           );
