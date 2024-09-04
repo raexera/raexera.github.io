@@ -1,6 +1,7 @@
 ---
-import Button from "../components/Button.astro";
-import Layout from "../layouts/Layout.astro";
+import Button from "@/components/Button.astro";
+import Layout from "@/layouts/Layout.astro";
+import Card from "@/components/Card.astro";
 ---
 
 <Layout title="Rxyhn">
@@ -34,6 +35,38 @@ import Layout from "../layouts/Layout.astro";
           class="h-full w-full bg-center object-cover"
         />
       </div>
+    </div>
+
+    <h3
+      class="mb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl"
+    >
+      Reach me!
+    </h3>
+    <div class="my-2 mb-8 mt-4 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+      <Card
+        url="mailto:rxyhn.dev@gmail.com"
+        description="rxyhn.dev@gmail.com"
+        highlights={[]}
+        name="Email"
+      />
+      <Card
+        url="https://t.me/rxxxyhn"
+        description="@rxxxyhn"
+        highlights={[]}
+        name="Telegram"
+      />
+      <Card
+        url="https://www.linkedin.com/in/rayhankafipratama"
+        description="Rayhan Kafi Pratama"
+        highlights={[]}
+        name="LinkedIn"
+      />
+      <Card
+        url="https://www.instagram.com/rayhankafii"
+        description="@rayhankafii"
+        highlights={[]}
+        name="Instagram"
+      />
     </div>
   </div>
 </Layout>

@@ -1,5 +1,3 @@
-// Add your javascript here
-
 window.darkMode = false;
 
 const stickyClasses = ["fixed", "h-14"];
@@ -31,17 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
   evaluateHeaderPosition();
   mobileMenuFunctionality();
 });
-
-// window.toggleDarkMode = function(){
-//     document.documentElement.classList.toggle('dark');
-//     if(document.documentElement.classList.contains('dark')){
-//         localStorage.setItem('dark_mode', true);
-//         window.darkMode = true;
-//     } else {
-//         window.darkMode = false;
-//         localStorage.setItem('dark_mode', false);
-//     }
-// }
 
 window.stickyHeaderFuncionality = () => {
   window.addEventListener("scroll", () => {
@@ -134,7 +121,6 @@ window.applyMenuItemClasses = () => {
       menuItems[i].classList.add("text-neutral-900", "dark:text-white");
     }
   }
-  //:class="{ 'text-neutral-900 dark:text-white': window.location.pathname == '{menu.url}', 'text-neutral-700 dark:text-neutral-400': window.location.pathname != '{menu.url}' }"
 };
 
 function mobileMenuFunctionality() {

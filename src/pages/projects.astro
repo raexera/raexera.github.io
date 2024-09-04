@@ -1,7 +1,8 @@
 ---
-import PageHeading from "../components/Heading.astro";
-import Project from "../components/Project.astro";
-import Layout from "../layouts/Layout.astro";
+import Card from "@/components/Card.astro";
+import Layout from "@/layouts/Layout.astro";
+import PageHeading from "@/components/Heading.astro";
+import { projects } from "@cv";
 ---
 
 <Layout title="My Projects">
@@ -10,6 +11,19 @@ import Layout from "../layouts/Layout.astro";
       title="My Projects"
       description="Explore a collection of my projects here. As an open-source enthusiast and maintainer, I'm passionate about the collaborative and knowledge-sharing nature of open source. I take pride in contributing work that ultimately benefits both the community and the industry."
     />
-    <Project className="print:hidden" />
+    <div
+      class="z-50 my-8 grid w-full grid-cols-1 items-stretch gap-7 sm:grid-cols-2 sm:gap-5"
+    >
+      {
+        projects.map(({ url, description, highlights, name }) => (
+          <Card
+            url={url}
+            description={description}
+            highlights={highlights}
+            name={name}
+          />
+        ))
+      }
+    </div>
   </section>
 </Layout>
