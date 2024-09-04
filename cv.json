@@ -91,16 +91,18 @@
       "summary": "Lab Assistant in the school's computer lab. Responsible for maintaining the computer lab, assisting students with computer-related problems, and providing technical support to teachers."
     }
   ],
-  "achievements": [
+  "awards": [
     {
-      "dates": "August 2024",
-      "name": "Finalist of Chain Fusion Hacker - ICP",
-      "description": "As a finalist in the Chain Fusion Hacker competition, I contributed to advancing Web3 technologies by developing seamless, user-friendly decentralized applications. My work focused on overcoming interoperability challenges, enhancing the usability of dApps, NFTs, and smart contracts, and bridging the gap between various blockchain platforms."
+      "title": "Finalist of Chain Fusion Hacker - ICP",
+      "date": "August 2024",
+      "awarder": "Chain Fusion",
+      "summary": "As a finalist in the Chain Fusion Hacker competition, I contributed to advancing Web3 technologies by developing seamless, user-friendly decentralized applications. My work focused on overcoming interoperability challenges, enhancing the usability of dApps, NFTs, and smart contracts, and bridging the gap between various blockchain platforms."
     },
     {
-      "dates": "November 2023",
-      "name": "Finalist of ICPC Asia Jakarta National Contest",
-      "description": "As a finalist in the ICPC Asia Jakarta National Contest, I competed against top teams from various universities in the region. The contest challenged us to solve complex algorithmic problems under time constraints, test our teamwork and problem-solving skills, and showcase our programming abilities. It was a rewarding experience that honed my competitive spirit and technical expertise."
+      "title": "Finalist of ICPC Asia Jakarta National Contest",
+      "date": "November 2023",
+      "awarder": "ICPC",
+      "summary": "As a finalist in the ICPC Asia Jakarta National Contest, I competed against top teams from various universities in the region. The contest challenged us to solve complex algorithmic problems under time constraints, test our teamwork and problem-solving skills, and showcase our programming abilities. It was a rewarding experience that honed my competitive spirit and technical expertise."
     }
   ],
   "skills": [
@@ -125,93 +127,82 @@
       "keywords": ["NoSQL Database", "Data Management"]
     }
   ],
-  "languages": [
-    {
-      "language": "English",
-      "fluency": "Fluent"
-    },
-    {
-      "language": "Indonesian",
-      "fluency": "Native speaker"
-    }
-  ],
   "interests": [
     {
       "name": "Technology",
       "keywords": ["AI", "Blockchain"]
     }
   ],
-    "projects": [
-      {
-        "name": "Kanjo",
-        "isActive": true,
-        "description": "AI-Powered Sentiment Analysis Tool",
-        "url": "https://github.com/rxyhn/kanjo",
-        "highlights": [
-          "Implemented various machine learning models like Naive Bayes, SVM, and Random Forest for sentiment analysis.",
-          "Designed an intuitive Streamlit interface for easy model interaction."
-        ]
-      },
-      {
-        "name": "Shusseki",
-        "isActive": true,
-        "description": "Automated Attendance System using Facial Recognition.",
-        "url": "https://github.com/rxyhn/shusseki",
-        "highlights": [
-          "Integrated facial recognition with OpenCV for real-time attendance tracking.",
-          "Achieved 95% accuracy in facial recognition under various lighting conditions."
-        ]
-      },
-      {
-        "name": "Yoru",
-        "isActive": true,
-        "description": "Aesthetic and Beautiful AwesomeWM Environment.",
-        "url": "https://github.com/rxyhn/yoru",
-        "highlights": [
-          "Customized AwesomeWM environment with a focus on aesthetics and productivity.",
-          "Included several custom widgets for enhanced user experience."
-        ]
-      },
-      {
-        "name": "Identik",
-        "isActive": true,
-        "description": "Indonesia Decentralized Identity Keys.",
-        "url": "https://github.com/rxyhn/identik",
-        "highlights": [
-          "Developed a decentralized identity system using Motoko on the Internet Computer (ICP) blockchain.",
-          "Integrated multi-factor authentication for enhanced security."
-        ]
-      },
-      {
-        "name": "RAiso",
-        "isActive": true,
-        "description": "Renowned online stationery store using a layered architecture for separation of concerns and maintainability.",
-        "url": "https://github.com/rxyhn/RAiso",
-        "highlights": [
-          "Implemented a layered architecture to separate concerns and improve maintainability.",
-          "Enhanced user experience with a modern and responsive UI design."
-        ]
-      },
-      {
-        "name": "PyQtLMS",
-        "isActive": true,
-        "description": "Yet Another Library Management System, created using PyQt5.",
-        "url": "https://github.com/rxyhn/PyQtLMS",
-        "highlights": [
-          "Developed a complete library management system with PyQt5.",
-          "Implemented a robust database system for efficient book management."
-        ]
-      },
-      {
-        "name": "Cursed",
-        "isActive": true,
-        "description": "Calendar based appointment and todo-list, created using the low-level library (ncurses.h).",
-        "url": "https://github.com/rxyhn/cursed",
-        "highlights": [
-          "Created a terminal-based calendar and todo-list application using ncurses.",
-          "Optimized for low-resource environments with minimalistic design."
-        ]
-      }
-    ]
-
+  "projects": [
+    {
+      "name": "Kanjo",
+      "isActive": true,
+      "description": "AI-Powered Sentiment Analysis Tool",
+      "url": "https://github.com/rxyhn/kanjo",
+      "highlights": [
+        "Implemented various machine learning models like Naive Bayes, SVM, and Random Forest for sentiment analysis.",
+        "Designed an intuitive Streamlit interface for easy model interaction."
+      ]
+    },
+    {
+      "name": "Shusseki",
+      "isActive": true,
+      "description": "Automated Attendance System using Facial Recognition.",
+      "url": "https://github.com/rxyhn/shusseki",
+      "highlights": [
+        "Integrated facial recognition with OpenCV for real-time attendance tracking.",
+        "Achieved 95% accuracy in facial recognition under various lighting conditions."
+      ]
+    },
+    {
+      "name": "Yoru",
+      "isActive": true,
+      "description": "Aesthetic and Beautiful AwesomeWM Environment.",
+      "url": "https://github.com/rxyhn/yoru",
+      "highlights": [
+        "Customized AwesomeWM environment with a focus on aesthetics and productivity.",
+        "Included several custom widgets for enhanced user experience."
+      ]
+    },
+    {
+      "name": "Identik",
+      "isActive": true,
+      "description": "Indonesia Decentralized Identity Keys.",
+      "url": "https://github.com/rxyhn/identik",
+      "highlights": [
+        "Developed a decentralized identity system using Motoko on the Internet Computer (ICP) blockchain.",
+        "Integrated multi-factor authentication for enhanced security."
+      ]
+    },
+    {
+      "name": "RAiso",
+      "isActive": true,
+      "description": "Renowned online stationery store using a layered architecture for separation of concerns and maintainability.",
+      "url": "https://github.com/rxyhn/RAiso",
+      "highlights": [
+        "Implemented a layered architecture to separate concerns and improve maintainability.",
+        "Enhanced user experience with a modern and responsive UI design."
+      ]
+    },
+    {
+      "name": "PyQtLMS",
+      "isActive": true,
+      "description": "Yet Another Library Management System, created using PyQt5.",
+      "url": "https://github.com/rxyhn/PyQtLMS",
+      "highlights": [
+        "Developed a complete library management system with PyQt5.",
+        "Implemented a robust database system for efficient book management."
+      ]
+    },
+    {
+      "name": "Cursed",
+      "isActive": true,
+      "description": "Calendar based appointment and todo-list, created using the low-level library (ncurses.h).",
+      "url": "https://github.com/rxyhn/cursed",
+      "highlights": [
+        "Created a terminal-based calendar and todo-list application using ncurses.",
+        "Optimized for low-resource environments with minimalistic design."
+      ]
+    }
+  ]
 }
