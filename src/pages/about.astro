@@ -1,10 +1,10 @@
 ---
-import achievements from "../collections/achievements.json";
-import AboutItem from "../components/about-item.astro";
 import PageHeading from "../components/Heading.astro";
 import Layout from "../layouts/Layout.astro";
 import Experience from "@/components/sections/Experience.astro";
 import Education from "@/components/sections/Education.astro";
+import Awards from "@/components/sections/Awards.astro";
+import Skills from "@/components/sections/Skills.astro";
 ---
 
 <Layout title="About Me">
@@ -36,33 +36,9 @@ import Education from "@/components/sections/Education.astro";
       class="space-y-12 md:col-span-4 print:col-span-1 print:grid print:grid-cols-4 print:gap-2 print:space-y-0"
     >
       <Experience className="print:col-span-3" />
-      <!-- <Skills className="print:hidden" /> -->
+      <Skills className="print:hidden" />
+      <Awards className="order-first" />
       <Education className="order-first" />
-    </div>
-
-    <h2
-      class="mb-2 mt-5 text-2xl font-bold dark:text-neutral-200 sm:mt-6 lg:mt-10"
-    >
-      Achievements
-    </h2>
-    <div class="px-5 py-10">
-      {
-        achievements.map((achievement, loop) => (
-          <div
-            class={
-              loop <= 1
-                ? "border-l border-gray-200 pb-10 dark:border-neutral-700"
-                : ""
-            }
-          >
-            <AboutItem
-              dates={achievement.dates}
-              title={achievement.name}
-              description={achievement.description}
-            />
-          </div>
-        ))
-      }
     </div>
   </section>
 </Layout>

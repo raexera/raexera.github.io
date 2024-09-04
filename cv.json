@@ -107,24 +107,85 @@
   ],
   "skills": [
     {
-      "name": "Java",
-      "level": "Advanced",
-      "keywords": ["Back-End Development", "Spring Boot"]
+      "name": "Figma",
+      "level": "Expert",
+      "keywords": ["Design", "UI"]
+    },
+    {
+      "name": "Gitlab",
+      "level": "Intermediate",
+      "keywords": ["Version Control", "Collaboration", "Source Code"]
+    },
+    {
+      "name": "HTML",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend"]
+    },
+    {
+      "name": "CSS",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", "Responsive Design"]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", "Backend", "Fullstack"]
+    },
+    {
+      "name": "Tailwind",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "CSS Framework",
+        "Responsive Design"
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "level": "Intermediate",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "Backend",
+        "JavaScript Superset"
+      ]
+    },
+    {
+      "name": "Node",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Backend", "JavaScript", "Server"]
     },
     {
       "name": "MySQL",
-      "level": "Advanced",
-      "keywords": ["Database Management", "SQL"]
+      "level": "Intermediate",
+      "keywords": ["Databases", "SQL", "Data Storage", "Backend"]
     },
     {
-      "name": "Node.js",
+      "name": "Git",
       "level": "Intermediate",
-      "keywords": ["Back-End Development", "JavaScript"]
+      "keywords": ["Version Control", "Collaboration", "Source Code"]
     },
     {
-      "name": "MongoDB",
+      "name": "GitHub",
       "level": "Intermediate",
-      "keywords": ["NoSQL Database", "Data Management"]
+      "keywords": ["Version Control", "Collaboration", "Source Code", "Git"]
+    },
+    {
+      "name": "Next.js",
+      "level": "Beginner",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "React Framework",
+        "SSR",
+        "Static Generation"
+      ]
+    },
+    {
+      "name": "React",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", "JavaScript Library", "UI"]
     }
   ],
   "interests": [
