@@ -1,18 +1,18 @@
 ---
-import Button from "../components/button.astro";
-import Layout from "../layouts/main.astro";
+import Button from "../components/Button.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Rxyhn">
   <div
-    class="relative z-20 w-full max-w-4xl mx-auto mt-16 px-7 md:mt-24 lg:mt-32 xl:px-0"
+    class="relative z-20 mx-auto mt-16 w-full max-w-4xl px-7 md:mt-24 lg:mt-32 xl:px-0"
   >
     <div
-      class="flex flex-col justify-between items-center md:flex-row gap-x-4 md:gap-x-0"
+      class="flex flex-col items-center justify-between gap-x-4 md:flex-row md:gap-x-0"
     >
       <div class="relative w-full">
         <h1
-          class="mb-5 text-4xl font-bold leading-tight md:text-4xl lg:text-6xl dark:text-white"
+          class="mb-5 text-4xl font-bold leading-tight dark:text-white md:text-4xl lg:text-6xl"
         >
           Hello, I'm Rayhan Pratama.
         </h1>
@@ -25,13 +25,13 @@ import Layout from "../layouts/main.astro";
         <Button text="View my resume." link="./resume.pdf" />
       </div>
       <div
-        class="w-full h-full lg:h-[420px] translate-x-0 -translate-y-px bg-red-400 border border-dashed rounded-2xl bg-gradient-to-r from-white to-white dark:from-neutral-950 dark:via-black dark:to-neutral-950 via-neutral-50 border-neutral-300 dark:border-neutral-700"
+        class="h-full w-full -translate-y-px translate-x-0 rounded-2xl border border-dashed border-neutral-300 bg-red-400 bg-gradient-to-r from-white via-neutral-50 to-white dark:border-neutral-700 dark:from-neutral-950 dark:via-black dark:to-neutral-950 lg:h-[420px]"
       >
         <img
           src="/pfp.png"
           loading="eager"
           decoding="auto"
-          class="object-cover w-full h-full bg-center"
+          class="h-full w-full bg-center object-cover"
         />
       </div>
     </div>

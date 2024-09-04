@@ -1,0 +1,45 @@
+<div class="absolute h-auto w-full" style="z-index:-1">
+  <div
+    class="absolute left-0 top-0 h-auto w-1/2 bg-neutral-100 dark:bg-neutral-800"
+  >
+    <div
+      class="pointer-events-none absolute inset-0 z-30 h-full w-full bg-gradient-to-tl from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-neutral-950"
+    >
+    </div>
+    <div
+      class="flex h-full w-full flex-col divide-y divide-dashed divide-neutral-300 border-l border-t border-neutral-300 dark:divide-neutral-700 dark:border-neutral-900"
+    >
+      {
+        Array.from({ length: 6 }).map(() => (
+          <div class="relative flex h-[30px] w-full divide-x divide-dashed divide-neutral-300 dark:divide-neutral-700 sm:h-[45px] md:h-[60px] xl:h-[88px]">
+            {Array.from({ length: 9 }).map(() => (
+              <div class="aspect-square h-auto w-full bg-white dark:bg-neutral-950" />
+            ))}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <div
+    class="absolute right-0 top-0 h-auto w-1/2 bg-neutral-100 dark:bg-neutral-800"
+  >
+    <div
+      class="pointer-events-none absolute inset-0 z-30 h-full w-full bg-gradient-to-tr from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-neutral-950"
+    >
+    </div>
+    <div
+      class="flex h-full w-full flex-col divide-y divide-dashed divide-neutral-300 border-l border-t border-neutral-300 dark:divide-neutral-700 dark:border-neutral-900"
+    >
+      {
+        Array.from({ length: 6 }).map(() => (
+          <div class="relative flex h-[30px] w-full divide-x divide-dashed divide-neutral-300 dark:divide-neutral-700 sm:h-[45px] md:h-[60px] xl:h-[88px]">
+            {Array.from({ length: 9 }).map(() => (
+              <div class="aspect-square h-auto w-full bg-white dark:bg-neutral-950" />
+            ))}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

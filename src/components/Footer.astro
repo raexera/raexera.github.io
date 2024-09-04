@@ -1,30 +1,30 @@
 ---
-import Logo from "../components/logo.astro";
+import Logo from "./Logo.astro";
 ---
 
 <section
-  class="text-gray-700 bg-white border-t sm:mt-20 dark:bg-neutral-950 border-neutral-200 dark:border-neutral-800"
+  class="border-t border-neutral-200 bg-white text-gray-700 dark:border-neutral-800 dark:bg-neutral-950 sm:mt-20"
 >
   <div
-    class="container flex flex-col items-center py-8 mx-auto px-7 max-w-7xl sm:flex-row"
+    class="container mx-auto flex max-w-7xl flex-col items-center px-7 py-8 sm:flex-row"
   >
     <Logo />
     <p
-      class="mt-4 text-sm text-neutral-700 dark:text-neutral-100 sm:ml-4 sm:pl-4 sm:border-l sm:border-neutral-300 dark:sm:border-neutral-700 sm:mt-0"
+      class="mt-4 text-sm text-neutral-700 dark:text-neutral-100 sm:ml-4 sm:mt-0 sm:border-l sm:border-neutral-300 sm:pl-4 dark:sm:border-neutral-700"
     >
       © {new Date().getFullYear()} Rayhan Pratama. All rights reserved.
     </p>
     <span
-      class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start"
+      class="mt-4 inline-flex justify-center space-x-5 sm:ml-auto sm:mt-0 sm:justify-start"
     >
       <a
         href="https://instagram.com/rayhankafii"
         target="_blank"
-        class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+        class="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
       >
         <span class="sr-only">Instagram</span>
         <svg
-          class="w-6 h-6"
+          class="h-6 w-6"
           fill="currentColor"
           viewBox="0 0 24 24"
           aria-hidden="true"
@@ -38,11 +38,11 @@ import Logo from "../components/logo.astro";
       <a
         href="https://x.com/rxxxyhn"
         target="_blank"
-        class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+        class="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
       >
         <span class="sr-only">𝕏</span>
         <svg
-          class="w-6 h-6 dark:stroke-black stroke-white"
+          class="h-6 w-6 stroke-white dark:stroke-black"
           viewBox="0 0 100 100"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -59,11 +59,11 @@ import Logo from "../components/logo.astro";
       <a
         href="https://github.com/rxyhn"
         target="_blank"
-        class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+        class="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
       >
         <span class="sr-only">GitHub</span>
         <svg
-          class="w-6 h-6"
+          class="h-6 w-6"
           fill="currentColor"
           viewBox="0 0 24 24"
           aria-hidden="true"

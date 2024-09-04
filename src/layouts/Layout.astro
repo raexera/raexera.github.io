@@ -1,8 +1,8 @@
 ---
-import Footer from "../components/footer.astro";
-import Header from "../components/header.astro";
-import Particles from "../components/particles.astro";
-import SquareLines from "../components/square-lines.astro";
+import Footer from "../components/Footer.astro";
+import NavBar from "../components/NavBar.astro";
+import Particles from "../components/Particles.astro";
+import SquareLines from "../components/Square.astro";
 const { title } = Astro.props;
 ---
 
@@ -34,9 +34,9 @@ const { title } = Astro.props;
     <script src="../assets/css/main.css"></script>
     <Fragment set:html={import.meta.env.HEADER_INJECT} />
   </head>
-  <body class="antialiased bg-white dark:bg-neutral-950">
+  <body class="bg-white antialiased dark:bg-neutral-950">
     <SquareLines />
-    <Header />
+    <NavBar />
     <Particles />
     <slot />
     <Footer />

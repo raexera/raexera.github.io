@@ -1,31 +1,15 @@
 ---
-import projects from "../collections/projects.json";
-import PageHeading from "../components/page-heading.astro";
-import Project from "../components/project.astro";
-import Layout from "../layouts/main.astro";
+import PageHeading from "../components/Heading.astro";
+import Project from "../components/Project.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="My Projects">
-  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+  <section class="relative z-20 mx-auto my-12 max-w-2xl px-7 lg:px-0">
     <PageHeading
       title="My Projects"
       description="Explore a collection of my projects here. As an open-source enthusiast and maintainer, I'm passionate about the collaborative and knowledge-sharing nature of open source. I take pride in contributing work that ultimately benefits both the community and the industry."
     />
-
-    <div
-      class="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2"
-    >
-      {
-        projects.map((project) => {
-          return (
-            <Project
-              name={project.name}
-              description={project.description}
-              url={project.url}
-            />
-          );
-        })
-      }
-    </div>
+    <Project className="print:hidden" />
   </section>
 </Layout>

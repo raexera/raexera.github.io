@@ -1,28 +1,28 @@
 ---
 import achievements from "../collections/achievements.json";
-import educations from "../collections/educations.json";
-import experiences from "../collections/experiences.json";
 import AboutItem from "../components/about-item.astro";
-import PageHeading from "../components/page-heading.astro";
-import Layout from "../layouts/main.astro";
+import PageHeading from "../components/Heading.astro";
+import Layout from "../layouts/Layout.astro";
+import Experience from "@/components/sections/Experience.astro";
+import Education from "@/components/sections/Education.astro";
 ---
 
 <Layout title="About Me">
-  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+  <section class="relative z-20 mx-auto my-12 max-w-2xl px-7 lg:px-0">
     <PageHeading
       title="About Me"
       description="Hello 👋 I'm Rayhan Kafi Pratama, a bachelor of computer science student."
     />
 
     <p
-      class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400 sm:mt-4 lg:mt-6 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
+      class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400 sm:mt-4 sm:text-base sm:leading-7 lg:mt-6 lg:text-lg lg:leading-8"
     >
       My passion for crafting software that turns ideas into reality through
       elegant and intuitive interfaces.
     </p>
 
     <p
-      class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400 sm:mt-4 lg:mt-6 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
+      class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400 sm:mt-4 sm:text-base sm:leading-7 lg:mt-6 lg:text-lg lg:leading-8"
     >
       I place a strong emphasis on creating seamless experiences, robust
       architecture, and high-quality code. Dedicated to continuous learning and
@@ -32,34 +32,16 @@ import Layout from "../layouts/main.astro";
       meaningful and impactful projects.
     </p>
 
-    <h2
-      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
+    <div
+      class="space-y-12 md:col-span-4 print:col-span-1 print:grid print:grid-cols-4 print:gap-2 print:space-y-0"
     >
-      Education
-    </h2>
-    <div class="px-5 py-10">
-      {
-        educations.map((education, loop) => (
-          <div
-            class={
-              loop <= 1
-                ? "pb-10 border-l border-gray-200 dark:border-neutral-700"
-                : ""
-            }
-          >
-            <AboutItem
-              dates={education.dates}
-              title={education.degree}
-              subtitle={education.school}
-              description={education.description}
-            />
-          </div>
-        ))
-      }
+      <Experience className="print:col-span-3" />
+      <!-- <Skills className="print:hidden" /> -->
+      <Education className="order-first" />
     </div>
 
     <h2
-      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
+      class="mb-2 mt-5 text-2xl font-bold dark:text-neutral-200 sm:mt-6 lg:mt-10"
     >
       Achievements
     </h2>
@@ -69,7 +51,7 @@ import Layout from "../layouts/main.astro";
           <div
             class={
               loop <= 1
-                ? "pb-10 border-l border-gray-200 dark:border-neutral-700"
+                ? "border-l border-gray-200 pb-10 dark:border-neutral-700"
                 : ""
             }
           >
@@ -77,32 +59,6 @@ import Layout from "../layouts/main.astro";
               dates={achievement.dates}
               title={achievement.name}
               description={achievement.description}
-            />
-          </div>
-        ))
-      }
-    </div>
-
-    <h2
-      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
-    >
-      Experience
-    </h2>
-    <div class="px-5 py-10">
-      {
-        experiences.map((experience, loop) => (
-          <div
-            class={
-              loop <= 1
-                ? "pb-10 border-l border-gray-200 dark:border-neutral-700"
-                : ""
-            }
-          >
-            <AboutItem
-              dates={experience.dates}
-              title={experience.role}
-              subtitle={experience.company}
-              description={experience.description}
             />
           </div>
         ))
