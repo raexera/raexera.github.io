@@ -2,8 +2,12 @@
 import Button from "@/components/Button.astro";
 import Card from "@/components/Card.astro";
 import Layout from "@/layouts/Layout.astro";
-import { Image } from "astro:assets";
 import PFP from "@/assets/images/pfp.png";
+import { Image } from "astro:assets";
+import { basics } from "@cv";
+
+const { name, label, location, profiles, summary } = basics;
+const { city, region } = location;
 ---
 
 <Layout title="Rxyhn">
@@ -15,17 +19,17 @@ import PFP from "@/assets/images/pfp.png";
     >
       <div class="relative w-full">
         <h1
-          class="mb-5 text-4xl font-bold leading-tight dark:text-white md:text-4xl lg:text-6xl"
+          class="mb-5 text-4xl font-bold leading-tight text-black dark:text-white md:text-4xl lg:text-6xl"
         >
-          Hello, I'm Rayhan Pratama.
+          Hello, I'm {name}.
         </h1>
         <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
-          Computer Science Student at Bina Nusantara University. <br
-            class="hidden lg:block"
-          />With a deep passion for Software Engineering, AI, and Blockchain
-          technology.
+          {label}.
         </p>
-        <Button text="About Me." link="/about" />
+        <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
+          {summary}.
+        </p>
+        <Button text="About Me." link="/about" class />
       </div>
       <div
         class="h-full w-full -translate-y-px translate-x-0 rounded-2xl border border-dashed border-neutral-300 bg-red-400 bg-gradient-to-r from-white via-neutral-50 to-white dark:border-neutral-700 dark:from-neutral-950 dark:via-black dark:to-neutral-950 lg:h-[420px]"
@@ -45,30 +49,18 @@ import PFP from "@/assets/images/pfp.png";
       Reach me!
     </h3>
     <div class="my-2 mb-8 mt-4 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-      <Card
-        url="mailto:rxyhn.dev@gmail.com"
-        description="rxyhn.dev@gmail.com"
-        highlights={[]}
-        name="Email"
-      />
-      <Card
-        url="https://t.me/rxxxyhn"
-        description="@rxxxyhn"
-        highlights={[]}
-        name="Telegram"
-      />
-      <Card
-        url="https://www.linkedin.com/in/rayhankafipratama"
-        description="Rayhan Kafi Pratama"
-        highlights={[]}
-        name="LinkedIn"
-      />
-      <Card
-        url="https://www.instagram.com/rayhankafii"
-        description="@rayhankafii"
-        highlights={[]}
-        name="Instagram"
-      />
+      {
+        profiles.map((profile) => {
+          return (
+            <Card
+              url={profile.url}
+              description={profile.username}
+              highlights={[]}
+              name={profile.network}
+            />
+          );
+        })
+      }
     </div>
   </div>
 </Layout>

@@ -1,5 +1,7 @@
 ---
 import Logo from "./Logo.astro";
+import { basics } from "@cv";
+const { name } = basics;
 ---
 
 <section
@@ -12,7 +14,8 @@ import Logo from "./Logo.astro";
     <p
       class="mt-4 text-sm text-neutral-700 dark:text-neutral-100 sm:ml-4 sm:mt-0 sm:border-l sm:border-neutral-300 sm:pl-4 dark:sm:border-neutral-700"
     >
-      © {new Date().getFullYear()} Rayhan Pratama. All rights reserved.
+      © {new Date().getFullYear()}
+      {name}. All rights reserved.
     </p>
     <span
       class="mt-4 inline-flex justify-center space-x-5 sm:ml-auto sm:mt-0 sm:justify-start"
