@@ -5,7 +5,7 @@ const { className, title } = Astro.props;
 <section class:list={["flex flex-col gap-4 print:gap-0", className]}>
   {
     title && (
-      <h2 class="mb-2 mt-5 text-2xl font-bold text-neutral-200 sm:mt-6 lg:mt-10">
+      <h2 class="text-sm font-bold uppercase tracking-widest text-neutral-200">
         {title}
       </h2>
     )
