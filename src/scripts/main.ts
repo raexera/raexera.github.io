@@ -24,13 +24,6 @@ let headerElement: HTMLElement | null = null;
 document.addEventListener("DOMContentLoaded", () => {
   headerElement = document.getElementById("header");
 
-  if (localStorage.getItem("dark_mode") === "true") {
-    window.darkMode = true;
-    showNight();
-  } else {
-    showDay();
-  }
-
   window.stickyHeaderFuncionality();
   window.applyMenuItemClasses();
   window.evaluateHeaderPosition();
@@ -64,68 +57,6 @@ window.evaluateHeaderPosition = () => {
     document.getElementById("menu")?.classList.add("top-[75px]");
   }
 };
-
-document.getElementById("darkToggle")?.addEventListener("click", () => {
-  document.documentElement.classList.add("duration-300");
-
-  if (document.documentElement.classList.contains("dark")) {
-    localStorage.removeItem("dark_mode");
-    showDay(true);
-  } else {
-    localStorage.setItem("dark_mode", "true");
-    showNight(true);
-  }
-});
-
-function showDay(animate: boolean = false): void {
-  const sunElement = document.getElementById("sun");
-  const moonElement = document.getElementById("moon");
-
-  sunElement?.classList.remove("setting");
-  moonElement?.classList.remove("rising");
-
-  let timeout = 0;
-
-  if (animate) {
-    timeout = 500;
-    moonElement?.classList.add("setting");
-  }
-
-  setTimeout(() => {
-    moonElement?.classList.add("hidden");
-    sunElement?.classList.remove("hidden");
-
-    if (animate) {
-      document.documentElement.classList.remove("dark");
-      sunElement?.classList.add("rising");
-    }
-  }, timeout);
-}
-
-function showNight(animate: boolean = false): void {
-  const sunElement = document.getElementById("sun");
-  const moonElement = document.getElementById("moon");
-
-  sunElement?.classList.remove("rising");
-  moonElement?.classList.remove("setting");
-
-  let timeout = 0;
-
-  if (animate) {
-    timeout = 500;
-    sunElement?.classList.add("setting");
-  }
-
-  setTimeout(() => {
-    sunElement?.classList.add("hidden");
-    moonElement?.classList.remove("hidden");
-
-    if (animate) {
-      document.documentElement.classList.add("dark");
-      moonElement?.classList.add("rising");
-    }
-  }, timeout);
-}
 
 window.applyMenuItemClasses = () => {
   const menuItems = document.querySelectorAll<HTMLAnchorElement>("#menu a");

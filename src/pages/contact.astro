@@ -1,0 +1,46 @@
+---
+import Card from "@/components/Card.astro";
+import Layout from "@/layouts/Layout.astro";
+import { basics } from "@cv";
+
+const { location, profiles } = basics;
+const { city, region } = location;
+---
+
+<Layout title="Rxyhn">
+  <div
+    class="relative z-20 mx-auto mt-16 w-full max-w-4xl px-7 md:mt-24 lg:mt-32 xl:px-0"
+  >
+    <h3
+      class="mb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl"
+    >
+      Reach me!
+    </h3>
+
+    <div
+      class="border-jet relative mb-[30px] h-[250px] w-full overflow-hidden rounded-lg border"
+    >
+      <figure class="h-full">
+        <iframe
+          class="h-full w-full border-none grayscale invert filter"
+          src="https://maps.google.com/maps?width=100%&height=600&hl=en&coord=106.7810449, -6.2091996&q=Jl.%20Kyai%20Haji%20Taisir%20No.%2028,%20Sukabumi%20Utara,%20Jakarta,%20Kota%20Jakarta%20Barat,%20Daerah%20Khusus%20Ibukota%20Jakarta%2011530&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+        ></iframe>
+      </figure>
+    </div>
+
+    <div class="my-2 mb-8 mt-4 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+      {
+        profiles.map((profile) => {
+          return (
+            <Card
+              url={profile.url}
+              description={profile.username}
+              highlights={[]}
+              name={profile.network}
+            />
+          );
+        })
+      }
+    </div>
+  </div>
+</Layout>

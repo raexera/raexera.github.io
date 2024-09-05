@@ -3,7 +3,6 @@ import Logo from "./Logo.astro";
 import navLinks from "./navLinks.json";
 ---
 
-<!-- This is an invisible div with relative position so that it takes up the height of the menu (because menu is absolute/fixed) -->
 <div class="pointer-events-none relative h-20 w-full opacity-0"></div>
 <header id="header" class="absolute top-0 z-50 h-20 w-full">
   <div
@@ -35,7 +34,7 @@ import navLinks from "./navLinks.json";
       </div>
       <div
         id="closeMenu"
-        class="ml-4 flex hidden h-6 w-6 -translate-x-1 cursor-pointer flex-col items-end justify-center sm:hidden"
+        class="ml-4 flex h-6 w-6 -translate-x-1 cursor-pointer flex-col items-end justify-center sm:hidden"
       >
         <svg
           class="h-6 w-6 text-neutral-600 dark:text-neutral-200"
@@ -49,7 +48,7 @@ import navLinks from "./navLinks.json";
       </div>
       <div
         id="menu"
-        class="dm:mx-0 fixed left-0 top-[75px] z-40 hidden h-auto w-full flex-col items-end justify-start pb-4 pt-7 text-sm duration-300 ease-out sm:relative sm:top-0 sm:flex sm:h-auto sm:w-auto sm:flex-row sm:py-0 sm:pr-0 sm:pt-0 sm:text-base sm:text-sm"
+        class="dm:mx-0 fixed left-0 top-[75px] z-40 hidden h-auto w-full flex-col items-end justify-start pb-4 pt-7 text-sm duration-300 ease-out sm:relative sm:top-0 sm:flex sm:h-auto sm:w-auto sm:flex-row sm:py-0 sm:pr-0 sm:pt-0 sm:text-sm"
       >
         <div
           class="absolute inset-0 right-0 top-0 block h-full w-full px-3 sm:hidden"
@@ -71,41 +70,6 @@ import navLinks from "./navLinks.json";
             );
           })
         }
-      </div>
-      <div
-        id="darkToggle"
-        class="group relative ml-4 flex cursor-pointer items-center pl-6 font-medium tracking-wide text-neutral-800 dark:text-white"
-      >
-        <div
-          class="horizon absolute left-0 flex h-6 w-6 items-center justify-center overflow-hidden border-b border-transparent group-hover:border-neutral-600"
-        >
-          <svg
-            class="ease absolute h-6 w-6 transform transition duration-700"
-            id="sun"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            ><path
-              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-            ></path></svg
-          >
-          <svg
-            class="ease absolute hidden h-6 w-6 transform transition duration-700"
-            id="moon"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            ><path
-              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-            ></path></svg
-          >
-        </div>
       </div>
     </nav>
   </div>

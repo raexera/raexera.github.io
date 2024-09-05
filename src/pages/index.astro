@@ -1,13 +1,11 @@
 ---
 import Button from "@/components/Button.astro";
-import Card from "@/components/Card.astro";
 import Layout from "@/layouts/Layout.astro";
 import PFP from "@/assets/images/pfp.png";
 import { Image } from "astro:assets";
 import { basics } from "@cv";
 
-const { name, label, location, profiles, summary } = basics;
-const { city, region } = location;
+const { name, label, summary } = basics;
 ---
 
 <Layout title="Rxyhn">
@@ -23,12 +21,12 @@ const { city, region } = location;
         >
           Hello, I'm {name}.
         </h1>
-        <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
+        <div class="mb-5 text-base text-neutral-600 dark:text-neutral-400">
           {label}.
-        </p>
-        <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
+        </div>
+        <div class="mb-5 text-base text-neutral-600 dark:text-neutral-400">
           {summary}.
-        </p>
+        </div>
         <Button text="About Me." link="/about" class />
       </div>
       <div
@@ -41,26 +39,6 @@ const { city, region } = location;
           class="h-full w-full bg-center object-cover"
         />
       </div>
-    </div>
-
-    <h3
-      class="mb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl"
-    >
-      Reach me!
-    </h3>
-    <div class="my-2 mb-8 mt-4 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-      {
-        profiles.map((profile) => {
-          return (
-            <Card
-              url={profile.url}
-              description={profile.username}
-              highlights={[]}
-              name={profile.network}
-            />
-          );
-        })
-      }
     </div>
   </div>
 </Layout>

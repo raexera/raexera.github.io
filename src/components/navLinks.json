@@ -10,5 +10,9 @@
   {
     "name": "About",
     "url": "/about"
+  },
+  {
+    "name": "Reach Me!",
+    "url": "/contact"
   }
 ]
