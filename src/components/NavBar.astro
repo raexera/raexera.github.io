@@ -3,27 +3,27 @@ import Logo from "./Logo.astro";
 import navLinks from "./navLinks.json";
 ---
 
-<div class="pointer-events-none relative h-20 w-full opacity-0"></div>
-<header id="header" class="absolute top-0 z-50 h-20 w-full">
+<div class="pointer-events-none relative h-14 w-full opacity-0"></div>
+<header id="header" class="fixed top-0 z-50 h-14 w-full">
   <div
-    class="mx-auto flex h-full max-w-5xl select-none items-center justify-between border-b border-l-0 border-r-0 border-transparent pl-6 pr-4 lg:rounded-b-xl lg:border-l lg:border-r"
+    class="mx-auto flex h-full max-w-5xl select-none items-center justify-between border-b border-l-0 border-r-0 border-neutral-600/40 bg-neutral-900/60 pl-6 pr-4 backdrop-blur-2xl lg:rounded-b-xl lg:border-l lg:border-r"
   >
     <Logo />
     <div
       id="mobileMenuBackground"
       onclick="closeMobileMenu()"
-      class="fixed inset-0 z-20 hidden h-screen w-screen bg-white/90 duration-300 ease-out dark:bg-neutral-950/90"
+      class="fixed inset-0 z-20 hidden h-screen w-screen bg-neutral-950/90 duration-300 ease-out"
     >
     </div>
     <nav
-      class="relative z-30 flex w-full flex-row-reverse justify-start text-sm text-neutral-500 dark:text-neutral-400 sm:flex-row sm:justify-end"
+      class="relative z-30 flex w-full flex-row-reverse justify-start text-sm text-neutral-400 sm:flex-row sm:justify-end"
     >
       <div
         id="openMenu"
         class="ml-4 flex h-6 w-6 cursor-pointer flex-col items-end justify-center sm:hidden"
       >
         <svg
-          class="h-8 w-8 dark:text-neutral-200"
+          class="h-8 w-8 text-neutral-200"
           fill="none"
           stroke-linecap="round"
           stroke-linejoin="round"
@@ -37,7 +37,7 @@ import navLinks from "./navLinks.json";
         class="ml-4 flex h-6 w-6 -translate-x-1 cursor-pointer flex-col items-end justify-center sm:hidden"
       >
         <svg
-          class="h-6 w-6 text-neutral-600 dark:text-neutral-200"
+          class="h-6 w-6 text-neutral-200"
           fill="none"
           stroke-linecap="round"
           stroke-linejoin="round"
@@ -54,7 +54,7 @@ import navLinks from "./navLinks.json";
           class="absolute inset-0 right-0 top-0 block h-full w-full px-3 sm:hidden"
         >
           <div
-            class="relative h-full w-full rounded-xl border border-dashed border-neutral-300 bg-white backdrop-blur-sm dark:border-neutral-700 dark:bg-neutral-950"
+            class="relative h-full w-full rounded-xl border border-dashed border-neutral-700 bg-neutral-950 backdrop-blur-sm"
           >
           </div>
         </div>
@@ -63,7 +63,7 @@ import navLinks from "./navLinks.json";
             return (
               <a
                 href={link.url}
-                class="relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-neutral-900 dark:hover:text-white sm:mb-0 sm:py-0 md:w-auto"
+                class="relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-white sm:mb-0 sm:py-0 md:w-auto"
               >
                 {link.name}
               </a>

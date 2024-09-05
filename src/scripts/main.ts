@@ -1,5 +1,4 @@
 interface Window {
-  darkMode: boolean;
   stickyHeaderFuncionality: () => void;
   evaluateHeaderPosition: () => void;
   applyMenuItemClasses: () => void;
@@ -7,18 +6,6 @@ interface Window {
   closeMobileMenu: () => void;
 }
 
-window.darkMode = false;
-
-const stickyClasses: string[] = ["fixed", "h-14"];
-const unstickyClasses: string[] = ["absolute", "h-20"];
-const stickyClassesContainer: string[] = [
-  "border-neutral-300/50",
-  "bg-white/80",
-  "dark:border-neutral-600/40",
-  "dark:bg-neutral-900/60",
-  "backdrop-blur-2xl",
-];
-const unstickyClassesContainer: string[] = ["border-transparent"];
 let headerElement: HTMLElement | null = null;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -38,21 +25,9 @@ window.stickyHeaderFuncionality = () => {
 
 window.evaluateHeaderPosition = () => {
   if (window.scrollY > 16 && headerElement) {
-    headerElement.firstElementChild?.classList.add(...stickyClassesContainer);
-    headerElement.firstElementChild?.classList.remove(
-      ...unstickyClassesContainer,
-    );
-    headerElement.classList.add(...stickyClasses);
-    headerElement.classList.remove(...unstickyClasses);
     document.getElementById("menu")?.classList.add("top-[56px]");
     document.getElementById("menu")?.classList.remove("top-[75px]");
   } else if (headerElement) {
-    headerElement.firstElementChild?.classList.remove(
-      ...stickyClassesContainer,
-    );
-    headerElement.firstElementChild?.classList.add(...unstickyClassesContainer);
-    headerElement.classList.add(...unstickyClasses);
-    headerElement.classList.remove(...stickyClasses);
     document.getElementById("menu")?.classList.remove("top-[56px]");
     document.getElementById("menu")?.classList.add("top-[75px]");
   }
@@ -62,7 +37,7 @@ window.applyMenuItemClasses = () => {
   const menuItems = document.querySelectorAll<HTMLAnchorElement>("#menu a");
   menuItems.forEach((menuItem) => {
     if (menuItem.pathname === window.location.pathname) {
-      menuItem.classList.add("text-neutral-900", "dark:text-white");
+      menuItem.classList.add("text-white");
     }
   });
 };
