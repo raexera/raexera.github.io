@@ -1,8 +1,9 @@
 ---
-import Footer from "@/components/Footer.astro";
 import NavBar from "@/components/NavBar.astro";
 import Starry from "@/components/Starry";
 import SquareLines from "@/components/Square.astro";
+import { basics } from "@cv";
+const { name } = basics;
 const { title } = Astro.props;
 ---
 
@@ -48,8 +49,14 @@ const { title } = Astro.props;
       particleColor="#FFFFFF"
     />
     <slot />
-    <Footer />
+    <footer class="fixed bottom-0 left-0 z-50 h-14 w-full">
+      <div
+        class="mx-auto h-full w-full items-center border-l-0 border-r-0 border-t border-neutral-600/40 bg-neutral-900/60 py-4 pl-6 pr-4 text-center text-xs backdrop-blur-2xl"
+      >
+        © {new Date().getFullYear()}
+        {name}. All rights reserved.
+      </div>
+    </footer>
     <script src="../scripts/main.ts"></script>
-    <Fragment set:html={import.meta.env.FOOTER_INJECT} />
   </body>
 </html>
