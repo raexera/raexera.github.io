@@ -1,7 +1,7 @@
 ---
 import NavBar from "@/components/NavBar.astro";
 import Starry from "@/components/Starry";
-import SquareLines from "@/components/Square.astro";
+import Square from "@/components/Square.astro";
 import { basics } from "@cv";
 const { name } = basics;
 const { title } = Astro.props;
@@ -19,7 +19,7 @@ const { title } = Astro.props;
   <body
     class="relative z-10 bg-neutral-950 leading-relaxed tracking-wide text-neutral-200 antialiased selection:bg-neutral-300 selection:text-neutral-900"
   >
-    <SquareLines />
+    <Square />
     <NavBar />
     <Starry
       client:idle
