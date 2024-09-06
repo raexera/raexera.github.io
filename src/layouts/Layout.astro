@@ -32,7 +32,9 @@ const { title } = Astro.props;
       className="fixed z-0 h-full w-full"
       particleColor="#FFFFFF"
     />
-    <slot />
+    <main class="flex flex-grow flex-col items-center justify-center">
+      <slot />
+    </main>
     <footer class="fixed bottom-0 left-0 z-50 h-14 w-full print:hidden">
       <div
         class="mx-auto h-full w-full items-center border-l-0 border-r-0 border-t border-neutral-600/40 bg-neutral-900/60 py-4 pl-6 pr-4 text-center text-xs backdrop-blur-2xl"
