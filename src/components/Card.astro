@@ -1,5 +1,4 @@
 ---
-// Card.astro
 export interface CardProps {
   url: string;
   description: string;
@@ -28,7 +27,9 @@ const { url, description, highlights, name } = Astro.props as CardProps;
       <span
         class="mb-0 flex items-center text-base font-semibold tracking-tight text-neutral-100"
       >
-        <span>{name}</span>
+        <h3 class="font-medium leading-snug text-neutral-200">
+          <span>{name}</span>
+        </h3>
         <svg
           class="ml-1 h-2.5 w-2.5 -translate-x-1 translate-y-1 -rotate-45 transform stroke-current transition-all duration-200 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
           viewBox="0 0 13 15"
@@ -65,16 +66,16 @@ const { url, description, highlights, name } = Astro.props as CardProps;
           </g>
         </svg>
       </span>
-      <p class="py-3 text-sm text-neutral-400">
+      <p class="mt-2 text-sm leading-normal">
         {description}
       </p>
-      <ul class="mt-1 text-sm text-neutral-400">
+      <p class="mt-2 text-sm leading-normal">
         {
           highlights.map((highlight) => {
-            return <li>{highlight}</li>;
+            return <span>{highlight}</span>;
           })
         }
-      </ul>
+      </p>
     </span>
   </span>
 </a>
