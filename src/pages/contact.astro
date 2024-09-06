@@ -1,6 +1,7 @@
 ---
 import Card from "@/components/Card.astro";
 import Layout from "@/layouts/Layout.astro";
+import Heading from "@/components/Heading.astro";
 import { basics } from "@cv";
 
 const { profiles } = basics;
@@ -10,22 +11,13 @@ const { profiles } = basics;
   <div
     class="relative z-20 mx-auto flex min-h-screen w-full max-w-4xl flex-col items-center justify-center px-7 xl:px-0"
   >
-    <h3
-      class="mb-4 text-center text-2xl font-bold tracking-tight text-white md:text-4xl"
-    >
-      Reach me!
-    </h3>
+    <Heading
+      title="Reach Me!"
+      description="I'm always open to new opportunities and collaborations. Feel free to reach out to me through any of the following platforms."
+    />
     <div
-      class="border-jet relative mb-[30px] w-full translate-x-0 overflow-hidden rounded-2xl border border-dashed border-neutral-700 bg-gradient-to-r from-neutral-950 via-black to-neutral-950 lg:h-[420px]"
+      class="z-50 my-8 grid w-full grid-cols-1 items-stretch gap-7 sm:grid-cols-2 sm:gap-5"
     >
-      <figure class="h-full">
-        <iframe
-          class="h-full w-full border-none grayscale invert filter"
-          src="https://maps.google.com/maps?width=100%&height=600&hl=en&coord=106.7810449, -6.2091996&q=Jl.%20Kyai%20Haji%20Taisir%20No.%2028,%20Sukabumi%20Utara,%20Jakarta,%20Kota%20Jakarta%20Barat,%20Daerah%20Khusus%20Ibukota%20Jakarta%2011530&ie=UTF8&t=&z=14&iwloc=B&output=embed"
-        ></iframe>
-      </figure>
-    </div>
-    <div class="my-2 mb-8 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
       {
         profiles.map((profile) => (
           <Card
