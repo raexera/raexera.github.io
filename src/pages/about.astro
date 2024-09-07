@@ -22,7 +22,7 @@ import Skills from "@/components/sections/Skills.astro";
       elegant and intuitive interfaces.
     </p>
     <p
-      class="mt-2 text-justify text-sm leading-6 text-neutral-400 sm:mt-4 sm:text-base sm:leading-7 lg:mt-6 lg:text-lg lg:leading-8"
+      class="mb-8 mt-2 text-justify text-sm leading-6 text-neutral-400 sm:mt-4 sm:text-base sm:leading-7 lg:mt-6 lg:text-lg lg:leading-8"
     >
       I place a strong emphasis on creating seamless experiences, robust
       architecture, and high-quality code. Dedicated to continuous learning and
@@ -32,11 +32,9 @@ import Skills from "@/components/sections/Skills.astro";
       meaningful and impactful projects.
     </p>
 
-    <div
-      class="space-y-12 md:col-span-4 print:col-span-1 print:grid print:grid-cols-4 print:gap-2 print:space-y-0"
-    >
-      <Experience className="mt-8 print:col-span-3" />
-      <Skills className="print:hidden" />
+    <div class="space-y-12 md:col-span-4">
+      <Experience />
+      <Skills />
       <Awards className="order-first" />
       <Education className="order-first" />
     </div>

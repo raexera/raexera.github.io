@@ -4,7 +4,7 @@ import { education } from "@cv";
 ---
 
 <Section className={Astro.props.className} title="Education">
-  <ul class="space-y-4 py-3 print:space-y-0">
+  <ul class="space-y-4 py-3">
     {
       education.map(
         ({ institution, startDate, endDate, area, url, summary }) => {
@@ -25,7 +25,7 @@ import { education } from "@cv";
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="mr-2 hidden h-5 w-5 self-start md:inline-block print:hidden"
+                class="mr-2 hidden h-5 w-5 self-start md:inline-block"
               >
                 <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
                 <path d="M22 10v6" />
@@ -63,7 +63,7 @@ import { education } from "@cv";
                 </h3>
                 <p class="mt-1 text-sm text-neutral-400">{area}</p>
                 <div
-                  class="mt-4 flex flex-col gap-4 text-sm print:gap-0 print:text-xs"
+                  class="mt-4 flex flex-col gap-4 text-sm"
                   x-data="{ expanded: false }"
                 >
                   {summary && (
@@ -85,7 +85,7 @@ import { education } from "@cv";
               </div>
             </div>
           );
-        },
+        }
       )
     }
   </ul>

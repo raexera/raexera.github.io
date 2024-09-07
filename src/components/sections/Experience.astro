@@ -24,15 +24,15 @@ import CollapseText from "../CollapseText";
           const endYear = endDate ? new Date(endDate).getFullYear() : "Present";
 
           return (
-            <li class="relative print:py-2">
-              <div class="group relative grid pb-1 transition-all sm:grid-cols-12 sm:gap-8 md:gap-6 lg:hover:!opacity-100 print:grid-cols-1 print:gap-1 print:pb-0">
+            <li class="relative">
+              <div class="group relative grid pb-1 transition-all sm:grid-cols-12 sm:gap-8 md:gap-6 lg:hover:!opacity-100">
                 <header class="relative mt-1 text-xs font-semibold text-neutral-500 sm:col-span-2">
                   <time datetime={startDate}>{startYear}</time>
                   <span class="mx-1">-</span>
                   <time datetime={endDate}>{endYear}</time>
                 </header>
-                <div class="relative flex flex-col pb-6 before:absolute before:-ml-6 before:mt-2 before:h-full before:w-px before:bg-neutral-500 sm:col-span-10 print:pb-0 print:before:hidden">
-                  <div class="absolute mt-2 h-2 w-2 -translate-x-[1.71rem] rounded-full bg-neutral-500 ring ring-neutral-500 print:hidden" />
+                <div class="relative flex flex-col pb-6 before:absolute before:-ml-6 before:mt-2 before:h-full before:w-px before:bg-neutral-500 sm:col-span-10">
+                  <div class="absolute mt-2 h-2 w-2 -translate-x-[1.71rem] rounded-full bg-neutral-500 ring ring-neutral-500" />
                   <h3 class="text-base font-medium leading-snug text-neutral-200">
                     <div class="inline-flex items-center">
                       <span>{position}</span>

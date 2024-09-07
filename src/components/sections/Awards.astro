@@ -4,7 +4,7 @@ import { awards } from "@cv";
 ---
 
 <Section className={Astro.props.className} title="Awards">
-  <ul class="space-y-4 py-3 print:space-y-0">
+  <ul class="space-y-4 py-3">
     {
       awards.map(({ title, date, awarder, summary }) => {
         return (
@@ -19,7 +19,7 @@ import { awards } from "@cv";
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="mr-2 hidden h-5 w-5 self-start md:inline-block print:hidden"
+              class="mr-2 hidden h-5 w-5 self-start md:inline-block"
             >
               <circle cx="12" cy="8" r="7" />
               <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
@@ -30,7 +30,7 @@ import { awards } from "@cv";
               </h3>
               <p class="mt-1 text-sm text-neutral-400">{awarder}</p>
               <div
-                class="mt-4 flex flex-col gap-4 text-sm print:gap-0 print:text-xs"
+                class="mt-4 flex flex-col gap-4 text-sm"
                 x-data="{ expanded: false }"
               >
                 {summary && (

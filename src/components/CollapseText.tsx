@@ -10,7 +10,7 @@ export default function CollapseText({ children }: CollapseTextProps) {
   return (
     <div className="relative">
       <div
-        className={`relative flex flex-col gap-4 max-sm:!h-auto md:after:absolute md:after:bottom-0 md:after:h-12 md:after:w-full md:after:bg-gradient-to-t md:after:from-neutral-950 md:after:content-[''] print:!h-auto print:gap-2 print:after:hidden ${
+        className={`relative flex flex-col gap-4 max-sm:!h-auto md:after:absolute md:after:bottom-0 md:after:h-12 md:after:w-full md:after:bg-gradient-to-t md:after:from-neutral-950 md:after:content-[''] ${
           expanded ? "after:hidden" : ""
         }`}
         style={{ maxHeight: expanded ? "none" : "50px", overflow: "hidden" }}
@@ -19,7 +19,7 @@ export default function CollapseText({ children }: CollapseTextProps) {
       </div>
       <button
         onClick={() => setExpanded(!expanded)}
-        className="group/more flex w-fit cursor-pointer items-center justify-center gap-1.5 text-xs text-neutral-400 underline transition-all hover:text-neutral-200 print:hidden"
+        className="group/more flex w-fit cursor-pointer items-center justify-center gap-1.5 text-xs text-neutral-400 underline transition-all hover:text-neutral-200"
       >
         <span>{expanded ? "Show less" : "Show more"}</span>
         <svg
