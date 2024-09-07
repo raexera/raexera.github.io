@@ -13,8 +13,8 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <link rel="icon" type="image/x-icon" href="../favicon.png" />
-    <script src="../styles/global.css"></script>
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <link rel="stylesheet" href="../styles/global.css" />
   </head>
   <body
     class="relative z-10 bg-neutral-950 leading-relaxed tracking-wide text-neutral-200 antialiased selection:bg-neutral-300 selection:text-neutral-900"
@@ -32,12 +32,14 @@ const { title } = Astro.props;
       className="fixed z-0 h-full w-full"
       particleColor="#FFFFFF"
     />
-    <main class="flex flex-grow flex-col items-center justify-center">
+    <main
+      class="flex flex-grow flex-col items-center justify-center pb-20 pt-16"
+    >
       <slot />
     </main>
-    <footer class="fixed bottom-0 left-0 z-50 h-14 w-full print:hidden">
+    <footer class="fixed bottom-0 left-0 z-50 w-full print:hidden">
       <div
-        class="mx-auto h-full w-full items-center border-l-0 border-r-0 border-t border-neutral-600/40 bg-neutral-900/60 py-4 pl-6 pr-4 text-center text-xs backdrop-blur-2xl"
+        class="mx-auto h-14 w-full items-center border-l-0 border-r-0 border-t border-neutral-600/40 bg-neutral-900/60 px-6 py-4 text-center text-xs backdrop-blur-2xl"
       >
         © {new Date().getFullYear()}
         {name}. All rights reserved.

@@ -1,5 +1,7 @@
 ---
 import Section from "../Section.astro";
+import { skills } from "@cv";
+
 import HTML from "@/icons/html.astro";
 import CSS from "@/icons/css.astro";
 import JavaScript from "@/icons/javascript.astro";
@@ -11,7 +13,6 @@ import Git from "@/icons/git.astro";
 import GitHub from "@/icons/GitHub.astro";
 import Tailwind from "@/icons/tailwind.astro";
 import Next from "@/icons/next.astro";
-import { skills } from "@cv";
 import Swift from "@/icons/swift.astro";
 import SwiftUI from "@/icons/swiftui.astro";
 import Kotlin from "@/icons/kotlin.astro";
@@ -41,17 +42,16 @@ const SKILLS_ICONS: Record<string, any> = {
 ---
 
 <Section className={Astro.props.className} title="Skills">
-  <ul
-    class="[&>li>svg]:text-skin-hue inline-flex flex-wrap gap-6 [&>li>svg]:size-5 [&>li]:text-sm"
-  >
+  <ul class="flex flex-wrap gap-2">
     {
       skills.map(({ name }) => {
         const iconName = name === "Next.js" ? "Next" : name;
         const Icon = SKILLS_ICONS[iconName];
 
         return (
-          <li class="border-skin-hue/20s bg-skin-button-accent/20s borders border-solids text-skin-muted flex items-center gap-1 rounded-md px-2 py-0.5 text-xs print:border-none print:bg-transparent print:p-0 print:text-zinc-800">
-            {Icon && <Icon />} <span>{name}</span>
+          <li class="flex items-center gap-1 rounded-md border border-neutral-700 bg-neutral-800/50 px-2 py-1 text-xs text-neutral-300">
+            {Icon && <Icon class="h-4 w-4" />}
+            <span>{name}</span>
           </li>
         );
       })

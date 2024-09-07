@@ -4,76 +4,51 @@ import { basics } from "@cv";
 const { nickname } = basics;
 ---
 
-<header id="header" class="fixed top-0 z-50 h-14 w-full print:hidden">
+<header id="header" class="fixed top-0 z-50 w-full print:hidden">
   <div
-    class="mx-auto flex h-full max-w-5xl select-none items-center justify-between border-b border-l-0 border-r-0 border-neutral-600/40 bg-neutral-900/60 pl-6 pr-4 backdrop-blur-2xl lg:rounded-b-xl lg:border-l lg:border-r"
+    class="mx-auto flex h-14 max-w-5xl select-none items-center justify-between border-b border-l-0 border-r-0 border-neutral-600/40 bg-neutral-900/60 px-6 backdrop-blur-2xl lg:rounded-b-xl lg:border-l lg:border-r"
   >
     <a
       href="/"
-      class="group relative z-30 flex h-5 items-center space-x-1.5 text-base font-semibold uppercase text-white"
+      class="group relative z-30 flex items-center space-x-1.5 text-base font-semibold uppercase text-white"
     >
       {nickname}
     </a>
-    <div
-      id="mobileMenuBackground"
-      onclick="closeMobileMenu()"
-      class="fixed inset-0 z-20 hidden h-screen w-screen bg-neutral-950/90 duration-300 ease-out"
-    >
-    </div>
     <nav
       class="relative z-30 flex w-full flex-row-reverse justify-start text-sm text-neutral-400 sm:flex-row sm:justify-end"
     >
-      <div
+      <button
         id="openMenu"
-        class="ml-4 flex h-6 w-6 cursor-pointer flex-col items-end justify-center sm:hidden"
-      >
-        <svg
-          class="h-8 w-8 text-neutral-200"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          stroke="currentColor"><path d="M4 8h16M4 16h16"></path></svg
-        >
-      </div>
-      <div
-        id="closeMenu"
-        class="ml-4 flex h-6 w-6 -translate-x-1 cursor-pointer flex-col items-end justify-center sm:hidden"
+        aria-label="Open menu"
+        class="ml-4 flex h-6 w-6 cursor-pointer items-center justify-center sm:hidden"
       >
         <svg
           class="h-6 w-6 text-neutral-200"
           fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          stroke="currentColor"
           viewBox="0 0 24 24"
-          stroke="currentColor"><path d="M6 18L18 6M6 6l12 12"></path></svg
+          xmlns="http://www.w3.org/2000/svg"
         >
-      </div>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
       <div
         id="menu"
-        class="dm:mx-0 fixed left-0 top-[75px] z-40 hidden h-auto w-full flex-col items-end justify-start pb-4 pt-7 text-sm duration-300 ease-out sm:relative sm:top-0 sm:flex sm:h-auto sm:w-auto sm:flex-row sm:py-0 sm:pr-0 sm:pt-0 sm:text-sm"
+        class="fixed left-0 top-14 z-40 hidden h-auto w-full flex-col items-end justify-start bg-neutral-900/95 pb-4 pt-2 text-sm duration-300 ease-out sm:relative sm:top-0 sm:flex sm:h-auto sm:w-auto sm:flex-row sm:bg-transparent sm:p-0"
       >
-        <div
-          class="absolute inset-0 right-0 top-0 block h-full w-full px-3 sm:hidden"
-        >
-          <div
-            class="relative h-full w-full rounded-xl border border-dashed border-neutral-700 bg-neutral-950 backdrop-blur-sm"
-          >
-          </div>
-        </div>
         {
-          navLinks.map((link) => {
-            return (
-              <a
-                href={link.url}
-                class="relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-white sm:mb-0 sm:py-0 md:w-auto"
-              >
-                {link.name}
-              </a>
-            );
-          })
+          navLinks.map((link) => (
+            <a
+              href={link.url}
+              class="relative flex w-full items-center justify-center px-4 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-white sm:w-auto sm:py-0"
+            >
+              {link.name}
+            </a>
+          ))
         }
       </div>
     </nav>
