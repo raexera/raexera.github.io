@@ -103,13 +103,13 @@
       "title": "Finalist of Chain Fusion Hacker - ICP",
       "date": "August 2024",
       "awarder": "Chain Fusion",
-      "summary": "As a finalist in the Chain Fusion Hacker competition, I contributed to advancing Web3 technologies by developing seamless, user-friendly decentralized applications. My work focused on overcoming interoperability challenges, enhancing the usability of dApps, NFTs, and smart contracts, and bridging the gap between various blockchain platforms."
+      "summary": "As a finalist in the Chain Fusion Hacker competition, I contributed to the advancement of Web3 technologies by developing user-centric decentralized applications. My focus was on addressing interoperability challenges, improving dApp usability, and facilitating seamless integration between blockchain platforms. In my role as a backend developer, I was responsible for managing APIs and creating smart contracts using Motoko."
     },
     {
       "title": "Finalist of ICPC Asia Jakarta National Contest",
       "date": "November 2023",
       "awarder": "ICPC",
-      "summary": "As a finalist in the ICPC Asia Jakarta National Contest, I competed against top teams from various universities in the region. The contest challenged us to solve complex algorithmic problems under time constraints, test our teamwork and problem-solving skills, and showcase our programming abilities. It was a rewarding experience that honed my competitive spirit and technical expertise."
+      "summary": "As a finalist in the ICPC Asia Jakarta National Contest, I competed against top university teams across the region. The competition involved solving complex algorithmic challenges under strict time constraints, testing our teamwork, problem-solving abilities, and programming expertise. This experience significantly enhanced my technical skills and competitive mindset."
     }
   ],
   "skills": {
@@ -162,6 +162,11 @@
         "name": "MySQL",
         "level": "Intermediate",
         "keywords": ["Databases", "SQL", "Data Storage", "Backend"]
+      },
+      {
+        "name": "Nix Package Manager",
+        "level": "Intermediate",
+        "keywords": ["Package Management", "DevOps", "Configuration"]
       },
       {
         "name": "Node.js",
@@ -234,6 +239,11 @@
         "name": "Lua",
         "level": "Intermediate",
         "keywords": ["Scripting", "Embedded Systems"]
+      },
+      {
+        "name": "Nix",
+        "level": "Intermediate",
+        "keywords": ["Functional Programming", "Package Management"]
       },
       {
         "name": "Python",
