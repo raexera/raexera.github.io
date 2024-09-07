@@ -1,6 +1,7 @@
 ---
 import navLinks from "./navLinks.json";
 import { basics } from "@cv";
+import MobileMenu from "./MobileMenu";
 const { nickname } = basics;
 ---
 
@@ -17,29 +18,19 @@ const { nickname } = basics;
     <nav
       class="relative z-30 flex w-full flex-row-reverse justify-start text-sm text-neutral-400 sm:flex-row sm:justify-end"
     >
-      <button
-        id="openMenu"
-        aria-label="Open menu"
-        class="ml-4 flex h-6 w-6 cursor-pointer items-center justify-center sm:hidden"
-      >
-        <svg
-          class="h-6 w-6 text-neutral-200"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-      </button>
-      <div
-        id="menu"
-        class="fixed left-0 top-14 z-40 hidden h-auto w-full flex-col items-end justify-start bg-neutral-900/95 pb-4 pt-2 text-sm duration-300 ease-out sm:relative sm:top-0 sm:flex sm:h-auto sm:w-auto sm:flex-row sm:bg-transparent sm:p-0"
-      >
+      <MobileMenu client:load>
+        {
+          navLinks.map((link) => (
+            <a
+              href={link.url}
+              class="relative flex w-full items-center justify-center px-4 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-white sm:w-auto sm:py-0"
+            >
+              {link.name}
+            </a>
+          ))
+        }
+      </MobileMenu>
+      <div class="hidden sm:flex">
         {
           navLinks.map((link) => (
             <a
