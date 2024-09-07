@@ -12,14 +12,15 @@ const { url, description, highlights, name } = Astro.props as CardProps;
 <a
   href={url}
   target="_blank"
-  class="h-100 group relative flex flex-col items-stretch rounded-2xl p-7 duration-300 ease-out sm:p-3"
+  rel="noopener noreferrer"
+  class="group relative flex h-full flex-col items-stretch rounded-2xl p-7 duration-300 ease-out sm:p-5"
 >
   <span
     class="absolute inset-0 z-20 block h-full w-full rounded-2xl border border-dashed border-transparent bg-transparent duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:border group-hover:border-dashed group-hover:border-neutral-600 group-hover:bg-neutral-950"
-  ></span>
+    aria-hidden="true"></span>
   <span
     class="absolute inset-0 z-10 block h-full w-full rounded-2xl border border-dashed border-neutral-600 duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1"
-  ></span>
+    aria-hidden="true"></span>
   <span
     class="relative z-30 block duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1"
   >
@@ -66,15 +67,11 @@ const { url, description, highlights, name } = Astro.props as CardProps;
           </g>
         </svg>
       </span>
-      <p class="mt-2 text-sm leading-normal">
+      <p class="mt-2 text-sm leading-normal text-neutral-300">
         {description}
       </p>
-      <p class="mt-2 text-sm leading-normal">
-        {
-          highlights.map((highlight) => {
-            return <span>{highlight}</span>;
-          })
-        }
+      <p class="mt-2 text-sm leading-normal text-neutral-400">
+        {highlights.join(" • ")}
       </p>
     </span>
   </span>
