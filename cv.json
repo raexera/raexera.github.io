@@ -112,89 +112,151 @@
       "summary": "As a finalist in the ICPC Asia Jakarta National Contest, I competed against top teams from various universities in the region. The contest challenged us to solve complex algorithmic problems under time constraints, test our teamwork and problem-solving skills, and showcase our programming abilities. It was a rewarding experience that honed my competitive spirit and technical expertise."
     }
   ],
-  "skills": [
-    {
-      "name": "Figma",
-      "level": "Expert",
-      "keywords": ["Design", "UI"]
-    },
-    {
-      "name": "Gitlab",
-      "level": "Intermediate",
-      "keywords": ["Version Control", "Collaboration", "Source Code"]
-    },
-    {
-      "name": "HTML",
-      "level": "Intermediate",
-      "keywords": ["Web Development", "Frontend"]
-    },
-    {
-      "name": "CSS",
-      "level": "Intermediate",
-      "keywords": ["Web Development", "Frontend", "Responsive Design"]
-    },
-    {
-      "name": "JavaScript",
-      "level": "Intermediate",
-      "keywords": ["Web Development", "Frontend", "Backend", "Fullstack"]
-    },
-    {
-      "name": "Tailwind",
-      "level": "Intermediate",
-      "keywords": [
-        "Web Development",
-        "Frontend",
-        "CSS Framework",
-        "Responsive Design"
-      ]
-    },
-    {
-      "name": "TypeScript",
-      "level": "Intermediate",
-      "keywords": [
-        "Web Development",
-        "Frontend",
-        "Backend",
-        "JavaScript Superset"
-      ]
-    },
-    {
-      "name": "Node",
-      "level": "Intermediate",
-      "keywords": ["Web Development", "Backend", "JavaScript", "Server"]
-    },
-    {
-      "name": "MySQL",
-      "level": "Intermediate",
-      "keywords": ["Databases", "SQL", "Data Storage", "Backend"]
-    },
-    {
-      "name": "Git",
-      "level": "Intermediate",
-      "keywords": ["Version Control", "Collaboration", "Source Code"]
-    },
-    {
-      "name": "GitHub",
-      "level": "Intermediate",
-      "keywords": ["Version Control", "Collaboration", "Source Code", "Git"]
-    },
-    {
-      "name": "Next.js",
-      "level": "Beginner",
-      "keywords": [
-        "Web Development",
-        "Frontend",
-        "React Framework",
-        "SSR",
-        "Static Generation"
-      ]
-    },
-    {
-      "name": "React",
-      "level": "Intermediate",
-      "keywords": ["Web Development", "Frontend", "JavaScript Library", "UI"]
-    }
-  ],
+  "skills": {
+    "technologies": [
+      {
+        "name": "Ansible",
+        "level": "Expert",
+        "keywords": ["Automation", "Configuration Management", "DevOps"]
+      },
+      {
+        "name": "Docker",
+        "level": "Intermediate",
+        "keywords": ["Containers", "Virtualization", "DevOps"]
+      },
+      {
+        "name": "Django",
+        "level": "Intermediate",
+        "keywords": ["Python", "Backend", "Web Development"]
+      },
+      {
+        "name": "Express.js",
+        "level": "Intermediate",
+        "keywords": ["Node.js", "Backend", "Web Development"]
+      },
+      {
+        "name": "Figma",
+        "level": "Expert",
+        "keywords": ["Design", "UI"]
+      },
+      {
+        "name": "Flask",
+        "level": "Intermediate",
+        "keywords": ["Python", "Backend", "Web Development"]
+      },
+      {
+        "name": "Git",
+        "level": "Expert",
+        "keywords": ["Version Control", "Collaboration", "Source Code"]
+      },
+      {
+        "name": "Linux",
+        "level": "Intermediate",
+        "keywords": [
+          "Operating System",
+          "System Administration",
+          "System Programming"
+        ]
+      },
+      {
+        "name": "MySQL",
+        "level": "Intermediate",
+        "keywords": ["Databases", "SQL", "Data Storage", "Backend"]
+      },
+      {
+        "name": "Node.js",
+        "level": "Intermediate",
+        "keywords": ["Web Development", "Backend", "JavaScript", "Server"]
+      },
+      {
+        "name": "PostgreSQL",
+        "level": "Intermediate",
+        "keywords": ["Databases", "SQL", "Data Storage", "Backend"]
+      },
+      {
+        "name": "React",
+        "level": "Intermediate",
+        "keywords": ["Web Development", "Frontend", "JavaScript Library", "UI"]
+      },
+      {
+        "name": "Spring Boot",
+        "level": "Intermediate",
+        "keywords": ["Java", "Backend", "Framework"]
+      },
+      {
+        "name": "Tailwind",
+        "level": "Intermediate",
+        "keywords": [
+          "Web Development",
+          "Frontend",
+          "CSS Framework",
+          "Responsive Design"
+        ]
+      }
+    ],
+    "programming_languages": [
+      {
+        "name": "C",
+        "level": "Intermediate",
+        "keywords": ["Programming", "Backend", "System Programming"]
+      },
+      {
+        "name": "C#",
+        "level": "Intermediate",
+        "keywords": ["Programming", "Backend", "Object-Oriented"]
+      },
+      {
+        "name": "C++",
+        "level": "Intermediate",
+        "keywords": ["Programming", "Backend", "Object-Oriented"]
+      },
+      {
+        "name": "CSS",
+        "level": "Intermediate",
+        "keywords": ["Web Development", "Frontend", "Responsive Design"]
+      },
+      {
+        "name": "HTML",
+        "level": "Intermediate",
+        "keywords": ["Web Development", "Frontend"]
+      },
+      {
+        "name": "Java",
+        "level": "Intermediate",
+        "keywords": ["Programming", "Backend", "Object-Oriented"]
+      },
+      {
+        "name": "JavaScript",
+        "level": "Intermediate",
+        "keywords": ["Web Development", "Frontend", "Backend", "Fullstack"]
+      },
+      {
+        "name": "Lua",
+        "level": "Intermediate",
+        "keywords": ["Scripting", "Embedded Systems"]
+      },
+      {
+        "name": "Python",
+        "level": "Intermediate",
+        "keywords": ["Programming", "Backend", "Data Science"]
+      },
+      {
+        "name": "Shell",
+        "level": "Intermediate",
+        "keywords": ["Scripting", "Automation", "System Programming"]
+      },
+      {
+        "name": "TypeScript",
+        "level": "Intermediate",
+        "keywords": [
+          "Web Development",
+          "Frontend",
+          "Backend",
+          "JavaScript Superset"
+        ]
+      }
+    ]
+  },
   "interests": [
     {
       "name": "Technology",

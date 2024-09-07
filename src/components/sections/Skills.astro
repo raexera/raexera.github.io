@@ -1,60 +1,31 @@
 ---
 import Section from "../Section.astro";
 import { skills } from "@cv";
-
-import HTML from "@/icons/html.astro";
-import CSS from "@/icons/css.astro";
-import JavaScript from "@/icons/javascript.astro";
-import TypeScript from "@/icons/type.astro";
-import React from "@/icons/react.astro";
-import Node from "@/icons/node.astro";
-import MySQL from "@/icons/sql.astro";
-import Git from "@/icons/git.astro";
-import GitHub from "@/icons/GitHub.astro";
-import Tailwind from "@/icons/tailwind.astro";
-import Next from "@/icons/next.astro";
-import Swift from "@/icons/swift.astro";
-import SwiftUI from "@/icons/swiftui.astro";
-import Kotlin from "@/icons/kotlin.astro";
-import Flutter from "@/icons/flutter.astro";
-import Figma from "@/icons/Figma.astro";
-import Gitlab from "@/icons/Gitlab.astro";
-
-const SKILLS_ICONS: Record<string, any> = {
-  HTML,
-  CSS,
-  JavaScript,
-  TypeScript,
-  React,
-  Node,
-  MySQL,
-  Git,
-  GitHub,
-  Next,
-  Tailwind,
-  Swift,
-  SwiftUI,
-  Kotlin,
-  Flutter,
-  Figma,
-  Gitlab,
-};
+const { technologies, programming_languages } = skills;
 ---
 
 <Section className={Astro.props.className} title="Skills">
+  <h3 class="text-sm font-semibold">Technologies</h3>
   <ul class="flex flex-wrap gap-2">
     {
-      skills.map(({ name }) => {
-        const iconName = name === "Next.js" ? "Next" : name;
-        const Icon = SKILLS_ICONS[iconName];
-
+      technologies.map(({ name }) => {
         return (
           <li class="flex items-center gap-1 rounded-md border border-neutral-700 bg-neutral-800/50 px-2 py-1 text-xs text-neutral-300">
-            {Icon && <Icon class="h-4 w-4" />}
             <span>{name}</span>
           </li>
         );
       })
+    }
+  </ul>
+
+  <h3 class="mt-4 text-sm font-semibold">Programming Languages</h3>
+  <ul class="flex flex-wrap gap-2">
+    {
+      programming_languages.map(({ name }) => (
+        <li class="flex items-center gap-1 rounded-md border border-neutral-700 bg-neutral-800/50 px-2 py-1 text-xs text-neutral-300">
+          <span>{name}</span>
+        </li>
+      ))
     }
   </ul>
 </Section>
