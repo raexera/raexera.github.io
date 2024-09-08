@@ -16,63 +16,47 @@ const { url, description, highlights, name } = Astro.props as CardProps;
   class="group relative flex h-full flex-col items-stretch rounded-2xl p-7 duration-300 ease-out sm:p-5"
 >
   <span
-    class="absolute inset-0 z-20 block h-full w-full rounded-2xl border border-dashed border-transparent bg-transparent duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:border group-hover:border-dashed group-hover:border-neutral-600 group-hover:bg-black"
-    aria-hidden="true"></span>
+    class="absolute inset-0 z-20 rounded-2xl border border-dashed border-neutral-600 bg-black duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1"
+  ></span>
   <span
-    class="absolute inset-0 z-10 block h-full w-full rounded-2xl border border-dashed border-neutral-600 duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1"
-    aria-hidden="true"></span>
+    class="absolute inset-0 z-10 rounded-2xl border border-dashed border-neutral-600 duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1"
+  ></span>
   <span
-    class="relative z-30 block duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1"
+    class="relative z-30 duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1"
   >
-    <span class="mb-1 mt-5 block w-full px-1 sm:mt-3">
-      <span
+    <div class="mb-1 mt-5 w-full px-1 sm:mt-3">
+      <h3
         class="mb-0 flex items-center text-base font-semibold tracking-tight text-neutral-100"
       >
-        <h3 class="font-medium leading-snug text-neutral-200">
-          <span>{name}</span>
-        </h3>
+        <span class="font-medium leading-snug text-neutral-200">{name}</span>
         <svg
           class="ml-1 h-2.5 w-2.5 -translate-x-1 translate-y-1 -rotate-45 transform stroke-current transition-all duration-200 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
           viewBox="0 0 13 15"
-          version="1.1"
           xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
         >
           <g
-            stroke="none"
-            stroke-width="1"
             fill="none"
-            fill-rule="evenodd"
+            stroke="currentColor"
+            stroke-width="2.4"
             stroke-linecap="round"
             stroke-linejoin="round"
           >
-            <g
-              id="svg"
-              transform="translate(0.666667, 2.333333)"
-              stroke="currentColor"
-              stroke-width="2.4"
-            >
-              <g>
-                <polyline
-                  class="opacity-0 transition-all delay-0 duration-200 ease-out group-hover:opacity-100"
-                  points="5.33333333 0 10.8333333 5.5 5.33333333 11"></polyline>
-                <line
-                  class="-translate-x-1 transform opacity-0 transition-all duration-200 ease-out group-hover:ml-0 group-hover:translate-x-0 group-hover:opacity-100"
-                  x1="10.8333333"
-                  y1="5.5"
-                  x2="0.833333333"
-                  y2="5.16666667"></line>
-              </g>
-            </g>
+            <polyline
+              class="opacity-0 transition-all duration-200 ease-out group-hover:opacity-100"
+              points="5.33 0 10.83 5.5 5.33 11"></polyline>
+            <line
+              class="-translate-x-1 transform opacity-0 transition-all duration-200 ease-out group-hover:translate-x-0 group-hover:opacity-100"
+              x1="10.83"
+              y1="5.5"
+              x2="0.83"
+              y2="5.17"></line>
           </g>
         </svg>
-      </span>
-      <p class="mt-2 text-sm leading-normal text-neutral-300">
-        {description}
-      </p>
+      </h3>
+      <p class="mt-2 text-sm leading-normal text-neutral-300">{description}</p>
       <p class="mt-2 text-sm leading-normal text-neutral-400">
         {highlights.join(" ")}
       </p>
-    </span>
+    </div>
   </span>
 </a>
