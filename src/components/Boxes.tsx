@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface GridProps {
   className?: string;
@@ -13,7 +13,7 @@ export default function Boxes({ className = "" }: GridProps) {
   useEffect(() => {
     const updateDimensions = () => {
       if (containerRef.current) {
-        const { scrollWidth, scrollHeight } = document.documentElement;
+        const { scrollHeight } = document.documentElement;
         setDimensions({
           width: window.innerWidth,
           height: Math.max(window.innerHeight, scrollHeight),
