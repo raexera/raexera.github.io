@@ -55,11 +55,24 @@ window.evaluateHeaderPosition = () => {
 
 window.applyMenuItemClasses = () => {
   const menuItems = document.querySelectorAll<HTMLAnchorElement>("nav a");
-  const currentPath = window.location.pathname;
+  let currentPath = window.location.pathname;
+
+  if (currentPath === "/") {
+    currentPath = "/";
+  } else {
+    currentPath = currentPath.replace(/\/$/, "");
+  }
+
   const activeClass = ["text-white", "font-bold"];
 
   menuItems.forEach((menuItem) => {
-    if (new URL(menuItem.href).pathname === currentPath) {
+    let menuItemPath = new URL(menuItem.href).pathname;
+
+    if (menuItemPath !== "/") {
+      menuItemPath = menuItemPath.replace(/\/$/, "");
+    }
+
+    if (menuItemPath === currentPath) {
       menuItem.classList.add(...activeClass);
     } else {
       menuItem.classList.remove(...activeClass);
