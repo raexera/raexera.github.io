@@ -1,8 +1,9 @@
 ---
-import navLinks from "./navLinks.json";
+import path from "./path.json";
 import { basics } from "@cv";
 import MobileMenu from "./MobileMenu";
 const { nickname } = basics;
+const currentPath = Astro.url.pathname;
 ---
 
 <header id="header" class="fixed top-0 z-50 w-full print:hidden">
@@ -20,10 +21,12 @@ const { nickname } = basics;
     >
       <MobileMenu client:load>
         {
-          navLinks.map((link) => (
+          path.map((link) => (
             <a
               href={link.url}
-              class="relative flex w-full items-center justify-center px-4 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-white sm:w-auto sm:py-0"
+              class={`relative flex w-full items-center justify-center px-4 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-white sm:w-auto sm:py-0 ${
+                currentPath === link.url ? "text-white" : ""
+              }`}
             >
               {link.name}
             </a>
@@ -32,10 +35,12 @@ const { nickname } = basics;
       </MobileMenu>
       <div class="hidden sm:flex">
         {
-          navLinks.map((link) => (
+          path.map((link) => (
             <a
               href={link.url}
-              class="relative flex w-full items-center justify-center px-4 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-white sm:w-auto sm:py-0"
+              class={`relative flex w-full items-center justify-center px-4 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-white sm:w-auto sm:py-0 ${
+                currentPath === link.url ? "text-white" : ""
+              }`}
             >
               {link.name}
             </a>

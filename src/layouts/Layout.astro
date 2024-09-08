@@ -1,5 +1,5 @@
 ---
-import NavBar from "@/components/NavBar.astro";
+import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Starry from "@/components/Starry";
 import Boxes from "@/components/Boxes";
@@ -24,7 +24,7 @@ const { title } = Astro.props;
     class="relative flex min-h-screen flex-col bg-black leading-relaxed tracking-wide text-neutral-200 antialiased selection:bg-neutral-300 selection:text-neutral-900"
   >
     <Boxes client:load />
-    <NavBar />
+    <Header />
     <Starry
       client:idle
       id="tsparticlesfullpage"

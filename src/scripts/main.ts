@@ -1,7 +1,6 @@
 interface Window {
   stickyHeaderFuncionality: () => void;
   evaluateHeaderPosition: () => void;
-  applyMenuItemClasses: () => void;
 }
 
 let headerElement: HTMLElement | null = null;
@@ -10,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   headerElement = document.getElementById("header");
 
   window.stickyHeaderFuncionality();
-  window.applyMenuItemClasses();
   window.evaluateHeaderPosition();
 });
 
@@ -28,13 +26,4 @@ window.evaluateHeaderPosition = () => {
     headerElement.classList.remove("h-14");
     headerElement.classList.add("h-[75px]");
   }
-};
-
-window.applyMenuItemClasses = () => {
-  const menuItems = document.querySelectorAll<HTMLAnchorElement>("nav a");
-  menuItems.forEach((menuItem) => {
-    if (menuItem.pathname === window.location.pathname) {
-      menuItem.classList.add("text-white");
-    }
-  });
 };
