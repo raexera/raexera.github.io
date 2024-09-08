@@ -33,8 +33,8 @@ import CollapseText from "../CollapseText";
                 </header>
                 <div class="relative flex flex-col pb-6 before:absolute before:-ml-6 before:mt-2 before:h-full before:w-px before:bg-neutral-500 sm:col-span-10">
                   <div class="absolute mt-2 h-2 w-2 -translate-x-[1.71rem] rounded-full bg-neutral-500 ring ring-neutral-500" />
-                  <h3 class="text-base font-medium leading-snug text-neutral-200">
-                    <div class="inline-flex items-center">
+                  <h3 class="text-left text-base font-medium leading-snug text-neutral-200">
+                    <div class="group/link inline-flex flex-wrap items-center leading-tight">
                       <span>{position}</span>
                       <span class="mx-1.5">@</span>
                       {url ? (
@@ -117,7 +117,7 @@ import CollapseText from "../CollapseText";
               </div>
             </li>
           );
-        },
+        }
       )
     }
   </ul>
