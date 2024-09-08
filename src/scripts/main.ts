@@ -21,8 +21,8 @@ window.stickyHeaderFuncionality = () => {
 };
 
 window.evaluateHeaderPosition = () => {
-  const stickyClasses = ["fixed", "h-14"];
-  const unstickyClasses = ["absolute", "h-20"];
+  const stickyClasses = ["fixed"];
+  const unstickyClasses = ["absolute"];
   const stickyClassesContainer = [
     "border-neutral-300/50",
     "bg-white/80",
@@ -55,11 +55,14 @@ window.evaluateHeaderPosition = () => {
 
 window.applyMenuItemClasses = () => {
   const menuItems = document.querySelectorAll<HTMLAnchorElement>("nav a");
+  const currentPath = window.location.pathname;
+  const activeClass = ["text-white", "font-bold"];
+
   menuItems.forEach((menuItem) => {
-    if (menuItem.pathname === window.location.pathname) {
-      menuItem.classList.add("text-white");
+    if (new URL(menuItem.href).pathname === currentPath) {
+      menuItem.classList.add(...activeClass);
     } else {
-      menuItem.classList.remove("text-white");
+      menuItem.classList.remove(...activeClass);
     }
   });
 };

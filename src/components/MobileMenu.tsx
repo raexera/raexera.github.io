@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface MobileMenuProps {
@@ -8,7 +8,15 @@ interface MobileMenuProps {
 const MobileMenu: React.FC<MobileMenuProps> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      window.applyMenuItemClasses();
+    }
+  }, [isOpen]);
 
   return (
     <>

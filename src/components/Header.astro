@@ -7,16 +7,16 @@ const { nickname } = basics;
 
 <header id="header" class="absolute top-0 z-50 w-full print:hidden">
   <div
-    class="mx-auto flex h-20 max-w-5xl select-none items-center justify-between border-b border-transparent bg-transparent px-6 transition-all duration-300 lg:rounded-b-xl lg:border-l lg:border-r"
+    class="mx-auto flex h-12 max-w-5xl select-none items-center justify-between border-b border-transparent bg-transparent px-6 py-6 transition-all duration-300 lg:rounded-b-xl lg:border-l lg:border-r"
   >
     <a
       href="/"
-      class="group relative z-30 flex items-center space-x-1.5 text-base font-semibold uppercase text-white"
+      class="group relative z-30 flex items-center space-x-1.5 text-base uppercase text-white"
     >
       {nickname}
     </a>
     <nav
-      class="relative z-30 flex w-full flex-row-reverse justify-start text-sm text-neutral-400 sm:flex-row sm:justify-end"
+      class="relative z-30 flex w-full flex-row-reverse justify-start text-sm text-neutral-600 sm:flex-row sm:justify-end"
     >
       <MobileMenu client:load>
         {
