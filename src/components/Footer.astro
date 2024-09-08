@@ -1,0 +1,13 @@
+---
+import { basics } from "@cv";
+const { name } = basics;
+---
+
+<footer class="w-full print:hidden">
+  <div
+    class="mx-auto items-center border-t border-neutral-800 bg-black px-6 py-4 text-center text-xs text-neutral-200 sm:mt-20"
+  >
+    © {new Date().getFullYear()}
+    {name}. All rights reserved.
+  </div>
+</footer>

@@ -10,7 +10,7 @@ export default function CollapseText({ children }: CollapseTextProps) {
   return (
     <div className="relative">
       <div
-        className={`relative flex flex-col gap-4 max-sm:!h-auto md:after:absolute md:after:bottom-0 md:after:h-12 md:after:w-full md:after:bg-gradient-to-t md:after:from-neutral-950 md:after:content-[''] ${
+        className={`relative flex flex-col gap-4 max-sm:!h-auto md:after:absolute md:after:bottom-0 md:after:h-12 md:after:w-full md:after:bg-gradient-to-t md:after:from-black md:after:content-[''] ${
           expanded ? "after:hidden" : ""
         }`}
         style={{ maxHeight: expanded ? "none" : "50px", overflow: "hidden" }}
