@@ -3,12 +3,11 @@ import path from "./path.json";
 import { basics } from "@cv";
 import MobileMenu from "./MobileMenu";
 const { nickname } = basics;
-const currentPath = Astro.url.pathname;
 ---
 
-<header id="header" class="fixed top-0 z-50 w-full print:hidden">
+<header id="header" class="absolute top-0 z-50 w-full print:hidden">
   <div
-    class="mx-auto flex h-14 max-w-5xl select-none items-center justify-between border-b border-l-0 border-r-0 border-neutral-600/40 bg-neutral-900/60 px-6 backdrop-blur-2xl lg:rounded-b-xl lg:border-l lg:border-r"
+    class="mx-auto flex h-20 max-w-5xl select-none items-center justify-between border-b border-transparent bg-transparent px-6 transition-all duration-300 lg:rounded-b-xl lg:border-l lg:border-r"
   >
     <a
       href="/"
@@ -24,9 +23,7 @@ const currentPath = Astro.url.pathname;
           path.map((link) => (
             <a
               href={link.url}
-              class={`relative flex w-full items-center justify-center px-4 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-white sm:w-auto sm:py-0 ${
-                currentPath === link.url ? "text-white" : ""
-              }`}
+              class="relative flex w-full items-center justify-center px-4 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-white sm:w-auto sm:py-0"
             >
               {link.name}
             </a>
@@ -38,9 +35,7 @@ const currentPath = Astro.url.pathname;
           path.map((link) => (
             <a
               href={link.url}
-              class={`relative flex w-full items-center justify-center px-4 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-white sm:w-auto sm:py-0 ${
-                currentPath === link.url ? "text-white" : ""
-              }`}
+              class="relative flex w-full items-center justify-center px-4 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-white sm:w-auto sm:py-0"
             >
               {link.name}
             </a>

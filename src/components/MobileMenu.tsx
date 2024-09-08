@@ -47,7 +47,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ children }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed left-0 top-14 z-40 w-full flex-col items-end justify-start bg-neutral-900/95 pb-4 pt-2 text-sm sm:hidden"
+            className="fixed left-0 top-14 z-40 w-full flex-col items-end justify-start rounded-2xl border border-dashed border-neutral-600 bg-black pb-4 pt-2 text-sm sm:hidden"
           >
             {children}
           </motion.div>
