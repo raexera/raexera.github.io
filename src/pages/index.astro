@@ -35,9 +35,11 @@ const { name, label, summary } = basics;
           {summary}.
         </h2>
 
-        <Button text="Check My Projects." link="/projects" />
-        <Button text="About Me." link="/about" />
-        <Button text="Contact Me." link="/contact" />
+        <div class="mt-4 grid grid-cols-1 gap-2 md:grid-cols-3">
+          <Button text="My Projects." link="/projects" />
+          <Button text="About Me." link="/about" />
+          <Button text="Contact Me." link="/contact" />
+        </div>
       </div>
       <div
         class="mx-auto w-full max-w-xs rounded-2xl border border-dashed border-neutral-700 bg-gradient-to-r from-neutral-950 via-black to-neutral-950 md:w-1/2 md:max-w-full"
