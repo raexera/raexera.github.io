@@ -1,24 +1,34 @@
-import React, { useState, useEffect } from "react";
+"use client";
+
+import React, { useState, useEffect, useRef } from "react";
 
 interface GridProps {
   className?: string;
 }
 
-const Boxes: React.FC<GridProps> = ({ className = "" }) => {
+export default function Boxes({ className = "" }: GridProps) {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const updateDimensions = () => {
-      setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
+      if (containerRef.current) {
+        const { scrollWidth, scrollHeight } = document.documentElement;
+        setDimensions({
+          width: window.innerWidth,
+          height: Math.max(window.innerHeight, scrollHeight),
+        });
+      }
     };
 
     window.addEventListener("resize", updateDimensions);
+    window.addEventListener("scroll", updateDimensions);
     updateDimensions();
 
-    return () => window.removeEventListener("resize", updateDimensions);
+    return () => {
+      window.removeEventListener("resize", updateDimensions);
+      window.removeEventListener("scroll", updateDimensions);
+    };
   }, []);
 
   const getCellSize = () => {
@@ -30,12 +40,13 @@ const Boxes: React.FC<GridProps> = ({ className = "" }) => {
 
   const cellSize = getCellSize();
   const columns = Math.ceil(dimensions.width / cellSize);
-  const rows = Math.ceil(dimensions.height / 2 / cellSize); // Only half the screen height
+  const rows = Math.ceil(dimensions.height / cellSize);
 
   return (
     <div
-      className={`absolute h-1/2 w-full overflow-hidden ${className}`}
-      style={{ zIndex: -1 }}
+      ref={containerRef}
+      className={`absolute w-full overflow-hidden ${className}`}
+      style={{ height: `${dimensions.height}px`, zIndex: -1 }}
     >
       {/* Left gradient overlay */}
       <div className="absolute left-0 top-0 h-full w-1/2">
@@ -47,11 +58,13 @@ const Boxes: React.FC<GridProps> = ({ className = "" }) => {
               className="relative flex w-full divide-x divide-dashed divide-neutral-700"
               style={{ height: `${cellSize}px` }}
             >
-              {Array.from({ length: columns / 2 }).map((_, colIndex) => (
-                <div key={colIndex} className="relative w-full bg-black">
-                  <div className="absolute inset-0.5 bg-black" />
-                </div>
-              ))}
+              {Array.from({ length: Math.ceil(columns / 2) }).map(
+                (_, colIndex) => (
+                  <div key={colIndex} className="relative w-full bg-black">
+                    <div className="absolute inset-0.5 bg-black" />
+                  </div>
+                ),
+              )}
             </div>
           ))}
         </div>
@@ -67,17 +80,17 @@ const Boxes: React.FC<GridProps> = ({ className = "" }) => {
               className="relative flex w-full divide-x divide-dashed divide-neutral-700"
               style={{ height: `${cellSize}px` }}
             >
-              {Array.from({ length: columns / 2 }).map((_, colIndex) => (
-                <div key={colIndex} className="relative w-full bg-black">
-                  <div className="absolute inset-0.5 bg-black" />
-                </div>
-              ))}
+              {Array.from({ length: Math.ceil(columns / 2) }).map(
+                (_, colIndex) => (
+                  <div key={colIndex} className="relative w-full bg-black">
+                    <div className="absolute inset-0.5 bg-black" />
+                  </div>
+                ),
+              )}
             </div>
           ))}
         </div>
       </div>
     </div>
   );
-};
-
-export default Boxes;
+}
