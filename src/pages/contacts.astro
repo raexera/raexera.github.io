@@ -9,15 +9,13 @@ const { profiles } = basics;
 
 <Layout title="Contacts" description={SITE.DESCRIPTION}>
   <div
-    class="relative z-20 mx-auto flex min-h-screen w-full max-w-4xl flex-col items-center justify-center px-7 xl:px-0"
+    class="mx-auto flex min-h-screen w-full max-w-4xl flex-col items-center justify-center"
   >
     <Heading
       title="Contacts"
-      description="I'm always open to new opportunities and collaborations. Feel free to reach out to me through any of the following platforms."
+      description="I'm always open to new opportunities and collaborations. Feel free to reach out through any of the following platforms."
     />
-    <div
-      class="z-50 my-8 grid w-full grid-cols-1 items-stretch gap-7 sm:grid-cols-2 sm:gap-5"
-    >
+    <div class="my-8 grid w-full grid-cols-1 gap-7 sm:grid-cols-2">
       {
         profiles.map((profile) => (
           <Card

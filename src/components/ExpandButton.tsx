@@ -19,7 +19,7 @@ export default function ExpandButton({ children }: ExpandButtonProps) {
       </div>
       <button
         onClick={() => setExpanded(!expanded)}
-        className="group/more flex w-fit cursor-pointer items-center justify-center gap-1.5 text-xs text-neutral-400 underline transition-all hover:text-neutral-200"
+        className="group/more flex w-fit cursor-pointer items-center justify-center gap-1.5 text-xs underline transition-all hover:text-white"
       >
         <span>{expanded ? "Show less" : "Show more"}</span>
         <svg

@@ -10,30 +10,17 @@ const { name, label, summary } = basics;
 
 <Layout title="Home" description={SITE.DESCRIPTION}>
   <div
-    class="relative z-20 mx-auto flex min-h-screen w-full max-w-4xl flex-col items-center justify-center px-7 xl:px-0"
+    class="mx-auto flex min-h-screen w-full max-w-4xl flex-col items-center justify-center"
   >
-    <div
-      class="flex flex-col-reverse items-center justify-between gap-4 md:flex-row"
-    >
-      <div class="relative w-full text-center md:w-1/2 md:text-left">
-        <a
-          href="/"
-          class="block bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-left text-4xl font-bold tracking-tight text-transparent lg:text-5xl"
+    <div class="flex flex-col-reverse items-center gap-4 md:flex-row">
+      <div class="w-full text-center md:w-1/2 md:text-left">
+        <h1
+          class="bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-4xl font-bold tracking-tight text-transparent lg:text-5xl"
         >
-          <h1>
-            Hello, I'm {name}.
-          </h1>
-        </a>
-        <h2
-          class="mt-2 text-left text-sm font-medium text-neutral-400 lg:text-lg"
-        >
-          {label}.
-        </h2>
-        <h2
-          class="mt-2 text-left text-sm font-medium text-neutral-400 lg:text-lg"
-        >
-          {summary}.
-        </h2>
+          Hello, I'm {name}.
+        </h1>
+        <h2 class="mt-2 text-sm font-medium lg:text-lg">{label}.</h2>
+        <h2 class="mt-2 text-sm font-medium lg:text-lg">{summary}.</h2>
 
         <div class="mt-4 grid grid-cols-1 gap-2 md:grid-cols-3">
           <Button text="My Projects" link="/projects" />
@@ -42,7 +29,7 @@ const { name, label, summary } = basics;
         </div>
       </div>
       <div
-        class="mx-auto w-full max-w-xs rounded-3xl border border-dashed border-neutral-700 bg-black p-10 md:w-1/2 md:max-w-full"
+        class="mx-auto w-full max-w-xs rounded-3xl border border-dashed border-white/25 p-10 md:w-1/2"
       >
         <Image
           src={PFP}

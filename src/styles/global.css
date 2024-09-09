@@ -37,7 +37,7 @@ body {
 }
 
 main {
-  @apply relative flex-grow py-24;
+  @apply relative flex-grow px-12 py-24 xl:px-0;
 }
 
 header {

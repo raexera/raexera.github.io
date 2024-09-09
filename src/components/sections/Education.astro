@@ -32,14 +32,13 @@ import { education } from "@cv";
                 <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
               </svg>
               <div class="relative w-full">
-                {/* Date appears above the institution on small screens */}
-                <time class="mb-1 text-xs font-bold text-neutral-500 md:absolute md:right-0 md:top-0 md:mb-0">
+                <time class="mb-1 text-xs font-bold text-white/50 md:absolute md:right-0 md:top-0 md:mb-0">
                   {years}
                 </time>
-                <h3 class="text-base font-medium leading-snug text-neutral-200">
+                <h3 class="text-base font-medium leading-snug text-white">
                   {url ? (
                     <a
-                      class="inline-flex items-center text-neutral-200 hover:text-neutral-300"
+                      class="inline-flex items-center hover:text-white/75"
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -63,11 +62,11 @@ import { education } from "@cv";
                     <span>{institution}</span>
                   )}
                 </h3>
-                <p class="mt-1 text-sm text-neutral-400">{area}</p>
+                <p class="mt-1 text-sm">{area}</p>
                 {summary && (
                   <div class="mt-4 text-sm">
-                    <h4 class="font-medium text-neutral-300">Summary:</h4>
-                    <ul class="list-inside list-disc space-y-1 text-neutral-400">
+                    <h4 class="font-medium">Summary:</h4>
+                    <ul class="list-inside list-disc space-y-1 text-white/50">
                       {Array.isArray(summary) ? (
                         summary.map((item) => <li>{item}</li>)
                       ) : (
@@ -79,7 +78,7 @@ import { education } from "@cv";
               </div>
             </li>
           );
-        },
+        }
       )
     }
   </ul>

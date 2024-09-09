@@ -26,7 +26,7 @@ import ExpandButton from "../ExpandButton";
           return (
             <li class="relative">
               <div class="group relative grid pb-1 transition-all sm:grid-cols-12 sm:gap-8">
-                <header class="mt-1 text-xs font-bold text-neutral-500 sm:col-span-2">
+                <header class="mt-1 text-xs font-bold text-white/50 sm:col-span-2">
                   <time datetime={startDate}>{startYear}</time>
                   <span class="mx-1">-</span>
                   <time datetime={endDate}>{endYear}</time>
@@ -34,13 +34,13 @@ import ExpandButton from "../ExpandButton";
                 <div class="relative flex flex-col pb-6 before:absolute before:-ml-6 before:mt-2 before:h-full before:w-px before:bg-neutral-500 sm:col-span-10">
                   <div class="absolute mt-2 h-2 w-2 -translate-x-[1.71rem] rounded-full bg-white ring ring-white" />
                   <div class="flex flex-col pb-6 sm:col-span-10">
-                    <h3 class="text-left text-base font-medium leading-snug text-neutral-200">
+                    <h3 class="text-left text-base font-medium leading-snug text-white">
                       <div class="inline-flex flex-wrap items-center">
                         <span>{position}</span>
                         <span class="mx-1.5">@</span>
                         {url ? (
                           <a
-                            class="inline-flex items-center text-neutral-200 hover:text-neutral-300"
+                            class="inline-flex items-center hover:text-white/75"
                             href={url}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -66,7 +66,7 @@ import ExpandButton from "../ExpandButton";
                       </div>
                     </h3>
                     {(location || location_type) && (
-                      <p class="mt-1 text-sm text-neutral-400">
+                      <p class="mt-1 text-sm">
                         {location}
                         {location && location_type && " - "}
                         {location_type}
@@ -75,8 +75,8 @@ import ExpandButton from "../ExpandButton";
                     <div class="mt-2 flex flex-col gap-4 text-sm">
                       {summary && (
                         <div>
-                          <h4 class="font-medium text-neutral-300">Summary:</h4>
-                          <ul class="list-inside list-disc space-y-1 text-neutral-400">
+                          <h4 class="font-medium">Summary:</h4>
+                          <ul class="list-inside list-disc space-y-1 text-white/50">
                             {Array.isArray(summary) ? (
                               summary.map((item) => <li>{item}</li>)
                             ) : (
@@ -89,10 +89,8 @@ import ExpandButton from "../ExpandButton";
                         <ExpandButton client:load>
                           {responsibilities && (
                             <div>
-                              <h4 class="font-medium text-neutral-300">
-                                Responsibilities:
-                              </h4>
-                              <ul class="list-inside list-disc space-y-1 text-neutral-400">
+                              <h4 class="font-medium">Responsibilities:</h4>
+                              <ul class="list-inside list-disc space-y-1 text-white/50">
                                 {responsibilities.map((responsibility) => (
                                   <li>{responsibility}</li>
                                 ))}
@@ -101,10 +99,8 @@ import ExpandButton from "../ExpandButton";
                           )}
                           {achievements && (
                             <div>
-                              <h4 class="font-medium text-neutral-300">
-                                Achievements:
-                              </h4>
-                              <ul class="list-inside list-disc space-y-1 text-neutral-400">
+                              <h4 class="font-medium">Achievements:</h4>
+                              <ul class="list-inside list-disc space-y-1 text-white/50">
                                 {achievements.map((achievement) => (
                                   <li>{achievement}</li>
                                 ))}
@@ -119,7 +115,7 @@ import ExpandButton from "../ExpandButton";
               </div>
             </li>
           );
-        },
+        }
       )
     }
   </ul>

@@ -10,34 +10,31 @@ import { SITE } from "@/consts";
 
 <Layout title="About" description={SITE.DESCRIPTION}>
   <div
-    class="relative z-20 mx-auto flex min-h-screen w-full max-w-4xl flex-col items-center justify-center px-7 xl:px-0"
+    class="mx-auto flex min-h-screen w-full max-w-4xl flex-col items-center justify-center"
   >
     <Heading
       title="About Me"
       description="Hello 👋 I'm Rayhan Kafi Pratama, a bachelor of computer science student."
     />
     <p
-      class="mt-2 text-justify text-sm leading-6 text-neutral-400 sm:mt-4 sm:text-base lg:mt-6 lg:text-lg"
+      class="mt-2 text-justify text-sm leading-6 sm:mt-4 sm:text-base lg:mt-6 lg:text-lg"
     >
       My passion for crafting software that turns ideas into reality through
       elegant and intuitive interfaces.
     </p>
     <p
-      class="mb-8 mt-2 text-justify text-sm leading-6 text-neutral-400 sm:mt-4 sm:text-base sm:leading-7 lg:mt-6 lg:text-lg lg:leading-8"
+      class="mb-8 mt-2 text-justify text-sm leading-6 sm:mt-4 sm:text-base lg:mt-6 lg:text-lg"
     >
       I place a strong emphasis on creating seamless experiences, robust
-      architecture, and high-quality code. Dedicated to continuous learning and
-      the development of innovative open-source projects, I have experience in
-      software engineering with a particular focus on back-end and scripting
-      technologies. I'm always eager to enhance my skills and contribute to
-      meaningful and impactful projects.
+      architecture, and high-quality code. I'm always eager to enhance my skills
+      and contribute to meaningful and impactful projects.
     </p>
 
     <div class="space-y-12 md:col-span-4">
       <Experience />
       <Skills />
-      <Awards className="order-first" />
-      <Education className="order-first" />
+      <Awards class="order-first" />
+      <Education class="order-first" />
     </div>
   </div>
 </Layout>

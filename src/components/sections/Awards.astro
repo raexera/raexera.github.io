@@ -25,15 +25,15 @@ import { awards } from "@cv";
               <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
             </svg>
             <div class="relative w-full">
-              <time class="mb-1 text-xs font-bold text-neutral-500 md:absolute md:right-0 md:top-0 md:mb-0">
+              <time class="mb-1 text-xs font-bold text-white/50 md:absolute md:right-0 md:top-0 md:mb-0">
                 {date}
               </time>
-              <h3 class="font-medium">{title}</h3>
-              <p class="mt-1 text-sm text-neutral-400">{awarder}</p>
+              <h3 class="font-medium text-white">{title}</h3>
+              <p class="mt-1 text-sm">{awarder}</p>
               {summary && (
                 <div class="mt-4 text-sm">
-                  <h4 class="font-medium text-neutral-300">Summary:</h4>
-                  <ul class="list-inside list-disc space-y-1 text-neutral-400">
+                  <h4 class="font-medium">Summary:</h4>
+                  <ul class="list-inside list-disc space-y-1 text-white/50">
                     {Array.isArray(summary) ? (
                       summary.map((item) => <li>{item}</li>)
                     ) : (
