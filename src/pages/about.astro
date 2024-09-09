@@ -5,9 +5,10 @@ import Experience from "@/components/sections/Experience.astro";
 import Education from "@/components/sections/Education.astro";
 import Awards from "@/components/sections/Awards.astro";
 import Skills from "@/components/sections/Skills.astro";
+import { SITE } from "@/consts";
 ---
 
-<Layout title="About Me">
+<Layout title="About" description={SITE.DESCRIPTION}>
   <div
     class="relative z-20 mx-auto flex min-h-screen w-full max-w-4xl flex-col items-center justify-center px-7 xl:px-0"
   >

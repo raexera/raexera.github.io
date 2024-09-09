@@ -1,0 +1,38 @@
+---
+import { LINKS } from "@/consts";
+import { cn } from "@/lib/utils";
+const { pathname } = Astro.url;
+const subpath = pathname.match(/[^/]+/g);
+---
+
+<div
+  id="drawer"
+  class="fixed inset-0 z-40 flex h-0 flex-col items-center justify-center overflow-hidden bg-black/50 backdrop-blur-md transition-[height] duration-300 ease-in-out md:hidden"
+>
+  <nav class="flex flex-col items-center space-y-2">
+    {
+      LINKS.map((LINK) => (
+        <a
+          href={LINK.HREF}
+          class={cn(
+            "flex items-center justify-center rounded-full px-3 py-1",
+            "text-current hover:text-white",
+            "hover:bg-white/20",
+            "transition-colors duration-300 ease-in-out",
+            pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
+              ? "pointer-events-none bg-white text-black"
+              : ""
+          )}
+        >
+          {LINK.TEXT}
+        </a>
+      ))
+    }
+  </nav>
+</div>
+
+<style>
+  #drawer.open {
+    @apply h-full;
+  }
+</style>

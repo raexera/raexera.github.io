@@ -2,12 +2,12 @@
 import Card from "@/components/Card.astro";
 import Layout from "@/layouts/Layout.astro";
 import Heading from "@/components/Heading.astro";
+import { SITE } from "@/consts";
 import { basics } from "@cv";
-
 const { profiles } = basics;
 ---
 
-<Layout title="Rxyhn">
+<Layout title="Contacts" description={SITE.DESCRIPTION}>
   <div
     class="relative z-20 mx-auto flex min-h-screen w-full max-w-4xl flex-col items-center justify-center px-7 xl:px-0"
   >

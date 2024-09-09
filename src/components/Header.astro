@@ -1,47 +1,125 @@
 ---
-import path from "./path.json";
-import { basics } from "@cv";
-import MobileMenu from "./MobileMenu";
-const { nickname } = basics;
+import { SITE, LINKS } from "@/consts";
+import { cn } from "@/lib/utils";
+const { pathname } = Astro.url;
+const subpath = pathname.match(/[^/]+/g);
+import Container from "@/components/Container.astro";
 ---
 
-<header id="header" class="absolute top-0 z-50 w-full print:hidden">
-  <div
-    class="mx-auto flex h-12 max-w-5xl select-none items-center justify-between border-b border-transparent bg-transparent px-6 py-6 transition-all duration-300 lg:rounded-b-xl lg:border-l lg:border-r"
-  >
-    <a
-      href="/"
-      class="group relative z-30 flex items-center space-x-1.5 text-base uppercase text-white"
-    >
-      {nickname}
-    </a>
-    <nav
-      class="relative z-30 flex w-full flex-row-reverse justify-start text-sm text-neutral-600 sm:flex-row sm:justify-end"
-    >
-      <MobileMenu client:load>
-        {
-          path.map((link) => (
-            <a
-              href={link.url}
-              class="relative flex w-full items-center justify-center px-4 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-white sm:w-auto sm:py-0"
-            >
-              {link.name}
-            </a>
-          ))
-        }
-      </MobileMenu>
-      <div class="hidden sm:flex">
-        {
-          path.map((link) => (
-            <a
-              href={link.url}
-              class="relative flex w-full items-center justify-center px-4 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-white sm:w-auto sm:py-0"
-            >
-              {link.name}
-            </a>
-          ))
-        }
+<header id="header" class="fixed top-0 z-50 h-16 w-full">
+  <Container size="md">
+    <div class="relative h-full w-full">
+      <div
+        class="absolute left-0 top-1/2 flex -translate-y-1/2 gap-1 font-semibold"
+      >
+        <a
+          href="/"
+          class="flex gap-1 text-current transition-colors duration-300 ease-in-out hover:text-white"
+        >
+          <div class="font-bold uppercase">
+            {SITE.TITLE}
+          </div>
+        </a>
       </div>
-    </nav>
-  </div>
+
+      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <nav class="hidden items-center justify-center gap-1 text-sm md:flex">
+          {
+            LINKS.map((LINK) => (
+              <a
+                href={LINK.HREF}
+                class={cn(
+                  "h-8 rounded-full px-3 text-current",
+                  "flex items-center justify-center",
+                  "transition-colors duration-300 ease-in-out",
+                  pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
+                    ? "bg-white text-black"
+                    : "hover:bg-white/20 hover:text-white"
+                )}
+              >
+                {LINK.TEXT}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+      <div class="buttons absolute right-0 top-1/2 flex -translate-y-1/2 gap-1">
+        <button
+          id="header-drawer-button"
+          aria-label={`Toggle drawer open and closed`}
+          class={cn(
+            "flex md:hidden",
+            "size-9 rounded-full p-2 items-center justify-center",
+            "bg-transparent hover:bg-white/20",
+            "stroke-current  hover:stroke-white",
+            "border border-white/25",
+            "transition-colors duration-300 ease-in-out"
+          )}
+        >
+          <svg
+            id="drawer-open"
+            class="size-full"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          >
+            <path d="M3 12h18"></path>
+            <path d="M3 6h18"></path>
+            <path d="M3 18h18"></path>
+          </svg>
+          <svg
+            id="drawer-close"
+            class="size-full"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          >
+            <path d="M18 6L6 18"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </Container>
 </header>
+
+<style>
+  #header-drawer-button > #drawer-open {
+    @apply block;
+  }
+
+  #header-drawer-button > #drawer-close {
+    @apply hidden;
+  }
+
+  #header-drawer-button.open > #drawer-open {
+    @apply hidden;
+  }
+
+  #header-drawer-button.open > #drawer-close {
+    @apply block;
+  }
+</style>
+
+<script is:inline>
+  function toggleDrawer() {
+    const drawer = document.getElementById("drawer");
+    const drawerButton = document.getElementById("header-drawer-button");
+    drawer?.classList.toggle("open");
+    drawerButton?.classList.toggle("open");
+  }
+
+  function initializeDrawerButton() {
+    const drawerButton = document.getElementById("header-drawer-button");
+    drawerButton?.addEventListener("click", toggleDrawer);
+  }
+
+  document.addEventListener("astro:after-swap", initializeDrawerButton);
+  initializeDrawerButton();
+</script>

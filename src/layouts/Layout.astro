@@ -1,30 +1,24 @@
 ---
+import "@/styles/global.css";
+import BaseHead from "@/components/BaseHead.astro";
 import Header from "@/components/Header.astro";
+import Drawer from "@/components/Drawer.astro";
 import Footer from "@/components/Footer.astro";
 import Starry from "@/components/Starry";
 import Boxes from "@/components/Boxes";
-const { title } = Astro.props;
+const { title, description } = Astro.props;
+import { SITE } from "@/consts";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <BaseHead title={`${title} | ${SITE.TITLE}`} description={description} />
   </head>
-  <body
-    class="relative flex min-h-screen flex-col bg-black leading-relaxed tracking-wide text-neutral-200 antialiased selection:bg-neutral-300 selection:text-neutral-900"
-  >
+  <body>
     <Boxes client:load />
     <Header />
+    <Drawer />
     <Starry
       client:idle
       id="tsparticlesfullpage"
@@ -36,11 +30,9 @@ const { title } = Astro.props;
       className="fixed inset-0 z-0"
       particleColor="#FFFFFF"
     />
-    <main class="relative z-10 flex-grow py-16">
+    <main>
       <slot />
     </main>
     <Footer />
-
-    <script src="../scripts/main.ts"></script>
   </body>
 </html>

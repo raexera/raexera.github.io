@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+html {
+  overflow-y: scroll;
+  background-color: black;
+  font-family: "Inter", sans-serif;
+}
+
+html,
+body {
+  @apply h-full w-full antialiased;
+  @apply text-white/75;
+}
+
+body {
+  @apply relative flex flex-col;
+}
+
+main {
+  @apply relative flex-grow py-24;
+}
+
+header {
+  @apply border-b;
+  @apply transition-all duration-300 ease-in-out;
+}
+
+header:not(.scrolled) {
+  @apply border-transparent bg-transparent;
+}
+
+header.scrolled {
+  @apply bg-black/50;
+  @apply border-white/25;
+  @apply backdrop-blur-md;
+}
