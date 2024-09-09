@@ -1,13 +1,19 @@
 ---
-import { basics } from "@cv";
-const { name } = basics;
+import { SITE } from "@/consts";
+import Container from "@/components/Container.astro";
 ---
 
-<footer class="w-full print:hidden">
-  <div
-    class="mx-auto items-center border-t border-neutral-800 bg-black px-6 py-4 text-center text-xs text-neutral-200 sm:mt-20"
+<footer class="relative bg-black">
+  <section
+    class="overflow-hidden border-t border-black/10 py-5 dark:border-white/25"
   >
-    © {new Date().getFullYear()}
-    {name}. All rights reserved.
-  </div>
+    <Container size="md">
+      <div class="flex flex-col items-center justify-center">
+        <p class="mt-2 text-center text-sm">
+          &copy; {new Date().getFullYear()}
+          {SITE.AUTHOR}. All rights reserved.
+        </p>
+      </div>
+    </Container>
+  </section>
 </footer>

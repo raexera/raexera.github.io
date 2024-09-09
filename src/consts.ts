@@ -3,7 +3,7 @@ import type { Site, Links } from "@/types";
 export const SITE: Site = {
   TITLE: "Rxyhn",
   DESCRIPTION: "Rxyhn's personal website",
-  AUTHOR: "Rayhan Pratama",
+  AUTHOR: "Rayhan Kafi Pratama",
 };
 
 // Links
