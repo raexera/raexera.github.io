@@ -26,29 +26,36 @@ Inside of your Astro project, you'll see the following folders and files:
 │   ├── CNAME
 │   ├── favicon.ico
 │   ├── favicon.png
-│   └── pattern.svg
+│   ├── fonts
+│   │   ├── Inter-Bold.woff2
+│   │   └── Inter-Regular.woff2
+│   └── js
+│       └── scroll.js
 ├── README.md
 ├── src
 │   ├── assets
 │   │   └── images
 │   │       └── pfp.png
 │   ├── components
+│   │   ├── BaseHead.astro
 │   │   ├── Boxes.tsx
 │   │   ├── Button.astro
 │   │   ├── Card.astro
-│   │   ├── CollapseText.tsx
+│   │   ├── Container.astro
+│   │   ├── Drawer.astro
+│   │   ├── ExpandButton.tsx
 │   │   ├── Footer.astro
 │   │   ├── Header.astro
 │   │   ├── Heading.astro
-│   │   ├── MobileMenu.tsx
-│   │   ├── path.json
 │   │   ├── Section.astro
 │   │   ├── sections
 │   │   │   ├── Awards.astro
 │   │   │   ├── Education.astro
 │   │   │   ├── Experience.astro
 │   │   │   └── Skills.astro
-│   │   └── Starry.tsx
+│   │   ├── Starry.tsx
+│   │   └── Timeline.astro
+│   ├── consts.ts
 │   ├── env.d.ts
 │   ├── layouts
 │   │   └── Layout.astro
@@ -56,15 +63,16 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   └── utils.ts
 │   ├── pages
 │   │   ├── about.astro
-│   │   ├── contact.astro
+│   │   ├── contacts.astro
 │   │   ├── index.astro
 │   │   └── projects.astro
-│   └── scripts
-│       └── main.ts
+│   ├── styles
+│   │   └── global.css
+│   └── types.ts
 ├── tailwind.config.mjs
 └── tsconfig.json
 
-11 directories, 36 files
+13 directories, 42 files
 ```
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
