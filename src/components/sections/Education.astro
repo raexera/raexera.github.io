@@ -14,7 +14,7 @@ import { education } from "@cv";
           const years = `${startYear} - ${endYear}`;
 
           return (
-            <div class="flex items-baseline">
+            <li class="flex flex-col items-start md:flex-row md:items-baseline">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -31,59 +31,53 @@ import { education } from "@cv";
                 <path d="M22 10v6" />
                 <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
               </svg>
-              <div class="relative w-full items-baseline justify-between gap-2">
-                <h3 class="text-base font-medium leading-snug text-neutral-200">
-                  <div class="group/link inline-flex flex-wrap items-center leading-tight">
-                    {url ? (
-                      <a
-                        class="group inline-flex items-center text-neutral-200 hover:text-neutral-300 focus-visible:text-neutral-300"
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {institution}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          class="ml-1 inline-block h-4 w-4 shrink-0 translate-y-px transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none"
-                          aria-hidden="true"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </a>
-                    ) : (
-                      <span>{institution}</span>
-                    )}
-                  </div>
-                </h3>
-                <p class="mt-1 text-sm text-neutral-400">{area}</p>
-                <div
-                  class="mt-4 flex flex-col gap-4 text-sm"
-                  x-data="{ expanded: false }"
-                >
-                  {summary && (
-                    <div class="flex flex-col gap-1">
-                      <h4 class="font-medium text-neutral-300">Summary:</h4>
-                      <ul class="list-inside list-disc space-y-1 text-neutral-400">
-                        {Array.isArray(summary) ? (
-                          summary.map((item) => ({ item }))
-                        ) : (
-                          <li>{summary}</li>
-                        )}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-                <time class="right-0 top-0 text-xs font-semibold text-neutral-500 md:absolute md:block">
+              <div class="relative w-full">
+                {/* Date appears above the institution on small screens */}
+                <time class="mb-1 text-xs font-semibold text-neutral-500 md:absolute md:right-0 md:top-0 md:mb-0">
                   {years}
                 </time>
+                <h3 class="text-base font-medium leading-snug text-neutral-200">
+                  {url ? (
+                    <a
+                      class="inline-flex items-center text-neutral-200 hover:text-neutral-300"
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {institution}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        class="ml-1 inline-block h-4 w-4 shrink-0 translate-y-px transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                  ) : (
+                    <span>{institution}</span>
+                  )}
+                </h3>
+                <p class="mt-1 text-sm text-neutral-400">{area}</p>
+                {summary && (
+                  <div class="mt-4 text-sm">
+                    <h4 class="font-medium text-neutral-300">Summary:</h4>
+                    <ul class="list-inside list-disc space-y-1 text-neutral-400">
+                      {Array.isArray(summary) ? (
+                        summary.map((item) => <li>{item}</li>)
+                      ) : (
+                        <li>{summary}</li>
+                      )}
+                    </ul>
+                  </div>
+                )}
               </div>
-            </div>
+            </li>
           );
         },
       )
