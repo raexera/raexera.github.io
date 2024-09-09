@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-interface CollapseTextProps {
+interface ExpandButtonProps {
   children: React.ReactNode;
 }
 
-export default function CollapseText({ children }: CollapseTextProps) {
+export default function ExpandButton({ children }: ExpandButtonProps) {
   const [expanded, setExpanded] = useState(false);
 
   return (
