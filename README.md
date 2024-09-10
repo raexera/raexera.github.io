@@ -53,8 +53,7 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   │   ├── Education.astro
 │   │   │   ├── Experience.astro
 │   │   │   └── Skills.astro
-│   │   ├── Starry.tsx
-│   │   └── Timeline.astro
+│   │   └── Starry.tsx
 │   ├── consts.ts
 │   ├── env.d.ts
 │   ├── layouts
@@ -72,7 +71,7 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── tailwind.config.mjs
 └── tsconfig.json
 
-13 directories, 42 files
+13 directories, 41 files
 ```
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
