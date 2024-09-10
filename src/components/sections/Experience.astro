@@ -32,11 +32,11 @@ import ExpandButton from "../ExpandButton";
                 </header>
                 <div class="relative flex flex-col pb-6 before:absolute before:-ml-6 before:mt-2 before:h-full before:w-px before:bg-neutral-500 sm:col-span-10">
                   <div class="absolute mt-2 h-2 w-2 -translate-x-[1.71rem] rounded-full bg-white ring ring-white" />
-                  <div class="flex flex-col pb-6">
+                  <div class="flex flex-col">
                     <h3 class="text-left text-base font-medium leading-snug text-white">
                       <div class="inline-flex flex-wrap items-center">
                         <span>{position}</span>
-                        <span class="mx-1.5">@</span>
+                        <span class="mx-1">@</span>
                         {url ? (
                           <a
                             class="inline-flex items-center hover:text-white/75"
@@ -65,7 +65,7 @@ import ExpandButton from "../ExpandButton";
                       </div>
                     </h3>
                     {(location || location_type) && (
-                      <p class="mt-1 text-sm">
+                      <p class="mt-2 text-sm">
                         {location}
                         {location && location_type && " - "}
                         {location_type}

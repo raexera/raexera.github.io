@@ -1,14 +1,13 @@
 ---
-export interface CardProps {
+type Props = {
   url: string;
   description: string;
   highlights: string[];
   name: string;
   technologies: string[];
-}
+};
 
-const { url, name, description, highlights, technologies } =
-  Astro.props as CardProps;
+const { url, name, description, highlights, technologies } = Astro.props;
 ---
 
 <a

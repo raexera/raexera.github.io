@@ -12,22 +12,12 @@ import { SITE } from "@/consts";
   <Heading
     title="About Me"
     description="Hello 👋 I'm Rayhan Kafi Pratama, a bachelor of computer science student."
+    highlight={[
+      "My passion for crafting software that turns ideas into reality through elegant and intuitive interfaces.",
+      "I place a strong emphasis on creating seamless experiences, robust architecture, and high-quality code. I'm always eager to enhance my skills and contribute to meaningful and impactful projects.",
+    ]}
   />
-  <p
-    class="mt-2 text-justify text-sm leading-6 sm:mt-4 sm:text-base lg:mt-6 lg:text-lg"
-  >
-    My passion for crafting software that turns ideas into reality through
-    elegant and intuitive interfaces.
-  </p>
-  <p
-    class="mb-8 mt-2 text-justify text-sm leading-6 sm:mt-4 sm:text-base lg:mt-6 lg:text-lg"
-  >
-    I place a strong emphasis on creating seamless experiences, robust
-    architecture, and high-quality code. I'm always eager to enhance my skills
-    and contribute to meaningful and impactful projects.
-  </p>
-
-  <div class="space-y-12 md:col-span-4">
+  <div class="mt-8 flex flex-col gap-8">
     <Experience />
     <Skills />
     <Awards class="order-first" />

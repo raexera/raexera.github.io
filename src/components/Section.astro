@@ -1,12 +1,13 @@
 ---
+type Props = {
+  className: string;
+  title: string;
+};
+
 const { className, title } = Astro.props;
 ---
 
-<section class:list={["flex flex-col gap-4", className]}>
-  {
-    title && (
-      <h2 class="text-sm font-bold uppercase tracking-widest">{title}</h2>
-    )
-  }
+<section class:list={["flex flex-col gap-2", className]}>
+  {title && <h2 class="font-semibold text-white">{title}</h2>}
   <slot />
 </section>
