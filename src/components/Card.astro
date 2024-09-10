@@ -4,9 +4,11 @@ export interface CardProps {
   description: string;
   highlights: string[];
   name: string;
+  technologies: string[];
 }
 
-const { url, description, highlights, name } = Astro.props as CardProps;
+const { url, name, description, highlights, technologies } =
+  Astro.props as CardProps;
 ---
 
 <a
@@ -49,6 +51,15 @@ const { url, description, highlights, name } = Astro.props as CardProps;
       <p class="text-sm text-white/50">
         {highlights.join(" ")}
       </p>
+      <ul class="flex flex-wrap gap-2">
+        {
+          technologies.map((name) => (
+            <li class="flex items-center gap-1 rounded-md border border-white/25 bg-neutral-800/50 px-2 py-1 text-xs">
+              <span>{name}</span>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </div>
 </a>

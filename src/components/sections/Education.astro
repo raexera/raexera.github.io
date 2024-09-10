@@ -65,8 +65,7 @@ import { education } from "@cv";
                 <p class="mt-1 text-sm">{area}</p>
                 {summary && (
                   <div class="mt-4 text-sm">
-                    <h4 class="font-medium">Summary:</h4>
-                    <ul class="list-inside list-disc space-y-1 text-white/50">
+                    <ul class="space-y-1 text-white/50">
                       {Array.isArray(summary) ? (
                         summary.map((item) => <li>{item}</li>)
                       ) : (

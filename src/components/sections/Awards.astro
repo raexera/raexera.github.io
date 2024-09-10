@@ -6,7 +6,7 @@ import { awards } from "@cv";
 <Section className={Astro.props.className} title="Awards">
   <ul class="space-y-4 py-3">
     {
-      awards.map(({ title, date, awarder, summary }) => {
+      awards.map(({ title, date, awarder }) => {
         return (
           <li class="flex flex-col items-baseline md:flex-row">
             <svg
@@ -30,18 +30,6 @@ import { awards } from "@cv";
               </time>
               <h3 class="font-medium text-white">{title}</h3>
               <p class="mt-1 text-sm">{awarder}</p>
-              {summary && (
-                <div class="mt-4 text-sm">
-                  <h4 class="font-medium">Summary:</h4>
-                  <ul class="list-inside list-disc space-y-1 text-white/50">
-                    {Array.isArray(summary) ? (
-                      summary.map((item) => <li>{item}</li>)
-                    ) : (
-                      <li>{summary}</li>
-                    )}
-                  </ul>
-                </div>
-              )}
             </div>
           </li>
         );

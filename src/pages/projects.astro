@@ -7,24 +7,21 @@ import { projects } from "@cv";
 ---
 
 <Layout title="Projects" description={SITE.DESCRIPTION}>
-  <div
-    class="mx-auto flex min-h-screen w-full max-w-4xl flex-col items-center justify-center"
-  >
-    <Heading
-      title="My Projects"
-      description="Explore a collection of my projects here. As an open-source enthusiast, I'm passionate about collaboration and knowledge-sharing."
-    />
-    <div class="my-8 grid w-full grid-cols-1 gap-7 sm:grid-cols-2">
-      {
-        projects.map(({ url, description, highlights, name }) => (
-          <Card
-            url={url}
-            description={description}
-            highlights={highlights}
-            name={name}
-          />
-        ))
-      }
-    </div>
+  <Heading
+    title="My Projects"
+    description="Explore a collection of my projects here. As an open-source enthusiast, I'm passionate about collaboration and knowledge-sharing."
+  />
+  <div class="mt-4 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+    {
+      projects.map(({ url, name, description, highlights, technologies }) => (
+        <Card
+          url={url}
+          description={description}
+          highlights={highlights}
+          name={name}
+          technologies={technologies}
+        />
+      ))
+    }
   </div>
 </Layout>

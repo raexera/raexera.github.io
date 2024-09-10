@@ -15,7 +15,6 @@ import ExpandButton from "../ExpandButton";
           position,
           summary,
           responsibilities,
-          achievements,
           url,
           location,
           location_type,
@@ -75,8 +74,7 @@ import ExpandButton from "../ExpandButton";
                     <div class="mt-2 flex flex-col gap-4 text-sm">
                       {summary && (
                         <div>
-                          <h4 class="font-medium">Summary:</h4>
-                          <ul class="list-inside list-disc space-y-1 text-white/50">
+                          <ul class="space-y-1 text-white/50">
                             {Array.isArray(summary) ? (
                               summary.map((item) => <li>{item}</li>)
                             ) : (
@@ -85,7 +83,7 @@ import ExpandButton from "../ExpandButton";
                           </ul>
                         </div>
                       )}
-                      {(responsibilities || achievements) && (
+                      {responsibilities && (
                         <ExpandButton client:load>
                           {responsibilities && (
                             <div>
@@ -93,16 +91,6 @@ import ExpandButton from "../ExpandButton";
                               <ul class="list-inside list-disc space-y-1 text-white/50">
                                 {responsibilities.map((responsibility) => (
                                   <li>{responsibility}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
-                          {achievements && (
-                            <div>
-                              <h4 class="font-medium">Achievements:</h4>
-                              <ul class="list-inside list-disc space-y-1 text-white/50">
-                                {achievements.map((achievement) => (
-                                  <li>{achievement}</li>
                                 ))}
                               </ul>
                             </div>

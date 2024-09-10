@@ -6,22 +6,17 @@ export const SITE: Site = {
   AUTHOR: "Rayhan Kafi Pratama",
 };
 
-// Links
 export const LINKS: Links = [
   {
     TEXT: "Home",
     HREF: "/",
   },
   {
-    TEXT: "Projects",
-    HREF: "/projects",
-  },
-  {
     TEXT: "About",
     HREF: "/about",
   },
   {
-    TEXT: "Contacts",
-    HREF: "/contacts",
+    TEXT: "Projects",
+    HREF: "/projects",
   },
 ];

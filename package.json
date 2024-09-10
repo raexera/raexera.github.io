@@ -21,6 +21,7 @@
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.15.3",
+    "astro-icon": "^1.1.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.5.4",
     "prettier-plugin-tailwindcss": "^0.6.6",

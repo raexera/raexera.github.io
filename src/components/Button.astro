@@ -1,10 +1,22 @@
 ---
-const { link, text } = Astro.props;
+import { Icon } from "astro-icon/components";
+
+type Props = {
+  icon: string;
+  href: string;
+};
+
+const { icon, href } = Astro.props;
 ---
 
 <a
-  href={link}
-  class="inline-flex w-full items-center justify-center rounded-full border border-black bg-white px-4 py-2 text-sm font-bold text-black transition-all duration-300 ease-out hover:border-white hover:bg-black hover:text-white md:w-auto"
+  href={href}
+  target="_blank"
+  class="blend group flex w-fit items-center gap-2 rounded border border-neutral-700 px-3 py-2 hover:bg-neutral-800"
 >
-  {text}
+  <span
+    class="blend text-sm capitalize text-neutral-400 group-hover:text-white"
+  >
+    <Icon name={icon} size={20} />
+  </span>
 </a>

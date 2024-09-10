@@ -9,26 +9,22 @@
       "countryCode": "ID",
       "region": "Indonesia"
     },
-    "profiles": [
+    "socials": [
       {
-        "network": "Email",
-        "username": "rxyhn.dev@gmail.com",
+        "network": "email",
         "url": "mailto:rxyhn.dev@gmail.com"
       },
       {
-        "network": "Telegram",
-        "username": "@rxxxyhn",
+        "network": "telegram",
         "url": "https://t.me/rxxxyhn"
       },
       {
-        "network": "LinkedIn",
-        "username": "Rayhan Kafi Pratama",
-        "url": "https://linkedin.com/in/rayhankafipratama"
+        "network": "github",
+        "url": "https://github.com/rxyhn"
       },
       {
-        "network": "GitHub",
-        "username": "rxyhn",
-        "url": "https://github.com/rxyhn"
+        "network": "linkedin",
+        "url": "https://linkedin.com/in/rayhankafipratama"
       }
     ]
   },
@@ -42,18 +38,11 @@
       "startDate": "2024-08-01",
       "endDate": null,
       "summary": "Developed back-end systems and APIs for an Audit Trail Management System project, collaborating closely with Business Analysts to understand requirements and design the system architecture.",
-      "highlights": [
-        "Participated in code reviews and pair programming sessions to ensure code quality and maintainability."
-      ],
       "responsibilities": [
         "Developed back-end systems and APIs for Audit Trail Management System.",
         "Collaborated with Business Analysts to understand project requirements.",
         "Designed system architecture and participated in code reviews."
-      ],
-      "achievements": [
-        "Contributed to the successful implementation of a scalable back-end system."
-      ],
-      "skills": ["Java", "Spring Boot", "MySQL"]
+      ]
     },
     {
       "name": "PT. Khatulistiwa Nusantara Indonesia (KHANSIA)",
@@ -64,18 +53,11 @@
       "startDate": "2020-09-01",
       "endDate": "2021-04-01",
       "summary": "Assisted senior developers in building and maintaining back-end systems for mobile applications, gaining hands-on experience with back-end technologies.",
-      "highlights": [
-        "Collaborated with front-end developers to integrate back-end functionalities with user interfaces."
-      ],
       "responsibilities": [
         "Assisted in building and maintaining back-end systems for mobile applications.",
         "Participated in Agile development processes including sprint planning and daily stand-ups.",
         "Integrated back-end functionalities with front-end user interfaces."
-      ],
-      "achievements": [
-        "Successfully contributed to the delivery of multiple mobile application projects."
-      ],
-      "skills": ["Node.js", "MongoDB", "Express"]
+      ]
     }
   ],
   "education": [
@@ -95,184 +77,54 @@
       "studyType": "Vocational High School",
       "startDate": "2019-09-01",
       "endDate": "2022-06-01",
-      "summary": "Lab Assistant in the school's computer lab. Responsible for maintaining the computer lab, assisting students with computer-related problems, and providing technical support to teachers."
+      "summary": "Graduated as a top student, gained expertise in web and mobile development, and software methodologies. Served as a lab assistant, helping students with software engineering issues and providing technical support to teachers."
     }
   ],
   "awards": [
     {
-      "title": "Finalist of Chain Fusion Hacker - ICP",
+      "title": "Finalist of Chain Fusion Hacker House",
       "date": "August 2024",
-      "awarder": "Chain Fusion",
-      "summary": "As a finalist in the Chain Fusion Hacker competition, I contributed to the advancement of Web3 technologies by developing user-centric decentralized applications. My focus was on addressing interoperability challenges, improving dApp usability, and facilitating seamless integration between blockchain platforms. In my role as a backend developer, I was responsible for managing APIs and creating smart contracts using Motoko."
+      "awarder": "ICP"
     },
     {
       "title": "Finalist of ICPC Asia Jakarta National Contest",
       "date": "November 2023",
-      "awarder": "ICPC",
-      "summary": "As a finalist in the ICPC Asia Jakarta National Contest, I competed against top university teams across the region. The competition involved solving complex algorithmic challenges under strict time constraints, testing our teamwork, problem-solving abilities, and programming expertise. This experience significantly enhanced my technical skills and competitive mindset."
+      "awarder": "ICPC"
     }
   ],
   "skills": {
     "technologies": [
-      {
-        "name": "Ansible",
-        "level": "Expert",
-        "keywords": ["Automation", "Configuration Management", "DevOps"]
-      },
-      {
-        "name": "Docker",
-        "level": "Intermediate",
-        "keywords": ["Containers", "Virtualization", "DevOps"]
-      },
-      {
-        "name": "Django",
-        "level": "Intermediate",
-        "keywords": ["Python", "Backend", "Web Development"]
-      },
-      {
-        "name": "Express.js",
-        "level": "Intermediate",
-        "keywords": ["Node.js", "Backend", "Web Development"]
-      },
-      {
-        "name": "Figma",
-        "level": "Expert",
-        "keywords": ["Design", "UI"]
-      },
-      {
-        "name": "Flask",
-        "level": "Intermediate",
-        "keywords": ["Python", "Backend", "Web Development"]
-      },
-      {
-        "name": "Git",
-        "level": "Expert",
-        "keywords": ["Version Control", "Collaboration", "Source Code"]
-      },
-      {
-        "name": "Linux",
-        "level": "Intermediate",
-        "keywords": [
-          "Operating System",
-          "System Administration",
-          "System Programming"
-        ]
-      },
-      {
-        "name": "MySQL",
-        "level": "Intermediate",
-        "keywords": ["Databases", "SQL", "Data Storage", "Backend"]
-      },
-      {
-        "name": "Nix Package Manager",
-        "level": "Intermediate",
-        "keywords": ["Package Management", "DevOps", "Configuration"]
-      },
-      {
-        "name": "Node.js",
-        "level": "Intermediate",
-        "keywords": ["Web Development", "Backend", "JavaScript", "Server"]
-      },
-      {
-        "name": "PostgreSQL",
-        "level": "Intermediate",
-        "keywords": ["Databases", "SQL", "Data Storage", "Backend"]
-      },
-      {
-        "name": "React",
-        "level": "Intermediate",
-        "keywords": ["Web Development", "Frontend", "JavaScript Library", "UI"]
-      },
-      {
-        "name": "Spring Boot",
-        "level": "Intermediate",
-        "keywords": ["Java", "Backend", "Framework"]
-      },
-      {
-        "name": "Tailwind",
-        "level": "Intermediate",
-        "keywords": [
-          "Web Development",
-          "Frontend",
-          "CSS Framework",
-          "Responsive Design"
-        ]
-      }
+      "Ansible",
+      "Docker",
+      "Django",
+      "Express.js",
+      "Figma",
+      "Flask",
+      "Git",
+      "Linux",
+      "MySQL",
+      "Nix Package Manager",
+      "Node.js",
+      "PostgreSQL",
+      "React",
+      "Spring Boot",
+      "Tailwind"
     ],
     "programming_languages": [
-      {
-        "name": "C",
-        "level": "Intermediate",
-        "keywords": ["Programming", "Backend", "System Programming"]
-      },
-      {
-        "name": "C#",
-        "level": "Intermediate",
-        "keywords": ["Programming", "Backend", "Object-Oriented"]
-      },
-      {
-        "name": "C++",
-        "level": "Intermediate",
-        "keywords": ["Programming", "Backend", "Object-Oriented"]
-      },
-      {
-        "name": "CSS",
-        "level": "Intermediate",
-        "keywords": ["Web Development", "Frontend", "Responsive Design"]
-      },
-      {
-        "name": "HTML",
-        "level": "Intermediate",
-        "keywords": ["Web Development", "Frontend"]
-      },
-      {
-        "name": "Java",
-        "level": "Intermediate",
-        "keywords": ["Programming", "Backend", "Object-Oriented"]
-      },
-      {
-        "name": "JavaScript",
-        "level": "Intermediate",
-        "keywords": ["Web Development", "Frontend", "Backend", "Fullstack"]
-      },
-      {
-        "name": "Lua",
-        "level": "Intermediate",
-        "keywords": ["Scripting", "Embedded Systems"]
-      },
-      {
-        "name": "Nix",
-        "level": "Intermediate",
-        "keywords": ["Functional Programming", "Package Management"]
-      },
-      {
-        "name": "Python",
-        "level": "Intermediate",
-        "keywords": ["Programming", "Backend", "Data Science"]
-      },
-      {
-        "name": "Shell",
-        "level": "Intermediate",
-        "keywords": ["Scripting", "Automation", "System Programming"]
-      },
-      {
-        "name": "TypeScript",
-        "level": "Intermediate",
-        "keywords": [
-          "Web Development",
-          "Frontend",
-          "Backend",
-          "JavaScript Superset"
-        ]
-      }
+      "C",
+      "C#",
+      "C++",
+      "CSS",
+      "HTML",
+      "Java",
+      "JavaScript",
+      "Lua",
+      "Nix",
+      "Python",
+      "Shell",
+      "TypeScript"
     ]
   },
-  "interests": [
-    {
-      "name": "Technology",
-      "keywords": ["AI", "Blockchain"]
-    }
-  ],
   "projects": [
     {
       "name": "Kanjo",
@@ -282,7 +134,8 @@
       "highlights": [
         "Implemented various machine learning models like Naive Bayes, SVM, and Random Forest for sentiment analysis.",
         "Designed an intuitive Streamlit interface for easy model interaction."
-      ]
+      ],
+      "technologies": ["Python", "Streamlit", "Scikit-learn", "Pandas"]
     },
     {
       "name": "Shusseki",
@@ -292,7 +145,8 @@
       "highlights": [
         "Integrated facial recognition with OpenCV for real-time attendance tracking.",
         "Achieved 95% accuracy in facial recognition under various lighting conditions."
-      ]
+      ],
+      "technologies": ["Python", "OpenCV", "Dlib"]
     },
     {
       "name": "Yoru",
@@ -302,7 +156,8 @@
       "highlights": [
         "Customized AwesomeWM environment with a focus on aesthetics and productivity.",
         "Included several custom widgets for enhanced user experience."
-      ]
+      ],
+      "technologies": ["Lua", "Shell"]
     },
     {
       "name": "Identik",
@@ -312,7 +167,8 @@
       "highlights": [
         "Developed a decentralized identity system using Motoko on the Internet Computer (ICP) blockchain.",
         "Integrated multi-factor authentication for enhanced security."
-      ]
+      ],
+      "technologies": ["Motoko", "JavaScript", "HTML", "CSS"]
     },
     {
       "name": "RAiso",
@@ -322,7 +178,8 @@
       "highlights": [
         "Implemented a layered architecture to separate concerns and improve maintainability.",
         "Enhanced user experience with a modern and responsive UI design."
-      ]
+      ],
+      "technologies": ["C#", "ASP.NET", "Entity Framework"]
     },
     {
       "name": "PyQtLMS",
@@ -332,7 +189,8 @@
       "highlights": [
         "Developed a complete library management system with PyQt5.",
         "Implemented a robust database system for efficient book management."
-      ]
+      ],
+      "technologies": ["Python", "PyQt5", "MySQL"]
     },
     {
       "name": "Cursed",
@@ -342,7 +200,8 @@
       "highlights": [
         "Created a terminal-based calendar and todo-list application using ncurses.",
         "Optimized for low-resource environments with minimalistic design."
-      ]
+      ],
+      "technologies": ["C", "ncurses"]
     }
   ]
 }
