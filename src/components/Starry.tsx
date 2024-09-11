@@ -13,7 +13,6 @@ type ParticlesProps = {
   minSize?: number;
   maxSize?: number;
   speed?: number;
-  particleColor?: string;
   particleDensity?: number;
   opacity?: number;
 };
@@ -26,12 +25,12 @@ const Starry = (props: ParticlesProps) => {
     minSize,
     maxSize,
     speed,
-    particleColor,
     particleDensity,
     opacity,
   } = props;
 
   const [init, setInit] = useState(false);
+  const [particleColor, setParticleColor] = useState("#000000");
   const controls = useAnimation();
 
   useEffect(() => {
@@ -40,6 +39,24 @@ const Starry = (props: ParticlesProps) => {
     }).then(() => {
       setInit(true);
     });
+
+    const isDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    setParticleColor(isDarkMode ? "#FFFFFF" : "#000000");
+
+    const handleThemeChange = (e: MediaQueryListEvent) => {
+      setParticleColor(e.matches ? "#FFFFFF" : "#000000");
+    };
+
+    const darkModeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    );
+    darkModeMediaQuery.addEventListener("change", handleThemeChange);
+
+    return () => {
+      darkModeMediaQuery.removeEventListener("change", handleThemeChange);
+    };
   }, []);
 
   const particlesLoaded = async (container?: Container) => {
@@ -64,7 +81,7 @@ const Starry = (props: ParticlesProps) => {
           options={{
             background: {
               color: {
-                value: background || "#0d47a1",
+                value: background || "transparent",
               },
             },
             fullScreen: {
@@ -125,7 +142,7 @@ const Starry = (props: ParticlesProps) => {
                 },
               },
               color: {
-                value: particleColor || "#ffffff",
+                value: particleColor,
                 animation: {
                   h: {
                     count: 0,

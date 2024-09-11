@@ -22,14 +22,21 @@
 
 html {
   overflow-y: scroll;
-  background-color: black;
+  color-scheme: light;
+  background-color: white;
   font-family: "Inter", sans-serif;
+}
+
+html.dark {
+  color-scheme: dark;
+  background-color: black;
 }
 
 html,
 body {
   @apply h-full w-full antialiased;
-  @apply text-white/75;
+  @apply bg-white dark:bg-black;
+  @apply text-black/75 dark:text-white/75;
 }
 
 body {
@@ -37,7 +44,7 @@ body {
 }
 
 main {
-  @apply relative flex-grow px-12 py-24;
+  @apply relative flex flex-1 flex-col py-24;
 }
 
 header {
@@ -50,7 +57,7 @@ header:not(.scrolled) {
 }
 
 header.scrolled {
-  @apply bg-black/50;
-  @apply border-white/25;
-  @apply backdrop-blur-md;
+  @apply bg-white/75 dark:bg-black/50;
+  @apply border-black/10 dark:border-white/25;
+  @apply saturate-200 backdrop-blur-sm;
 }

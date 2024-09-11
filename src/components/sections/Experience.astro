@@ -25,20 +25,20 @@ import ExpandButton from "../ExpandButton";
           return (
             <li class="relative">
               <div class="group grid pb-1 transition-all sm:grid-cols-12 sm:gap-8">
-                <header class="mt-1 text-xs font-bold text-white/50 sm:col-span-2">
+                <header class="mt-1 text-xs font-bold text-black/50 sm:col-span-2 dark:text-white/50">
                   <time datetime={startDate}>{startYear}</time>
                   <span class="mx-1">-</span>
                   <time datetime={endDate}>{endYear}</time>
                 </header>
                 <div class="relative flex flex-col pb-6 before:absolute before:-ml-6 before:mt-2 before:h-full before:w-px before:bg-neutral-500 sm:col-span-10">
-                  <div class="absolute mt-2 h-2 w-2 -translate-x-[1.71rem] rounded-full bg-white ring ring-white" />
-                  <h3 class="text-base font-medium leading-snug text-white">
+                  <div class="absolute mt-2 h-2 w-2 -translate-x-[1.71rem] rounded-full bg-black ring ring-black dark:bg-white dark:ring-white" />
+                  <h3 class="text-base font-medium leading-snug text-black dark:text-white">
                     <span>
                       {position}
                       <span>@</span>
                       {url ? (
                         <a
-                          class="inline-flex items-center hover:text-white/75"
+                          class="inline-flex items-center hover:text-black/75 dark:hover:text-white/75"
                           href={url}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -72,7 +72,7 @@ import ExpandButton from "../ExpandButton";
                   )}
                   <div class="mt-2 flex flex-col gap-4 text-sm">
                     {summary && (
-                      <ul class="space-y-1 text-white/50">
+                      <ul class="space-y-1 text-black/50 dark:text-white/50">
                         {Array.isArray(summary) ? (
                           summary.map((item) => <li>{item}</li>)
                         ) : (
@@ -84,7 +84,7 @@ import ExpandButton from "../ExpandButton";
                       <ExpandButton client:load>
                         <div>
                           <h4 class="font-medium">Responsibilities:</h4>
-                          <ul class="list-inside list-disc space-y-1 text-white/50">
+                          <ul class="list-inside list-disc space-y-1 text-black/50 dark:text-white/50">
                             {responsibilities.map((responsibility) => (
                               <li>{responsibility}</li>
                             ))}
@@ -97,7 +97,7 @@ import ExpandButton from "../ExpandButton";
               </div>
             </li>
           );
-        },
+        }
       )
     }
   </ul>

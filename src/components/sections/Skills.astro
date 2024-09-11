@@ -9,7 +9,7 @@ const { technologies, programming_languages } = skills;
   <ul class="flex flex-wrap gap-2">
     {
       technologies.map((name) => (
-        <li class="flex items-center gap-1 rounded-md border border-white/25 bg-neutral-800/50 px-2 py-1 text-xs">
+        <li class="flex items-center gap-1 rounded-md border border-black/25 bg-neutral-200/50 px-2 py-1 text-xs dark:border-white/25 dark:bg-neutral-800/50">
           <span>{name}</span>
         </li>
       ))
@@ -20,7 +20,7 @@ const { technologies, programming_languages } = skills;
   <ul class="flex flex-wrap gap-2">
     {
       programming_languages.map((name) => (
-        <li class="flex items-center gap-1 rounded-md border border-white/25 bg-neutral-800/50 px-2 py-1 text-xs">
+        <li class="flex items-center gap-1 rounded-md border border-black/25 bg-neutral-200/50 px-2 py-1 text-xs dark:border-white/25 dark:bg-neutral-800/50">
           <span>{name}</span>
         </li>
       ))

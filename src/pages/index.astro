@@ -15,11 +15,13 @@ const { name, label, summary, socials } = basics;
     >
       <div class="w-full text-justify md:w-1/2 md:text-start">
         <div class="flex flex-col items-start gap-2">
-          <h1 class="text-sm tracking-tight text-neutral-50 lg:text-lg">
+          <h1
+            class="text-sm tracking-tight text-neutral-900 lg:text-lg dark:text-neutral-50"
+          >
             Hi, my name is
           </h1>
           <h1
-            class="bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-start text-4xl font-bold tracking-tight text-transparent lg:text-5xl"
+            class="bg-gradient-to-b from-neutral-900 to-neutral-600 bg-clip-text text-start text-4xl font-bold tracking-tight text-transparent lg:text-5xl dark:from-neutral-50 dark:to-neutral-400"
           >
             {name}.
           </h1>
@@ -31,14 +33,18 @@ const { name, label, summary, socials } = basics;
         >
           {
             socials.map((item) => (
-              <Button icon={item.network} href={item.url} />
+              <Button
+                icon={item.network}
+                href={item.url}
+                label="Social Media Link"
+              />
             ))
           }
         </div>
       </div>
       <div class="w-full md:w-auto md:flex-shrink-0">
         <div
-          class="mx-auto w-full max-w-xs rounded-3xl border border-white/25 bg-black p-10"
+          class="mx-auto w-full max-w-xs rounded-3xl border border-black/25 bg-white p-10 dark:border-white/25 dark:bg-black"
         >
           <Image
             src={PFP}

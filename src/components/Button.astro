@@ -4,18 +4,20 @@ import { Icon } from "astro-icon/components";
 type Props = {
   icon: string;
   href: string;
+  label: string; // Add a label prop for accessibility
 };
 
-const { icon, href } = Astro.props;
+const { icon, href, label } = Astro.props;
 ---
 
 <a
   href={href}
   target="_blank"
-  class="blend group flex w-fit items-center gap-2 rounded border border-neutral-700 px-3 py-2 hover:bg-neutral-800"
+  class="blend group flex w-fit items-center gap-2 rounded border border-neutral-300 px-3 py-2 hover:bg-neutral-200 dark:border-neutral-700 dark:hover:bg-neutral-800"
+  aria-label={label}
 >
   <span
-    class="blend text-sm capitalize text-neutral-400 group-hover:text-white"
+    class="blend text-sm capitalize text-neutral-600 group-hover:text-black dark:text-neutral-400 dark:group-hover:text-white"
   >
     <Icon name={icon} size={20} />
   </span>
