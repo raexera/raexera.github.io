@@ -14,12 +14,12 @@ const { url, name, description, highlights, technologies } = Astro.props;
   href={url}
   target="_blank"
   rel="noopener noreferrer"
-  class="group relative flex h-full flex-col gap-3 rounded-lg border border-white/25 bg-black p-4 transition-colors duration-300 ease-in-out hover:bg-white/10"
+  class="group relative flex h-full flex-col gap-3 rounded-lg border border-black/25 bg-white p-4 transition-colors duration-300 ease-in-out hover:bg-black/10 dark:border-white/25 dark:bg-black dark:hover:bg-white/10"
 >
-  <div class="w-full group-hover:text-white">
+  <div class="w-full group-hover:text-black dark:group-hover:text-white">
     <div class="flex items-center gap-2">
       <h3 class="text-base font-bold">
-        <span class="leading-snug text-white">{name}</span>
+        <span class="leading-snug text-black dark:text-white">{name}</span>
       </h3>
       <svg
         class="ml-1 h-2.5 w-2.5 -translate-x-1 translate-y-1 -rotate-45 transform stroke-current transition-all duration-200 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"

@@ -8,7 +8,7 @@ const subpath = pathname.match(/[^/]+/g);
 
 <div
   id="drawer"
-  class="fixed inset-0 z-40 flex h-0 flex-col items-center justify-center overflow-hidden bg-white/50 backdrop-blur-md transition-[height] duration-300 ease-in-out md:hidden dark:bg-black/50"
+  class="fixed inset-0 z-40 flex h-0 flex-col items-center justify-center overflow-hidden bg-white/50 backdrop-blur-md transition-[height] duration-300 ease-in-out dark:bg-black/50 md:hidden"
 >
   <nav class="flex flex-col items-center space-y-2">
     {
@@ -18,7 +18,7 @@ const subpath = pathname.match(/[^/]+/g);
           class={cn(
             "flex items-center justify-center rounded-full px-3 py-1",
             "text-current hover:text-black dark:hover:text-white",
-            "hover:bg-black/5 dark:hover:bg-white/20",
+            "hover:bg-black/20 dark:hover:bg-white/20",
             "transition-colors duration-300 ease-in-out",
             pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
               ? "pointer-events-none bg-black text-white dark:bg-white dark:text-black"
@@ -34,7 +34,7 @@ const subpath = pathname.match(/[^/]+/g);
     <button
       id="drawer-theme-button"
       aria-label="Toggle light and dark theme"
-      class="flex items-center space-x-2 rounded-full border border-black/10 bg-transparent stroke-current p-2 px-4 transition-colors duration-300 ease-in-out hover:bg-black/5 hover:stroke-black dark:border-white/25 dark:hover:bg-white/20 hover:dark:stroke-white"
+      class="flex items-center space-x-2 rounded-full border border-black/10 bg-transparent stroke-current p-2 px-4 transition-colors duration-300 ease-in-out hover:bg-black/20 hover:stroke-black dark:border-white/25 dark:hover:bg-white/20 hover:dark:stroke-white"
     >
       <Icon name="sun" class="block size-6 dark:hidden" />
       <Icon name="moon" class="hidden size-6 dark:block" />
