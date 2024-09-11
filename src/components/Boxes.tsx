@@ -43,62 +43,60 @@ export default function Boxes({ className = "" }: GridProps) {
   const rows = Math.ceil(dimensions.height / cellSize);
 
   return (
-    <section className="relative h-screen w-full">
-      <div
-        ref={containerRef}
-        className={`absolute flex h-full w-full justify-center overflow-hidden bg-white dark:bg-black ${className}`}
-        style={{ height: `${dimensions.height}px`, zIndex: 0 }}
-      >
-        {/* Left gradient overlay */}
-        <div className="absolute left-0 top-0 h-full w-1/2">
-          <div className="absolute inset-0 z-50 bg-gradient-to-tl from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-black" />
-          <div className="flex h-full w-full flex-col divide-y divide-black/25 border-l border-t border-white dark:divide-white/25 dark:border-black">
-            {Array.from({ length: rows }).map((_, rowIndex) => (
-              <div
-                key={rowIndex}
-                className="relative flex w-full divide-x divide-black/25 dark:divide-white/25"
-                style={{ height: `${cellSize}px` }}
-              >
-                {Array.from({ length: Math.ceil(columns / 2) }).map(
-                  (_, colIndex) => (
-                    <div
-                      key={colIndex}
-                      className="relative w-full bg-white dark:bg-black"
-                    >
-                      <div className="absolute inset-0.5 bg-white dark:bg-black" />
-                    </div>
-                  ),
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Right gradient overlay */}
-        <div className="absolute right-0 top-0 h-full w-1/2">
-          <div className="absolute inset-0 z-50 bg-gradient-to-tr from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-black" />
-          <div className="flex h-full w-full flex-col divide-y divide-black/25 border-l border-t border-white dark:divide-white/25 dark:border-black">
-            {Array.from({ length: rows }).map((_, rowIndex) => (
-              <div
-                key={rowIndex}
-                className="relative flex w-full divide-x divide-black/25 dark:divide-white/25"
-                style={{ height: `${cellSize}px` }}
-              >
-                {Array.from({ length: Math.ceil(columns / 2) }).map(
-                  (_, colIndex) => (
-                    <div
-                      key={colIndex}
-                      className="relative w-full bg-white dark:bg-black"
-                    >
-                      <div className="absolute inset-0.5 bg-white dark:bg-black" />
-                    </div>
-                  ),
-                )}
-              </div>
-            ))}
-          </div>
+    <div
+      ref={containerRef}
+      className={`absolute flex h-full w-full justify-center overflow-hidden bg-white dark:bg-black ${className}`}
+      style={{ height: `${dimensions.height}px`, zIndex: 0 }}
+    >
+      {/* Left gradient overlay */}
+      <div className="absolute left-0 top-0 h-full w-1/2">
+        <div className="absolute inset-0 z-50 bg-gradient-to-tl from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-black" />
+        <div className="flex h-full w-full flex-col divide-y divide-black/25 border-l border-t border-white dark:divide-white/25 dark:border-black">
+          {Array.from({ length: rows }).map((_, rowIndex) => (
+            <div
+              key={rowIndex}
+              className="relative flex w-full divide-x divide-black/25 dark:divide-white/25"
+              style={{ height: `${cellSize}px` }}
+            >
+              {Array.from({ length: Math.ceil(columns / 2) }).map(
+                (_, colIndex) => (
+                  <div
+                    key={colIndex}
+                    className="relative w-full bg-white dark:bg-black"
+                  >
+                    <div className="absolute inset-0.5 bg-white dark:bg-black" />
+                  </div>
+                ),
+              )}
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+
+      {/* Right gradient overlay */}
+      <div className="absolute right-0 top-0 h-full w-1/2">
+        <div className="absolute inset-0 z-50 bg-gradient-to-tr from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-black" />
+        <div className="flex h-full w-full flex-col divide-y divide-black/25 border-l border-t border-white dark:divide-white/25 dark:border-black">
+          {Array.from({ length: rows }).map((_, rowIndex) => (
+            <div
+              key={rowIndex}
+              className="relative flex w-full divide-x divide-black/25 dark:divide-white/25"
+              style={{ height: `${cellSize}px` }}
+            >
+              {Array.from({ length: Math.ceil(columns / 2) }).map(
+                (_, colIndex) => (
+                  <div
+                    key={colIndex}
+                    className="relative w-full bg-white dark:bg-black"
+                  >
+                    <div className="absolute inset-0.5 bg-white dark:bg-black" />
+                  </div>
+                ),
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

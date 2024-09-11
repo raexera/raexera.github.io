@@ -18,8 +18,6 @@ import { SITE } from "@/consts";
   </head>
   <body>
     <Boxes client:load />
-    <Header />
-    <Drawer />
     <Starry
       client:idle
       id="tsparticlesfullpage"
@@ -30,11 +28,15 @@ import { SITE } from "@/consts";
       particleDensity={100}
       className="fixed inset-0 z-0"
     />
-    <main>
-      <Container size="lg">
-        <slot />
-      </Container>
-    </main>
-    <Footer />
+    <div class="relative z-10">
+      <Header />
+      <Drawer />
+      <main>
+        <Container size="lg">
+          <slot />
+        </Container>
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
