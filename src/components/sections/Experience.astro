@@ -34,35 +34,33 @@ import { work } from "@cv";
                   <div class="hidden before:absolute before:-ml-6 before:mt-2 before:h-full before:w-px before:bg-black dark:before:bg-white md:block" />
                   <div class="absolute mt-2 hidden h-2 w-2 -translate-x-[1.71rem] rounded-full bg-black ring ring-black dark:bg-white dark:ring-white md:block" />
                   <h3 class="text-base font-medium leading-snug text-black dark:text-white">
-                    <span>
-                      {position}
-                      <span>@</span>
-                      {url ? (
-                        <a
-                          class="inline-flex items-center hover:text-black/75 dark:hover:text-white/75"
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                    {position}
+                    <span>@</span>
+                    {url ? (
+                      <a
+                        class="inline-flex items-center hover:text-black/75 dark:hover:text-white/75"
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {name}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          class="ml-1 h-4 w-4 shrink-0 translate-y-px"
+                          aria-hidden="true"
                         >
-                          {name}
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            class="ml-1 h-4 w-4 shrink-0 translate-y-px"
-                            aria-hidden="true"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                              clip-rule="evenodd"
-                            />
-                          </svg>
-                        </a>
-                      ) : (
-                        <span>{name}</span>
-                      )}
-                    </span>
+                          <path
+                            fill-rule="evenodd"
+                            d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    ) : (
+                      name
+                    )}
                   </h3>
                   {(location || location_type) && (
                     <p class="mt-2 text-sm">
