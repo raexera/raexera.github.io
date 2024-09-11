@@ -40,16 +40,15 @@ body {
 }
 
 body {
-  @apply relative flex flex-col;
+  @apply flex min-h-screen flex-col;
 }
 
 main {
-  @apply relative flex flex-1 flex-col py-24;
+  @apply flex-grow py-16;
 }
 
 header {
-  @apply border-b;
-  @apply transition-all duration-300 ease-in-out;
+  @apply border-b transition-all duration-300 ease-in-out;
 }
 
 header:not(.scrolled) {
@@ -57,7 +56,5 @@ header:not(.scrolled) {
 }
 
 header.scrolled {
-  @apply bg-white/75 dark:bg-black/50;
-  @apply border-black/10 dark:border-white/25;
-  @apply saturate-200 backdrop-blur-sm;
+  @apply border-black/10 bg-white/75 saturate-200 backdrop-blur-sm dark:border-white/25 dark:bg-black/50;
 }
