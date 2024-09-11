@@ -50,8 +50,8 @@ const { title, description } = Astro.props;
   document.addEventListener("astro:before-swap", (e) =>
     [
       ...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll(
-        'link[as="font"]'
+        'link[as="font"]',
       ),
-    ].forEach((link) => link.remove())
+    ].forEach((link) => link.remove()),
   );
 </script>
