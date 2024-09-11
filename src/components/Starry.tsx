@@ -40,22 +40,31 @@ const Starry = (props: ParticlesProps) => {
       setInit(true);
     });
 
-    const isDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
-    setParticleColor(isDarkMode ? "#FFFFFF" : "#000000");
-
-    const handleThemeChange = (e: MediaQueryListEvent) => {
-      setParticleColor(e.matches ? "#FFFFFF" : "#000000");
+    const updateParticleColor = () => {
+      const isDarkMode = document.documentElement.classList.contains("dark");
+      setParticleColor(isDarkMode ? "#FFFFFF" : "#000000");
     };
 
-    const darkModeMediaQuery = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    );
-    darkModeMediaQuery.addEventListener("change", handleThemeChange);
+    updateParticleColor();
+
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (
+          mutation.type === "attributes" &&
+          mutation.attributeName === "class"
+        ) {
+          updateParticleColor();
+        }
+      });
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
 
     return () => {
-      darkModeMediaQuery.removeEventListener("change", handleThemeChange);
+      observer.disconnect();
     };
   }, []);
 
@@ -88,7 +97,6 @@ const Starry = (props: ParticlesProps) => {
               enable: false,
               zIndex: 1,
             },
-
             fpsLimit: 120,
             interactivity: {
               events: {
