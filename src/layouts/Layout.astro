@@ -16,7 +16,7 @@ import { SITE } from "@/consts";
   <head>
     <BaseHead title={`${title} - ${SITE.TITLE}`} description={description} />
   </head>
-  <body>
+  <body class="flex min-h-screen flex-col">
     <Boxes client:load />
     <Starry
       client:idle
@@ -28,10 +28,10 @@ import { SITE } from "@/consts";
       particleDensity={100}
       className="fixed inset-0 z-0"
     />
-    <div class="relative z-10">
+    <div class="relative z-10 flex min-h-screen flex-col">
       <Header />
       <Drawer />
-      <main>
+      <main class="flex-grow">
         <Container size="lg">
           <slot />
         </Container>
