@@ -76,7 +76,7 @@ export default function Boxes({ className = "" }: GridProps) {
 
         {/* Right gradient overlay */}
         <div className="absolute right-0 top-0 h-full w-1/2">
-          <div className="absolute inset-0 z-50 bg-gradient-to-tr from-black from-50% via-transparent via-90% to-transparent to-100%" />
+          <div className="absolute inset-0 z-50 bg-gradient-to-tr from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-black" />
           <div className="flex h-full w-full flex-col divide-y divide-black/25 border-l border-t border-white dark:divide-white/25 dark:border-black">
             {Array.from({ length: rows }).map((_, rowIndex) => (
               <div
