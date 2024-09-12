@@ -34,17 +34,15 @@ html.dark {
 
 html,
 body {
-  @apply h-full w-full antialiased;
-  @apply bg-white dark:bg-black;
-  @apply text-black/75 dark:text-white/75;
+  @apply h-full w-full bg-white text-black/75 antialiased dark:bg-black dark:text-white/75;
 }
 
 body {
-  @apply flex min-h-screen flex-col;
+  @apply relative flex flex-col;
 }
 
 main {
-  @apply flex-grow py-16;
+  @apply flex flex-1 flex-col;
 }
 
 header {

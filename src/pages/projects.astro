@@ -1,27 +1,33 @@
 ---
 import Card from "@/components/Card.astro";
-import Layout from "@/layouts/Layout.astro";
 import Heading from "@/components/Heading.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
+import TopLayout from "@/layouts/TopLayout.astro";
+import BottomLayout from "@/layouts/BottomLayout.astro";
 import { SITE } from "@/consts";
 import { projects } from "@cv";
 ---
 
-<Layout title="Projects" description={SITE.DESCRIPTION}>
-  <Heading
-    title="My Projects"
-    description="Explore a collection of my projects here. As an open-source enthusiast, I'm passionate about collaboration and knowledge-sharing."
-  />
-  <div class="mt-4 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-    {
-      projects.map(({ url, name, description, highlights, technologies }) => (
-        <Card
-          url={url}
-          description={description}
-          highlights={highlights}
-          name={name}
-          technologies={technologies}
-        />
-      ))
-    }
-  </div>
-</Layout>
+<PageLayout title="Projects" description={SITE.DESCRIPTION}>
+  <TopLayout>
+    <Heading
+      title="My Projects"
+      description="Explore a collection of my projects here. As an open-source enthusiast, I'm passionate about collaboration and knowledge-sharing."
+    />
+  </TopLayout>
+  <BottomLayout>
+    <div class="mt-4 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+      {
+        projects.map(({ url, name, description, highlights, technologies }) => (
+          <Card
+            url={url}
+            description={description}
+            highlights={highlights}
+            name={name}
+            technologies={technologies}
+          />
+        ))
+      }
+    </div>
+  </BottomLayout>
+</PageLayout>

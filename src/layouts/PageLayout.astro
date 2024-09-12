@@ -1,7 +1,6 @@
 ---
 import "@/styles/global.css";
 import BaseHead from "@/components/BaseHead.astro";
-import Container from "@/components/Container.astro";
 import Header from "@/components/Header.astro";
 import Drawer from "@/components/Drawer.astro";
 import Footer from "@/components/Footer.astro";
@@ -16,7 +15,7 @@ import { SITE } from "@/consts";
   <head>
     <BaseHead title={`${title} - ${SITE.TITLE}`} description={description} />
   </head>
-  <body class="flex min-h-screen flex-col">
+  <body>
     <Boxes client:load />
     <Starry
       client:idle
@@ -28,15 +27,11 @@ import { SITE } from "@/consts";
       particleDensity={100}
       className="fixed inset-0 z-0"
     />
-    <div class="relative z-10 flex min-h-screen flex-col">
-      <Header />
-      <Drawer />
-      <main class="flex-grow">
-        <Container size="lg">
-          <slot />
-        </Container>
-      </main>
-      <Footer />
-    </div>
+    <Header />
+    <Drawer />
+    <main class="z-10">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>

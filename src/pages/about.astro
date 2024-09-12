@@ -1,26 +1,32 @@
 ---
-import Heading from "@/components/Heading.astro";
-import Layout from "@/layouts/Layout.astro";
-import Experience from "@/components/sections/Experience.astro";
-import Education from "@/components/sections/Education.astro";
 import Awards from "@/components/sections/Awards.astro";
+import Heading from "@/components/Heading.astro";
+import Education from "@/components/sections/Education.astro";
+import Experience from "@/components/sections/Experience.astro";
 import Skills from "@/components/sections/Skills.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
+import TopLayout from "@/layouts/TopLayout.astro";
+import BottomLayout from "@/layouts/BottomLayout.astro";
 import { SITE } from "@/consts";
 ---
 
-<Layout title="About" description={SITE.DESCRIPTION}>
-  <Heading
-    title="About Me"
-    description="Hello 👋 I'm Rayhan Kafi Pratama, a bachelor of computer science student."
-    highlight={[
-      "My passion for crafting software that turns ideas into reality through elegant and intuitive interfaces.",
-      "I place a strong emphasis on creating seamless experiences, robust architecture, and high-quality code. I'm always eager to enhance my skills and contribute to meaningful and impactful projects.",
-    ]}
-  />
-  <div class="mt-8 flex flex-col gap-8">
-    <Experience />
-    <Skills />
-    <Awards class="order-first" />
-    <Education class="order-first" />
-  </div>
-</Layout>
+<PageLayout title="About" description={SITE.DESCRIPTION}>
+  <TopLayout>
+    <Heading
+      title="About Me"
+      description="Hello 👋 I'm Rayhan Kafi Pratama, a bachelor of computer science student."
+      highlight={[
+        "My passion for crafting software that turns ideas into reality through elegant and intuitive interfaces.",
+        "I place a strong emphasis on creating seamless experiences, robust architecture, and high-quality code. I'm always eager to enhance my skills and contribute to meaningful and impactful projects.",
+      ]}
+    />
+  </TopLayout>
+  <BottomLayout>
+    <div class="mt-8 flex flex-col gap-8">
+      <Experience />
+      <Skills />
+      <Awards class="order-first" />
+      <Education class="order-first" />
+    </div>
+  </BottomLayout>
+</PageLayout>
