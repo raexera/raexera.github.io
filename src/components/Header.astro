@@ -10,12 +10,10 @@ const subpath = pathname.match(/[^/]+/g);
 <header id="header" class="fixed top-0 z-50 h-16 w-full">
   <Container size="md">
     <div class="relative h-full w-full">
-      <div
-        class="absolute left-0 top-1/2 flex -translate-y-1/2 gap-1 font-semibold"
-      >
+      <div class="absolute left-0 top-1/2 flex -translate-y-1/2 font-semibold">
         <a
           href="/"
-          class="flex gap-1 text-current transition-colors duration-300 ease-in-out hover:text-black dark:hover:text-white"
+          class="flex text-current transition-colors duration-300 ease-in-out hover:text-black dark:hover:text-white"
         >
           <div class="font-bold uppercase">
             {SITE.TITLE}
@@ -45,12 +43,12 @@ const subpath = pathname.match(/[^/]+/g);
         </nav>
       </div>
 
-      <div class="buttons absolute right-0 top-1/2 flex -translate-y-1/2 gap-1">
+      <div class="buttons absolute right-0 top-1/2 flex -translate-y-1/2 gap-2">
         <button
           id="header-theme-button"
           aria-label={`Toggle light and dark theme`}
           class={cn(
-            "hidden md:flex",
+            "flex",
             "size-9 rounded-full p-2 items-center justify-center",
             "bg-transparent hover:bg-black/20 dark:hover:bg-white/20",
             "stroke-current hover:stroke-black hover:dark:stroke-white",
