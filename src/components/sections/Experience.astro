@@ -8,30 +8,36 @@ import { work } from "@cv";
   <ul class="flex flex-col">
     {
       work.map(
-        ({
-          name,
-          startDate,
-          endDate,
-          position,
-          summary,
-          responsibilities,
-          url,
-          location,
-          location_type,
-        }) => {
+        (
+          {
+            name,
+            startDate,
+            endDate,
+            position,
+            summary,
+            responsibilities,
+            url,
+            location,
+            location_type,
+          },
+          index,
+        ) => {
           const startYear = new Date(startDate).getFullYear();
           const endYear = endDate ? new Date(endDate).getFullYear() : "Present";
+          const isLastItem = index === work.length - 1;
 
           return (
             <li class="relative">
-              <div class="group grid pb-1 transition-all sm:grid-cols-12 sm:gap-8">
+              <div class="group grid transition-all sm:grid-cols-12 sm:gap-8">
                 <header class="mt-1 text-xs font-bold text-black/50 dark:text-white/50 sm:col-span-2">
                   <time datetime={startDate}>{startYear}</time>
                   <span class="mx-1">-</span>
                   <time datetime={endDate}>{endYear}</time>
                 </header>
                 <div class="relative flex flex-col pb-4 sm:col-span-10">
-                  <div class="hidden before:absolute before:-ml-6 before:mt-2 before:h-full before:w-px before:bg-black dark:before:bg-white md:block" />
+                  {!isLastItem && (
+                    <div class="hidden before:absolute before:-ml-6 before:mt-2 before:h-full before:w-px before:bg-black dark:before:bg-white md:block" />
+                  )}
                   <div class="absolute mt-2 hidden h-2 w-2 -translate-x-[1.71rem] rounded-full bg-black ring ring-black dark:bg-white dark:ring-white md:block" />
                   <h3 class="text-base font-medium leading-snug text-black dark:text-white">
                     {position}
