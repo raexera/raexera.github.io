@@ -38,64 +38,66 @@ import { work } from "@cv";
                   <div class="hidden before:absolute before:-ml-6 before:mt-2 before:h-full before:w-px before:bg-black dark:before:bg-white md:block" />
                 )}
                 <div class="absolute mt-2 hidden h-2 w-2 -translate-x-[1.71rem] rounded-full bg-black dark:bg-white md:block" />
-                <h3 class="text-base font-medium leading-snug text-black dark:text-white">
-                  {position}
-                  <span>@</span>
-                  {url ? (
-                    <a
-                      class="inline-flex items-center hover:text-black/75 dark:hover:text-white/75"
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {name}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        class="ml-1 h-4 w-4 shrink-0 translate-y-px"
-                        aria-hidden="true"
+                <div class={isLastItem ? "mb-0" : "mb-8"}>
+                  <h3 class="text-base font-bold leading-snug text-black dark:text-white">
+                    {position}
+                    <span>@</span>
+                    {url ? (
+                      <a
+                        class="inline-flex items-center hover:text-black/75 dark:hover:text-white/75"
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <path
-                          fill-rule="evenodd"
-                          d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                    </a>
-                  ) : (
-                    name
+                        {name}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          class="ml-1 h-4 w-4 shrink-0 translate-y-px"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    ) : (
+                      name
+                    )}
+                  </h3>
+                  {(location || location_type) && (
+                    <p class="mt-2 text-sm">
+                      {location}
+                      {location && location_type && " - "}
+                      {location_type}
+                    </p>
                   )}
-                </h3>
-                {(location || location_type) && (
-                  <p class="mt-2 text-sm">
-                    {location}
-                    {location && location_type && " - "}
-                    {location_type}
-                  </p>
-                )}
-                <div class="mt-2 flex flex-col gap-4 text-sm">
-                  {summary && (
-                    <ul class="text-black/50 dark:text-white/50">
-                      {Array.isArray(summary) ? (
-                        summary.map((item) => <li>{item}</li>)
-                      ) : (
-                        <li>{summary}</li>
-                      )}
-                    </ul>
-                  )}
-                  {responsibilities && (
-                    <ExpandButton client:load>
-                      <div>
-                        <h4 class="font-medium">Responsibilities:</h4>
-                        <ul class="list-inside list-disc space-y-1 text-black/50 dark:text-white/50">
-                          {responsibilities.map((responsibility) => (
-                            <li>{responsibility}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </ExpandButton>
-                  )}
+                  <div class="mt-2 flex flex-col gap-4 text-sm">
+                    {summary && (
+                      <ul class="text-black/50 dark:text-white/50">
+                        {Array.isArray(summary) ? (
+                          summary.map((item) => <li>{item}</li>)
+                        ) : (
+                          <li>{summary}</li>
+                        )}
+                      </ul>
+                    )}
+                    {responsibilities && (
+                      <ExpandButton client:load>
+                        <div>
+                          <h4 class="font-medium">Responsibilities:</h4>
+                          <ul class="list-inside list-disc space-y-1 text-black/50 dark:text-white/50">
+                            {responsibilities.map((responsibility) => (
+                              <li>{responsibility}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </ExpandButton>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
