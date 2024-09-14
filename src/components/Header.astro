@@ -7,7 +7,7 @@ const { pathname } = Astro.url;
 const subpath = pathname.match(/[^/]+/g);
 ---
 
-<header id="header" class="fixed top-0 z-50 h-16 w-full">
+<header id="header" class="fixed top-0 z-50 h-16 w-full print:hidden">
   <Container size="md">
     <div class="relative h-full w-full">
       <div class="absolute left-0 top-1/2 flex -translate-y-1/2 font-semibold">
@@ -33,7 +33,7 @@ const subpath = pathname.match(/[^/]+/g);
                   "transition-colors duration-300 ease-in-out",
                   pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
                     ? "bg-black text-white dark:bg-white dark:text-black"
-                    : "hover:bg-black/20 hover:text-black dark:hover:bg-white/20 dark:hover:text-white",
+                    : "hover:bg-black/20 hover:text-black dark:hover:bg-white/20 dark:hover:text-white"
                 )}
               >
                 {LINK.TEXT}
@@ -52,7 +52,7 @@ const subpath = pathname.match(/[^/]+/g);
             "bg-transparent hover:bg-black/20 dark:hover:bg-white/20",
             "stroke-current hover:stroke-black hover:dark:stroke-white",
             "border border-black/25 dark:border-white/25",
-            "transition-colors duration-300 ease-in-out",
+            "transition-colors duration-300 ease-in-out"
           )}
         >
           <a
@@ -74,7 +74,7 @@ const subpath = pathname.match(/[^/]+/g);
             "bg-transparent hover:bg-black/20 dark:hover:bg-white/20",
             "stroke-current hover:stroke-black hover:dark:stroke-white",
             "border border-black/25 dark:border-white/25",
-            "transition-colors duration-300 ease-in-out",
+            "transition-colors duration-300 ease-in-out"
           )}
         >
           <Icon name="sun" class="block size-full dark:hidden" />
@@ -90,7 +90,7 @@ const subpath = pathname.match(/[^/]+/g);
             "bg-transparent hover:bg-black/20 dark:hover:bg-white/20",
             "stroke-current hover:stroke-black hover:dark:stroke-white",
             "border border-black/25 dark:border-white/25",
-            "transition-colors duration-300 ease-in-out",
+            "transition-colors duration-300 ease-in-out"
           )}
         >
           <svg

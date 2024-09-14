@@ -20,6 +20,12 @@
   }
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   overflow-y: scroll;
   color-scheme: light;
@@ -55,4 +61,26 @@ header:not(.scrolled) {
 
 header.scrolled {
   @apply border-black/25 bg-white/75 saturate-200 backdrop-blur-sm dark:border-white/25 dark:bg-black/50;
+}
+
+.print {
+  display: none !important;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print {
+    display: block !important;
+  }
+
+  astro-dev-toolbar {
+    display: none !important;
+  }
+
+  article {
+    break-inside: avoid;
+  }
 }
