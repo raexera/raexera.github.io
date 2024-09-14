@@ -29,8 +29,9 @@ Inside of your Astro project, you'll see the following folders and files:
 │   ├── fonts
 │   │   ├── Inter-Bold.woff2
 │   │   └── Inter-Regular.woff2
-│   └── js
-│       └── scroll.js
+│   ├── js
+│   │   └── main.js
+│   └── robots.txt
 ├── README.md
 ├── src
 │   ├── assets
@@ -60,9 +61,13 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   ├── email.svg
 │   │   ├── github.svg
 │   │   ├── linkedin.svg
+│   │   ├── moon.svg
+│   │   ├── sun.svg
 │   │   └── telegram.svg
 │   ├── layouts
-│   │   └── Layout.astro
+│   │   ├── BottomLayout.astro
+│   │   ├── PageLayout.astro
+│   │   └── TopLayout.astro
 │   ├── lib
 │   │   └── utils.ts
 │   ├── pages
@@ -75,7 +80,7 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── tailwind.config.mjs
 └── tsconfig.json
 
-14 directories, 44 files
+14 directories, 49 files
 ```
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
