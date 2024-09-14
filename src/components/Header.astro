@@ -33,7 +33,7 @@ const subpath = pathname.match(/[^/]+/g);
                   "transition-colors duration-300 ease-in-out",
                   pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
                     ? "bg-black text-white dark:bg-white dark:text-black"
-                    : "hover:bg-black/20 hover:text-black dark:hover:bg-white/20 dark:hover:text-white",
+                    : "hover:bg-black/20 hover:text-black dark:hover:bg-white/20 dark:hover:text-white"
                 )}
               >
                 {LINK.TEXT}
@@ -45,6 +45,27 @@ const subpath = pathname.match(/[^/]+/g);
 
       <div class="buttons absolute right-0 top-1/2 flex -translate-y-1/2 gap-2">
         <button
+          aria-label={`Github repository`}
+          class={cn(
+            "flex",
+            "size-9 rounded-full p-2 items-center justify-center",
+            "bg-transparent hover:bg-black/20 dark:hover:bg-white/20",
+            "stroke-current hover:stroke-black hover:dark:stroke-white",
+            "border border-black/25 dark:border-white/25",
+            "transition-colors duration-300 ease-in-out"
+          )}
+        >
+          <a
+            href={SITE.REPO_URL}
+            aria-label={`Github repository link`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="github" class="block size-full" />
+          </a>
+        </button>
+
+        <button
           id="header-theme-button"
           aria-label={`Toggle light and dark theme`}
           class={cn(
@@ -53,7 +74,7 @@ const subpath = pathname.match(/[^/]+/g);
             "bg-transparent hover:bg-black/20 dark:hover:bg-white/20",
             "stroke-current hover:stroke-black hover:dark:stroke-white",
             "border border-black/25 dark:border-white/25",
-            "transition-colors duration-300 ease-in-out",
+            "transition-colors duration-300 ease-in-out"
           )}
         >
           <Icon name="sun" class="block size-full dark:hidden" />
@@ -69,7 +90,7 @@ const subpath = pathname.match(/[^/]+/g);
             "bg-transparent hover:bg-black/20 dark:hover:bg-white/20",
             "stroke-current hover:stroke-black hover:dark:stroke-white",
             "border border-black/25 dark:border-white/25",
-            "transition-colors duration-300 ease-in-out",
+            "transition-colors duration-300 ease-in-out"
           )}
         >
           <svg
