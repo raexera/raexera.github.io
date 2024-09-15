@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface ExpandButtonProps {
   children: React.ReactNode;
@@ -9,23 +12,38 @@ export default function ExpandButton({ children }: ExpandButtonProps) {
 
   return (
     <div className="relative">
-      <div
-        className={`relative flex flex-col gap-4 after:absolute after:bottom-0 after:h-12 after:w-full after:bg-gradient-to-t after:from-white after:content-[''] dark:after:from-black max-sm:!h-auto ${
-          expanded ? "after:hidden" : ""
-        }`}
-        style={{ maxHeight: expanded ? "none" : "50px", overflow: "hidden" }}
-      >
-        {children}
-      </div>
+      <AnimatePresence initial={false}>
+        <motion.div
+          key="content"
+          initial="collapsed"
+          animate={expanded ? "expanded" : "collapsed"}
+          exit="collapsed"
+          variants={{
+            expanded: { height: "auto" },
+            collapsed: { height: "50px" },
+          }}
+          transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
+          className="relative flex flex-col gap-4 overflow-hidden"
+        >
+          {children}
+          {!expanded && (
+            <motion.div
+              className="absolute bottom-0 h-12 w-full bg-gradient-to-t from-white dark:from-black"
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            />
+          )}
+        </motion.div>
+      </AnimatePresence>
       <button
         onClick={() => setExpanded(!expanded)}
         className="group/more flex w-fit cursor-pointer items-center justify-center gap-1.5 text-xs underline transition-all hover:text-black dark:hover:text-white"
       >
         <span>{expanded ? "Show less" : "Show more"}</span>
-        <svg
-          className={`h-4 w-4 duration-200 ease-out group-hover/more:translate-y-0.5 ${
-            expanded ? "rotate-180" : ""
-          }`}
+        <motion.svg
+          animate={{ rotate: expanded ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+          className="h-4 w-4 duration-200 ease-out group-hover/more:translate-y-0.5"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -35,7 +53,7 @@ export default function ExpandButton({ children }: ExpandButtonProps) {
           strokeLinejoin="round"
         >
           <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
+        </motion.svg>
       </button>
     </div>
   );
