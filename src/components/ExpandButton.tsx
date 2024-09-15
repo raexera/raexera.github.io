@@ -10,7 +10,7 @@ export default function ExpandButton({ children }: ExpandButtonProps) {
   return (
     <div className="relative">
       <div
-        className={`relative flex flex-col gap-4 max-sm:!h-auto md:after:absolute md:after:bottom-0 md:after:h-12 md:after:w-full md:after:bg-gradient-to-t md:after:from-white md:after:content-[''] dark:md:after:from-black ${
+        className={`relative flex flex-col gap-4 after:absolute after:bottom-0 after:h-12 after:w-full after:bg-gradient-to-t after:from-white after:content-[''] dark:after:from-black max-sm:!h-auto ${
           expanded ? "after:hidden" : ""
         }`}
         style={{ maxHeight: expanded ? "none" : "50px", overflow: "hidden" }}
