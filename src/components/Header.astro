@@ -160,3 +160,16 @@ const subpath = pathname.match(/[^/]+/g);
   document.addEventListener("astro:after-swap", initializeDrawerButton);
   initializeDrawerButton();
 </script>
+
+<script is:inline>
+  function onScroll() {
+    const header = document.getElementById("header");
+    if (window.scrollY > 0) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  }
+
+  document.addEventListener("scroll", onScroll);
+</script>

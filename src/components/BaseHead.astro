@@ -46,15 +46,5 @@ const { title, description } = Astro.props;
 <!-- Global Scripts -->
 <script is:inline src="/js/main.js"></script>
 
+<!--  View Transitions -->
 <ViewTransitions />
-
-<script>
-  import type { TransitionBeforeSwapEvent } from "astro:transitions/client";
-  document.addEventListener("astro:before-swap", (e) =>
-    [
-      ...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll(
-        'link[as="font"]',
-      ),
-    ].forEach((link) => link.remove()),
-  );
-</script>
