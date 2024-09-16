@@ -1,5 +1,7 @@
 ---
 import Container from "@/components/Container.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+import DrawerToggle from "./DrawerToggle.astro";
 import { Icon } from "astro-icon/components";
 import { SITE, LINKS } from "@/consts";
 import { cn } from "@/lib/utils";
@@ -33,7 +35,7 @@ const subpath = pathname.match(/[^/]+/g);
                   "transition-colors duration-300 ease-in-out",
                   pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
                     ? "bg-black text-white dark:bg-white dark:text-black"
-                    : "hover:bg-black/20 hover:text-black dark:hover:bg-white/20 dark:hover:text-white",
+                    : "hover:bg-black/20 hover:text-black dark:hover:bg-white/20 dark:hover:text-white"
                 )}
               >
                 {LINK.TEXT}
@@ -52,7 +54,7 @@ const subpath = pathname.match(/[^/]+/g);
             "bg-transparent hover:bg-black/20 dark:hover:bg-white/20",
             "stroke-current hover:stroke-black hover:dark:stroke-white",
             "border border-black/25 dark:border-white/25",
-            "transition-colors duration-300 ease-in-out",
+            "transition-colors duration-300 ease-in-out"
           )}
         >
           <a
@@ -64,102 +66,12 @@ const subpath = pathname.match(/[^/]+/g);
             <Icon name="github" class="block size-full" />
           </a>
         </button>
-
-        <button
-          id="header-theme-button"
-          aria-label={`Toggle light and dark theme`}
-          class={cn(
-            "flex",
-            "size-9 rounded-full p-2 items-center justify-center",
-            "bg-transparent hover:bg-black/20 dark:hover:bg-white/20",
-            "stroke-current hover:stroke-black hover:dark:stroke-white",
-            "border border-black/25 dark:border-white/25",
-            "transition-colors duration-300 ease-in-out",
-          )}
-        >
-          <Icon name="sun" class="block size-full dark:hidden" />
-          <Icon name="moon" class="hidden size-full dark:block" />
-        </button>
-
-        <button
-          id="header-drawer-button"
-          aria-label={`Toggle drawer open and closed`}
-          class={cn(
-            "flex md:hidden",
-            "size-9 rounded-full p-2 items-center justify-center",
-            "bg-transparent hover:bg-black/20 dark:hover:bg-white/20",
-            "stroke-current hover:stroke-black hover:dark:stroke-white",
-            "border border-black/25 dark:border-white/25",
-            "transition-colors duration-300 ease-in-out",
-          )}
-        >
-          <svg
-            id="drawer-open"
-            class="size-full"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-          >
-            <path d="M3 12h18"></path>
-            <path d="M3 6h18"></path>
-            <path d="M3 18h18"></path>
-          </svg>
-          <svg
-            id="drawer-close"
-            class="size-full"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-          >
-            <path d="M18 6L6 18"></path>
-            <path d="M6 6l12 12"></path>
-          </svg>
-        </button>
+        <ThemeToggle />
+        <DrawerToggle />
       </div>
     </div>
   </Container>
 </header>
-
-<style>
-  #header-drawer-button > #drawer-open {
-    @apply block;
-  }
-
-  #header-drawer-button > #drawer-close {
-    @apply hidden;
-  }
-
-  #header-drawer-button.open > #drawer-open {
-    @apply hidden;
-  }
-
-  #header-drawer-button.open > #drawer-close {
-    @apply block;
-  }
-</style>
-
-<script is:inline>
-  function toggleDrawer() {
-    const drawer = document.getElementById("drawer");
-    const drawerButton = document.getElementById("header-drawer-button");
-    drawer?.classList.toggle("open");
-    drawerButton?.classList.toggle("open");
-  }
-
-  function initializeDrawerButton() {
-    const drawerButton = document.getElementById("header-drawer-button");
-    drawerButton?.addEventListener("click", toggleDrawer);
-  }
-
-  document.addEventListener("astro:after-swap", initializeDrawerButton);
-  initializeDrawerButton();
-</script>
 
 <script is:inline>
   function onScroll() {

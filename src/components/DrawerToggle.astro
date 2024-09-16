@@ -1,0 +1,55 @@
+---
+import { Icon } from "astro-icon/components";
+import { cn } from "@/lib/utils";
+---
+
+<button
+  id="drawer_toggle"
+  aria-label={`Toggle drawer open and closed`}
+  class={cn(
+    "flex md:hidden",
+    "size-9 rounded-full p-2 items-center justify-center",
+    "bg-transparent hover:bg-black/20 dark:hover:bg-white/20",
+    "stroke-current hover:stroke-black hover:dark:stroke-white",
+    "border border-black/25 dark:border-white/25",
+    "transition-colors duration-300 ease-in-out"
+  )}
+>
+  <Icon id="drawer-open" name="menu" class="size-full" />
+  <Icon id="drawer-close" name="close" class="size-full" />
+</button>
+
+<style>
+  #drawer_toggle > #drawer-open {
+    @apply block;
+  }
+
+  #drawer_toggle > #drawer-close {
+    @apply hidden;
+  }
+
+  #drawer_toggle.open > #drawer-open {
+    @apply hidden;
+  }
+
+  #drawer_toggle.open > #drawer-close {
+    @apply block;
+  }
+</style>
+
+<script is:inline>
+  function toggleDrawer() {
+    const drawer = document.getElementById("drawer");
+    const drawerButton = document.getElementById("drawer_toggle");
+    drawer?.classList.toggle("open");
+    drawerButton?.classList.toggle("open");
+  }
+
+  function initializeDrawerButton() {
+    const drawerButton = document.getElementById("drawer_toggle");
+    drawerButton?.addEventListener("click", toggleDrawer);
+  }
+
+  document.addEventListener("astro:after-swap", initializeDrawerButton);
+  initializeDrawerButton();
+</script>

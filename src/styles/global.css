@@ -28,14 +28,7 @@
 
 html {
   overflow-y: scroll;
-  color-scheme: light;
-  background-color: white;
   font-family: "Inter", sans-serif;
-}
-
-html.dark {
-  color-scheme: dark;
-  background-color: black;
 }
 
 html,
