@@ -33,7 +33,7 @@ html {
 
 html,
 body {
-  @apply h-full w-full bg-white text-black/75 antialiased dark:bg-black dark:text-white/75;
+  @apply h-full w-full;
 }
 
 body {
@@ -45,7 +45,7 @@ main {
 }
 
 header {
-  @apply border-b transition-all duration-300 ease-in-out;
+  @apply border-b;
 }
 
 header:not(.scrolled) {
@@ -71,9 +71,5 @@ header.scrolled {
 
   astro-dev-toolbar {
     display: none !important;
-  }
-
-  article {
-    break-inside: avoid;
   }
 }

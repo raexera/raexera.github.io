@@ -19,57 +19,80 @@ import { cn } from "@/lib/utils";
   <Icon name="moon" class="hidden size-full dark:block" />
 </button>
 
-<style>
+<style is:global>
+  :root {
+    --bg-light: #ffffff;
+    --bg-dark: #000000;
+    --text-light: rgba(0, 0, 0, 0.75);
+    --text-dark: rgba(255, 255, 255, 0.75);
+  }
+
   html {
     color-scheme: light;
-    background-color: white;
+    background-color: var(--bg-light);
+    color: var(--text-light);
   }
 
   html.dark {
     color-scheme: dark;
-    background-color: black;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
   }
 </style>
 
 <script is:inline>
-  function setTheme(theme) {
-    const element = document.documentElement;
-    element.classList.toggle("dark", theme === "dark");
-    localStorage.theme = theme;
-  }
+  (function () {
+    function setTheme(theme) {
+      const element = document.documentElement;
+      element.classList.toggle("dark", theme === "dark");
+      localStorage.theme = theme;
+    }
 
-  function changeTheme() {
-    const currentTheme = document.documentElement.classList.contains("dark")
-      ? "dark"
-      : "light";
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-  }
+    function changeTheme() {
+      const currentTheme = document.documentElement.classList.contains("dark")
+        ? "dark"
+        : "light";
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      setTheme(newTheme);
+    }
 
-  function preloadTheme() {
-    const savedTheme = localStorage.theme;
-    const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)")
-      .matches
-      ? "dark"
-      : "light";
+    function preloadTheme() {
+      const savedTheme = localStorage.theme;
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      const theme =
+        savedTheme === "light" || savedTheme === "dark"
+          ? savedTheme
+          : prefersDark
+            ? "dark"
+            : "light";
+      setTheme(theme);
+    }
 
-    const theme =
-      savedTheme === "light" || savedTheme === "dark"
-        ? savedTheme
-        : preferredTheme;
-    setTheme(theme);
-  }
+    function initializeThemeButtons() {
+      const themeToggleButton = document.getElementById("theme_toggle");
+      themeToggleButton?.addEventListener("click", changeTheme);
+    }
 
-  function initializeThemeButtons() {
-    const themeToggleButton = document.getElementById("theme_toggle");
-    themeToggleButton?.addEventListener("click", changeTheme);
-  }
+    // Use requestAnimationFrame for smoother initial theme application
+    requestAnimationFrame(() => {
+      preloadTheme();
+      initializeThemeButtons();
+    });
 
-  window.onload = () => {
-    document.addEventListener("astro:after-swap", initializeThemeButtons);
-    initializeThemeButtons();
-  };
+    // Listen for system theme changes
+    window.matchMedia("(prefers-color-scheme: dark)").addListener((e) => {
+      if (localStorage.theme !== "light" && localStorage.theme !== "dark") {
+        setTheme(e.matches ? "dark" : "light");
+      }
+    });
 
-  document.addEventListener("astro:after-swap", preloadTheme);
-  preloadTheme();
+    document.addEventListener("astro:after-swap", () => {
+      requestAnimationFrame(() => {
+        preloadTheme();
+        initializeThemeButtons();
+      });
+    });
+  })();
 </script>
