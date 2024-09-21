@@ -12,27 +12,26 @@ const subpath = pathname.match(/[^/]+/g);
 <header id="header" class="fixed top-0 z-50 h-16 w-full print:hidden">
   <Container size="md">
     <div class="relative h-full w-full">
-      <div class="absolute left-0 top-1/2 flex -translate-y-1/2 font-semibold">
+      <div class="absolute left-0 top-1/2 -translate-y-1/2 font-semibold">
         <a
           href="/"
-          class="flex text-current transition-colors duration-300 ease-in-out hover:text-black dark:hover:text-white"
+          class="text-black/75 transition-colors duration-300 hover:text-black dark:text-white/75 dark:hover:text-white"
         >
-          <div class="font-bold uppercase">
-            {SITE.TITLE}
-          </div>
+          <div class="font-bold uppercase">{SITE.TITLE}</div>
         </a>
       </div>
 
       <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <nav class="hidden items-center justify-center gap-1 text-sm md:flex">
+        <nav class="hidden items-center gap-1 text-sm md:flex">
           {
             LINKS.map((LINK) => (
               <a
                 href={LINK.HREF}
                 class={cn(
-                  "h-8 rounded-full px-3 text-current",
+                  "h-8 rounded-full px-3",
+                  "text-black/75 dark:text-white/75",
                   "flex items-center justify-center",
-                  "transition-colors duration-300 ease-in-out",
+                  "transition-colors duration-300",
                   pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
                     ? "bg-black text-white dark:bg-white dark:text-black"
                     : "hover:bg-black/20 hover:text-black dark:hover:bg-white/20 dark:hover:text-white",
@@ -46,26 +45,21 @@ const subpath = pathname.match(/[^/]+/g);
       </div>
 
       <div class="absolute right-0 top-1/2 flex -translate-y-1/2 gap-2">
-        <button
-          aria-label={`Github repository`}
+        <a
+          href={SITE.REPO_URL}
+          aria-label="Github repository link"
+          target="_blank"
+          rel="noopener noreferrer"
           class={cn(
-            "flex",
-            "size-9 rounded-full p-2 items-center justify-center",
-            "bg-transparent hover:bg-black/20 dark:hover:bg-white/20",
-            "stroke-current hover:stroke-black hover:dark:stroke-white",
+            "flex items-center justify-center size-9 rounded-full p-2",
+            "text-black/75 dark:text-white/75",
+            "hover:bg-black/20 dark:hover:bg-white/20",
             "border border-black/25 dark:border-white/25",
-            "transition-colors duration-300 ease-in-out",
+            "transition-colors duration-300",
           )}
         >
-          <a
-            href={SITE.REPO_URL}
-            aria-label={`Github repository link`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon name="github" class="block size-full" />
-          </a>
-        </button>
+          <Icon name="github" class="block size-full" />
+        </a>
         <ThemeToggle />
         <DrawerToggle />
       </div>

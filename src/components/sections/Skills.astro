@@ -5,23 +5,27 @@ const { technologies, programming_languages } = skills;
 ---
 
 <Section className={Astro.props.className} title="Skills">
-  <h3 class="text-sm font-bold">Technologies</h3>
+  <h3 class="text-sm font-bold text-black/75 dark:text-white/75">
+    Technologies
+  </h3>
   <ul class="flex flex-wrap gap-2">
     {
-      technologies.map((name) => (
-        <li class="flex items-center gap-1 rounded-md border border-black/25 bg-neutral-200/50 px-2 py-1 text-xs dark:border-white/25 dark:bg-neutral-800/50">
-          <span>{name}</span>
+      technologies.map((tech) => (
+        <li class="flex items-center gap-1 rounded-md border border-black/25 bg-neutral-200/50 px-2 py-1 text-xs text-black/75 dark:border-white/25 dark:bg-neutral-800/50 dark:text-white/75">
+          {tech}
         </li>
       ))
     }
   </ul>
 
-  <h3 class="mt-2 text-sm font-bold">Programming Languages</h3>
+  <h3 class="mt-2 text-sm font-bold text-black/75 dark:text-white/75">
+    Programming Languages
+  </h3>
   <ul class="flex flex-wrap gap-2">
     {
-      programming_languages.map((name) => (
-        <li class="flex items-center gap-1 rounded-md border border-black/25 bg-neutral-200/50 px-2 py-1 text-xs dark:border-white/25 dark:bg-neutral-800/50">
-          <span>{name}</span>
+      programming_languages.map((lang) => (
+        <li class="flex items-center gap-1 rounded-md border border-black/25 bg-neutral-200/50 px-2 py-1 text-xs text-black/75 dark:border-white/25 dark:bg-neutral-800/50 dark:text-white/75">
+          {lang}
         </li>
       ))
     }

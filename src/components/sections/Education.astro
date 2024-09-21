@@ -4,7 +4,7 @@ import { education } from "@cv";
 ---
 
 <Section className={Astro.props.className} title="Education">
-  <ul class="space-y-4">
+  <ul class="space-y-4 text-black/75 dark:text-white/75">
     {
       education.map(
         ({ institution, startDate, endDate, area, url, summary }) => {
@@ -32,7 +32,7 @@ import { education } from "@cv";
                 <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
               </svg>
               <div class="relative w-full">
-                <time class="mb-1 text-xs font-bold text-black/50 md:absolute md:right-0 md:top-0 md:mb-0 dark:text-white/50">
+                <time class="mb-1 text-xs font-bold text-black/50 dark:text-white/50 md:absolute md:right-0 md:top-0 md:mb-0">
                   {years}
                 </time>
                 <h3 class="text-base font-medium leading-snug text-black dark:text-white">

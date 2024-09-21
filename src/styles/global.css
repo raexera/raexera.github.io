@@ -31,6 +31,14 @@ html {
   font-family: "Inter", sans-serif;
 }
 
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
 html,
 body {
   @apply h-full w-full;

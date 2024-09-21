@@ -28,7 +28,7 @@ import { work } from "@cv";
 
           return (
             <>
-              {/*  Datetime */}
+              {/* Datetime */}
               <div class="mt-1 text-xs font-bold text-black/50 dark:text-white/50">
                 <time datetime={startDate}>{startYear}</time>
                 <span class="mx-1">-</span>
@@ -36,7 +36,7 @@ import { work } from "@cv";
               </div>
 
               {/* Timeline */}
-              <div class="relative hidden items-start justify-center sm:flex">
+              <div class="relative hidden justify-center sm:flex">
                 {!isLastItem && (
                   <div class="absolute top-2 h-full w-px bg-black/25 dark:bg-white/25" />
                 )}
@@ -75,7 +75,7 @@ import { work } from "@cv";
                   )}
                 </h3>
                 {(location || location_type) && (
-                  <p class="mt-2 text-sm">
+                  <p class="mt-2 text-sm text-black/75 dark:text-white/75">
                     {location}
                     {location && location_type && " - "}
                     {location_type}
@@ -94,7 +94,9 @@ import { work } from "@cv";
                   {responsibilities && (
                     <ExpandButton client:load>
                       <div>
-                        <h4 class="font-medium">Responsibilities:</h4>
+                        <h4 class="font-medium text-black/75 dark:text-white/75">
+                          Responsibilities:
+                        </h4>
                         <ul class="list-inside list-disc space-y-1 text-black/50 dark:text-white/50">
                           {responsibilities.map((responsibility) => (
                             <li>{responsibility}</li>
