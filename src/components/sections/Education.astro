@@ -4,17 +4,16 @@ import { education } from "@cv";
 ---
 
 <Section className={Astro.props.className} title="Education">
-  <ul class="space-y-4 text-black/75 dark:text-white/75">
+  <ul class="space-y-4">
     {
       education.map(
         ({ institution, startDate, endDate, area, url, summary }) => {
           const startYear = new Date(startDate).getFullYear();
-          const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Present";
+          const endYear = endDate ? new Date(endDate).getFullYear() : "Present";
           const years = `${startYear} - ${endYear}`;
 
           return (
-            <li class="flex flex-col items-start md:flex-row md:items-baseline">
+            <li class="flex flex-col md:flex-row md:items-baseline">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -25,14 +24,14 @@ import { education } from "@cv";
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="mr-2 hidden h-5 w-5 self-start md:inline-block"
+                class="mr-2 hidden h-5 w-5 md:inline-block"
               >
                 <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
                 <path d="M22 10v6" />
                 <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
               </svg>
               <div class="relative w-full">
-                <time class="mb-1 text-xs font-bold text-black/50 dark:text-white/50 md:absolute md:right-0 md:top-0 md:mb-0">
+                <time class="mb-1 text-xs font-bold text-black/50 dark:text-white/50 md:absolute md:right-0 md:top-0">
                   {years}
                 </time>
                 <h3 class="text-base font-medium leading-snug text-black dark:text-white">
@@ -48,7 +47,7 @@ import { education } from "@cv";
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
                         fill="currentColor"
-                        class="ml-1 inline-block h-4 w-4 shrink-0 translate-y-px transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
+                        class="ml-1 h-4 w-4"
                         aria-hidden="true"
                       >
                         <path
@@ -62,7 +61,9 @@ import { education } from "@cv";
                     <span>{institution}</span>
                   )}
                 </h3>
-                <p class="mt-1 text-sm">{area}</p>
+                <p class="mt-1 text-sm text-black/75 dark:text-white/75">
+                  {area}
+                </p>
                 {summary && (
                   <div class="mt-4 text-sm">
                     <ul class="space-y-1 text-black/50 dark:text-white/50">

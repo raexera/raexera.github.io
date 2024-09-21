@@ -46,8 +46,7 @@ import { work } from "@cv";
               {/* Content */}
               <div class={isLastItem ? "" : "mb-8"}>
                 <h3 class="font-bold text-black dark:text-white">
-                  {position}
-                  <span>@</span>
+                  {position} <span>@</span>
                   {url ? (
                     <a
                       class="inline-flex items-center hover:text-black/75 dark:hover:text-white/75"
@@ -76,8 +75,7 @@ import { work } from "@cv";
                 </h3>
                 {(location || location_type) && (
                   <p class="mt-2 text-sm text-black/75 dark:text-white/75">
-                    {location}
-                    {location && location_type && " - "}
+                    {location} {location && location_type && " - "}{" "}
                     {location_type}
                   </p>
                 )}

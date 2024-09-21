@@ -4,36 +4,36 @@ import { awards } from "@cv";
 ---
 
 <Section className={Astro.props.className} title="Awards">
-  <ul class="space-y-4 text-black/75 dark:text-white/75">
+  <ul class="space-y-4">
     {
-      awards.map(({ title, date, awarder }) => {
-        return (
-          <li class="flex flex-col items-baseline md:flex-row">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="mr-2 hidden h-5 w-5 self-start md:inline-block"
-            >
-              <circle cx="12" cy="8" r="7" />
-              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
-            </svg>
-            <div class="relative w-full">
-              <time class="mb-1 text-xs font-bold text-black/50 dark:text-white/50 md:absolute md:right-0 md:top-0 md:mb-0">
-                {date}
-              </time>
-              <h3 class="font-medium text-black dark:text-white">{title}</h3>
-              <p class="mt-1 text-sm">{awarder}</p>
-            </div>
-          </li>
-        );
-      })
+      awards.map(({ title, date, awarder }) => (
+        <li class="flex flex-col md:flex-row md:items-baseline">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="mr-2 hidden h-5 w-5 md:inline-block"
+          >
+            <circle cx="12" cy="8" r="7" />
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+          </svg>
+          <div class="relative w-full">
+            <time class="text-xs font-bold text-black/50 dark:text-white/50 md:absolute md:right-0 md:top-0">
+              {date}
+            </time>
+            <h3 class="font-medium text-black dark:text-white">{title}</h3>
+            <p class="mt-1 text-sm text-black/75 dark:text-white/75">
+              {awarder}
+            </p>
+          </div>
+        </li>
+      ))
     }
   </ul>
 </Section>

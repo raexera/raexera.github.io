@@ -5,36 +5,26 @@ import { cn } from "@/lib/utils";
 
 <button
   id="drawer_toggle"
-  aria-label={`Toggle drawer open and closed`}
+  aria-label="Toggle drawer open and closed"
   class={cn(
-    "flex md:hidden",
-    "size-9 rounded-full p-2 items-center justify-center",
+    "md:hidden flex size-9 p-2 rounded-full items-center justify-center",
     "text-black/75 dark:text-white/75",
-    "bg-transparent hover:bg-black/20 dark:hover:bg-white/20",
-    "stroke-current hover:stroke-black hover:dark:stroke-white",
+    "hover:bg-black/20 dark:hover:bg-white/20",
     "border border-black/25 dark:border-white/25",
-    "transition-colors duration-300 ease-in-out",
+    "transition-colors duration-300",
   )}
 >
-  <Icon id="drawer-open" name="menu" class="size-full" />
-  <Icon id="drawer-close" name="close" class="size-full" />
+  <Icon id="drawer-open" name="menu" class="block size-full" />
+  <Icon id="drawer-close" name="close" class="hidden size-full" />
 </button>
 
 <style>
-  #drawer_toggle > #drawer-open {
-    @apply block;
+  #drawer_toggle.open #drawer-open {
+    display: none;
   }
 
-  #drawer_toggle > #drawer-close {
-    @apply hidden;
-  }
-
-  #drawer_toggle.open > #drawer-open {
-    @apply hidden;
-  }
-
-  #drawer_toggle.open > #drawer-close {
-    @apply block;
+  #drawer_toggle.open #drawer-close {
+    display: block;
   }
 </style>
 
@@ -46,11 +36,13 @@ import { cn } from "@/lib/utils";
     drawerButton?.classList.toggle("open");
   }
 
-  function initializeDrawerButton() {
-    const drawerButton = document.getElementById("drawer_toggle");
-    drawerButton?.addEventListener("click", toggleDrawer);
-  }
+  document
+    .getElementById("drawer_toggle")
+    ?.addEventListener("click", toggleDrawer);
 
-  document.addEventListener("astro:after-swap", initializeDrawerButton);
-  initializeDrawerButton();
+  document.addEventListener("astro:after-swap", () => {
+    document
+      .getElementById("drawer_toggle")
+      ?.addEventListener("click", toggleDrawer);
+  });
 </script>

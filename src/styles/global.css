@@ -32,10 +32,12 @@ html {
 }
 
 html {
+  background-color: white;
   color-scheme: light;
 }
 
 html.dark {
+  background-color: black;
   color-scheme: dark;
 }
 
