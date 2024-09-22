@@ -14,13 +14,11 @@ const { url, name, description, highlights, technologies } = Astro.props;
   href={url}
   target="_blank"
   rel="noopener noreferrer"
-  class="group flex items-center gap-3 rounded-lg border border-black/15 p-4 transition-colors hover:bg-black/5 dark:border-white/20 hover:dark:bg-white/10"
+  class="group flex items-center gap-3 rounded-lg border p-4 duration-300 hover:bg-black/5 dark:border-white/20 hover:dark:bg-white/10"
 >
   <div class="w-full group-hover:text-black dark:group-hover:text-white">
     <div class="flex items-center gap-2">
-      <div
-        class="text-base font-bold leading-snug text-black/75 dark:text-white/75"
-      >
+      <div class="text-base font-bold text-black/75 dark:text-white/75">
         {name}
       </div>
       <svg
@@ -55,7 +53,7 @@ const { url, name, description, highlights, technologies } = Astro.props;
       <ul class="flex flex-wrap gap-2">
         {
           technologies.map((tech) => (
-            <li class="flex items-center gap-1 rounded-md border border-black/25 bg-neutral-200/50 px-2 py-1 text-xs text-black/75 dark:border-white/25 dark:bg-neutral-800/50 dark:text-white/75">
+            <li class="flex items-center gap-1 rounded-md border bg-neutral-200/50 px-2 py-1 text-xs text-black/75 dark:bg-neutral-800/50 dark:text-white/75">
               {tech}
             </li>
           ))

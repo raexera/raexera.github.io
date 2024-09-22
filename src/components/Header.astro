@@ -15,7 +15,7 @@ const subpath = pathname.match(/[^/]+/g);
       {/* Logo/Title */}
       <a
         href="/"
-        class="absolute left-0 top-1/2 -translate-y-1/2 font-bold uppercase text-black/75 transition-colors duration-300 hover:text-black dark:text-white/75 dark:hover:text-white"
+        class="absolute left-0 top-1/2 -translate-y-1/2 font-bold uppercase text-black/75 duration-300 hover:text-black hover:transition-colors dark:text-white/75 dark:hover:text-white"
       >
         {SITE.TITLE}
       </a>
@@ -29,7 +29,7 @@ const subpath = pathname.match(/[^/]+/g);
             <a
               href={LINK.HREF}
               class={cn(
-                "flex h-8 items-center justify-center rounded-full px-3 transition-colors duration-300",
+                "flex h-8 items-center justify-center rounded-full px-3 duration-300 hover:transition-colors",
                 pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
                   ? "bg-black text-white dark:bg-white dark:text-black"
                   : "text-black/75 hover:bg-black/20 hover:text-black dark:text-white/75 dark:hover:bg-white/20 dark:hover:text-white",
@@ -48,7 +48,7 @@ const subpath = pathname.match(/[^/]+/g);
           aria-label="Github repository link"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex size-9 items-center justify-center rounded-full border border-black/25 p-2 text-black/75 transition-colors duration-300 hover:bg-black/20 dark:border-white/25 dark:text-white/75 dark:hover:bg-white/20"
+          class="flex size-9 items-center justify-center rounded-full border border-black/25 p-2 text-black/75 duration-300 hover:bg-black/20 hover:transition-colors dark:border-white/25 dark:text-white/75 dark:hover:bg-white/20"
         >
           <Icon name="github" class="block size-full" />
         </a>

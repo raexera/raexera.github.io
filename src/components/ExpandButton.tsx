@@ -37,7 +37,7 @@ export default function ExpandButton({ children }: ExpandButtonProps) {
       </AnimatePresence>
       <button
         onClick={() => setExpanded(!expanded)}
-        className="group/more flex w-fit cursor-pointer items-center justify-center gap-1.5 text-xs text-black/75 underline transition-all hover:text-black dark:text-white/75 dark:hover:text-white"
+        className="group/more flex w-fit cursor-pointer items-center justify-center gap-1.5 text-xs text-black/75 underline duration-300 hover:text-black hover:transition-colors dark:text-white/75 dark:hover:text-white"
       >
         <span>{expanded ? "Show less" : "Show more"}</span>
         <motion.svg
