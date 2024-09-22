@@ -5,9 +5,9 @@ const { technologies, programming_languages } = skills;
 ---
 
 <Section className={Astro.props.className} title="Skills">
-  <h3 class="text-sm font-bold text-black/75 dark:text-white/75">
+  <div class="text-sm font-bold text-black/75 dark:text-white/75">
     Technologies
-  </h3>
+  </div>
   <ul class="flex flex-wrap gap-2">
     {
       technologies.map((tech) => (
@@ -18,9 +18,9 @@ const { technologies, programming_languages } = skills;
     }
   </ul>
 
-  <h3 class="mt-2 text-sm font-bold text-black/75 dark:text-white/75">
+  <div class="mt-2 text-sm font-bold text-black/75 dark:text-white/75">
     Programming Languages
-  </h3>
+  </div>
   <ul class="flex flex-wrap gap-2">
     {
       programming_languages.map((lang) => (

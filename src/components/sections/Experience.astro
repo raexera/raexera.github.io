@@ -45,7 +45,7 @@ import { work } from "@cv";
 
               {/* Content */}
               <div class={isLastItem ? "" : "mb-8"}>
-                <h3 class="font-bold text-black dark:text-white">
+                <div class="font-bold text-black dark:text-white">
                   {position} <span>@</span>
                   {url ? (
                     <a
@@ -72,7 +72,7 @@ import { work } from "@cv";
                   ) : (
                     name
                   )}
-                </h3>
+                </div>
                 {(location || location_type) && (
                   <p class="mt-2 text-sm text-black/75 dark:text-white/75">
                     {location} {location && location_type && " - "}{" "}
@@ -92,9 +92,9 @@ import { work } from "@cv";
                   {responsibilities && (
                     <ExpandButton client:load>
                       <div>
-                        <h4 class="font-medium text-black/75 dark:text-white/75">
+                        <div class="font-medium text-black/75 dark:text-white/75">
                           Responsibilities:
-                        </h4>
+                        </div>
                         <ul class="list-inside list-disc space-y-1 text-black/50 dark:text-white/50">
                           {responsibilities.map((responsibility) => (
                             <li>{responsibility}</li>

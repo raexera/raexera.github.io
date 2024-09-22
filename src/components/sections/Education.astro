@@ -34,7 +34,7 @@ import { education } from "@cv";
                 <time class="mb-1 text-xs font-bold text-black/50 dark:text-white/50 md:absolute md:right-0 md:top-0">
                   {years}
                 </time>
-                <h3 class="text-base font-medium leading-snug text-black dark:text-white">
+                <div class="text-base font-medium leading-snug text-black dark:text-white">
                   {url ? (
                     <a
                       class="inline-flex items-center hover:text-black/75 dark:hover:text-white/75"
@@ -60,7 +60,7 @@ import { education } from "@cv";
                   ) : (
                     <span>{institution}</span>
                   )}
-                </h3>
+                </div>
                 <p class="mt-1 text-sm text-black/75 dark:text-white/75">
                   {area}
                 </p>
