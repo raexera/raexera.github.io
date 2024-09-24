@@ -18,7 +18,7 @@ const { url, name, description, highlights, technologies } = Astro.props;
 >
   <div class="w-full">
     <div class="flex items-center gap-2">
-      <div class="text-base font-bold text-black/75 dark:text-white/75">
+      <div class="text-base font-bold text-black/80 dark:text-white/80">
         {name}
       </div>
       <svg
@@ -46,14 +46,14 @@ const { url, name, description, highlights, technologies } = Astro.props;
       </svg>
     </div>
     <div class="mt-2 flex flex-col gap-2">
-      <p class="text-sm text-black/75 dark:text-white/75">{description}</p>
+      <p class="text-sm text-black/80 dark:text-white/80">{description}</p>
       <p class="text-sm text-black/50 dark:text-white/50">
         {highlights.join(" ")}
       </p>
       <ul class="flex flex-wrap gap-2">
         {
           technologies.map((tech) => (
-            <li class="flex items-center gap-1 rounded-md border border-black/25 bg-neutral-200/50 px-2 py-1 text-xs text-black/75 dark:border-white/25 dark:bg-neutral-800/50 dark:text-white/75">
+            <li class="flex items-center gap-1 rounded-md border border-black/25 bg-neutral-200/50 px-2 py-1 text-xs text-black/80 dark:border-white/25 dark:bg-neutral-800/50 dark:text-white/80">
               {tech}
             </li>
           ))

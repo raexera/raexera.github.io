@@ -49,7 +49,7 @@ import { work } from "@cv";
                   {position} <span>@</span>
                   {url ? (
                     <a
-                      class="inline-flex items-center duration-300 hover:text-black/75 hover:transition-colors dark:hover:text-white/75"
+                      class="inline-flex items-center duration-300 hover:text-black/80 hover:transition-colors dark:hover:text-white/80"
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -74,7 +74,7 @@ import { work } from "@cv";
                   )}
                 </div>
                 {(location || location_type) && (
-                  <p class="mt-2 text-sm text-black/75 dark:text-white/75">
+                  <p class="mt-2 text-sm text-black/80 dark:text-white/80">
                     {location} {location && location_type && " - "}{" "}
                     {location_type}
                   </p>
@@ -92,7 +92,7 @@ import { work } from "@cv";
                   {responsibilities && (
                     <ExpandButton client:load>
                       <div>
-                        <div class="font-medium text-black/75 dark:text-white/75">
+                        <div class="font-medium text-black/80 dark:text-white/80">
                           Responsibilities:
                         </div>
                         <ul class="list-inside list-disc space-y-1 text-black/50 dark:text-white/50">
