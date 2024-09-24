@@ -1,9 +1,8 @@
 ---
 import Button from "@/components/Button.astro";
 import Container from "@/components/Container.astro";
+import Photo from "@/components/Photo";
 import PageLayout from "@/layouts/PageLayout.astro";
-import PFP from "@/assets/images/pfp.png";
-import { Image } from "astro:assets";
 import { SITE } from "@/consts";
 import { basics } from "@cv";
 const { name, label, summary, socials } = basics;
@@ -11,36 +10,36 @@ const { name, label, summary, socials } = basics;
 
 <PageLayout title="Home" description={SITE.DESCRIPTION}>
   <section class="h-full">
-    <Container size="lg">
-      <div class="my-24 flex h-screen items-center justify-center md:my-0">
+    <Container size="xl">
+      <div class="my-24 flex h-screen items-center justify-center xl:my-0">
         <div
-          class="flex flex-col-reverse items-center justify-between gap-8 md:flex-row"
+          class="flex flex-col-reverse items-center justify-between xl:flex-row"
         >
           <!-- Text Section -->
-          <div class="w-full text-justify md:w-1/2 md:text-start">
+          <div class="w-full text-justify xl:w-1/2 xl:text-start">
             <div class="flex flex-col items-start gap-2">
               <p
-                class="text-sm tracking-tight text-neutral-900 dark:text-neutral-50 lg:text-lg"
+                class="text-md tracking-tight text-neutral-900 dark:text-neutral-50 xl:text-xl"
               >
                 Hi, my name is
               </p>
               <h1
-                class="bg-gradient-to-b from-neutral-900 to-neutral-600 bg-clip-text text-start text-4xl font-bold tracking-tight text-transparent dark:from-neutral-50 dark:to-neutral-400 lg:text-6xl"
+                class="bg-gradient-to-b from-neutral-900 to-neutral-600 bg-clip-text text-start text-4xl font-bold tracking-tight text-transparent dark:from-neutral-50 dark:to-neutral-400 xl:text-8xl"
               >
                 {name}.
               </h1>
             </div>
             <p
-              class="mt-2 text-sm font-medium text-black/75 dark:text-white/75 lg:text-lg"
+              class="text-md mt-2 font-medium text-black/75 dark:text-white/75 xl:text-xl"
             >
               {label}.
             </p>
             <p
-              class="mt-2 text-sm font-medium text-black/75 dark:text-white/75 lg:text-lg"
+              class="text-md mt-2 font-medium text-black/75 dark:text-white/75 xl:text-xl"
             >
               {summary}.
             </p>
-            <div class="mt-5 flex flex-wrap items-center gap-2">
+            <div class="mt-5 flex flex-wrap items-center gap-6">
               {
                 socials.map((item) => (
                   <Button
@@ -54,17 +53,8 @@ const { name, label, summary, socials } = basics;
           </div>
 
           <!-- Photo Section -->
-          <div class="w-full md:w-auto">
-            <div
-              class="mx-auto w-full max-w-xs rounded-3xl border border-black/25 bg-white p-10 dark:border-white/25 dark:bg-black"
-            >
-              <Image
-                src={PFP}
-                alt="Profile Picture"
-                loading="eager"
-                class="w-full rounded-xl object-cover"
-              />
-            </div>
+          <div class="mb-8 xl:mb-0">
+            <Photo client:load imageSrc="/assets/photo.png" imageAlt={name} />
           </div>
         </div>
       </div>

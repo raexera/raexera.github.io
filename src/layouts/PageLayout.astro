@@ -18,14 +18,13 @@ import { SITE } from "@/consts";
   <body>
     <Boxes client:load />
     <Starry
-      client:idle
+      client:load
       id="tsparticlesfullpage"
-      background="transparent"
-      minSize={0.6}
-      maxSize={1.8}
-      opacity={0.3}
+      minSize={0.5}
+      maxSize={1.5}
+      opacity={0.5}
       particleDensity={100}
-      className="fixed inset-0 z-0"
+      className="fixed h-full w-full"
     />
     <Header />
     <Drawer />
