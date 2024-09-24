@@ -11,11 +11,11 @@ import { SITE } from "@/consts";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate="none">
   <head>
     <BaseHead title={`${title} - ${SITE.TITLE}`} description={description} />
   </head>
-  <body transition:animate="none">
+  <body>
     <Boxes client:load />
     <Starry
       client:load
