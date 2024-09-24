@@ -10,25 +10,15 @@ interface PhotoProps {
 export default function Photo({ imageSrc, imageAlt }: PhotoProps) {
   return (
     <div className="relative h-full w-full">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 0.4, ease: "easeIn" }}
-        className="relative flex items-center justify-center"
-      >
+      <div className="relative flex items-center justify-center">
         {/* Image */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2.4, duration: 0.4, ease: "easeInOut" }}
-          className="absolute h-[298px] w-[298px] p-10 mix-blend-lighten xl:h-[498px] xl:w-[498px]"
-        >
+        <div className="absolute h-[298px] w-[298px] p-10 mix-blend-lighten xl:h-[498px] xl:w-[498px]">
           <img
             src={imageSrc}
             alt={imageAlt}
             className="h-full w-full rounded-full object-contain"
           />
-        </motion.div>
+        </div>
 
         {/* Circle */}
         <motion.svg
@@ -57,7 +47,7 @@ export default function Photo({ imageSrc, imageAlt }: PhotoProps) {
             }}
           />
         </motion.svg>
-      </motion.div>
+      </div>
     </div>
   );
 }

@@ -8,7 +8,7 @@ type Props = {
 const { title, description, highlight } = Astro.props;
 ---
 
-<header class="flex flex-col items-center">
+<header class="flex flex-col items-center" transition:animate="slide">
   <div>
     <h1 class="mb-6 text-center">
       {title}

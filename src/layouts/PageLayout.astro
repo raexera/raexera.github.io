@@ -15,7 +15,7 @@ import { SITE } from "@/consts";
   <head>
     <BaseHead title={`${title} - ${SITE.TITLE}`} description={description} />
   </head>
-  <body>
+  <body transition:animate="fade">
     <Boxes client:load />
     <Starry
       client:load

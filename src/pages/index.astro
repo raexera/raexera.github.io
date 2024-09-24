@@ -8,12 +8,15 @@ const { name, label, summary, socials } = basics;
 ---
 
 <PageLayout title="Home" description={SITE.DESCRIPTION}>
-  <section class="h-full">
+  <section class="h-full" transition:animate="slide">
     <div class="flex h-full items-center justify-center">
       <div class="container mx-auto my-24 xl:my-0">
         <div class="flex flex-col items-center justify-between xl:flex-row">
           <!-- Text Section -->
-          <div class="order-2 text-center xl:order-none xl:text-left">
+          <div
+            class="order-2 text-center xl:order-none xl:text-left"
+            transition:animate="slide"
+          >
             <span class="text-xl">Hi, my name is</span>
             <h1 class="mb-6">
               {name}
@@ -37,7 +40,10 @@ const { name, label, summary, socials } = basics;
             </div>
           </div>
           <!-- Photo Section -->
-          <div class="order-1 mb-8 xl:order-none xl:mb-0">
+          <div
+            class="order-1 mb-8 xl:order-none xl:mb-0"
+            transition:animate="slide"
+          >
             <Photo client:load imageSrc="/assets/photo.png" imageAlt={name} />
           </div>
         </div>
