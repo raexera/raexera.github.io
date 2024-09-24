@@ -10,15 +10,18 @@ const { name, label, summary, socials } = basics;
 <PageLayout title="Home" description={SITE.DESCRIPTION}>
   <section class="h-full">
     <div class="flex h-full items-center justify-center">
-      <div class="container mx-auto">
+      <div class="container mx-auto my-24 xl:my-0">
         <div class="flex flex-col items-center justify-between xl:flex-row">
           <!-- Text Section -->
           <div class="order-2 text-center xl:order-none xl:text-left">
             <span class="text-xl">Hi, my name is</span>
-            <h1 class="mb-6 text-[48px] font-bold leading-[1.1] xl:text-[80px]">
+            <h1 class="mb-6">
               {name}
             </h1>
-            <p class="mb-8 max-w-[500px] text-white/80">{label} {summary}</p>
+            <p class="mb-8 max-w-[500px] text-black/80 dark:text-white/80">
+              {label}
+              {summary}
+            </p>
             <div
               class="flex flex-row items-center justify-center gap-8 xl:justify-start"
             >

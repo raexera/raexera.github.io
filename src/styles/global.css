@@ -10,13 +10,24 @@
     font-style: normal;
     font-display: swap;
   }
-
   @font-face {
     font-family: "Inter";
     src: url("/fonts/Inter-Bold.woff2") format("woff2");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
+  }
+  body {
+    @apply leading-loose;
+  }
+  h1 {
+    @apply text-[48px] font-bold leading-[1.1] xl:text-[80px];
+  }
+  h2 {
+    @apply text-[36px] font-bold leading-[1.1] xl:text-[48px];
+  }
+  h3 {
+    @apply text-[20px] font-bold leading-[1.1] xl:text-[24px];
   }
 }
 
