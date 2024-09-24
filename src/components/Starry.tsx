@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { type Container, type ISourceOptions } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
@@ -14,60 +14,47 @@ type ParticlesProps = {
   opacity?: number;
 };
 
-const Starry = (props: ParticlesProps) => {
-  const { className, minSize, maxSize, speed, particleDensity, opacity } =
-    props;
-
+const Starry = ({
+  className,
+  minSize,
+  maxSize,
+  speed,
+  particleDensity,
+  opacity,
+}: ParticlesProps) => {
   const [init, setInit] = useState(false);
   const [particleColor, setParticleColor] = useState("#000");
   const controls = useAnimation();
 
   useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
+    initParticlesEngine(loadSlim).then(() => setInit(true));
 
     const updateParticleColor = () => {
       const isDarkMode = document.documentElement.classList.contains("dark");
       setParticleColor(isDarkMode ? "#FFF" : "#000");
     };
-
     updateParticleColor();
 
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (
-          mutation.type === "attributes" &&
-          mutation.attributeName === "class"
-        ) {
-          updateParticleColor();
-        }
-      });
-    });
-
+    const observer = new MutationObserver(updateParticleColor);
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ["class"],
     });
 
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
-  const particlesLoaded = async (container?: Container) => {
-    if (container) {
-      controls.start({
-        opacity: opacity || 1,
-        transition: {
-          duration: 1,
-          delay: 2,
-        },
-      });
-    }
-  };
+  const particlesLoaded = useCallback(
+    async (container?: Container) => {
+      if (container) {
+        await controls.start({
+          opacity: opacity || 1,
+          transition: { duration: 1, delay: 2 },
+        });
+      }
+    },
+    [controls, opacity],
+  );
 
   const options: ISourceOptions = useMemo(
     () => ({
@@ -441,19 +428,15 @@ const Starry = (props: ParticlesProps) => {
     [minSize, maxSize, speed, particleDensity, opacity, particleColor],
   );
 
-  if (init) {
-    return (
-      <motion.div animate={controls} className={cn("opacity-0", className)}>
-        <Particles
-          id="tsparticles"
-          particlesLoaded={particlesLoaded}
-          options={options}
-        />
-      </motion.div>
-    );
-  }
-
-  return <></>;
+  return init ? (
+    <motion.div animate={controls} className={cn("opacity-0", className)}>
+      <Particles
+        id="tsparticles"
+        particlesLoaded={particlesLoaded}
+        options={options}
+      />
+    </motion.div>
+  ) : null;
 };
 
 export default Starry;
