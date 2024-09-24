@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 
 type ParticlesProps = {
   className?: string;
-  particleSize?: number;
   minSize?: number;
   maxSize?: number;
   speed?: number;
@@ -439,7 +438,7 @@ const Starry = (props: ParticlesProps) => {
       },
       detectRetina: true,
     }),
-    [],
+    [minSize, maxSize, speed, particleDensity, opacity, particleColor],
   );
 
   if (init) {
