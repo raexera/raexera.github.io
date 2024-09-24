@@ -21,7 +21,7 @@ export default function Photo({ imageSrc, imageAlt }: PhotoProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.4, duration: 0.4, ease: "easeInOut" }}
-          className="absolute h-[298px] w-[298px] p-10 xl:h-[498px] xl:w-[498px]"
+          className="absolute h-[298px] w-[298px] p-10 mix-blend-lighten xl:h-[498px] xl:w-[498px]"
         >
           <img
             src={imageSrc}
