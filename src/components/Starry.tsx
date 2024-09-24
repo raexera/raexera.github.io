@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { type Container, type ISourceOptions } from "@tsparticles/engine";
@@ -8,7 +6,6 @@ import { motion, useAnimation } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 type ParticlesProps = {
-  id?: string;
   className?: string;
   particleSize?: number;
   minSize?: number;
@@ -18,13 +15,12 @@ type ParticlesProps = {
   opacity?: number;
 };
 
-let themeableContainer: Container | undefined;
-
 const Starry = (props: ParticlesProps) => {
-  const { id, className, minSize, maxSize, speed, particleDensity, opacity } =
+  const { className, minSize, maxSize, speed, particleDensity, opacity } =
     props;
 
   const [init, setInit] = useState(false);
+  const [particleColor, setParticleColor] = useState("#000");
   const controls = useAnimation();
 
   useEffect(() => {
@@ -34,26 +30,36 @@ const Starry = (props: ParticlesProps) => {
       setInit(true);
     });
 
-    const updateTheme = () => {
+    const updateParticleColor = () => {
       const isDarkMode = document.documentElement.classList.contains("dark");
-      themeableContainer?.loadTheme(isDarkMode ? "dark" : "light");
+      setParticleColor(isDarkMode ? "#FFF" : "#000");
     };
 
-    const observer = new MutationObserver(updateTheme);
+    updateParticleColor();
+
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (
+          mutation.type === "attributes" &&
+          mutation.attributeName === "class"
+        ) {
+          updateParticleColor();
+        }
+      });
+    });
+
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ["class"],
     });
 
-    updateTheme();
-
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
-  const particlesLoaded = async (container?: Container): Promise<void> => {
+  const particlesLoaded = async (container?: Container) => {
     if (container) {
-      themeableContainer = container;
-      themeableContainer!.canvas.initBackground();
       controls.start({
         opacity: opacity || 1,
         transition: {
@@ -128,7 +134,7 @@ const Starry = (props: ParticlesProps) => {
           },
         },
         color: {
-          value: "#fff",
+          value: particleColor,
           animation: {
             h: {
               count: 0,
@@ -401,7 +407,7 @@ const Starry = (props: ParticlesProps) => {
         links: {
           blink: false,
           color: {
-            value: "#fff",
+            value: "#FFF",
           },
           consent: false,
           distance: 100,
@@ -431,36 +437,6 @@ const Starry = (props: ParticlesProps) => {
           speed: 1,
         },
       },
-      themes: [
-        {
-          name: "dark",
-          default: {
-            value: true,
-            mode: "dark",
-          },
-          options: {
-            particles: {
-              color: {
-                value: "#fff",
-              },
-            },
-          },
-        },
-        {
-          name: "light",
-          default: {
-            value: false,
-            mode: "light",
-          },
-          options: {
-            particles: {
-              color: {
-                value: "#000",
-              },
-            },
-          },
-        },
-      ],
       detectRetina: true,
     }),
     [],
@@ -470,13 +446,15 @@ const Starry = (props: ParticlesProps) => {
     return (
       <motion.div animate={controls} className={cn("opacity-0", className)}>
         <Particles
-          id={id || "tsparticles"}
+          id="tsparticles"
           particlesLoaded={particlesLoaded}
           options={options}
         />
       </motion.div>
     );
   }
+
+  return <></>;
 };
 
 export default Starry;
