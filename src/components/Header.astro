@@ -60,10 +60,18 @@ const subpath = pathname.match(/[^/]+/g);
 </header>
 
 <script is:inline>
-  function onScroll() {
-    const header = document.getElementById("header");
-    header.classList.toggle("scrolled", window.scrollY > 0);
+  const header = document.getElementById("header");
+
+  function handleScroll() {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 0) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
   }
 
-  document.addEventListener("scroll", onScroll);
+  handleScroll();
+  document.addEventListener("astro:after-swap", handleScroll);
 </script>

@@ -4,13 +4,13 @@ import Heading from "@/components/Heading.astro";
 import Education from "@/components/sections/Education.astro";
 import Experience from "@/components/sections/Experience.astro";
 import Skills from "@/components/sections/Skills.astro";
-import PageLayout from "@/layouts/PageLayout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import TopLayout from "@/layouts/TopLayout.astro";
 import BottomLayout from "@/layouts/BottomLayout.astro";
 import { SITE } from "@/consts";
 ---
 
-<PageLayout title="About" description={SITE.DESCRIPTION}>
+<BaseLayout title="About" description={SITE.DESCRIPTION}>
   <TopLayout>
     <Heading
       title="About Me"
@@ -29,4 +29,4 @@ import { SITE } from "@/consts";
       <Education class="order-first" />
     </div>
   </BottomLayout>
-</PageLayout>
+</BaseLayout>

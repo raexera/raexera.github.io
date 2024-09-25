@@ -1,14 +1,14 @@
 ---
 import Card from "@/components/Card.astro";
 import Heading from "@/components/Heading.astro";
-import PageLayout from "@/layouts/PageLayout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import TopLayout from "@/layouts/TopLayout.astro";
 import BottomLayout from "@/layouts/BottomLayout.astro";
 import { SITE } from "@/consts";
 import { projects } from "@cv";
 ---
 
-<PageLayout title="Projects" description={SITE.DESCRIPTION}>
+<BaseLayout title="Projects" description={SITE.DESCRIPTION}>
   <TopLayout>
     <Heading
       title="My Projects"
@@ -30,4 +30,4 @@ import { projects } from "@cv";
       }
     </div>
   </BottomLayout>
-</PageLayout>
+</BaseLayout>

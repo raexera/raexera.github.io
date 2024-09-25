@@ -35,7 +35,6 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── README.md
 ├── src
 │   ├── components
-│   │   ├── BaseHead.astro
 │   │   ├── Boxes.tsx
 │   │   ├── Button.astro
 │   │   ├── Card.astro
@@ -67,8 +66,9 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   ├── sun.svg
 │   │   └── telegram.svg
 │   ├── layouts
+│   │   ├── BaseHead.astro
+│   │   ├── BaseLayout.astro
 │   │   ├── BottomLayout.astro
-│   │   ├── PageLayout.astro
 │   │   └── TopLayout.astro
 │   ├── lib
 │   │   └── utils.ts
