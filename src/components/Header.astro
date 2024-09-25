@@ -1,7 +1,6 @@
 ---
 import Container from "@/components/Container.astro";
 import ThemeToggle from "./ThemeToggle.astro";
-import DrawerToggle from "./DrawerToggle.astro";
 import { Icon } from "astro-icon/components";
 import { SITE, LINKS } from "@/consts";
 import { cn } from "@/lib/utils";
@@ -9,7 +8,10 @@ const { pathname } = Astro.url;
 const subpath = pathname.match(/[^/]+/g);
 ---
 
-<header id="header" class="fixed top-0 z-50 h-16 w-full print:hidden">
+<header
+  id="header"
+  class="fixed top-0 z-50 hidden h-16 w-full md:block print:hidden"
+>
   <Container size="md">
     <div class="relative h-full w-full">
       {/* Logo/Title */}
@@ -53,7 +55,6 @@ const subpath = pathname.match(/[^/]+/g);
           <Icon name="github" class="block size-full" />
         </a>
         <ThemeToggle />
-        <DrawerToggle />
       </div>
     </div>
   </Container>

@@ -1,0 +1,51 @@
+---
+import Container from "@/components/Container.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+import { Icon } from "astro-icon/components";
+import { SITE, LINKS } from "@/consts";
+import { cn } from "@/lib/utils";
+const { pathname } = Astro.url;
+const subpath = pathname.match(/[^/]+/g);
+---
+
+<div class="fixed bottom-4 left-1/2 z-50 block h-16 -translate-x-1/2 sm:hidden">
+  <Container size="sm">
+    <div
+      class="flex items-center gap-4 rounded-full border border-black/25 bg-white/80 px-4 py-2 shadow-lg saturate-200 dark:border-white/25 dark:bg-black/50"
+    >
+      <!-- Navigation Links -->
+      <nav class="flex gap-2">
+        {
+          LINKS.map((LINK) => (
+            <a
+              href={LINK.HREF}
+              class={cn(
+                "flex items-center justify-center rounded-full duration-300 hover:transition-colors",
+                pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
+                  ? "text-black underline dark:text-white"
+                  : "text-black/80 hover:bg-black/20 hover:text-black dark:text-white/80 dark:hover:bg-white/20 dark:hover:text-white",
+              )}
+            >
+              {LINK.TEXT}
+            </a>
+          ))
+        }
+      </nav>
+      <!-- Separator -->
+      <div class="h-6 w-0.5 bg-black/80 dark:bg-white/80"></div>
+      <!-- Button -->
+      <div class="flex gap-2">
+        <a
+          href={SITE.REPO_URL}
+          aria-label="Github repository link"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex size-9 items-center justify-center rounded-full border border-black/25 p-2 text-black/80 duration-300 hover:bg-black/20 hover:transition-colors dark:border-white/25 dark:text-white/80 dark:hover:bg-white/20"
+        >
+          <Icon name="github" class="block size-full" />
+        </a>
+        <ThemeToggle />
+      </div>
+    </div>
+  </Container>
+</div>

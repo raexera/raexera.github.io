@@ -39,12 +39,11 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   ├── Button.astro
 │   │   ├── Card.astro
 │   │   ├── Container.astro
-│   │   ├── Drawer.astro
-│   │   ├── DrawerToggle.astro
 │   │   ├── ExpandButton.tsx
 │   │   ├── Footer.astro
 │   │   ├── Header.astro
 │   │   ├── Heading.astro
+│   │   ├── Navbar.astro
 │   │   ├── Photo.tsx
 │   │   ├── Section.astro
 │   │   ├── sections
@@ -82,7 +81,7 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── tailwind.config.mjs
 └── tsconfig.json
 
-12 directories, 53 files
+12 directories, 52 files
 ```
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.

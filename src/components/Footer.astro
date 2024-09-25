@@ -1,19 +1,16 @@
 ---
 import { SITE } from "@/consts";
-import Container from "@/components/Container.astro";
 ---
 
-<footer class="relative mt-auto bg-white dark:bg-black">
+<footer class="relative mt-auto hidden bg-white dark:bg-black md:block">
   <section
     class="overflow-hidden border-t border-black/25 py-3 dark:border-white/25"
   >
-    <Container size="md">
-      <div class="flex h-full items-center justify-center print:hidden">
-        <p class="text-center text-sm text-black/80 dark:text-white/80">
-          &copy; {new Date().getFullYear()}
-          {SITE.AUTHOR}. All rights reserved.
-        </p>
-      </div>
-    </Container>
+    <div class="flex h-full items-center justify-center print:hidden">
+      <p class="text-center text-sm text-black/80 dark:text-white/80">
+        &copy; {new Date().getFullYear()}
+        {SITE.AUTHOR}. All rights reserved.
+      </p>
+    </div>
   </section>
 </footer>
