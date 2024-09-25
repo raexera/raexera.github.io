@@ -11,7 +11,7 @@ const subpath = pathname.match(/[^/]+/g);
 <div class="fixed bottom-4 left-1/2 z-50 block h-16 -translate-x-1/2 sm:hidden">
   <Container size="sm">
     <div
-      class="flex items-center gap-4 rounded-full border border-black/25 bg-white/80 px-4 py-2 shadow-lg saturate-200 dark:border-white/25 dark:bg-black/50"
+      class="flex items-center gap-4 rounded-full border border-black/25 bg-white/80 px-4 py-2 shadow-lg saturate-200 backdrop-blur-sm dark:border-white/25 dark:bg-black/50"
     >
       <!-- Navigation Links -->
       <nav class="flex gap-2">
@@ -23,7 +23,7 @@ const subpath = pathname.match(/[^/]+/g);
                 "flex items-center justify-center rounded-full duration-300 hover:transition-colors",
                 pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
                   ? "text-black underline dark:text-white"
-                  : "text-black/80 hover:bg-black/20 hover:text-black dark:text-white/80 dark:hover:bg-white/20 dark:hover:text-white",
+                  : "text-black/80 hover:text-black dark:text-white/80 dark:hover:text-white",
               )}
             >
               {LINK.TEXT}
