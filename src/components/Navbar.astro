@@ -20,9 +20,9 @@ const subpath = pathname.match(/[^/]+/g);
             <a
               href={LINK.HREF}
               class={cn(
-                "flex items-center justify-center rounded-full duration-300 hover:transition-colors",
+                "flex items-center justify-center duration-300 hover:transition-colors",
                 pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
-                  ? "text-black underline dark:text-white"
+                  ? "border-b-2 border-black text-black dark:border-white dark:text-white"
                   : "text-black/80 hover:text-black dark:text-white/80 dark:hover:text-white",
               )}
             >
