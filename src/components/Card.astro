@@ -11,9 +11,9 @@ const { url, name, description, highlights, technologies } = Astro.props;
 ---
 
 <section
-  class="group flex items-center gap-3 rounded-lg border p-4 duration-300 hover:bg-black/5 hover:transition-colors group-hover:text-black dark:border-white/20 hover:dark:bg-white/10 dark:group-hover:text-white"
+  class="group flex items-center gap-4 rounded-lg border border-black/25 bg-white/80 p-4 saturate-200 backdrop-blur-sm transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg dark:border-white/25 dark:bg-black/50 dark:hover:shadow-white/10"
 >
-  <a href={url} target="_blank" rel="noopener noreferrer">
+  <a href={url} target="_blank" rel="noopener noreferrer" class="w-full">
     <div class="w-full">
       <div class="flex items-center gap-2">
         <div class="text-base font-bold text-black/80 dark:text-white/80">
