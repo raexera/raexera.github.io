@@ -1,11 +1,17 @@
 ---
 import { Icon } from "astro-icon/components";
 import { cn } from "@/lib/utils";
+
+type Props = {
+  id: string;
+};
+
+const { id } = Astro.props;
 ---
 
 <button
-  id="themeToggle"
-  aria-label={`Toggle light and dark theme`}
+  id={id}
+  aria-label="Toggle light and dark theme"
   class={cn(
     "flex",
     "size-9 rounded-full p-2 items-center justify-center",
@@ -13,16 +19,16 @@ import { cn } from "@/lib/utils";
     "bg-transparent hover:bg-black/20 dark:hover:bg-white/20",
     "stroke-current hover:stroke-black hover:dark:stroke-white",
     "border border-black/25 dark:border-white/25",
-    "hover:transition-colors duration-300 ",
+    "hover:transition-colors duration-300",
   )}
 >
   <Icon name="sun" class="block size-full dark:hidden" />
   <Icon name="moon" class="hidden size-full dark:block" />
 </button>
 
-<script>
+<script define:vars={{ id }}>
   const setToggleListener = () => {
-    let toggleBtn = document.getElementById("themeToggle");
+    let toggleBtn = document.getElementById(id);
     const handleToggleClick = () => {
       const element = document.documentElement;
       element.classList.toggle("dark");
