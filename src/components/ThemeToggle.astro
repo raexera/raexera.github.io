@@ -26,7 +26,7 @@ const { id } = Astro.props;
   <Icon name="moon" class="hidden size-full dark:block" />
 </button>
 
-<script define:vars={{ id }}>
+<script is:inline define:vars={{ id }}>
   const setToggleListener = () => {
     let toggleBtn = document.getElementById(id);
     const handleToggleClick = () => {
