@@ -8,22 +8,18 @@ type Props = {
 const { title, description, highlight } = Astro.props;
 ---
 
-<header class="flex flex-col items-center">
-  <div>
-    <h1 class="mb-6 text-center">
-      {title}
-    </h1>
-    <p class="mb-6 text-justify text-black/80 dark:text-white/80">
-      {description}
-    </p>
-    {
-      highlight && (
-        <div>
-          {highlight.map((item) => (
-            <p class="text-justify text-black/80 dark:text-white/80">{item}</p>
-          ))}
-        </div>
-      )
-    }
-  </div>
+<header class="flex flex-col items-center sm:mt-24">
+  <h1 class="mb-6 text-center">{title}</h1>
+  <p class="mb-6 text-justify text-black/80 dark:text-white/80">
+    {description}
+  </p>
+  {
+    highlight && (
+      <div>
+        {highlight.map((item) => (
+          <p class="text-justify text-black/80 dark:text-white/80">{item}</p>
+        ))}
+      </div>
+    )
+  }
 </header>

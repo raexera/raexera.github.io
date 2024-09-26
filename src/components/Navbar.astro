@@ -1,19 +1,19 @@
 ---
-import Container from "@/components/Container.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 import { Icon } from "astro-icon/components";
 import { SITE, LINKS } from "@/consts";
 import { cn } from "@/lib/utils";
+
 const { pathname } = Astro.url;
 const subpath = pathname.match(/[^/]+/g);
 ---
 
 <div class="fixed bottom-2 left-1/2 z-50 block h-16 -translate-x-1/2 sm:hidden">
-  <Container size="sm">
+  <div class="container mx-auto">
     <div
       class="flex items-center gap-4 rounded-full border border-black/25 bg-white/80 px-4 py-2 shadow-lg saturate-200 backdrop-blur-sm dark:border-white/25 dark:bg-black/50"
     >
-      <!-- Navigation Links -->
+      <!-- Navigation links -->
       <nav class="flex gap-2">
         {
           LINKS.map((LINK) => (
@@ -31,9 +31,11 @@ const subpath = pathname.match(/[^/]+/g);
           ))
         }
       </nav>
+
       <!-- Separator -->
       <div class="h-6 w-0.5 bg-black/25 dark:bg-white/25"></div>
-      <!-- Button -->
+
+      <!-- Action Buttons -->
       <div class="flex gap-2">
         <a
           href={SITE.REPO_URL}
@@ -47,5 +49,5 @@ const subpath = pathname.match(/[^/]+/g);
         <ThemeToggle id="navbarThemeToggle" />
       </div>
     </div>
-  </Container>
+  </div>
 </div>
