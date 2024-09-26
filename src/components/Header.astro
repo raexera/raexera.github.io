@@ -60,19 +60,24 @@ const subpath = pathname.match(/[^/]+/g);
   </Container>
 </header>
 
-<script is:inline>
-  const header = document.getElementById("header");
-
+<script>
   function handleScroll() {
-    window.addEventListener("scroll", () => {
+    const header = document.getElementById("header");
+    if (header) {
       if (window.scrollY > 0) {
         header.classList.add("scrolled");
       } else {
         header.classList.remove("scrolled");
       }
-    });
+    }
   }
 
-  handleScroll();
-  document.addEventListener("astro:after-swap", handleScroll);
+  function setupScrollHandler() {
+    window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+  }
+  setupScrollHandler();
+
+  document.addEventListener("astro:after-swap", setupScrollHandler);
 </script>
