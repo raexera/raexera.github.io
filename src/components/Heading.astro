@@ -15,7 +15,7 @@ const { title, description, highlight } = Astro.props;
   </p>
   {
     highlight && (
-      <div>
+      <div class="mb-6">
         {highlight.map((item) => (
           <p class="text-justify text-black/80 dark:text-white/80">{item}</p>
         ))}
