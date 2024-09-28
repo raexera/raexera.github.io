@@ -1,23 +1,16 @@
 ---
-import Awards from "@/components/sections/Awards.astro";
+import Awards from "@/components/Awards.astro";
 import Heading from "@/components/Heading.astro";
-import Education from "@/components/sections/Education.astro";
-import Experience from "@/components/sections/Experience.astro";
-import Skills from "@/components/sections/Skills.astro";
+import Education from "@/components/Education.astro";
+import Experience from "@/components/Experience.astro";
+import Skills from "@/components/Skills.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { SITE } from "@/consts";
 ---
 
 <BaseLayout title="About" description={SITE.DESCRIPTION}>
   <div class="container mx-auto my-24 xl:my-5">
-    <Heading
-      title="About Me"
-      description="Hello 👋 I'm Rayhan Kafi Pratama, a bachelor of computer science student."
-      highlight={[
-        "My passion for crafting software that turns ideas into reality through elegant and intuitive interfaces.",
-        "I place a strong emphasis on creating seamless experiences, robust architecture, and high-quality code. I'm always eager to enhance my skills and contribute to meaningful and impactful projects.",
-      ]}
-    />
+    <Heading title="About Me" />
     <div class="space-y-8 md:col-span-4">
       <Experience />
       <Skills />

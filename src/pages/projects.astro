@@ -8,10 +8,7 @@ import { projects } from "@cv";
 
 <BaseLayout title="Projects" description={SITE.DESCRIPTION}>
   <div class="container mx-auto my-24 xl:my-5">
-    <Heading
-      title="My Projects"
-      description="Explore a collection of my projects here. As an open-source enthusiast, I'm passionate about collaboration and knowledge-sharing."
-    />
+    <Heading title="My Projects" />
     <div class="grid w-full grid-cols-1 gap-5 sm:grid-cols-2">
       {
         projects.map(({ url, name, description, highlights, technologies }) => (

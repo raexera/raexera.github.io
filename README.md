@@ -35,22 +35,20 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── README.md
 ├── src
 │   ├── components
+│   │   ├── Awards.astro
 │   │   ├── Boxes.tsx
 │   │   ├── Button.astro
 │   │   ├── Card.astro
-│   │   ├── Container.astro
+│   │   ├── Education.astro
 │   │   ├── ExpandButton.tsx
+│   │   ├── Experience.astro
 │   │   ├── Footer.astro
 │   │   ├── Header.astro
 │   │   ├── Heading.astro
 │   │   ├── Navbar.astro
 │   │   ├── Photo.tsx
 │   │   ├── Section.astro
-│   │   ├── sections
-│   │   │   ├── Awards.astro
-│   │   │   ├── Education.astro
-│   │   │   ├── Experience.astro
-│   │   │   └── Skills.astro
+│   │   ├── Skills.astro
 │   │   ├── Starry.tsx
 │   │   └── ThemeToggle.astro
 │   ├── consts.ts
@@ -66,9 +64,7 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   └── telegram.svg
 │   ├── layouts
 │   │   ├── BaseHead.astro
-│   │   ├── BaseLayout.astro
-│   │   ├── BottomLayout.astro
-│   │   └── TopLayout.astro
+│   │   └── BaseLayout.astro
 │   ├── lib
 │   │   └── utils.ts
 │   ├── pages
@@ -81,7 +77,7 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── tailwind.config.mjs
 └── tsconfig.json
 
-12 directories, 52 files
+11 directories, 49 files
 ```
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.

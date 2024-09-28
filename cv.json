@@ -2,8 +2,10 @@
   "basics": {
     "name": "Rayhan Kafi Pratama",
     "nickname": "rxyhn",
-    "label": "Computer Science Student at Bina Nusantara University",
-    "summary": "Passionate about software development, problem-solving, and continuous learning. Strong advocate for clean code, best practices, and agile methodologies",
+    "label": "Undergraduate of Computer Science at Bina Nusantara University.",
+    "roles": ["Back-End Developer", "DevOps Engineer"],
+    "summary": "Crafting scalable and resilient systems that turn ideas into reality. I excel in seamless integration, clean code, and robust infrastructure. Committed to continuous learning, I deliver high-performance solutions that optimize reliability and deliver meaningful impact.",
+
     "location": {
       "city": "Jakarta",
       "countryCode": "ID",

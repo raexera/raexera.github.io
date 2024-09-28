@@ -21,10 +21,14 @@ const { name, label, summary, socials } = basics;
             <h1 class="mb-6">
               {name}
             </h1>
-            <p class="mb-8 max-w-[500px] text-black/80 dark:text-white/80">
-              {label}
-              {summary}
-            </p>
+            <div class="mb-8 flex max-w-[500px] flex-col gap-2">
+              <p class="text-black/80 dark:text-white/80">
+                {label}
+              </p>
+              <p class="text-black/80 dark:text-white/80">
+                {summary}
+              </p>
+            </div>
             <div
               class="flex flex-row items-center justify-center gap-6 xl:justify-start"
             >
