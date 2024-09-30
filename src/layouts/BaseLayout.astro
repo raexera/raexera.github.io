@@ -5,7 +5,7 @@ import Header from "@/components/Header.astro";
 import Navbar from "@/components/Navbar.astro";
 import Footer from "@/components/Footer.astro";
 import Starry from "@/components/Starry";
-import Boxes from "@/components/Boxes";
+import GridBackground from "@/components/GridBackground";
 const { title, description } = Astro.props;
 import { SITE } from "@/consts";
 ---
@@ -16,7 +16,7 @@ import { SITE } from "@/consts";
     <BaseHead title={`${title} - ${SITE.TITLE}`} description={description} />
   </head>
   <body>
-    <Boxes client:load />
+    <GridBackground client:load />
     <Starry
       client:load
       minSize={0.5}

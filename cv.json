@@ -184,6 +184,16 @@
       "technologies": ["Motoko", "JavaScript", "HTML", "CSS"]
     },
     {
+      "name": "OlahragaYuk",
+      "isActive": true,
+      "description": "Sports Booking Platform",
+      "url": "https://github.com/rxyhn/olahragayuk",
+      "highlights": [
+        "Developed a comprehensive web-based platform that facilitates booking sports fields, hiring coaches, and accessing tournament registration details, using Next.js for the frontend and PostgreSQL integrated with Supabase for backend data management."
+      ],
+      "technologies": ["Next.js", "React", "PostgreSQL", "Supabase"]
+    },
+    {
       "name": "RAiso",
       "isActive": true,
       "description": "Renowned online stationery store using a layered architecture for separation of concerns and maintainability.",
