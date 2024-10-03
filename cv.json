@@ -5,7 +5,6 @@
     "label": "Undergraduate of Computer Science at Bina Nusantara University.",
     "roles": ["Back-End Developer", "DevOps Engineer"],
     "summary": "Crafting scalable and resilient systems that turn ideas into reality. I excel in seamless integration, clean code, and robust infrastructure. Committed to continuous learning, I deliver high-performance solutions that optimize reliability and deliver meaningful impact.",
-
     "location": {
       "city": "Jakarta",
       "countryCode": "ID",
@@ -141,7 +140,6 @@
   "projects": [
     {
       "name": "Kanjo",
-      "isActive": true,
       "description": "AI-Powered Sentiment Analysis Tool",
       "url": "https://github.com/rxyhn/kanjo",
       "highlights": [
@@ -152,8 +150,7 @@
     },
     {
       "name": "Shusseki",
-      "isActive": true,
-      "description": "Automated Attendance System using Facial Recognition.",
+      "description": "Automated Attendance System using Facial Recognition",
       "url": "https://github.com/rxyhn/shusseki",
       "highlights": [
         "Integrated facial recognition with OpenCV for real-time attendance tracking.",
@@ -163,19 +160,17 @@
     },
     {
       "name": "Yoru",
-      "isActive": true,
-      "description": "Aesthetic and Beautiful AwesomeWM Environment.",
+      "description": "Custom Linux Environment",
       "url": "https://github.com/rxyhn/yoru",
       "highlights": [
-        "Customized AwesomeWM environment with a focus on aesthetics and productivity.",
-        "Included several custom widgets for enhanced user experience."
+        "Engineered a performance-focused Linux environment with AwesomeWM, enhancing productivity for developers and power users.",
+        "Developed custom widgets for system monitoring and task management, streamlining workflows and improving user experience."
       ],
       "technologies": ["Lua", "Shell"]
     },
     {
       "name": "Identik",
-      "isActive": true,
-      "description": "Indonesia Decentralized Identity Keys.",
+      "description": "Indonesia Decentralized Identity Keys",
       "url": "https://github.com/rxyhn/identik",
       "highlights": [
         "Developed a decentralized identity system using Motoko on the Internet Computer (ICP) blockchain.",
@@ -185,44 +180,41 @@
     },
     {
       "name": "OlahragaYuk",
-      "isActive": true,
       "description": "Sports Booking Platform",
       "url": "https://github.com/rxyhn/olahragayuk",
       "highlights": [
-        "Developed a comprehensive web-based platform that facilitates booking sports fields, hiring coaches, and accessing tournament registration details, using Next.js for the frontend and PostgreSQL integrated with Supabase for backend data management."
+        "Developed a full-stack platform for booking sports fields, hiring coaches, and managing tournaments.",
+        "Improved user engagement by designing efficient booking and registration workflows."
       ],
       "technologies": ["Next.js", "React", "PostgreSQL", "Supabase"]
     },
     {
       "name": "RAiso",
-      "isActive": true,
-      "description": "Renowned online stationery store using a layered architecture for separation of concerns and maintainability.",
+      "description": "Online Stationery Store",
       "url": "https://github.com/rxyhn/RAiso",
       "highlights": [
-        "Implemented a layered architecture to separate concerns and improve maintainability.",
-        "Enhanced user experience with a modern and responsive UI design."
+        "Implemented a scalable layered architecture to enhance maintainability, separating core business logic from data access and UI layers.",
+        "Optimized the user experience by designing a modern, responsive UI, resulting in improved user retention and satisfaction."
       ],
       "technologies": ["C#", "ASP.NET", "Entity Framework"]
     },
     {
       "name": "PyQtLMS",
-      "isActive": true,
-      "description": "Yet Another Library Management System, created using PyQt5.",
+      "description": "Yet Another Library Management System",
       "url": "https://github.com/rxyhn/PyQtLMS",
       "highlights": [
-        "Developed a complete library management system with PyQt5.",
-        "Implemented a robust database system for efficient book management."
+        "Developed a feature-rich library management system using PyQt5, enabling efficient book tracking and user management.",
+        "Designed a robust MySQL-based backend to handle large-scale book inventories and transactions efficiently."
       ],
       "technologies": ["Python", "PyQt5", "MySQL"]
     },
     {
       "name": "Cursed",
-      "isActive": true,
-      "description": "Calendar based appointment and todo-list, created using the low-level library (ncurses.h).",
+      "description": "Text-based calendar and scheduling application",
       "url": "https://github.com/rxyhn/cursed",
       "highlights": [
-        "Created a terminal-based calendar and todo-list application using ncurses.",
-        "Optimized for low-resource environments with minimalistic design."
+        "Created a terminal-based calendar and todo-list application utilizing ncurses, providing a lightweight and efficient scheduling solution for command-line users.",
+        "Implemented efficient data structures to handle complex scheduling tasks while maintaining a minimalist and lightweight user experience."
       ],
       "technologies": ["C", "ncurses"]
     }
