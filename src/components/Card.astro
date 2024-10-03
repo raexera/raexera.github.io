@@ -11,10 +11,10 @@ const { url, name, description, highlights, technologies } = Astro.props;
 ---
 
 <section
-  class="group flex items-center gap-4 rounded-lg border border-black/25 bg-white/80 p-4 saturate-200 backdrop-blur-sm transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg dark:border-white/25 dark:bg-black/50 dark:hover:shadow-white/10"
+  class="group flex items-center rounded-lg border border-black/25 bg-white/80 p-4 saturate-200 backdrop-blur-sm transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg dark:border-white/25 dark:bg-black/50 dark:hover:shadow-white/10"
 >
   <a href={url} target="_blank" rel="noopener noreferrer" class="w-full">
-    <div class="w-full">
+    <div class="flex flex-col gap-2">
       <div class="flex items-center gap-2">
         <div class="text-base font-bold text-black/80 dark:text-white/80">
           {name}
@@ -43,21 +43,19 @@ const { url, name, description, highlights, technologies } = Astro.props;
           </g>
         </svg>
       </div>
-      <div class="mt-2 flex flex-col gap-2">
-        <p class="text-sm text-black/80 dark:text-white/80">{description}</p>
-        <p class="text-sm text-black/50 dark:text-white/50">
-          {highlights.join(" ")}
-        </p>
-        <ul class="flex flex-wrap gap-2">
-          {
-            technologies.map((tech) => (
-              <li class="flex items-center gap-1 rounded-md border border-black/25 bg-neutral-200/50 px-2 py-1 text-xs text-black/80 dark:border-white/25 dark:bg-neutral-800/50 dark:text-white/80">
-                {tech}
-              </li>
-            ))
-          }
-        </ul>
-      </div>
+      <p class="text-sm text-black/80 dark:text-white/80">{description}</p>
+      <ul class="list-disc pl-5 text-sm text-black/50 dark:text-white/50">
+        {highlights.map((highlight) => <li>{highlight}</li>)}
+      </ul>
+      <ul class="flex flex-wrap gap-2">
+        {
+          technologies.map((tech) => (
+            <li class="rounded-md border border-black/25 bg-neutral-200/50 px-2 py-1 text-xs text-black/80 dark:border-white/25 dark:bg-neutral-800/50 dark:text-white/80">
+              {tech}
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </a>
 </section>
