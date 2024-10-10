@@ -1,11 +1,10 @@
-import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
-
+import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
+import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://rxyhn.is-a.dev",
-  integrations: [tailwind(), react(), icon()],
+  site: "https://raexera.me",
+  integrations: [react(), tailwind(), icon()],
 });

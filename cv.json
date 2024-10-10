@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Rayhan Kafi Pratama",
-    "nickname": "rxyhn",
+    "nickname": "raexera",
     "label": "Undergraduate of Computer Science at Bina Nusantara University.",
     "summary": "Passionate about continuously learning and building impactful open source projects. Experienced in software engineering with a focus on development and operations.",
     "location": {
@@ -12,15 +12,15 @@
     "socials": [
       {
         "network": "email",
-        "url": "mailto:rxyhn.dev@gmail.com"
+        "url": "mailto:raexera@gmail.com"
       },
       {
         "network": "telegram",
-        "url": "https://t.me/rxxxyhn"
+        "url": "https://t.me/raexxera"
       },
       {
         "network": "github",
-        "url": "https://github.com/rxyhn"
+        "url": "https://github.com/raexera"
       },
       {
         "network": "linkedin",
@@ -140,7 +140,7 @@
     {
       "name": "Kanjo",
       "description": "AI-Powered Sentiment Analysis Tool",
-      "url": "https://github.com/rxyhn/kanjo",
+      "url": "https://github.com/raexera/kanjo",
       "highlights": [
         "Implemented various machine learning models like Naive Bayes, SVM, and Random Forest for sentiment analysis.",
         "Designed an intuitive Streamlit interface for easy model interaction."
@@ -150,7 +150,7 @@
     {
       "name": "Shusseki",
       "description": "Automated Attendance System using Facial Recognition",
-      "url": "https://github.com/rxyhn/shusseki",
+      "url": "https://github.com/raexera/shusseki",
       "highlights": [
         "Integrated facial recognition with OpenCV for real-time attendance tracking.",
         "Achieved 95% accuracy in facial recognition under various lighting conditions."
@@ -160,7 +160,7 @@
     {
       "name": "Yoru",
       "description": "Custom Linux Environment",
-      "url": "https://github.com/rxyhn/yoru",
+      "url": "https://github.com/raexera/yoru",
       "highlights": [
         "Engineered a performance-focused Linux environment with AwesomeWM, enhancing productivity for developers and power users.",
         "Developed custom widgets for system monitoring and task management, streamlining workflows and improving user experience."
@@ -170,7 +170,7 @@
     {
       "name": "Identik",
       "description": "Indonesia Decentralized Identity Keys",
-      "url": "https://github.com/rxyhn/identik",
+      "url": "https://github.com/raexera/identik",
       "highlights": [
         "Developed a decentralized identity system using Motoko on the Internet Computer (ICP) blockchain.",
         "Integrated multi-factor authentication for enhanced security."
@@ -180,7 +180,7 @@
     {
       "name": "OlahragaYuk",
       "description": "Sports Booking Platform",
-      "url": "https://github.com/rxyhn/olahragayuk",
+      "url": "https://github.com/raexera/olahragayuk",
       "highlights": [
         "Developed a full-stack platform for booking sports fields, hiring coaches, and managing tournaments.",
         "Improved user engagement by designing efficient booking and registration workflows."
@@ -190,7 +190,7 @@
     {
       "name": "RAiso",
       "description": "Online Stationery Store",
-      "url": "https://github.com/rxyhn/RAiso",
+      "url": "https://github.com/raexera/RAiso",
       "highlights": [
         "Implemented a scalable layered architecture to enhance maintainability, separating core business logic from data access and UI layers.",
         "Optimized the user experience by designing a modern, responsive UI, resulting in improved user retention and satisfaction."
@@ -200,7 +200,7 @@
     {
       "name": "PyQtLMS",
       "description": "Yet Another Library Management System",
-      "url": "https://github.com/rxyhn/PyQtLMS",
+      "url": "https://github.com/raexera/PyQtLMS",
       "highlights": [
         "Developed a feature-rich library management system using PyQt5, enabling efficient book tracking and user management.",
         "Designed a robust MySQL-based backend to handle large-scale book inventories and transactions efficiently."
@@ -210,7 +210,7 @@
     {
       "name": "Cursed",
       "description": "Text-based calendar and scheduling application",
-      "url": "https://github.com/rxyhn/cursed",
+      "url": "https://github.com/raexera/cursed",
       "highlights": [
         "Created a terminal-based calendar and todo-list application utilizing ncurses, providing a lightweight and efficient scheduling solution for command-line users.",
         "Implemented efficient data structures to handle complex scheduling tasks while maintaining a minimalist and lightweight user experience."
