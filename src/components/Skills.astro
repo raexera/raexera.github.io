@@ -1,33 +1,34 @@
 ---
-import Section from "./Section.astro";
 import { skills } from "@cv";
-const { technologies, programming_languages } = skills;
+import Section from "./Section.astro";
+const { programming_languages, frameworks, databases, tools } = skills;
+
+const skillCategories = [
+  { title: "Programming Languages", items: programming_languages },
+  { title: "Libraries / Frameworks", items: frameworks },
+  { title: "Database", items: databases },
+  { title: "Tools", items: tools },
+];
 ---
 
 <Section className={Astro.props.className} title="Skills">
-  <div class="text-sm font-bold text-black/80 dark:text-white/80">
-    Technologies
-  </div>
-  <ul class="flex flex-wrap gap-2">
+  <div class="flex flex-col space-y-4">
     {
-      technologies.map((tech) => (
-        <li class="flex items-center gap-1 rounded-md border border-black/25 bg-neutral-200/50 px-2 py-1 text-xs text-black/80 dark:border-white/25 dark:bg-neutral-800/50 dark:text-white/80">
-          {tech}
-        </li>
+      skillCategories.map(({ title, items }) => (
+        <div class="flex flex-col sm:flex-row sm:items-center">
+          <span class="w-full text-sm font-bold text-black/80 dark:text-white/80 sm:w-48">
+            {title}
+          </span>
+          <span class="hidden px-2 sm:inline-block">:</span>
+          <ul class="flex flex-1 flex-wrap gap-2">
+            {items.map((item) => (
+              <li class="inline-flex items-center rounded-md border border-black/25 bg-neutral-200/50 px-2 py-1 text-xs text-black/80 dark:border-white/25 dark:bg-neutral-800/50 dark:text-white/80">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       ))
     }
-  </ul>
-
-  <div class="mt-2 text-sm font-bold text-black/80 dark:text-white/80">
-    Programming Languages
   </div>
-  <ul class="flex flex-wrap gap-2">
-    {
-      programming_languages.map((lang) => (
-        <li class="flex items-center gap-1 rounded-md border border-black/25 bg-neutral-200/50 px-2 py-1 text-xs text-black/80 dark:border-white/25 dark:bg-neutral-800/50 dark:text-white/80">
-          {lang}
-        </li>
-      ))
-    }
-  </ul>
 </Section>

@@ -93,48 +93,10 @@
     }
   ],
   "skills": {
-    "technologies": [
-      "Ansible",
-      "AWS",
-      "Docker",
-      "Django",
-      "Express.js",
-      "Flask",
-      "GraphQL",
-      "Gin",
-      "Git",
-      "gRPC",
-      "Jenkins",
-      "Laravel",
-      "Linux",
-      "MongoDB",
-      "MySQL",
-      "Nix Package Manager",
-      "Next.js",
-      "Node.js",
-      "PostgreSQL",
-      "Postman",
-      "React",
-      "Spring Boot",
-      "Tailwind",
-      "Terraform"
-    ],
-    "programming_languages": [
-      "C",
-      "C#",
-      "C++",
-      "CSS",
-      "Go",
-      "HTML",
-      "Java",
-      "JavaScript",
-      "Lua",
-      "Nix",
-      "PHP",
-      "Python",
-      "Shell",
-      "TypeScript"
-    ]
+    "programming_languages": ["Go", "JavaScript", "Python"],
+    "frameworks": ["Echo", "Fiber", "Express.js", "Django", "Flask"],
+    "databases": ["MySQL", "PostgreSQL", "Redis"],
+    "tools": ["Docker", "Git"]
   },
   "projects": [
     {
