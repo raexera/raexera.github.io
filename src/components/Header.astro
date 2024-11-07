@@ -1,5 +1,4 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro";
 import { Icon } from "astro-icon/components";
 import { SITE, LINKS } from "@/consts";
 import { cn } from "@/lib/utils";
@@ -51,7 +50,6 @@ const subpath = pathname.match(/[^/]+/g);
         >
           <Icon name="github" class="block size-full" />
         </a>
-        <ThemeToggle id="headerThemeToggle" />
       </div>
     </div>
   </div>

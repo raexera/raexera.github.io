@@ -1,4 +1,4 @@
-import type { Site, Links } from "@/types";
+import type { Links, Site } from "@/types";
 
 export const SITE: Site = {
   TITLE: "RXR",
@@ -13,11 +13,7 @@ export const LINKS: Links = [
     HREF: "/",
   },
   {
-    TEXT: "About",
-    HREF: "/about",
-  },
-  {
-    TEXT: "Projects",
-    HREF: "/projects",
+    TEXT: "Blog",
+    HREF: "/blog",
   },
 ];
