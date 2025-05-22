@@ -48,8 +48,12 @@
       "url": "https://gdg.community.dev/gdg-on-campus-binus-university-bandung-bandung-indonesia",
       "startDate": "2024-10-01",
       "endDate": null,
-      "summary": null,
-      "responsibilities": null
+      "summary": "Part of the core team for GDG On-Campus BINUS Bandung, focusing on back-end development and system architecture.",
+      "responsibilities": [
+        "Developed and maintained back-end systems for GDG On-Campus events.",
+        "Collaborated with front-end teams to ensure seamless integration.",
+        "Participated in community outreach and event organization."
+      ]
     },
     {
       "name": "PT. Gunung Amal Solution International",
