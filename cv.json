@@ -31,14 +31,30 @@
   "work": [
     {
       "name": "PT. Verihubs Inteligensia Nusantara",
+      "position": "DevSecOps Engineer",
+      "location_type": "Hybrid",
+      "location": "Jakarta, Indonesia",
+      "url": "https://verihubs.com",
+      "startDate": "2025-08-01",
+      "endDate": null,
+      "summary": "DevSecOps Engineer specializing in securing and automating the entire software development lifecycle within an on-premise data center environment, focusing on infrastructure as code, CI/CD security, and container orchestration.",
+      "responsibilities": null
+    },
+    {
+      "name": "PT. Verihubs Inteligensia Nusantara",
       "position": "Back-End Engineer Intern",
       "location_type": "Hybrid",
       "location": "Jakarta, Indonesia",
       "url": "https://verihubs.com",
-      "startDate": "2025-02-03",
-      "endDate": null,
-      "summary": null,
-      "responsibilities": null
+      "startDate": "2025-02-01",
+      "endDate": "2025-08-01",
+      "summary": "Interned as a Backend Engineer with two primary responsibilities: building a foundational MLOps pipeline and developing backend services for an auto-tagging application powered by multi-face recognition.",
+      "responsibilities": [
+        "Contributed to building a foundational MLOps pipeline to automate the training, deployment, and monitoring of machine learning models.",
+        "Developed key backend services and RESTful APIs for an application.",
+        "Engineered and implemented an auto-tagging feature utilizing multi-face recognition technology.",
+        "Collaborated with the team in an Agile environment to deliver features and resolve technical challenges."
+      ]
     },
     {
       "name": "GDGoC BINUS Bandung",
@@ -53,21 +69,6 @@
         "Developed and maintained back-end systems for GDG On-Campus events.",
         "Collaborated with front-end teams to ensure seamless integration.",
         "Participated in community outreach and event organization."
-      ]
-    },
-    {
-      "name": "PT. Gunung Amal Solution International",
-      "position": "Freelance Back-End Developer",
-      "location_type": "Remote",
-      "location": "Bandung, Indonesia",
-      "url": "https://amalsolution.com",
-      "startDate": "2024-07-01",
-      "endDate": "2024-12-01",
-      "summary": "Worked on a freelance basis for back-end development, including system and API development for an Audit Trail Management System project. Collaborated with Business Analysts to meet project-specific requirements.",
-      "responsibilities": [
-        "Developed back-end systems and APIs for Audit Trail Management System.",
-        "Collaborated with Business Analysts to understand project requirements.",
-        "Designed system architecture and participated in code reviews."
       ]
     },
     {
