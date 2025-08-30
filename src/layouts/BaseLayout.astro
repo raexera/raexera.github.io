@@ -16,15 +16,17 @@ import { SITE } from "@/consts";
     <BaseHead title={`${title} - ${SITE.TITLE}`} description={description} />
   </head>
   <body>
-    <GridBackground client:load />
-    <Starry
-      client:load
-      minSize={0.5}
-      maxSize={1.5}
-      opacity={0.5}
-      particleDensity={100}
-      className="fixed h-full w-full"
-    />
+    <div transition:persist="background-wrapper">
+      <GridBackground client:load />
+      <Starry
+        client:load
+        minSize={0.5}
+        maxSize={1.5}
+        opacity={0.5}
+        particleDensity={100}
+        className="fixed h-full w-full"
+      />
+    </div>
     <Header />
     <Navbar />
     <main class="z-10" transition:animate="slide">
