@@ -22,12 +22,20 @@ import { work } from "@cv";
           },
           index,
         ) => {
-          const startYear = new Date(startDate).getFullYear();
-          const endYear = endDate ? new Date(endDate).getFullYear() : "Present";
           const isLastItem = index === work.length - 1;
 
           const d1 = new Date(startDate);
           const d2 = endDate ? new Date(endDate) : new Date();
+
+          const dateOptions: Intl.DateTimeFormatOptions = {
+            month: "short",
+            year: "numeric",
+          };
+
+          const formattedStartDate = d1.toLocaleString("en-US", dateOptions);
+          const formattedEndDate = endDate
+            ? d2.toLocaleString("en-US", dateOptions)
+            : "Present";
 
           let years = d2.getFullYear() - d1.getFullYear();
           let months = d2.getMonth() - d1.getMonth();
@@ -59,9 +67,9 @@ import { work } from "@cv";
               {/* Datetime */}
               <div class="mt-1 text-xs font-bold text-black/50 dark:text-white/50">
                 <div>
-                  <time datetime={startDate}>{startYear}</time>
+                  <time datetime={startDate}>{formattedStartDate}</time>
                   <span class="mx-1">-</span>
-                  <time datetime={endDate}>{endYear}</time>
+                  <time datetime={endDate}>{formattedEndDate}</time>
                 </div>
                 {duration && <div class="font-normal">{duration}</div>}
               </div>
