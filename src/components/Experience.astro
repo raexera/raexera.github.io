@@ -26,13 +26,44 @@ import { work } from "@cv";
           const endYear = endDate ? new Date(endDate).getFullYear() : "Present";
           const isLastItem = index === work.length - 1;
 
+          const d1 = new Date(startDate);
+          const d2 = endDate ? new Date(endDate) : new Date();
+
+          let years = d2.getFullYear() - d1.getFullYear();
+          let months = d2.getMonth() - d1.getMonth();
+
+          if (months < 0) {
+            years--;
+            months += 12;
+          }
+
+          if (!endDate) {
+            months += 1;
+            if (months === 12) {
+              years += 1;
+              months = 0;
+            }
+          }
+
+          const durationParts = [];
+          if (years > 0) {
+            durationParts.push(`${years} yr${years > 1 ? "s" : ""}`);
+          }
+          if (months > 0) {
+            durationParts.push(`${months} mo${months > 1 ? "s" : ""}`);
+          }
+          const duration = durationParts.join(" ");
+
           return (
             <>
               {/* Datetime */}
               <div class="mt-1 text-xs font-bold text-black/50 dark:text-white/50">
-                <time datetime={startDate}>{startYear}</time>
-                <span class="mx-1">-</span>
-                <time datetime={endDate}>{endYear}</time>
+                <div>
+                  <time datetime={startDate}>{startYear}</time>
+                  <span class="mx-1">-</span>
+                  <time datetime={endDate}>{endYear}</time>
+                </div>
+                {duration && <div class="font-normal">{duration}</div>}
               </div>
 
               {/* Timeline */}
