@@ -37,7 +37,7 @@
       "url": "https://verihubs.com",
       "startDate": "2025-08-01",
       "endDate": null,
-      "summary": "DevSecOps Engineer specializing in securing and automating the entire software development lifecycle within an on-premise data center environment, focusing on Infrastructure as Code (Terraform, Nix), CI/CD security (GitHub Actions), and container orchestration (Kubernetes, Docker).",
+      "summary": "DevSecOps Engineer specializing in securing and automating the entire software development lifecycle within an on-premise data center environment, focusing on Infrastructure as Code, CI/CD, and container orchestration.",
       "responsibilities": [
         "Designed, deployed, and managed scalable and secure on-premise containerized infrastructure.",
         "Provisioned and managed all infrastructure through code, adhering to IaC best practices to ensure consistency and repeatability.",
@@ -127,8 +127,15 @@
     }
   ],
   "skills": {
-    "languages": ["Go", "Python", "JavaScript", "Nix", "Shell Scripting", "SQL"],
-    "backend_frameworks": ["Echo & Fiber (Go)", "Express.js (Node.js)", "Django & Flask (Python)"],
+    "languages": [
+      "Go",
+      "Python",
+      "JavaScript",
+      "Nix",
+      "Shell Scripting",
+      "SQL"
+    ],
+    "frameworks": ["Echo", "Fiber", "Express.js", "Django", "Flask"],
     "databases": ["PostgreSQL", "MySQL", "Redis"],
     "infrastructure_and_devops": {
       "infrastructure_as_code": ["Terraform", "Nix"],
