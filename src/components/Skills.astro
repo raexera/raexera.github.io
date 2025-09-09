@@ -1,13 +1,23 @@
 ---
 import { skills } from "@cv";
 import Section from "./Section.astro";
-const { programming_languages, frameworks, databases, tools } = skills;
+
+const {
+  languages,
+  infrastructure_and_devops,
+  backend_frameworks,
+  databases,
+} = skills;
 
 const skillCategories = [
-  { title: "Programming Languages", items: programming_languages },
-  { title: "Libraries / Frameworks", items: frameworks },
-  { title: "Database", items: databases },
-  { title: "Tools", items: tools },
+  { title: "Languages", items: languages },
+  { title: "Backend Frameworks", items: backend_frameworks },
+  { title: "Databases", items: databases },
+  { title: "Infrastructure as Code", items: infrastructure_and_devops.infrastructure_as_code },
+  { title: "Config Management", items: infrastructure_and_devops.configuration_management },
+  { title: "Containers & Orchestration", items: infrastructure_and_devops.containerization_and_orchestration },
+  { title: "CI/CD", items: infrastructure_and_devops.ci_cd },
+  { title: "Version Control", items: infrastructure_and_devops.version_control },
 ];
 ---
 

@@ -3,7 +3,7 @@
     "name": "Rayhan Kafi Pratama",
     "nickname": "raexera",
     "label": "Undergraduate of Computer Science at Bina Nusantara University.",
-    "summary": "Passionate about continuously learning and building impactful open source projects. Experienced in software engineering with a focus on development and operations.",
+    "summary": "Accomplished DevSecOps and Backend Engineer with hands-on experience in building scalable applications and automating infrastructure. Passionate about leveraging Infrastructure as Code, CI/CD, and containerization to enhance security and efficiency. Eager to contribute to impactful open-source projects.",
     "location": {
       "city": "Jakarta",
       "countryCode": "ID",
@@ -37,8 +37,15 @@
       "url": "https://verihubs.com",
       "startDate": "2025-08-01",
       "endDate": null,
-      "summary": "DevSecOps Engineer specializing in securing and automating the entire software development lifecycle within an on-premise data center environment, focusing on infrastructure as code, CI/CD security, and container orchestration.",
-      "responsibilities": null
+      "summary": "DevSecOps Engineer specializing in securing and automating the entire software development lifecycle within an on-premise data center environment, focusing on Infrastructure as Code (Terraform, Nix), CI/CD security (GitHub Actions), and container orchestration (Kubernetes, Docker).",
+      "responsibilities": [
+        "Designed, deployed, and managed scalable and secure on-premise containerized infrastructure.",
+        "Provisioned and managed all infrastructure through code, adhering to IaC best practices to ensure consistency and repeatability.",
+        "Implemented and maintained secure CI/CD pipelines to fully automate application builds, testing, and deployments.",
+        "Developed automation scripts to streamline operational tasks and reduce manual intervention.",
+        "Led incident management and response, performing root cause analysis (RCA) to ensure system reliability.",
+        "Provided on-call support and led troubleshooting efforts to resolve complex infrastructure and application issues."
+      ]
     },
     {
       "name": "PT. Verihubs Inteligensia Nusantara",
@@ -51,7 +58,7 @@
       "summary": "Interned as a Backend Engineer with two primary responsibilities: building a foundational MLOps pipeline and developing backend services for an auto-tagging application powered by multi-face recognition.",
       "responsibilities": [
         "Contributed to building a foundational MLOps pipeline to automate the training, deployment, and monitoring of machine learning models.",
-        "Developed key backend services and RESTful APIs for an application.",
+        "Developed key backend services and RESTful APIs for a high-traffic internal application.",
         "Engineered and implemented an auto-tagging feature utilizing multi-face recognition technology.",
         "Collaborated with the team in an Agile environment to deliver features and resolve technical challenges."
       ]
@@ -66,7 +73,7 @@
       "endDate": null,
       "summary": "Part of the core team for GDG On-Campus BINUS Bandung, focusing on back-end development and system architecture.",
       "responsibilities": [
-        "Developed and maintained back-end systems for GDG On-Campus events.",
+        "Developed and maintained back-end systems for community events and initiatives.",
         "Collaborated with front-end teams to ensure seamless integration.",
         "Participated in community outreach and event organization."
       ]
@@ -120,10 +127,16 @@
     }
   ],
   "skills": {
-    "programming_languages": ["Go", "JavaScript", "Python"],
-    "frameworks": ["Echo", "Fiber", "Express.js", "Django", "Flask"],
-    "databases": ["MySQL", "PostgreSQL", "Redis"],
-    "tools": ["Docker", "Git"]
+    "languages": ["Go", "Python", "JavaScript", "Nix", "Shell Scripting", "SQL"],
+    "backend_frameworks": ["Echo & Fiber (Go)", "Express.js (Node.js)", "Django & Flask (Python)"],
+    "databases": ["PostgreSQL", "MySQL", "Redis"],
+    "infrastructure_and_devops": {
+      "infrastructure_as_code": ["Terraform", "Nix"],
+      "configuration_management": ["Ansible"],
+      "containerization_and_orchestration": ["Kubernetes", "Docker"],
+      "ci_cd": ["GitHub Actions"],
+      "version_control": ["Git"]
+    }
   },
   "projects": [
     {
