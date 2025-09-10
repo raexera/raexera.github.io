@@ -2,22 +2,29 @@
 import { skills } from "@cv";
 import Section from "./Section.astro";
 
-const {
-  languages,
-  infrastructure_and_devops,
-  backend_frameworks,
-  databases,
-} = skills;
+const { languages, infrastructure_and_devops, frameworks, databases } = skills;
 
 const skillCategories = [
   { title: "Languages", items: languages },
-  { title: "Backend Frameworks", items: backend_frameworks },
+  { title: "Frameworks", items: frameworks },
   { title: "Databases", items: databases },
-  { title: "Infrastructure as Code", items: infrastructure_and_devops.infrastructure_as_code },
-  { title: "Config Management", items: infrastructure_and_devops.configuration_management },
-  { title: "Containers & Orchestration", items: infrastructure_and_devops.containerization_and_orchestration },
+  {
+    title: "Infrastructure as Code",
+    items: infrastructure_and_devops.infrastructure_as_code,
+  },
+  {
+    title: "Config Management",
+    items: infrastructure_and_devops.configuration_management,
+  },
+  {
+    title: "Containers & Orchestration",
+    items: infrastructure_and_devops.containerization_and_orchestration,
+  },
   { title: "CI/CD", items: infrastructure_and_devops.ci_cd },
-  { title: "Version Control", items: infrastructure_and_devops.version_control },
+  {
+    title: "Version Control",
+    items: infrastructure_and_devops.version_control,
+  },
 ];
 ---
 
@@ -31,7 +38,7 @@ const skillCategories = [
           </span>
           <span class="hidden px-2 sm:inline-block">:</span>
           <ul class="flex flex-1 flex-wrap gap-2">
-            {items.map((item) => (
+            {items.map((item: string) => (
               <li class="inline-flex items-center rounded-md border border-black/25 bg-neutral-200/50 px-2 py-1 text-xs text-black/80 dark:border-white/25 dark:bg-neutral-800/50 dark:text-white/80">
                 {item}
               </li>
