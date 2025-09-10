@@ -11,7 +11,7 @@ interface PhotoCircleProps {
 
 export default function Logo({ lightSrc, darkSrc, alt }: PhotoCircleProps) {
   return (
-    <div className={`xl:w-128 xl:h-128 relative h-96 w-96`}>
+    <div className={`xl:w-150 xl:h-150 h-75 w-75 relative`}>
       <div className="h-full w-full">
         <img
           src={lightSrc}
