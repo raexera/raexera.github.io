@@ -9,14 +9,9 @@ interface PhotoCircleProps {
   sizeClasses?: string;
 }
 
-export default function Logo({
-  lightSrc,
-  darkSrc,
-  alt,
-  sizeClasses = "w-72 h-72 xl:w-96 xl:h-96",
-}: PhotoCircleProps) {
+export default function Logo({ lightSrc, darkSrc, alt }: PhotoCircleProps) {
   return (
-    <div className={`relative ${sizeClasses}`}>
+    <div className={`xl:w-128 xl:h-128 relative h-96 w-96`}>
       <div className="h-full w-full">
         <img
           src={lightSrc}
