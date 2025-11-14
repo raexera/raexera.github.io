@@ -5,6 +5,6 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://raexera.github.io",
+  site: "https://raexera.is-a.dev",
   integrations: [react(), tailwind(), icon()],
 });
