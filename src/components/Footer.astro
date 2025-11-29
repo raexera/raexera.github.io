@@ -8,9 +8,18 @@ import { SITE } from "@/consts";
   >
     <div class="flex h-full items-center justify-center print:hidden">
       <p class="text-center text-sm text-black/80 dark:text-white/80">
-        &copy; {new Date().getFullYear()}
+        © <span id="current-year"></span>
         {SITE.AUTHOR}. All rights reserved.
       </p>
     </div>
   </section>
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const yearElement = document.getElementById("current-year");
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear().toString();
+    }
+  });
+</script>
