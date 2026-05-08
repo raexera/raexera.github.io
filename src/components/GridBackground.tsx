@@ -13,10 +13,9 @@ export default function Boxes({ className = "" }: GridProps) {
   useEffect(() => {
     const updateDimensions = () => {
       if (containerRef.current) {
-        const { scrollHeight } = document.documentElement;
         setDimensions({
           width: window.innerWidth,
-          height: Math.max(window.innerHeight, scrollHeight),
+          height: window.innerHeight,
         });
       }
     };
@@ -45,12 +44,11 @@ export default function Boxes({ className = "" }: GridProps) {
   return (
     <div
       ref={containerRef}
-      className={`absolute flex h-full w-full justify-center overflow-hidden bg-white dark:bg-black ${className}`}
-      style={{ height: `${dimensions.height}px`, zIndex: 0 }}
+      className={`fixed inset-0 -z-20 flex h-full w-full justify-center overflow-hidden bg-white dark:bg-black ${className}`}
     >
       {/* Left gradient overlay */}
       <div className="absolute left-0 top-0 h-full w-1/2">
-        <div className="absolute inset-0 z-50 bg-gradient-to-tl from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-black" />
+        <div className="absolute inset-0 z-50 bg-linear-to-tl from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-black" />
         <div className="flex h-full w-full flex-col divide-y divide-black/25 border-l border-t border-white dark:divide-white/25 dark:border-black">
           {Array.from({ length: rows }).map((_, rowIndex) => (
             <div
@@ -75,7 +73,7 @@ export default function Boxes({ className = "" }: GridProps) {
 
       {/* Right gradient overlay */}
       <div className="absolute right-0 top-0 h-full w-1/2">
-        <div className="absolute inset-0 z-50 bg-gradient-to-tr from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-black" />
+        <div className="absolute inset-0 z-50 bg-linear-to-tr from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-black" />
         <div className="flex h-full w-full flex-col divide-y divide-black/25 border-l border-t border-white dark:divide-white/25 dark:border-black">
           {Array.from({ length: rows }).map((_, rowIndex) => (
             <div
