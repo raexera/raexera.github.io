@@ -4,10 +4,10 @@ import { awards } from "@cv";
 ---
 
 <Section className={Astro.props.className} title="Awards">
-  <ul class="space-y-4">
+  <ul class="space-y-6">
     {
       awards.map(({ title, date, awarder }) => (
-        <li class="flex flex-col md:flex-row md:items-baseline">
+        <li class="flex gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -18,19 +18,21 @@ import { awards } from "@cv";
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="mr-2 hidden h-5 w-5 md:inline-block"
+            class="mt-0.5 hidden h-5 w-5 shrink-0 text-muted-foreground md:block"
           >
             <circle cx="12" cy="8" r="7" />
             <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
           </svg>
-          <div class="relative w-full">
-            <time class="text-xs font-bold text-black/50 dark:text-white/50 md:absolute md:right-0 md:top-0">
-              {date}
-            </time>
-            <div class="font-medium text-black dark:text-white">{title}</div>
-            <p class="mt-1 text-sm text-black/80 dark:text-white/80">
-              {awarder}
-            </p>
+          <div class="flex w-full flex-col gap-1">
+            <div class="flex flex-col items-start justify-between gap-2 sm:flex-row">
+              <div class="font-medium leading-snug text-foreground">
+                {title}
+              </div>
+              <time class="shrink-0 text-xs font-medium text-muted-foreground sm:mt-0.5">
+                {date}
+              </time>
+            </div>
+            <p class="text-sm text-muted-foreground">{awarder}</p>
           </div>
         </li>
       ))

@@ -12,28 +12,31 @@ const {
 const skillCategories = [
   { title: "Programming Languages", items: programming_languages },
   { title: "Cloud Platforms", items: cloud_platforms },
-  { title: "Containers & Orchestration", items: infrastructure_devops.orchestration },
+  {
+    title: "Containers & Orchestration",
+    items: infrastructure_devops.orchestration,
+  },
   { title: "Infrastructure as Code", items: infrastructure_devops.iac },
   { title: "CI/CD & GitOps", items: infrastructure_devops.ci_cd },
   { title: "Operating Systems", items: infrastructure_devops.os },
-  { title: "Monitoring & Alerting", items: observability_security.monitoring_alerting },
+  {
+    title: "Monitoring & Alerting",
+    items: observability_security.monitoring_alerting,
+  },
   { title: "Security", items: observability_security.security },
   { title: "Testing", items: observability_security.testing },
 ];
 ---
 
 <Section className={Astro.props.className} title="Skills">
-  <div class="flex flex-col space-y-4">
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
     {
       skillCategories.map(({ title, items }) => (
-        <div class="flex flex-col sm:flex-row sm:items-center">
-          <span class="w-full text-sm font-bold text-black/80 dark:text-white/80 sm:w-48">
-            {title}
-          </span>
-          <span class="hidden px-2 sm:inline-block">:</span>
-          <ul class="flex flex-1 flex-wrap gap-2">
+        <div class="flex flex-col gap-3">
+          <span class="text-sm font-medium text-foreground">{title}</span>
+          <ul class="flex flex-wrap gap-2">
             {items.map((item: string) => (
-              <li class="inline-flex items-center rounded-md border border-black/25 bg-neutral-200/50 px-2 py-1 text-xs text-black/80 dark:border-white/25 dark:bg-neutral-800/50 dark:text-white/80">
+              <li class="inline-flex items-center rounded-md border border-border bg-muted/50 px-2.5 py-0.5 text-xs font-medium text-foreground transition-colors hover:bg-muted">
                 {item}
               </li>
             ))}

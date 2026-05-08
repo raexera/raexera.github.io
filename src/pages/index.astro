@@ -1,54 +1,148 @@
 ---
-import Button from "@/components/Button.astro";
-import Logo from "@/components/Logo.tsx";
+import { Icon } from "astro-icon/components";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { SITE } from "@/consts";
-import { basics } from "@cv";
+import { basics, skills } from "@cv";
+
 const { name, label, summary, socials } = basics;
+
+const extractSkills = (obj: any): string[] => {
+  let result: string[] = [];
+  for (const key in obj) {
+    if (Array.isArray(obj[key])) {
+      result.push(...obj[key]);
+    } else if (typeof obj[key] === "object") {
+      result.push(...extractSkills(obj[key]));
+    }
+  }
+  return result;
+};
+
+const finalSkills = Array.from(new Set(extractSkills(skills).filter(Boolean)));
 ---
 
 <BaseLayout title="Home" description={SITE.DESCRIPTION}>
-  <section class="h-full">
-    <div class="flex h-full items-center justify-center">
-      <div class="container mx-auto my-24 xl:my-0">
-        <div class="flex flex-col items-center justify-between xl:flex-row">
-          <div class="order-2 text-center xl:order-none xl:text-left">
-            <span class="text-xl">Hi, my name is</span>
-            <h1 class="mb-6">
-              {name}
-            </h1>
-            <div class="mb-8 flex max-w-[500px] flex-col gap-2">
-              <p class="text-black/80 dark:text-white/80">
-                {label}
-              </p>
-              <p class="text-black/80 dark:text-white/80">
-                {summary}
-              </p>
-            </div>
-            <div
-              class="flex flex-row items-center justify-center gap-6 xl:justify-start"
-            >
-              {
-                socials.map((item) => (
-                  <Button
-                    icon={item.network}
-                    href={item.url}
-                    label="Social Media Link"
+  <section class="flex min-h-[calc(100vh-12rem)] items-center py-24 sm:py-32">
+    <div class="container mx-auto">
+      <div class="mx-auto grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-3">
+        <div
+          class="flex flex-col justify-center rounded-2xl border border-border bg-card p-8 transition-colors hover:border-border/80 hover:bg-muted/10 sm:p-12 md:col-span-3"
+        >
+          <div
+            class="mb-6 flex w-fit items-center gap-2 rounded-full border border-border bg-muted/50 px-3 py-1.5 text-xs font-medium text-muted-foreground"
+          >
+            <span class="relative flex size-2 shrink-0">
+              <span
+                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex size-2 rounded-full bg-green-500"
+              ></span>
+            </span>
+            <span>DevSecOps Engineer @ Verihubs</span>
+          </div>
+          <h1
+            class="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl"
+          >
+            {name}
+          </h1>
+          <h2
+            class="mt-4 text-xl font-medium tracking-tight text-muted-foreground sm:text-2xl"
+          >
+            {label}
+          </h2>
+        </div>
+        <div
+          class="flex flex-col justify-center rounded-2xl border border-border bg-card p-8 transition-colors hover:border-border/80 hover:bg-muted/10 sm:p-10 md:col-span-2"
+        >
+          <span class="mb-4 text-sm font-medium text-foreground">Who I Am?</span
+          >
+          <p class="leading-relaxed text-muted-foreground sm:text-lg">
+            {summary}
+          </p>
+        </div>
+        <div
+          class="flex flex-col items-center justify-center rounded-2xl border border-border bg-card p-6 transition-colors hover:border-border/80 hover:bg-muted/10 sm:p-8 md:col-span-1"
+        >
+          <div class="grid w-full max-w-60 grid-cols-2 gap-4">
+            {
+              socials.map((item) => (
+                <a
+                  href={item.url}
+                  target="_blank"
+                  aria-label={`${item.network} link`}
+                  class="group flex aspect-square w-full items-center justify-center rounded-2xl border border-border bg-background transition-all hover:border-border/80 hover:bg-muted/50"
+                >
+                  <Icon
+                    name={item.network}
+                    class="size-8 text-muted-foreground transition-colors group-hover:text-foreground sm:size-10"
                   />
+                </a>
+              ))
+            }
+          </div>
+        </div>
+        <div
+          class="relative flex flex-col justify-center overflow-hidden rounded-2xl border border-border bg-card py-8 transition-colors hover:border-border/80 hover:bg-muted/10 md:col-span-3"
+        >
+          <div class="marquee-mask flex w-full overflow-hidden">
+            <div class="flex w-max animate-marquee">
+              {
+                [...Array(2)].map(() => (
+                  <div class="flex shrink-0 items-center gap-6 pr-6">
+                    {finalSkills.map((skill) => (
+                      <div class="flex shrink-0 items-center justify-center rounded-lg border border-border bg-muted/20 px-5 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground hover:border-border/80">
+                        {skill}
+                      </div>
+                    ))}
+                  </div>
                 ))
               }
             </div>
-          </div>
-          <div class="order-1 mb-8 xl:order-none xl:mb-0">
-            <Logo
-              client:load
-              lightSrc="/assets/logo-light.svg"
-              darkSrc="/assets/logo-dark.svg"
-              alt={name}
-            />
           </div>
         </div>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .marquee-mask {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+</style>

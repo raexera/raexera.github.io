@@ -8,22 +8,21 @@ const { pathname } = Astro.url;
 const subpath = pathname.match(/[^/]+/g);
 ---
 
-<div class="fixed bottom-2 left-1/2 z-50 block h-16 -translate-x-1/2 sm:hidden">
+<div class="fixed bottom-4 left-1/2 z-50 block h-14 -translate-x-1/2 sm:hidden">
   <div class="container mx-auto">
     <div
-      class="flex items-center gap-4 rounded-full border border-black/25 bg-white/80 px-4 py-2 shadow-lg saturate-200 backdrop-blur-sm dark:border-white/25 dark:bg-black/50"
+      class="flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 shadow-sm"
     >
-      <!-- Navigation links -->
-      <nav class="flex gap-2">
+      <nav class="flex gap-1">
         {
           LINKS.map((LINK) => (
             <a
               href={LINK.HREF}
               class={cn(
-                "flex items-center justify-center duration-300 hover:transition-colors",
+                "flex h-9 items-center justify-center rounded-full px-4 text-sm font-medium transition-colors",
                 pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
-                  ? "border-b-2 border-black text-black dark:border-white dark:text-white"
-                  : "text-black/80 hover:text-black dark:text-white/80 dark:hover:text-white",
+                  ? "bg-foreground text-background"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground",
               )}
             >
               {LINK.TEXT}
@@ -32,19 +31,17 @@ const subpath = pathname.match(/[^/]+/g);
         }
       </nav>
 
-      <!-- Separator -->
-      <div class="h-6 w-0.5 bg-black/25 dark:bg-white/25"></div>
+      <div class="mx-1 h-6 w-px bg-border"></div>
 
-      <!-- Action Buttons -->
-      <div class="flex gap-2">
+      <div class="flex gap-1">
         <a
           href={SITE.REPO_URL}
           aria-label="Github repository link"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex size-9 items-center justify-center rounded-full border border-black/25 p-2 text-black/80 duration-300 hover:bg-black/20 hover:transition-colors dark:border-white/25 dark:text-white/80 dark:hover:bg-white/20"
+          class="flex size-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
         >
-          <Icon name="github" class="block size-full" />
+          <Icon name="github" class="block size-[1.2rem]" />
         </a>
         <ThemeToggle id="navbarThemeToggle" />
       </div>

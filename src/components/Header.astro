@@ -16,22 +16,22 @@ const subpath = pathname.match(/[^/]+/g);
       {/* Logo/Title */}
       <a
         href="/"
-        class="font-bold uppercase text-black/80 duration-300 hover:text-black hover:transition-colors dark:text-white/80 dark:hover:text-white"
+        class="font-bold tracking-tight text-foreground transition-colors hover:text-muted-foreground"
       >
         {SITE.TITLE}
       </a>
 
       {/* Navigation */}
-      <nav class="hidden items-center gap-1 text-sm md:flex">
+      <nav class="hidden items-center gap-2 text-sm md:flex">
         {
           LINKS.map((LINK) => (
             <a
               href={LINK.HREF}
               class={cn(
-                "flex h-8 items-center justify-center rounded-full px-3 duration-300 hover:transition-colors",
+                "flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors ",
                 pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
-                  ? "bg-black text-white dark:bg-white dark:text-black"
-                  : "text-black/80 hover:bg-black/20 hover:text-black dark:text-white/80 dark:hover:bg-white/20 dark:hover:text-white",
+                  ? "bg-muted text-foreground"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground",
               )}
             >
               {LINK.TEXT}
@@ -47,9 +47,9 @@ const subpath = pathname.match(/[^/]+/g);
           aria-label="Github repository link"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex size-9 items-center justify-center rounded-full border border-black/25 p-2 text-black/80 duration-300 hover:bg-black/20 hover:transition-colors dark:border-white/25 dark:text-white/80 dark:hover:bg-white/20"
+          class="flex size-9 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
         >
-          <Icon name="github" class="block size-full" />
+          <Icon name="github" class="block size-[1.2rem]" />
         </a>
         <ThemeToggle id="headerThemeToggle" />
       </div>

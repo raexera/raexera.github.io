@@ -63,6 +63,8 @@ const { title, description } = Astro.props;
         return "light";
       })();
 
+      document.documentElement.classList.add("theme-transition-lock");
+
       if (theme === "light") {
         document.documentElement.classList.remove("dark");
       } else {
@@ -70,10 +72,13 @@ const { title, description } = Astro.props;
       }
 
       window.localStorage.setItem("theme", theme || "light");
+
+      setTimeout(() => {
+        document.documentElement.classList.remove("theme-transition-lock");
+      }, 10);
     };
 
     setTheme();
-
     document.addEventListener("astro:after-swap", setTheme);
   });
 </script>

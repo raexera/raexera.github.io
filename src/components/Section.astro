@@ -1,21 +1,23 @@
 ---
 type Props = {
-  className: string;
-  title: string;
+  className?: string;
+  title?: string;
 };
 
-const { className, title } = Astro.props;
+const { className = "", title } = Astro.props;
 ---
 
-<section class:list={["flex flex-col gap-2", className]}>
+<section
+  class:list={[
+    "flex flex-col rounded-2xl border border-border bg-card p-6 sm:p-10",
+    className,
+  ]}
+>
   {
     title && (
-      <div class="flex items-center gap-2">
-        <div class="text-base font-bold text-black dark:text-white">
-          {title}
-        </div>
-        <div class="h-0.5 flex-grow bg-black/25 dark:bg-white/25" />
-      </div>
+      <h2 class="mb-8 text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+        {title}
+      </h2>
     )
   }
   <slot />

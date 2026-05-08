@@ -65,7 +65,7 @@ import { work } from "@cv";
           return (
             <>
               {/* Datetime */}
-              <div class="mt-1 text-xs font-bold text-black/50 dark:text-white/50">
+              <div class="mt-1 text-xs font-medium text-muted-foreground">
                 <div>
                   <time datetime={startDate}>{formattedStartDate}</time>
                   <span class="mx-1">-</span>
@@ -77,18 +77,19 @@ import { work } from "@cv";
               {/* Timeline */}
               <div class="relative hidden justify-center sm:flex">
                 {!isLastItem && (
-                  <div class="absolute top-2 h-full w-px bg-black/25 dark:bg-white/25" />
+                  <div class="absolute top-3 h-full w-px bg-border" />
                 )}
-                <div class="relative z-10 mt-2 h-3 w-3 rounded-full bg-black dark:bg-white" />
+                {/* Changed to bg-card and ring-card to match the new Section container */}
+                <div class="relative z-10 mt-1.5 h-2.5 w-2.5 rounded-full border border-border bg-card ring-4 ring-card" />
               </div>
 
               {/* Content */}
               <div class={isLastItem ? "" : "mb-8"}>
-                <div class="font-bold text-black dark:text-white">
+                <div class="font-bold text-foreground">
                   {position} <span>@</span>
                   {url ? (
                     <a
-                      class="inline-flex items-center duration-300 hover:text-black/80 hover:transition-colors dark:hover:text-white/80"
+                      class="inline-flex items-center transition-colors hover:text-muted-foreground"
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -113,14 +114,14 @@ import { work } from "@cv";
                   )}
                 </div>
                 {(location || location_type) && (
-                  <p class="mt-2 text-sm text-black/80 dark:text-white/80">
+                  <p class="mt-2 text-sm text-muted-foreground">
                     {location} {location && location_type && " - "}{" "}
                     {location_type}
                   </p>
                 )}
                 <div class="mt-2 space-y-4 text-sm">
                   {summary && (
-                    <ul class="text-black/50 dark:text-white/50">
+                    <ul class="text-muted-foreground">
                       {Array.isArray(summary) ? (
                         summary.map((item) => <li>{item}</li>)
                       ) : (
@@ -131,10 +132,10 @@ import { work } from "@cv";
                   {responsibilities && (
                     <ExpandButton client:load>
                       <div class="mt-2 text-sm">
-                        <div class="font-medium text-black/80 dark:text-white/80">
+                        <div class="font-medium text-muted-foreground">
                           Responsibilities:
                         </div>
-                        <ul class="list-inside list-disc space-y-1 text-black/50 dark:text-white/50">
+                        <ul class="list-inside list-disc space-y-1 text-muted-foreground">
                           {responsibilities.map((responsibility) => (
                             <li>{responsibility}</li>
                           ))}

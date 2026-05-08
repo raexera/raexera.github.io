@@ -4,7 +4,7 @@ import { education } from "@cv";
 ---
 
 <Section className={Astro.props.className} title="Education">
-  <ul class="space-y-4">
+  <ul class="space-y-6">
     {
       education.map(
         ({ institution, startDate, endDate, area, url, summary }) => {
@@ -13,7 +13,7 @@ import { education } from "@cv";
           const years = `${startYear} - ${endYear}`;
 
           return (
-            <li class="flex flex-col md:flex-row md:items-baseline">
+            <li class="flex gap-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -24,49 +24,49 @@ import { education } from "@cv";
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="mr-2 hidden h-5 w-5 md:inline-block"
+                class="mt-0.5 hidden h-5 w-5 shrink-0 text-muted-foreground md:block"
               >
                 <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
                 <path d="M22 10v6" />
                 <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
               </svg>
-              <div class="relative w-full">
-                <time class="mb-1 text-xs font-bold text-black/50 dark:text-white/50 md:absolute md:right-0 md:top-0">
-                  {years}
-                </time>
-                <div class="text-base font-medium leading-snug text-black dark:text-white">
-                  {url ? (
-                    <a
-                      class="inline-flex items-center duration-300 hover:text-black/80 hover:transition-colors dark:hover:text-white/80"
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {institution}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        class="ml-1 h-4 w-4"
-                        aria-hidden="true"
+              <div class="flex w-full flex-col gap-1">
+                <div class="flex flex-col items-start justify-between gap-2 sm:flex-row">
+                  <div class="text-base font-medium leading-snug text-foreground">
+                    {url ? (
+                      <a
+                        class="inline-flex items-center transition-colors hover:text-muted-foreground"
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <path
-                          fill-rule="evenodd"
-                          d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                    </a>
-                  ) : (
-                    <span>{institution}</span>
-                  )}
+                        {institution}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          class="ml-1 h-4 w-4"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    ) : (
+                      <span>{institution}</span>
+                    )}
+                  </div>
+                  <time class="shrink-0 text-xs font-medium text-muted-foreground sm:mt-0.5">
+                    {years}
+                  </time>
                 </div>
-                <p class="mt-1 text-sm text-black/80 dark:text-white/80">
-                  {area}
-                </p>
+                <p class="text-sm text-muted-foreground">{area}</p>
                 {summary && (
-                  <div class="mt-4 text-sm">
-                    <ul class="space-y-1 text-black/50 dark:text-white/50">
+                  <div class="mt-2 text-sm">
+                    <ul class="space-y-1 text-muted-foreground">
                       {Array.isArray(summary) ? (
                         summary.map((item) => <li>{item}</li>)
                       ) : (

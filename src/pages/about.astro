@@ -1,6 +1,5 @@
 ---
 import Awards from "@/components/Awards.astro";
-import Heading from "@/components/Heading.astro";
 import Education from "@/components/Education.astro";
 import Experience from "@/components/Experience.astro";
 import Skills from "@/components/Skills.astro";
@@ -9,13 +8,27 @@ import { SITE } from "@/consts";
 ---
 
 <BaseLayout title="About" description={SITE.DESCRIPTION}>
-  <div class="container mx-auto my-24 xl:my-5">
-    <Heading title="About Me" />
-    <div class="space-y-8 md:col-span-4">
+  <div class="container mx-auto max-w-5xl py-24 sm:py-32">
+    {/* Page Header */}
+    <div class="mb-12 flex flex-col gap-4">
+      <h1 class="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
+        About Me
+      </h1>
+      <p class="text-lg text-muted-foreground">
+        My professional background, experience, and skills.
+      </p>
+    </div>
+
+    {/* Bento Grid */}
+    <div class="grid grid-cols-1 gap-4">
       <Experience />
       <Skills />
-      <Awards class="order-first" />
-      <Education class="order-first" />
+
+      {/* 2-Column Split for smaller sections */}
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <Education />
+        <Awards />
+      </div>
     </div>
   </div>
 </BaseLayout>

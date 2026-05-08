@@ -1,0 +1,543 @@
+This file is a merged representation of a subset of the codebase, containing specifically included files, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of a subset of the repository's contents that is considered the most important context.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Only files matching these patterns are included: src/pages/about.astro, src/components/Awards.astro, src/components/Heading.astro, src/components/Education.astro, src/components/Experience.astro, src/components/Skills.astro, src/components/Card.astro, src/components/Section.astro
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+src/
+  components/
+    Awards.astro
+    Card.astro
+    Education.astro
+    Experience.astro
+    Heading.astro
+    Section.astro
+    Skills.astro
+  pages/
+    about.astro
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="src/components/Awards.astro">
+---
+import Section from "./Section.astro";
+import { awards } from "@cv";
+---
+
+<Section className={Astro.props.className} title="Awards">
+  <ul class="space-y-4">
+    {
+      awards.map(({ title, date, awarder }) => (
+<li class="flex flex-col md:flex-row md:items-baseline">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="mr-2 hidden h-5 w-5 text-muted-foreground md:inline-block"
+          >
+            <circle cx="12" cy="8" r="7" />
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+          </svg>
+          <div class="relative w-full">
+            <time class="text-xs font-medium text-muted-foreground md:absolute md:right-0 md:top-0">
+              {date}
+            </time>
+            <div class="font-medium text-foreground">{title}</div>
+            <p class="mt-1 text-sm text-muted-foreground">
+              {awarder}
+            </p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</Section>
+</file>
+
+<file path="src/components/Education.astro">
+---
+import Section from "./Section.astro";
+import { education } from "@cv";
+---
+
+<Section className={Astro.props.className} title="Education">
+  <ul class="space-y-4">
+    {
+      education.map(
+        ({ institution, startDate, endDate, area, url, summary }) => {
+          const startYear = new Date(startDate).getFullYear();
+          const endYear = endDate ? new Date(endDate).getFullYear() : "Present";
+          const years = `${startYear} - ${endYear}`;
+
+          return (
+<li class="flex flex-col md:flex-row md:items-baseline">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="mr-2 hidden h-5 w-5 text-muted-foreground md:inline-block"
+              >
+                <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                <path d="M22 10v6" />
+                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+              </svg>
+              <div class="relative w-full">
+                <time class="mb-1 text-xs font-medium text-muted-foreground md:absolute md:right-0 md:top-0">
+                  {years}
+                </time>
+                <div class="text-base font-medium leading-snug text-foreground">
+                  {url ? (
+                    <a
+                      class="inline-flex items-center transition-colors hover:text-muted-foreground"
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {institution}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        class="ml-1 h-4 w-4"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                  ) : (
+                    <span>{institution}</span>
+                  )}
+                </div>
+                <p class="mt-1 text-sm text-muted-foreground">
+                  {area}
+                </p>
+                {summary && (
+                  <div class="mt-4 text-sm">
+                    <ul class="space-y-1 text-muted-foreground">
+                      {Array.isArray(summary) ? (
+                        summary.map((item) => <li>{item}</li>)
+                      ) : (
+                        <li>{summary}</li>
+                      )}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </li>
+          );
+        },
+      )
+    }
+  </ul>
+</Section>
+</file>
+
+<file path="src/components/Experience.astro">
+---
+import ExpandButton from "./ExpandButton";
+import Section from "./Section.astro";
+import { work } from "@cv";
+---
+
+<Section className={Astro.props.className} title="Experience">
+  <div class="grid grid-cols-1 gap-x-4 sm:grid-cols-[auto_auto_1fr] sm:gap-x-8">
+    {
+      work.map(
+        (
+          {
+            name,
+            startDate,
+            endDate,
+            position,
+            summary,
+            responsibilities,
+            url,
+            location,
+            location_type,
+          },
+          index,
+        ) => {
+          const isLastItem = index === work.length - 1;
+
+          const d1 = new Date(startDate);
+          const d2 = endDate ? new Date(endDate) : new Date();
+
+          const dateOptions: Intl.DateTimeFormatOptions = {
+            month: "short",
+            year: "numeric",
+          };
+
+          const formattedStartDate = d1.toLocaleString("en-US", dateOptions);
+          const formattedEndDate = endDate
+            ? d2.toLocaleString("en-US", dateOptions)
+            : "Present";
+
+          let years = d2.getFullYear() - d1.getFullYear();
+          let months = d2.getMonth() - d1.getMonth();
+
+          if (months < 0) {
+            years--;
+            months += 12;
+          }
+
+          if (!endDate) {
+            months += 1;
+            if (months === 12) {
+              years += 1;
+              months = 0;
+            }
+          }
+
+          const durationParts = [];
+          if (years > 0) {
+            durationParts.push(`${years} yr${years > 1 ? "s" : ""}`);
+          }
+          if (months > 0) {
+            durationParts.push(`${months} mo${months > 1 ? "s" : ""}`);
+          }
+          const duration = durationParts.join(" ");
+
+          return (
+            <>
+{/* Datetime */}
+              <div class="mt-1 text-xs font-medium text-muted-foreground">
+                <div>
+                  <time datetime={startDate}>{formattedStartDate}</time>
+                  <span class="mx-1">-</span>
+                  <time datetime={endDate}>{formattedEndDate}</time>
+                </div>
+                {duration && <div class="font-normal">{duration}</div>}
+              </div>
+
+              {/* Timeline */}
+              <div class="relative hidden justify-center sm:flex">
+                {!isLastItem && (
+                  <div class="absolute top-3 h-full w-px bg-border" />
+                )}
+                {/* Changed to bg-card and ring-card to match the new Section container */}
+                <div class="relative z-10 mt-1.5 h-2.5 w-2.5 rounded-full border border-border bg-card ring-4 ring-card" />
+              </div>
+
+              {/* Content */}
+              <div class={isLastItem ? "" : "mb-8"}>
+                <div class="font-bold text-foreground">
+                  {position} <span>@</span>
+                  {url ? (
+                    <a
+                      class="inline-flex items-center transition-colors hover:text-muted-foreground"
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {name}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        class="ml-1 h-4 w-4 shrink-0 translate-y-px"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                  ) : (
+                    name
+                  )}
+                </div>
+                {(location || location_type) && (
+                  <p class="mt-2 text-sm text-muted-foreground">
+                    {location} {location && location_type && " - "}{" "}
+                    {location_type}
+                  </p>
+                )}
+                <div class="mt-2 space-y-4 text-sm">
+                  {summary && (
+                    <ul class="text-muted-foreground">
+                      {Array.isArray(summary) ? (
+                        summary.map((item) => <li>{item}</li>)
+                      ) : (
+                        <li>{summary}</li>
+                      )}
+                    </ul>
+                  )}
+                  {responsibilities && (
+                    <ExpandButton client:load>
+                      <div class="mt-2 text-sm">
+                        <div class="font-medium text-muted-foreground">
+                          Responsibilities:
+                        </div>
+                        <ul class="list-inside list-disc space-y-1 text-muted-foreground">
+                          {responsibilities.map((responsibility) => (
+                            <li>{responsibility}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </ExpandButton>
+                  )}
+                </div>
+              </div>
+            </>
+          );
+        },
+      )
+    }
+  </div>
+</Section>
+</file>
+
+<file path="src/components/Section.astro">
+---
+type Props = {
+  className?: string;
+  title?: string;
+};
+
+const { className = "", title } = Astro.props;
+---
+
+<section class:list={["flex flex-col rounded-2xl border border-border bg-card p-6 sm:p-10", className]}>
+  {
+    title && (
+      <h2 class="mb-8 text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+        {title}
+      </h2>
+    )
+  }
+  <slot />
+</section>
+</file>
+
+<file path="src/components/Skills.astro">
+---
+import { skills } from "@cv";
+import Section from "./Section.astro";
+
+const {
+  programming_languages,
+  cloud_platforms,
+  infrastructure_devops,
+  observability_security,
+} = skills;
+
+const skillCategories = [
+  { title: "Programming Languages", items: programming_languages },
+  { title: "Cloud Platforms", items: cloud_platforms },
+  {
+    title: "Containers & Orchestration",
+    items: infrastructure_devops.orchestration,
+  },
+  { title: "Infrastructure as Code", items: infrastructure_devops.iac },
+  { title: "CI/CD & GitOps", items: infrastructure_devops.ci_cd },
+  { title: "Operating Systems", items: infrastructure_devops.os },
+  {
+    title: "Monitoring & Alerting",
+    items: observability_security.monitoring_alerting,
+  },
+  { title: "Security", items: observability_security.security },
+  { title: "Testing", items: observability_security.testing },
+];
+---
+
+<Section className={Astro.props.className} title="Skills">
+  <div class="flex flex-col space-y-4">
+    {
+      skillCategories.map(({ title, items }) => (
+<div class="flex flex-col sm:flex-row sm:items-center">
+          <span class="w-full text-sm font-semibold text-foreground sm:w-48">
+            {title}
+          </span>
+          <span class="hidden px-2 sm:inline-block text-muted-foreground">:</span>
+          <ul class="flex flex-1 flex-wrap gap-2">
+            {items.map((item: string) => (
+              <li class="inline-flex items-center rounded-md border border-border bg-muted/50 px-2.5 py-0.5 text-xs font-medium text-foreground transition-colors hover:bg-muted">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</Section>
+</file>
+
+<file path="src/pages/about.astro">
+---
+import Awards from "@/components/Awards.astro";
+import Education from "@/components/Education.astro";
+import Experience from "@/components/Experience.astro";
+import Skills from "@/components/Skills.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SITE } from "@/consts";
+---
+
+<BaseLayout title="About" description={SITE.DESCRIPTION}>
+  <div class="container mx-auto max-w-5xl py-24 sm:py-32">
+
+    {/* Page Header */}
+    <div class="mb-12 flex flex-col gap-4">
+      <h1 class="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
+        About Me
+      </h1>
+      <p class="text-lg text-muted-foreground">
+        My professional background, experience, and skills.
+      </p>
+    </div>
+
+    {/* Bento Grid */}
+    <div class="grid grid-cols-1 gap-4">
+      <Experience />
+      <Skills />
+
+      {/* 2-Column Split for smaller sections */}
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <Education />
+        <Awards />
+      </div>
+    </div>
+
+  </div>
+</BaseLayout>
+</file>
+
+<file path="src/components/Heading.astro">
+---
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<div class="flex flex-col items-center sm:mt-24">
+  <h1 class="mb-6 text-center">{title}</h1>
+</div>
+</file>
+
+<file path="src/components/Card.astro">
+---
+type Props = {
+  url: string;
+  description: string;
+  highlights: string[];
+  name: string;
+  technologies: string[];
+};
+
+const { url, name, description, highlights, technologies } = Astro.props;
+---
+
+<section
+  class="group flex items-center rounded-xl border border-border bg-card p-5 transition-colors hover:bg-muted/50"
+>
+  <a href={url} target="_blank" rel="noopener noreferrer" class="w-full">
+    <div class="flex flex-col gap-3">
+      <div class="flex items-center gap-2">
+        <div class="text-base font-semibold text-foreground">
+          {name}
+        </div>
+        <svg
+          class="h-3 w-3 -translate-x-1 translate-y-1 -rotate-45 text-muted-foreground transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:text-foreground"
+          viewBox="0 0 13 15"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline
+              class="opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              points="5.33 0 10.83 5.5 5.33 11"></polyline>
+            <line
+              class="opacity-0 transition-transform duration-300 group-hover:opacity-100"
+              x1="10.83"
+              y1="5.5"
+              x2="0.83"
+              y2="5.17"></line>
+          </g>
+        </svg>
+      </div>
+      <p class="text-sm text-muted-foreground">{description}</p>
+
+      <ul class="list-disc pl-5 text-sm text-muted-foreground">
+        {highlights.map((highlight) => <li>{highlight}</li>)}
+      </ul>
+
+      {/* Structural Badges */}
+      <div class="mt-2 flex flex-wrap gap-2">
+        {
+          technologies.map((tech) => (
+            <span class="inline-flex items-center rounded-md border border-border bg-muted/50 px-2.5 py-0.5 text-xs font-medium text-foreground transition-colors group-hover:bg-background">
+              {tech}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </a>
+</section>
+</file>
+
+</files>

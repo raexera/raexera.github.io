@@ -3,21 +3,45 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* 1. Define the Semantic Vercel/Linear Palette */
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --border: #e5e5e5; /* neutral-200 */
+  --muted: #f5f5f5; /* neutral-100 */
+  --muted-foreground: #737373; /* neutral-500 */
+}
+
+.dark {
+  --background: #000000; /* Pure matte black */
+  --foreground: #fafafa;
+  --card: #0a0a0a; /* neutral-950 */
+  --border: #262626; /* neutral-800 - The classic 1px Vercel border */
+  --muted: #171717; /* neutral-900 */
+  --muted-foreground: #a3a3a3; /* neutral-400 */
+}
+
 @theme {
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 960px;
   --breakpoint-xl: 1200px;
-  --font-sans:
-    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Map CSS variables to Tailwind classes */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
 }
 
 @utility container {
   margin-inline: auto;
   padding-inline: 15px;
   width: 100%;
-
   @variant sm {
     max-width: var(--breakpoint-sm);
   }
@@ -52,18 +76,22 @@
     font-display: swap;
   }
 
+  .theme-transition-lock * {
+    transition: none !important;
+  }
+
   body {
-    @apply leading-loose relative flex flex-col h-full w-full;
+    @apply leading-loose relative flex flex-col h-full w-full bg-background text-foreground;
   }
 
   h1 {
-    @apply bg-gradient-to-b from-neutral-900/50 to-neutral-600/50 bg-clip-text text-[48px] font-bold leading-[1.1] text-transparent dark:from-neutral-50/50 dark:to-neutral-400/50 xl:text-[80px];
+    @apply text-[48px] font-bold leading-[1.1] tracking-tight text-foreground xl:text-[80px];
   }
   h2 {
-    @apply bg-gradient-to-b from-neutral-900/50 to-neutral-600/50 bg-clip-text text-[36px] font-bold leading-[1.1] text-transparent dark:from-neutral-50/50 dark:to-neutral-400/50 xl:text-[48px];
+    @apply text-[36px] font-bold leading-[1.1] tracking-tight text-foreground xl:text-[48px];
   }
   h3 {
-    @apply bg-gradient-to-b from-neutral-900/50 to-neutral-600/50 bg-clip-text text-[20px] font-bold leading-[1.1] text-transparent dark:from-neutral-50/50 dark:to-neutral-400/50 xl:text-[24px];
+    @apply text-[20px] font-bold leading-[1.1] tracking-tight text-foreground xl:text-[24px];
   }
 }
 
@@ -75,13 +103,13 @@
 
 html {
   overflow-y: scroll;
-  background-color: white;
+  background-color: var(--background);
   color-scheme: light;
   @apply h-full w-full;
 }
 
 html.dark {
-  background-color: black;
+  background-color: var(--background);
   color-scheme: dark;
 }
 
@@ -90,27 +118,10 @@ main {
 }
 
 header {
-  @apply border-b border-transparent bg-transparent transition-colors duration-300;
+  @apply border-b border-transparent bg-background transition-colors duration-300;
 }
 
 header.scrolled {
-  @apply border-black/25 bg-white/80 saturate-200 backdrop-blur-sm dark:border-white/25 dark:bg-black/50;
-}
-
-.print {
-  display: none !important;
-}
-
-@media print {
-  .no-print {
-    display: none !important;
-  }
-
-  .print {
-    display: block !important;
-  }
-
-  astro-dev-toolbar {
-    display: none !important;
-  }
+  /* Crisp 1px border instead of blur */
+  @apply border-border bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/60;
 }

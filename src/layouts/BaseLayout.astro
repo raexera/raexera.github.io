@@ -4,8 +4,6 @@ import "@/styles/global.css";
 import Header from "@/components/Header.astro";
 import Navbar from "@/components/Navbar.astro";
 import Footer from "@/components/Footer.astro";
-import Starry from "@/components/Starry";
-import GridBackground from "@/components/GridBackground";
 const { title, description } = Astro.props;
 import { SITE } from "@/consts";
 ---
@@ -16,17 +14,6 @@ import { SITE } from "@/consts";
     <BaseHead title={`${title} - ${SITE.TITLE}`} description={description} />
   </head>
   <body>
-    <div transition:persist="background-wrapper">
-      <GridBackground client:load />
-      <Starry
-        client:load
-        minSize={0.5}
-        maxSize={1.5}
-        opacity={0.5}
-        particleDensity={100}
-        className="fixed h-full w-full"
-      />
-    </div>
     <Header />
     <Navbar />
     <main class="relative z-10" transition:animate="slide">

@@ -1,5 +1,5 @@
 allowBuilds:
-  '@tsparticles/engine': true
+  "@tsparticles/engine": true
   esbuild: true
   sharp: true
 overrides:
@@ -11,4 +11,4 @@ overrides:
   nanoid@<3.3.8: ">=3.3.8"
   undici@>=6.0.0 <6.21.1: ">=6.21.1"
   undici@>=6.0.0 <6.21.2: ">=6.21.2"
-  yaml@>=2.0.0 <2.8.3: '>=2.8.3'
+  yaml@>=2.0.0 <2.8.3: ">=2.8.3"
