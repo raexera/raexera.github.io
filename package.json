@@ -35,5 +35,12 @@
     "@tailwindcss/vite": "^4.2.4",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@tsparticles/engine",
+      "esbuild",
+      "sharp"
+    ]
   }
 }
