@@ -2,29 +2,23 @@
 import { skills } from "@cv";
 import Section from "./Section.astro";
 
-const { languages, infrastructure_and_devops, frameworks, databases } = skills;
+const {
+  programming_languages,
+  cloud_platforms,
+  infrastructure_devops,
+  observability_security,
+} = skills;
 
 const skillCategories = [
-  { title: "Languages", items: languages },
-  { title: "Frameworks", items: frameworks },
-  { title: "Databases", items: databases },
-  {
-    title: "Infrastructure as Code",
-    items: infrastructure_and_devops.infrastructure_as_code,
-  },
-  {
-    title: "Config Management",
-    items: infrastructure_and_devops.configuration_management,
-  },
-  {
-    title: "Containers & Orchestration",
-    items: infrastructure_and_devops.containerization_and_orchestration,
-  },
-  { title: "CI/CD", items: infrastructure_and_devops.ci_cd },
-  {
-    title: "Version Control",
-    items: infrastructure_and_devops.version_control,
-  },
+  { title: "Programming Languages", items: programming_languages },
+  { title: "Cloud Platforms", items: cloud_platforms },
+  { title: "Containers & Orchestration", items: infrastructure_devops.orchestration },
+  { title: "Infrastructure as Code", items: infrastructure_devops.iac },
+  { title: "CI/CD & GitOps", items: infrastructure_devops.ci_cd },
+  { title: "Operating Systems", items: infrastructure_devops.os },
+  { title: "Monitoring & Alerting", items: observability_security.monitoring_alerting },
+  { title: "Security", items: observability_security.security },
+  { title: "Testing", items: observability_security.testing },
 ];
 ---
 

@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -44,7 +44,7 @@ const { title, description } = Astro.props;
 <meta name="description" content={description} />
 
 <!--  View Transitions -->
-<ViewTransitions />
+<ClientRouter />
 
 <!--  Theme Toggle -->
 <script is:inline>
