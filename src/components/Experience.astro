@@ -65,36 +65,61 @@ import { work } from "@cv";
 
           return (
             <>
-              <div class="mt-2 flex flex-col text-xs font-medium text-muted-foreground">
-                <div class="flex flex-col gap-1 sm:flex-row sm:items-center">
+              {/* Datetime Area */}
+              {/* FIXED: Uses w-full and justify-between for mobile split, reverts to stacked column on sm: desktop */}
+              <div class="mb-2 flex w-full items-center justify-between text-xs font-medium text-muted-foreground sm:mb-0 sm:mt-0.5 sm:w-auto sm:flex-col sm:items-start sm:justify-start sm:gap-1">
+
+                {/* Left Side: Dates */}
+                <div class="flex items-center gap-1.5">
                   <time datetime={startDate}>{formattedStartDate}</time>
-                  <span class="hidden sm:inline-block">-</span>
+                  <span>-</span>
                   {isCurrent ? (
                     <span class="font-semibold text-foreground">Present</span>
                   ) : (
                     <time datetime={endDate}>{formattedEndDate}</time>
                   )}
                 </div>
-                {duration && <span class="mt-1 font-normal text-muted-foreground/70">{duration}</span>}
+
+                {/* Right Side: Indicator + Duration */}
+                {duration && (
+                  <div class="flex shrink-0 items-center gap-1.5">
+                    {/* Mobile-only status indicator OR bullet point */}
+                    <div class="flex sm:hidden">
+                      {isCurrent ? (
+                        <span class="relative flex size-2 shrink-0">
+                          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+                          <span class="relative inline-flex size-2 rounded-full bg-green-500"></span>
+                        </span>
+                      ) : (
+                        <span class="text-muted-foreground/40">•</span>
+                      )}
+                    </div>
+                    <span class="font-normal text-muted-foreground/70">{duration}</span>
+                  </div>
+                )}
               </div>
+
+              {/* Structural Timeline (Desktop Only) */}
               <div class="relative hidden w-2.5 flex-col items-center sm:flex">
                 {!isLastItem && (
                   <div class="absolute -bottom-3 top-3 left-1/2 w-px -translate-x-1/2 bg-border" />
                 )}
                 {isCurrent ? (
-                  <div class="relative z-10 mt-2.75 flex h-2.5 w-2.5 shrink-0 items-center justify-center rounded-full bg-card ring-4 ring-card">
+                  <div class="relative z-10 mt-[11px] flex h-2.5 w-2.5 shrink-0 items-center justify-center rounded-full bg-card ring-4 ring-card">
                     <span class="relative flex size-2 shrink-0">
                       <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
                       <span class="relative inline-flex size-2 rounded-full bg-green-500"></span>
                     </span>
                   </div>
                 ) : (
-                  <div class="relative z-10 mt-2.75 h-2.5 w-2.5 shrink-0 rounded-full border border-border bg-card ring-4 ring-card" />
+                  <div class="relative z-10 mt-[11px] h-2.5 w-2.5 shrink-0 rounded-full border border-border bg-card ring-4 ring-card" />
                 )}
               </div>
+
+              {/* Content Area */}
               <div class={isLastItem ? "" : "mb-10"}>
                 <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
-                  <h3 class="text-base font-semibold text-foreground leading-snug">{position}</h3>
+                  <h3 class="text-base font-semibold leading-snug text-foreground">{position}</h3>
                   <span class="hidden text-muted-foreground sm:inline">·</span>
                   {url ? (
                     <a

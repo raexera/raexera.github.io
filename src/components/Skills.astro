@@ -29,14 +29,17 @@ const skillCategories = [
 ---
 
 <Section className={Astro.props.className} title="Skills">
-  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+  {/* Removed the inner borders and expanded the grid gap for natural breathing room */}
+  <div class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2">
     {
       skillCategories.map(({ title, items }) => (
-        <div class="flex flex-col gap-3 rounded-xl border border-border p-5 transition-colors hover:bg-muted/50">
-          <span class="text-sm font-medium text-foreground">{title}</span>
+        <div class="flex flex-col gap-4">
+          <h3 class="text-sm font-semibold tracking-tight text-foreground">
+            {title}
+          </h3>
           <ul class="flex flex-wrap gap-2">
             {items.map((item: string) => (
-              <li class="inline-flex items-center rounded-md border border-border bg-background px-2.5 py-0.5 text-xs font-medium text-foreground transition-colors hover:bg-muted">
+              <li class="inline-flex cursor-default items-center rounded-md bg-muted/40 px-3 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-foreground hover:text-background">
                 {item}
               </li>
             ))}
