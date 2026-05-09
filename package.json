@@ -13,6 +13,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/react": "^5.0.4",
+    "@react-pdf/renderer": "^4.5.1",
     "@tailwindcss/typography": "^0.5.19",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -20,7 +21,6 @@
     "astro-icon": "^1.1.5",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
-    "pdfmake": "^0.3.8",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
