@@ -2,7 +2,8 @@ import type { Site, Links } from "@/types";
 
 export const SITE: Site = {
   TITLE: "RXR",
-  DESCRIPTION: "DevSecOps & Platform Engineer specializing in hybrid multi-cloud infrastructure and distributed systems.",
+  DESCRIPTION:
+    "DevSecOps & Platform Engineer specializing in hybrid multi-cloud infrastructure and distributed systems.",
   AUTHOR: "Rayhan Kafi Pratama",
   REPO_URL: "https://github.com/raexera/raexera.github.io",
 };

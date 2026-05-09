@@ -8,39 +8,41 @@ const { pathname } = Astro.url;
 const subpath = pathname.match(/[^/]+/g);
 ---
 
-<div class="fixed bottom-0 left-1/2 z-50 flex h-16 w-[calc(100%-2rem)] max-w-5xl -translate-x-1/2 items-end sm:hidden">
-    <div
-      class="flex w-full items-center justify-between rounded-t-2xl border-x border-t border-border bg-background/80 px-4 pb-3 pt-3 backdrop-blur-md"
-    >
-      <nav class="flex gap-1">
-        {
-          LINKS.map((LINK) => (
-            <a
-              href={LINK.HREF}
-              class={cn(
-                "flex h-9 items-center justify-center rounded-lg px-3 text-sm font-medium transition-colors",
-                pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
-                  ? "bg-muted text-foreground"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground",
-              )}
-            >
-              {LINK.TEXT}
-            </a>
-          ))
-        }
-      </nav>
-      <div class="flex items-center gap-1">
-        <div class="mx-1 h-5 w-px bg-border"></div>
-        <a
-          href={SITE.REPO_URL}
-          aria-label="Github repository link"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex size-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-        >
-          <Icon name="github" class="size-[1.2rem]" />
-        </a>
-        <ThemeToggle id="navbarThemeToggle" />
-      </div>
+<div
+  class="fixed bottom-0 left-1/2 z-50 flex h-16 w-[calc(100%-2rem)] max-w-5xl -translate-x-1/2 items-end sm:hidden"
+>
+  <div
+    class="flex w-full items-center justify-between rounded-t-2xl border-x border-t border-border bg-background/80 px-4 pb-3 pt-3 backdrop-blur-md"
+  >
+    <nav class="flex gap-1">
+      {
+        LINKS.map((LINK) => (
+          <a
+            href={LINK.HREF}
+            class={cn(
+              "flex h-9 items-center justify-center rounded-lg px-3 text-sm font-medium transition-colors",
+              pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF
+                ? "bg-muted text-foreground"
+                : "text-muted-foreground hover:bg-muted hover:text-foreground",
+            )}
+          >
+            {LINK.TEXT}
+          </a>
+        ))
+      }
+    </nav>
+    <div class="flex items-center gap-1">
+      <div class="mx-1 h-5 w-px bg-border"></div>
+      <a
+        href={SITE.REPO_URL}
+        aria-label="Github repository link"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex size-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+      >
+        <Icon name="github" class="size-[1.2rem]" />
+      </a>
+      <ThemeToggle id="navbarThemeToggle" />
     </div>
+  </div>
 </div>

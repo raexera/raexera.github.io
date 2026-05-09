@@ -25,28 +25,45 @@ const finalSkills = Array.from(new Set(extractSkills(skills).filter(Boolean)));
   <section class="flex min-h-[calc(100vh-12rem)] items-center py-24 sm:py-32">
     <div class="container mx-auto">
       <div class="mx-auto grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-3">
-        <div class="flex flex-col justify-center rounded-2xl border border-border bg-card p-8 transition-colors hover:border-border/80 hover:bg-muted/10 sm:p-12 md:col-span-3">
-          <div class="mb-6 flex w-fit items-center gap-2 rounded-full border border-border bg-muted/50 px-3 py-1.5 text-xs font-medium text-muted-foreground">
+        <div
+          class="flex flex-col justify-center rounded-2xl border border-border bg-card p-8 transition-colors hover:border-border/80 hover:bg-muted/10 sm:p-12 md:col-span-3"
+        >
+          <div
+            class="mb-6 flex w-fit items-center gap-2 rounded-full border border-border bg-muted/50 px-3 py-1.5 text-xs font-medium text-muted-foreground"
+          >
             <span class="relative flex size-2 shrink-0">
-              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
-              <span class="relative inline-flex size-2 rounded-full bg-green-500"></span>
+              <span
+                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex size-2 rounded-full bg-green-500"
+              ></span>
             </span>
             <span>DevSecOps Engineer @ Verihubs</span>
           </div>
-          <h1 class="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+          <h1
+            class="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl"
+          >
             {name}
           </h1>
-          <h2 class="mt-4 text-xl font-medium tracking-tight text-muted-foreground sm:text-2xl">
+          <h2
+            class="mt-4 text-xl font-medium tracking-tight text-muted-foreground sm:text-2xl"
+          >
             {label}
           </h2>
         </div>
-        <div class="flex flex-col justify-center rounded-2xl border border-border bg-card p-8 transition-colors hover:border-border/80 hover:bg-muted/10 sm:p-10 md:col-span-2">
-          <span class="mb-4 text-sm font-medium text-foreground">Who I Am?</span>
+        <div
+          class="flex flex-col justify-center rounded-2xl border border-border bg-card p-8 transition-colors hover:border-border/80 hover:bg-muted/10 sm:p-10 md:col-span-2"
+        >
+          <span class="mb-4 text-sm font-medium text-foreground">Who I Am?</span
+          >
           <p class="leading-relaxed text-muted-foreground sm:text-lg">
             {summary}
           </p>
         </div>
-        <div class="flex flex-col items-center justify-center rounded-2xl border border-border bg-card p-6 transition-colors hover:border-border/80 hover:bg-muted/10 sm:p-8 md:col-span-1">
+        <div
+          class="flex flex-col items-center justify-center rounded-2xl border border-border bg-card p-6 transition-colors hover:border-border/80 hover:bg-muted/10 sm:p-8 md:col-span-1"
+        >
           <div class="grid w-full grid-cols-4 gap-4 md:grid-cols-2">
             {
               socials.map((item) => (
@@ -65,7 +82,9 @@ const finalSkills = Array.from(new Set(extractSkills(skills).filter(Boolean)));
             }
           </div>
         </div>
-        <div class="relative flex flex-col justify-center overflow-hidden rounded-2xl border border-border bg-card py-8 transition-colors hover:border-border/80 hover:bg-muted/10 md:col-span-3">
+        <div
+          class="relative flex flex-col justify-center overflow-hidden rounded-2xl border border-border bg-card py-8 transition-colors hover:border-border/80 hover:bg-muted/10 md:col-span-3"
+        >
           <div class="marquee-mask flex w-full overflow-hidden">
             <div class="flex w-max animate-marquee">
               {
