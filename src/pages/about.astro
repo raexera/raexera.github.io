@@ -9,7 +9,6 @@ import { SITE } from "@/consts";
 
 <BaseLayout title="About" description={SITE.DESCRIPTION}>
   <div class="container mx-auto max-w-5xl py-24 sm:py-32">
-    {/* Page Header */}
     <div class="mb-12 flex flex-col gap-4">
       <h1 class="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
         About Me
@@ -18,13 +17,9 @@ import { SITE } from "@/consts";
         My professional background, experience, and skills.
       </p>
     </div>
-
-    {/* Bento Grid */}
     <div class="grid grid-cols-1 gap-4">
       <Experience />
       <Skills />
-
-      {/* 2-Column Split for smaller sections */}
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
         <Education />
         <Awards />

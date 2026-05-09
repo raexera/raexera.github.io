@@ -13,9 +13,12 @@ const { url, name, description, highlights, technologies } = Astro.props;
 <section
   class="group flex h-full items-center rounded-2xl border border-border bg-card p-6 transition-colors hover:border-border/80 hover:bg-muted/10 sm:p-8"
 >
-  <a href={url} target="_blank" rel="noopener noreferrer" class="flex h-full w-full flex-col gap-4">
-
-    {/* Header & Icon */}
+  <a
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="flex h-full w-full flex-col gap-4"
+  >
     <div class="flex items-start justify-between gap-2">
       <div class="text-lg font-semibold tracking-tight text-foreground">
         {name}
@@ -37,16 +40,12 @@ const { url, name, description, highlights, technologies } = Astro.props;
         </g>
       </svg>
     </div>
-
-    {/* Description */}
     <p class="text-sm leading-relaxed text-muted-foreground">{description}</p>
-
-    {/* Highlights - Uses flex-1 to push the badges below down to the bottom evenly */}
-    <ul class="flex-1 list-inside list-disc space-y-1 text-sm text-muted-foreground">
+    <ul
+      class="flex-1 list-inside list-disc space-y-1 text-sm text-muted-foreground"
+    >
       {highlights.map((highlight) => <li>{highlight}</li>)}
     </ul>
-
-    {/* Structural Badges */}
     <div class="mt-4 flex flex-wrap gap-2">
       {
         technologies.map((tech) => (
@@ -56,6 +55,5 @@ const { url, name, description, highlights, technologies } = Astro.props;
         ))
       }
     </div>
-
   </a>
 </section>

@@ -65,11 +65,7 @@ import { work } from "@cv";
 
           return (
             <>
-              {/* Datetime Area */}
-              {/* FIXED: Uses w-full and justify-between for mobile split, reverts to stacked column on sm: desktop */}
-              <div class="mb-2 flex w-full items-center justify-between text-xs font-medium text-muted-foreground sm:mb-0 sm:mt-0.5 sm:w-auto sm:flex-col sm:items-start sm:justify-start sm:gap-1">
-
-                {/* Left Side: Dates */}
+              <div class="mb-2 flex w-full items-center justify-between text-xs font-medium text-muted-foreground sm:mt-0.5 sm:mb-0 sm:w-auto sm:flex-col sm:items-start sm:justify-start sm:gap-1">
                 <div class="flex items-center gap-1.5">
                   <time datetime={startDate}>{formattedStartDate}</time>
                   <span>-</span>
@@ -79,47 +75,44 @@ import { work } from "@cv";
                     <time datetime={endDate}>{formattedEndDate}</time>
                   )}
                 </div>
-
-                {/* Right Side: Indicator + Duration */}
                 {duration && (
                   <div class="flex shrink-0 items-center gap-1.5">
-                    {/* Mobile-only status indicator OR bullet point */}
                     <div class="flex sm:hidden">
                       {isCurrent ? (
                         <span class="relative flex size-2 shrink-0">
-                          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
-                          <span class="relative inline-flex size-2 rounded-full bg-green-500"></span>
+                          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75" />
+                          <span class="relative inline-flex size-2 rounded-full bg-green-500" />
                         </span>
                       ) : (
                         <span class="text-muted-foreground/40">•</span>
                       )}
                     </div>
-                    <span class="font-normal text-muted-foreground/70">{duration}</span>
+                    <span class="font-normal text-muted-foreground/70">
+                      {duration}
+                    </span>
                   </div>
                 )}
               </div>
-
-              {/* Structural Timeline (Desktop Only) */}
               <div class="relative hidden w-2.5 flex-col items-center sm:flex">
                 {!isLastItem && (
-                  <div class="absolute -bottom-3 top-3 left-1/2 w-px -translate-x-1/2 bg-border" />
+                  <div class="absolute top-3 -bottom-3 left-1/2 w-px -translate-x-1/2 bg-border" />
                 )}
                 {isCurrent ? (
                   <div class="relative z-10 mt-[11px] flex h-2.5 w-2.5 shrink-0 items-center justify-center rounded-full bg-card ring-4 ring-card">
                     <span class="relative flex size-2 shrink-0">
-                      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
-                      <span class="relative inline-flex size-2 rounded-full bg-green-500"></span>
+                      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75" />
+                      <span class="relative inline-flex size-2 rounded-full bg-green-500" />
                     </span>
                   </div>
                 ) : (
                   <div class="relative z-10 mt-[11px] h-2.5 w-2.5 shrink-0 rounded-full border border-border bg-card ring-4 ring-card" />
                 )}
               </div>
-
-              {/* Content Area */}
               <div class={isLastItem ? "" : "mb-10"}>
                 <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
-                  <h3 class="text-base font-semibold leading-snug text-foreground">{position}</h3>
+                  <h3 class="text-base leading-snug font-semibold text-foreground">
+                    {position}
+                  </h3>
                   <span class="hidden text-muted-foreground sm:inline">·</span>
                   {url ? (
                     <a
@@ -141,18 +134,21 @@ import { work } from "@cv";
                           stroke-linecap="round"
                           stroke-linejoin="round"
                         >
-                          <polyline points="5.33 0 10.83 5.5 5.33 11"></polyline>
-                          <line x1="10.83" y1="5.5" x2="0.83" y2="5.17"></line>
+                          <polyline points="5.33 0 10.83 5.5 5.33 11" />
+                          <line x1="10.83" y1="5.5" x2="0.83" y2="5.17" />
                         </g>
                       </svg>
                     </a>
                   ) : (
-                    <span class="text-sm font-medium text-muted-foreground">{name}</span>
+                    <span class="text-sm font-medium text-muted-foreground">
+                      {name}
+                    </span>
                   )}
                 </div>
                 {(location || location_type) && (
                   <div class="mt-1 text-xs text-muted-foreground">
-                    {location} {location && location_type && " • "} {location_type}
+                    {location} {location && location_type && " • "}{" "}
+                    {location_type}
                   </div>
                 )}
                 <div class="mt-4 flex flex-col gap-4 text-sm text-muted-foreground">
@@ -160,7 +156,9 @@ import { work } from "@cv";
                     <div class="leading-relaxed">
                       {Array.isArray(summary) ? (
                         <ul class="flex flex-col gap-2">
-                          {summary.map((item) => <li>{item}</li>)}
+                          {summary.map((item) => (
+                            <li>{item}</li>
+                          ))}
                         </ul>
                       ) : (
                         <p>{summary}</p>
@@ -170,10 +168,14 @@ import { work } from "@cv";
                   {responsibilities && (
                     <ExpandButton client:load>
                       <div class="mt-3 flex flex-col gap-2">
-                        <span class="font-medium text-foreground">Key Responsibilities:</span>
+                        <span class="font-medium text-foreground">
+                          Key Responsibilities:
+                        </span>
                         <ul class="ml-4 list-outside list-disc space-y-1.5 marker:text-muted-foreground/50">
                           {responsibilities.map((responsibility) => (
-                            <li class="pl-1 leading-relaxed">{responsibility}</li>
+                            <li class="pl-1 leading-relaxed">
+                              {responsibility}
+                            </li>
                           ))}
                         </ul>
                       </div>
