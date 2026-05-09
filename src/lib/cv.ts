@@ -3,25 +3,13 @@ import cv from "@cv";
 export const generatePDF = async () => {
   const { basics, work, education, skills } = cv;
 
-  if (!(window as any).pdfMake) {
-    const script1 = document.createElement("script");
-    script1.src =
-      "https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js";
-    document.head.appendChild(script1);
-    await new Promise((resolve) => {
-      script1.onload = resolve;
-    });
+  const pdfMakeModule = await import("pdfmake/build/pdfmake");
+  const pdfFontsModule = await import("pdfmake/build/vfs_fonts");
 
-    const script2 = document.createElement("script");
-    script2.src =
-      "https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js";
-    document.head.appendChild(script2);
-    await new Promise((resolve) => {
-      script2.onload = resolve;
-    });
-  }
+  const pdfMake = pdfMakeModule.default || pdfMakeModule;
+  const pdfFonts = pdfFontsModule.default || pdfFontsModule;
 
-  const pdfMake = (window as any).pdfMake;
+  pdfMake.vfs = pdfFonts.pdfMake ? pdfFonts.pdfMake.vfs : pdfFonts.vfs;
 
   const formatDate = (dateString: string | null) => {
     if (!dateString) return "Present";
@@ -33,7 +21,7 @@ export const generatePDF = async () => {
 
   const docDefinition = {
     pageSize: "A4",
-    pageMargins: [40, 40, 40, 40],
+    pageMargins: [40, 40, 40, 40] as [number, number, number, number],
     content: [
       // Header
       { text: basics.name.toUpperCase(), style: "header" },
@@ -109,7 +97,7 @@ export const generatePDF = async () => {
           `Cloud Platforms: ${skills.cloud_platforms.join(", ")}`,
           `Orchestration & IaC: ${skills.infrastructure_devops.orchestration.join(", ")}, ${skills.infrastructure_devops.iac.join(", ")}`,
           `CI/CD & OS: ${skills.infrastructure_devops.ci_cd.join(", ")}, ${skills.infrastructure_devops.os.join(", ")}`,
-          `Observability: ${skills.observability_security.monitoring_alerting.join(", ")}`,
+          `Observability & Security: ${skills.observability_security.monitoring_alerting.join(", ")}`,
         ],
         margin: [0, 5, 0, 15],
       },
@@ -125,18 +113,18 @@ export const generatePDF = async () => {
         fontSize: 18,
         bold: true,
         alignment: "center",
-        margin: [0, 0, 0, 4],
+        margin: [0, 0, 0, 4] as [number, number, number, number],
       },
       subHeader: {
         fontSize: 9,
         alignment: "center",
         color: "#666666",
-        margin: [0, 0, 0, 15],
+        margin: [0, 0, 0, 15] as [number, number, number, number],
       },
       sectionTitle: {
         fontSize: 11,
         bold: true,
-        margin: [0, 10, 0, 4],
+        margin: [0, 10, 0, 4] as [number, number, number, number],
         color: "#000000",
       },
       jobTitle: { fontSize: 11, bold: true },
@@ -144,7 +132,7 @@ export const generatePDF = async () => {
         fontSize: 10,
         italics: true,
         color: "#444444",
-        margin: [0, 0, 0, 4],
+        margin: [0, 0, 0, 4] as [number, number, number, number],
       },
       dateRight: { alignment: "right", fontSize: 10, color: "#666666" },
     },

@@ -20,6 +20,7 @@
     "astro-icon": "^1.1.5",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
+    "pdfmake": "^0.3.8",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
