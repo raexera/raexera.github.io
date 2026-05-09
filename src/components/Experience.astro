@@ -23,6 +23,7 @@ import { work } from "@cv";
           index,
         ) => {
           const isLastItem = index === work.length - 1;
+          const isCurrent = !endDate;
 
           const d1 = new Date(startDate);
           const d2 = endDate ? new Date(endDate) : new Date();
@@ -64,80 +65,106 @@ import { work } from "@cv";
 
           return (
             <>
-              {/* Datetime */}
-              <div class="mt-1 text-xs font-medium text-muted-foreground">
-                <div>
+              {/* Datetime Area */}
+              <div class="mt-2 flex flex-col text-xs font-medium text-muted-foreground">
+                <div class="flex flex-col gap-1 sm:flex-row sm:items-center">
                   <time datetime={startDate}>{formattedStartDate}</time>
-                  <span class="mx-1">-</span>
-                  <time datetime={endDate}>{formattedEndDate}</time>
+                  <span class="hidden sm:inline-block">-</span>
+
+                  {isCurrent ? (
+                    <span class="font-semibold text-foreground">Present</span>
+                  ) : (
+                    <time datetime={endDate}>{formattedEndDate}</time>
+                  )}
                 </div>
-                {duration && <div class="font-normal">{duration}</div>}
+                {duration && <span class="mt-1 font-normal text-muted-foreground/70">{duration}</span>}
               </div>
 
-              {/* Timeline */}
-              <div class="relative hidden justify-center sm:flex">
+              {/* Structural Timeline */}
+              <div class="relative hidden w-2.5 flex-col items-center sm:flex">
+
                 {!isLastItem && (
-                  <div class="absolute top-3 h-full w-px bg-border" />
+                  <div class="absolute -bottom-3 top-3 left-1/2 w-px -translate-x-1/2 bg-border" />
                 )}
-                {/* Changed to bg-card and ring-card to match the new Section container */}
-                <div class="relative z-10 mt-1.5 h-2.5 w-2.5 rounded-full border border-border bg-card ring-4 ring-card" />
+
+                {/* Status Indicator - mt-[11px] provides the precise vertical center for text-base titles */}
+                {isCurrent ? (
+                  <div class="relative z-10 mt-[11px] flex h-2.5 w-2.5 shrink-0 items-center justify-center rounded-full bg-card ring-4 ring-card">
+                    <span class="relative flex size-2 shrink-0">
+                      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+                      <span class="relative inline-flex size-2 rounded-full bg-green-500"></span>
+                    </span>
+                  </div>
+                ) : (
+                  <div class="relative z-10 mt-[11px] h-2.5 w-2.5 shrink-0 rounded-full border border-border bg-card ring-4 ring-card" />
+                )}
               </div>
 
-              {/* Content */}
-              <div class={isLastItem ? "" : "mb-8"}>
-                <div class="font-bold text-foreground">
-                  {position} <span>@</span>
+              {/* Content Area */}
+              <div class={isLastItem ? "" : "mb-10"}>
+
+                {/* Header (Title & Company) */}
+                <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
+                  <h3 class="text-base font-semibold text-foreground leading-snug">{position}</h3>
+                  <span class="hidden text-muted-foreground sm:inline">·</span>
                   {url ? (
                     <a
-                      class="inline-flex items-center transition-colors hover:text-muted-foreground"
+                      class="group inline-flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       {name}
                       <svg
+                        class="h-3 w-3 -translate-x-1 translate-y-1 -rotate-45 opacity-0 transition-all group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100"
+                        viewBox="0 0 13 15"
                         xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        class="ml-1 h-4 w-4 shrink-0 translate-y-px"
-                        aria-hidden="true"
                       >
-                        <path
-                          fill-rule="evenodd"
-                          d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                          clip-rule="evenodd"
-                        />
+                        <g
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <polyline points="5.33 0 10.83 5.5 5.33 11"></polyline>
+                          <line x1="10.83" y1="5.5" x2="0.83" y2="5.17"></line>
+                        </g>
                       </svg>
                     </a>
                   ) : (
-                    name
+                    <span class="text-sm font-medium text-muted-foreground">{name}</span>
                   )}
                 </div>
+
+                {/* Location Meta */}
                 {(location || location_type) && (
-                  <p class="mt-2 text-sm text-muted-foreground">
-                    {location} {location && location_type && " - "}{" "}
-                    {location_type}
-                  </p>
+                  <div class="mt-1 text-xs text-muted-foreground">
+                    {location} {location && location_type && " • "} {location_type}
+                  </div>
                 )}
-                <div class="mt-2 space-y-4 text-sm">
+
+                {/* Description & Responsibilities */}
+                <div class="mt-4 flex flex-col gap-4 text-sm text-muted-foreground">
                   {summary && (
-                    <ul class="text-muted-foreground">
+                    <div class="leading-relaxed">
                       {Array.isArray(summary) ? (
-                        summary.map((item) => <li>{item}</li>)
+                        <ul class="flex flex-col gap-2">
+                          {summary.map((item) => <li>{item}</li>)}
+                        </ul>
                       ) : (
-                        <li>{summary}</li>
+                        <p>{summary}</p>
                       )}
-                    </ul>
+                    </div>
                   )}
+
                   {responsibilities && (
                     <ExpandButton client:load>
-                      <div class="mt-2 text-sm">
-                        <div class="font-medium text-muted-foreground">
-                          Responsibilities:
-                        </div>
-                        <ul class="list-inside list-disc space-y-1 text-muted-foreground">
+                      <div class="mt-3 flex flex-col gap-2">
+                        <span class="font-medium text-foreground">Key Responsibilities:</span>
+                        <ul class="ml-4 list-outside list-disc space-y-1.5 marker:text-muted-foreground/50">
                           {responsibilities.map((responsibility) => (
-                            <li>{responsibility}</li>
+                            <li class="pl-1 leading-relaxed">{responsibility}</li>
                           ))}
                         </ul>
                       </div>

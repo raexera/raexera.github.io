@@ -28,7 +28,7 @@ export default function ExpandButton({ children }: ExpandButtonProps) {
           {children}
           {!expanded && (
             <motion.div
-              className="absolute bottom-0 h-12 w-full bg-gradient-to-t from-white dark:from-black"
+              className="absolute bottom-0 h-12 w-full bg-linear-to-t from-white dark:from-black"
               initial={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             />
