@@ -65,12 +65,10 @@ import { work } from "@cv";
 
           return (
             <>
-              {/* Datetime Area */}
               <div class="mt-2 flex flex-col text-xs font-medium text-muted-foreground">
                 <div class="flex flex-col gap-1 sm:flex-row sm:items-center">
                   <time datetime={startDate}>{formattedStartDate}</time>
                   <span class="hidden sm:inline-block">-</span>
-
                   {isCurrent ? (
                     <span class="font-semibold text-foreground">Present</span>
                   ) : (
@@ -79,31 +77,22 @@ import { work } from "@cv";
                 </div>
                 {duration && <span class="mt-1 font-normal text-muted-foreground/70">{duration}</span>}
               </div>
-
-              {/* Structural Timeline */}
               <div class="relative hidden w-2.5 flex-col items-center sm:flex">
-
                 {!isLastItem && (
                   <div class="absolute -bottom-3 top-3 left-1/2 w-px -translate-x-1/2 bg-border" />
                 )}
-
-                {/* Status Indicator - mt-[11px] provides the precise vertical center for text-base titles */}
                 {isCurrent ? (
-                  <div class="relative z-10 mt-[11px] flex h-2.5 w-2.5 shrink-0 items-center justify-center rounded-full bg-card ring-4 ring-card">
+                  <div class="relative z-10 mt-2.75 flex h-2.5 w-2.5 shrink-0 items-center justify-center rounded-full bg-card ring-4 ring-card">
                     <span class="relative flex size-2 shrink-0">
                       <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
                       <span class="relative inline-flex size-2 rounded-full bg-green-500"></span>
                     </span>
                   </div>
                 ) : (
-                  <div class="relative z-10 mt-[11px] h-2.5 w-2.5 shrink-0 rounded-full border border-border bg-card ring-4 ring-card" />
+                  <div class="relative z-10 mt-2.75 h-2.5 w-2.5 shrink-0 rounded-full border border-border bg-card ring-4 ring-card" />
                 )}
               </div>
-
-              {/* Content Area */}
               <div class={isLastItem ? "" : "mb-10"}>
-
-                {/* Header (Title & Company) */}
                 <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
                   <h3 class="text-base font-semibold text-foreground leading-snug">{position}</h3>
                   <span class="hidden text-muted-foreground sm:inline">·</span>
@@ -136,15 +125,11 @@ import { work } from "@cv";
                     <span class="text-sm font-medium text-muted-foreground">{name}</span>
                   )}
                 </div>
-
-                {/* Location Meta */}
                 {(location || location_type) && (
                   <div class="mt-1 text-xs text-muted-foreground">
                     {location} {location && location_type && " • "} {location_type}
                   </div>
                 )}
-
-                {/* Description & Responsibilities */}
                 <div class="mt-4 flex flex-col gap-4 text-sm text-muted-foreground">
                   {summary && (
                     <div class="leading-relaxed">
@@ -157,7 +142,6 @@ import { work } from "@cv";
                       )}
                     </div>
                   )}
-
                   {responsibilities && (
                     <ExpandButton client:load>
                       <div class="mt-3 flex flex-col gap-2">
