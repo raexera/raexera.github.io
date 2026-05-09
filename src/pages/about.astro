@@ -9,13 +9,41 @@ import { SITE } from "@/consts";
 
 <BaseLayout title="About" description={SITE.DESCRIPTION}>
   <div class="container mx-auto max-w-5xl py-24 sm:py-32">
-    <div class="mb-12 flex flex-col gap-4">
-      <h1 class="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-        About Me
-      </h1>
-      <p class="text-lg text-muted-foreground">
-        My professional background, experience, and skills.
-      </p>
+    <div
+      class="mb-12 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between"
+    >
+      <div class="flex flex-col gap-4">
+        <h1
+          class="text-4xl font-bold tracking-tight text-foreground sm:text-6xl"
+        >
+          About Me
+        </h1>
+        <p class="text-lg text-muted-foreground">
+          My professional background, experience, and skills.
+        </p>
+      </div>
+      <button
+        id="download-cv"
+        class="group flex h-9 shrink-0 items-center justify-center gap-2 rounded-lg border border-border bg-background px-4 text-sm font-medium text-muted-foreground transition-all hover:border-border/80 hover:bg-muted hover:text-foreground sm:h-10"
+      >
+        <span id="cv-icon" class="flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-4 transition-transform group-hover:-translate-y-0.5"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </span>
+        <span id="cv-text">Download CV</span>
+      </button>
     </div>
     <div class="grid grid-cols-1 gap-4">
       <Experience />
@@ -27,3 +55,34 @@ import { SITE } from "@/consts";
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  import { generatePDF } from "@/lib/cv";
+
+  const btn = document.getElementById("download-cv");
+  const btnText = document.getElementById("cv-text");
+  const btnIcon = document.getElementById("cv-icon");
+
+  if (btn && btnText && btnIcon) {
+    const originalText = btnText.innerText;
+
+    btn.addEventListener("click", async () => {
+      btnText.innerText = "Generating PDF...";
+      btnIcon.style.display = "none";
+      btn.style.pointerEvents = "none";
+
+      try {
+        await generatePDF();
+      } catch (error) {
+        console.error("Failed to generate PDF:", error);
+        btnText.innerText = "Error generating CV";
+      } finally {
+        setTimeout(() => {
+          btnText.innerText = originalText;
+          btnIcon.style.display = "flex";
+          btn.style.pointerEvents = "auto";
+        }, 1500);
+      }
+    });
+  }
+</script>
