@@ -1,99 +1,28 @@
-# raexera's Personal Website
+# RXR
 
-This is the source code for my personal website. It is built using [Astro](https://astro.build/).
+Source code for my personal website. A highly opinionated, minimalist portfolio template built with a strict monochromatic aesthetic.
 
 ## Stack
 
-This project uses the following technologies:
+- Astro
+- React (with Framer Motion)
+- Tailwind CSS
+- TypeScript
 
-- [Astro](https://astro.build/)
-- [React](https://react.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [TypeScript](https://www.typescriptlang.org/)
+## Usage
 
-## 🚀 Project Structure
+1. Clone the repository: `git clone https://github.com/raexera/raexera.github.io.git`
+2. Install dependencies: `pnpm install`
+3. Start the development server: `pnpm dev`
+4. Build for production: `pnpm build`
 
-Inside of your Astro project, you'll see the following folders and files:
+## Configuration
 
-```text
-.
-├── astro.config.mjs
-├── cv.json
-├── LICENSE
-├── package.json
-├── pnpm-lock.yaml
-├── public
-│   ├── assets
-│   │   └── photo.png
-│   ├── CNAME
-│   ├── favicon.svg
-│   ├── fonts
-│   │   ├── Inter-Bold.woff2
-│   │   └── Inter-Regular.woff2
-│   └── robots.txt
-├── README.md
-├── src
-│   ├── components
-│   │   ├── Awards.astro
-│   │   ├── Boxes.tsx
-│   │   ├── Button.astro
-│   │   ├── Card.astro
-│   │   ├── Education.astro
-│   │   ├── ExpandButton.tsx
-│   │   ├── Experience.astro
-│   │   ├── Footer.astro
-│   │   ├── Header.astro
-│   │   ├── Heading.astro
-│   │   ├── Navbar.astro
-│   │   ├── Photo.tsx
-│   │   ├── Section.astro
-│   │   ├── Skills.astro
-│   │   ├── Starry.tsx
-│   │   └── ThemeToggle.astro
-│   ├── consts.ts
-│   ├── env.d.ts
-│   ├── icons
-│   │   ├── close.svg
-│   │   ├── email.svg
-│   │   ├── github.svg
-│   │   ├── linkedin.svg
-│   │   ├── menu.svg
-│   │   ├── moon.svg
-│   │   ├── sun.svg
-│   │   └── telegram.svg
-│   ├── layouts
-│   │   ├── BaseHead.astro
-│   │   └── BaseLayout.astro
-│   ├── lib
-│   │   └── utils.ts
-│   ├── pages
-│   │   ├── about.astro
-│   │   ├── index.astro
-│   │   └── projects.astro
-│   ├── styles
-│   │   └── global.css
-│   └── types.ts
-├── tailwind.config.mjs
-└── tsconfig.json
+Content is driven entirely by data files rather than hardcoded markup.
 
-11 directories, 49 files
-```
+- `cv.json`: Core resume data (Experience, Education, Skills, Awards).
+- `src/consts.ts`: Global site metadata and navigation links.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## License
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `pnpm install`         | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+MIT License.
