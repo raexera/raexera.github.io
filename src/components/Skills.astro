@@ -23,13 +23,14 @@ const skillCategories = [
     title: "Monitoring & Alerting",
     items: observability_security.monitoring_alerting,
   },
-  { title: "Security", items: observability_security.security },
   { title: "Testing", items: observability_security.testing },
 ];
 ---
 
 <Section className={Astro.props.className} title="Skills">
-  {/* Removed the inner borders and expanded the grid gap for natural breathing room */}
+  {
+    /* Removed the inner borders and expanded the grid gap for natural breathing room */
+  }
   <div class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2">
     {
       skillCategories.map(({ title, items }) => (

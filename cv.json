@@ -125,14 +125,7 @@
     }
   ],
   "skills": {
-    "programming_languages": [
-      "Go",
-      "Python",
-      "Shell/Bash",
-      "Nix",
-      "SQL",
-      "Lua"
-    ],
+    "programming_languages": ["Go", "Python", "Shell/Bash", "Nix", "SQL"],
     "cloud_platforms": [
       "Tencent Cloud (TKE)",
       "AWS (EKS, EC2)",
@@ -147,20 +140,20 @@
     },
     "observability_security": {
       "monitoring_alerting": ["Prometheus", "Grafana", "Gatus", "Incident.io"],
-      "security": ["Trivy", "SonarQube", "Network Policies"],
       "testing": ["k6"]
     }
   },
   "projects": [
     {
-      "name": "Yoru",
-      "description": "Custom Performance-Focused Linux Environment",
-      "url": "https://github.com/raexera/yoru",
+      "name": "MyLinx",
+      "description": "Multi-Tenant Web Generator for MSMEs",
+      "url": "https://mylinx.tech/",
       "highlights": [
-        "Engineered a customized Linux environment using Arch/NixOS and AwesomeWM.",
-        "Developed custom Lua scripts for system resource monitoring and workflow automation."
+        "Architected a scalable multi-tenant platform enabling MSMEs to deploy customized e-commerce storefronts and portfolios via dynamic subdomain routing.",
+        "Engineered real-time storefront customization features and a secure checkout flow integrated seamlessly with WhatsApp.",
+        "Containerized the application and deployed the production environment using Docker and Nginx."
       ],
-      "technologies": ["Lua", "Shell", "Nix", "Linux"]
+      "technologies": ["PHP", "Laravel", "Docker", "Nginx"]
     },
     {
       "name": "Shusseki",
@@ -182,13 +175,14 @@
       "technologies": ["Motoko", "Web3", "ICP"]
     },
     {
-      "name": "Cursed",
-      "description": "Minimalist TUI Calendar",
-      "url": "https://github.com/raexera/cursed",
+      "name": "Yoru",
+      "description": "Custom Performance-Focused Linux Environment",
+      "url": "https://github.com/raexera/yoru",
       "highlights": [
-        "Developed a lightweight terminal application optimizing memory usage via C and ncurses."
+        "Engineered a customized Linux environment using Arch/NixOS and AwesomeWM.",
+        "Developed custom Lua scripts for system resource monitoring and workflow automation."
       ],
-      "technologies": ["C", "ncurses"]
+      "technologies": ["Lua", "Shell", "Nix", "Linux"]
     }
   ]
 }
