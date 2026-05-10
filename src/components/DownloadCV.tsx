@@ -244,7 +244,7 @@ export default function DownloadCVButton() {
     <button
       onClick={handleDownload}
       disabled={isGenerating}
-      className="group flex h-9 shrink-0 items-center justify-center gap-2 rounded-lg border border-border bg-background px-4 text-sm font-medium text-muted-foreground transition-all hover:border-border/80 hover:bg-muted hover:text-foreground disabled:pointer-events-none disabled:opacity-50 sm:h-10"
+      className="group flex h-9 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-lg border border-border bg-background px-4 text-sm font-medium text-muted-foreground transition-all hover:border-border/80 hover:bg-muted hover:text-foreground disabled:pointer-events-none disabled:opacity-50 sm:h-10"
     >
       {!isGenerating && (
         <svg

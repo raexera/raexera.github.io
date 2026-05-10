@@ -11,7 +11,7 @@ const { id } = Astro.props;
 <button
   id={id}
   aria-label="Toggle light and dark theme"
-  class="flex size-9 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+  class="flex size-9 cursor-pointer items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
 >
   <Icon name="sun" class="block size-[1.2rem] dark:hidden" />
   <Icon name="moon" class="hidden size-[1.2rem] dark:block" />
