@@ -138,7 +138,7 @@
       "ci_cd": ["GitHub Actions", "GitOps"],
       "os": ["Linux", "NixOS"]
     },
-    "observability_security": {
+    "observability": {
       "monitoring_alerting": ["Prometheus", "Grafana", "Gatus", "Incident.io"],
       "testing": ["k6"]
     }

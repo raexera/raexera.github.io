@@ -18,41 +18,48 @@ const styles = StyleSheet.create({
     lineHeight: 1.2,
   },
   header: {
-    fontSize: 18,
+    fontSize: 24,
     fontFamily: "Helvetica-Bold",
     textAlign: "center",
-    marginBottom: 4,
+    marginBottom: 12,
+    letterSpacing: 1.5,
+    lineHeight: 1,
+    color: "#000000",
   },
   subHeader: {
-    fontSize: 9,
+    fontSize: 10,
     textAlign: "center",
     color: "#666666",
-    marginBottom: 15,
+    marginBottom: 16,
   },
   sectionTitle: {
     fontSize: 11,
     fontFamily: "Helvetica-Bold",
-    marginTop: 10,
+    marginTop: 12,
     marginBottom: 4,
     color: "#000000",
+    textTransform: "uppercase",
   },
   line: {
     borderBottomWidth: 1,
     borderBottomColor: "#000000",
+    marginBottom: 8,
   },
-  summaryText: {
-    marginTop: 5,
-    marginBottom: 15,
+  textBlock: {
+    marginBottom: 10,
+  },
+  entryBlock: {
+    marginBottom: 10,
   },
   entryHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 5,
     marginBottom: 2,
   },
   jobTitle: {
     fontSize: 11,
     fontFamily: "Helvetica-Bold",
+    color: "#000000",
   },
   dateRight: {
     fontSize: 10,
@@ -66,25 +73,21 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   entrySummary: {
-    marginTop: 2,
     marginBottom: 4,
   },
   bulletList: {
-    marginLeft: 10,
-    marginBottom: 10,
+    marginLeft: 12,
   },
   bulletRow: {
     flexDirection: "row",
+    marginBottom: 2,
   },
   bullet: {
     width: 12,
+    color: "#444444",
   },
   bulletText: {
     flex: 1,
-  },
-  skillsList: {
-    marginTop: 5,
-    marginBottom: 15,
   },
 });
 
@@ -112,17 +115,15 @@ const ResumeDocument = () => {
             )
             .join("  |  ")}
         </Text>
-
         {/* Summary */}
         <Text style={styles.sectionTitle}>SUMMARY</Text>
         <View style={styles.line} />
-        <Text style={styles.summaryText}>{basics.summary}</Text>
-
+        <Text style={styles.textBlock}>{basics.summary}</Text>
         {/* Experience */}
         <Text style={styles.sectionTitle}>EXPERIENCE</Text>
         <View style={styles.line} />
         {work.map((w: any, i: number) => (
-          <View key={i}>
+          <View key={i} style={styles.entryBlock}>
             <View style={styles.entryHeader}>
               <Text style={styles.jobTitle}>{w.position}</Text>
               <Text style={styles.dateRight}>
@@ -145,12 +146,11 @@ const ResumeDocument = () => {
             )}
           </View>
         ))}
-
         {/* Education */}
         <Text style={styles.sectionTitle}>EDUCATION</Text>
         <View style={styles.line} />
         {education.map((e: any, i: number) => (
-          <View key={i}>
+          <View key={i} style={styles.entryBlock}>
             <View style={styles.entryHeader}>
               <Text style={styles.jobTitle}>{e.institution}</Text>
               <Text style={styles.dateRight}>
@@ -160,30 +160,37 @@ const ResumeDocument = () => {
             <Text style={styles.jobCompany}>
               {e.studyType} in {e.area}
             </Text>
-            {e.summary && <Text style={{ marginBottom: 10 }}>{e.summary}</Text>}
+            {e.summary && <Text style={styles.entrySummary}>{e.summary}</Text>}
           </View>
         ))}
-
         {/* Skills */}
         <Text style={styles.sectionTitle}>SKILLS</Text>
         <View style={styles.line} />
-        <View style={styles.skillsList}>
+        <View style={styles.bulletList}>
           <View style={styles.bulletRow}>
             <Text style={styles.bullet}>•</Text>
             <Text style={styles.bulletText}>
-              Programming Languages: {skills.programming_languages.join(", ")}
+              <Text style={{ fontFamily: "Helvetica-Bold" }}>
+                Programming Languages:{" "}
+              </Text>
+              {skills.programming_languages.join(", ")}
             </Text>
           </View>
           <View style={styles.bulletRow}>
             <Text style={styles.bullet}>•</Text>
             <Text style={styles.bulletText}>
-              Cloud Platforms: {skills.cloud_platforms.join(", ")}
+              <Text style={{ fontFamily: "Helvetica-Bold" }}>
+                Cloud Platforms:{" "}
+              </Text>
+              {skills.cloud_platforms.join(", ")}
             </Text>
           </View>
           <View style={styles.bulletRow}>
             <Text style={styles.bullet}>•</Text>
             <Text style={styles.bulletText}>
-              Orchestration & IaC:{" "}
+              <Text style={{ fontFamily: "Helvetica-Bold" }}>
+                Orchestration & IaC:{" "}
+              </Text>
               {skills.infrastructure_devops.orchestration.join(", ")},{" "}
               {skills.infrastructure_devops.iac.join(", ")}
             </Text>
@@ -191,15 +198,18 @@ const ResumeDocument = () => {
           <View style={styles.bulletRow}>
             <Text style={styles.bullet}>•</Text>
             <Text style={styles.bulletText}>
-              CI/CD & OS: {skills.infrastructure_devops.ci_cd.join(", ")},{" "}
+              <Text style={{ fontFamily: "Helvetica-Bold" }}>CI/CD & OS: </Text>
+              {skills.infrastructure_devops.ci_cd.join(", ")},{" "}
               {skills.infrastructure_devops.os.join(", ")}
             </Text>
           </View>
           <View style={styles.bulletRow}>
             <Text style={styles.bullet}>•</Text>
             <Text style={styles.bulletText}>
-              Observability & Security:{" "}
-              {skills.observability_security.monitoring_alerting.join(", ")}
+              <Text style={{ fontFamily: "Helvetica-Bold" }}>
+                Observabilityy:{" "}
+              </Text>
+              {skills.observability.monitoring_alerting.join(", ")}
             </Text>
           </View>
         </View>
