@@ -2,7 +2,7 @@
   "basics": {
     "name": "Rayhan Kafi Pratama",
     "nickname": "raexera",
-    "label": "Platform Engineer & DevSecOps Specialist",
+    "label": "Platform & DevSecOps Engineer",
     "summary": "Platform Engineer specializing in hybrid multi-cloud and bare-metal infrastructure. Experienced in low-level Linux debugging, distributed systems, and building custom internal developer platforms (IDP) using Go and Python. Advocate for Immutable Infrastructure (NixOS) and Reproducible Builds.",
     "location": {
       "city": "Bandung",
@@ -76,20 +76,6 @@
         "Designed backend architectures for event registration systems.",
         "Mentored junior members on Go best practices and cloud-native concepts."
       ]
-    },
-    {
-      "name": "PT. Khatulistiwa Nusantara Indonesia (KHANSIA)",
-      "position": "Back-End Developer Intern",
-      "location_type": "Hybrid",
-      "location": "Bandung, Indonesia",
-      "url": "https://khansia.co.id",
-      "startDate": "2020-09-01",
-      "endDate": "2020-12-01",
-      "summary": "Gained early career exposure to agile development and mobile backend systems.",
-      "responsibilities": [
-        "Assisted in developing REST APIs for mobile applications.",
-        "Participated in agile sprint planning and daily stand-ups."
-      ]
     }
   ],
   "education": [
@@ -101,15 +87,6 @@
       "startDate": "2022-09-01",
       "endDate": null,
       "summary": "Currently in Final Year (Semester 8). Specializing in Systems Engineering and Cloud Architecture. Researching multi-tenant web generator architectures for MSMEs."
-    },
-    {
-      "institution": "SMK Assalaam Bandung",
-      "url": "https://smkassalaambandung.sch.id/",
-      "area": "Software Engineering",
-      "studyType": "Vocational High School",
-      "startDate": "2019-09-01",
-      "endDate": "2022-06-01",
-      "summary": "Graduated with honors, focusing on software engineering fundamentals."
     }
   ],
   "awards": [
@@ -176,13 +153,23 @@
     },
     {
       "name": "Yoru",
-      "description": "Custom Performance-Focused Linux Environment",
+      "description": "Event-Driven Linux Workspace Automation",
       "url": "https://github.com/raexera/yoru",
       "highlights": [
-        "Engineered a customized Linux environment using Arch/NixOS and AwesomeWM.",
-        "Developed custom Lua scripts for system resource monitoring and workflow automation."
+        "Engineered a highly optimized, low-overhead Linux environment utilizing Arch Linux and AwesomeWM.",
+        "Developed custom Lua modules for system resource monitoring, process management, and workflow automation."
       ],
-      "technologies": ["Lua", "Shell", "Nix", "Linux"]
+      "technologies": ["Linux", "Lua", "Shell", "AwesomeWM"]
+    },
+    {
+      "name": "Yuki",
+      "description": "Declarative Infrastructure & Immutable Workspace",
+      "url": "https://github.com/raexera/yuki",
+      "highlights": [
+        "Architected a fully reproducible, declarative system configuration utilizing Nix Flakes and Home Manager.",
+        "Managed immutable developer workspace provisioning, ensuring zero configuration drift across bare-metal machines."
+      ],
+      "technologies": ["Nix", "NixOS", "Infrastructure as Code", "Shell"]
     }
   ]
 }
