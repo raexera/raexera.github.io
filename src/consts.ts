@@ -5,7 +5,6 @@ export const SITE: Site = {
   DESCRIPTION:
     "DevSecOps Engineer specializing in hybrid multi-cloud infrastructure and distributed systems.",
   AUTHOR: "Rayhan Kafi Pratama",
-  REPO_URL: "https://github.com/raexera/raexera.github.io",
 };
 
 export const LINKS: Links = [

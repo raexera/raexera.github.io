@@ -1,7 +1,6 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
-import { Icon } from "astro-icon/components";
-import { SITE, LINKS } from "@/consts";
+import { LINKS } from "@/consts";
 import { cn } from "@/lib/utils";
 
 const { pathname } = Astro.url;
@@ -31,17 +30,7 @@ const subpath = pathname.match(/[^/]+/g);
         ))
       }
     </nav>
-    <div class="flex items-center gap-1">
-      <div class="mx-1 h-5 w-px bg-border"></div>
-      <a
-        href={SITE.REPO_URL}
-        aria-label="Github repository link"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex size-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-      >
-        <Icon name="github" class="size-[1.2rem]" />
-      </a>
+    <div class="flex items-center">
       <ThemeToggle id="navbarThemeToggle" />
     </div>
   </div>
