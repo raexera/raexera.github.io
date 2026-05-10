@@ -207,7 +207,7 @@ const ResumeDocument = () => {
             <Text style={styles.bullet}>•</Text>
             <Text style={styles.bulletText}>
               <Text style={{ fontFamily: "Helvetica-Bold" }}>
-                Observabilityy:{" "}
+                Observability:{" "}
               </Text>
               {skills.observability.monitoring_alerting.join(", ")}
             </Text>
