@@ -1,7 +1,7 @@
 import type { Site, Links } from "@/types";
 
 export const SITE: Site = {
-  TITLE: "RXR",
+  TITLE: "ラエクセラ",
   DESCRIPTION:
     "DevSecOps & Platform Engineer specializing in hybrid multi-cloud infrastructure and distributed systems.",
   AUTHOR: "Rayhan Kafi Pratama",

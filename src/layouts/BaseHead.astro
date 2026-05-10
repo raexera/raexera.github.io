@@ -35,6 +35,13 @@ const { title, description } = Astro.props;
   crossorigin
 />
 
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap"
+  rel="stylesheet"
+/>
+
 <link rel="canonical" href={canonicalURL} />
 <title>{title}</title>
 <meta name="title" content={title} />
@@ -60,7 +67,6 @@ const { title, description } = Astro.props;
         ) {
           return localStorage.getItem("theme");
         }
-
         return "dark";
       })();
 
