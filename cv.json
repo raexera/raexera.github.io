@@ -144,15 +144,6 @@
       "technologies": ["Python", "OpenCV", "Dlib", "SQL"]
     },
     {
-      "name": "Identik",
-      "description": "Decentralized Web3 Identity",
-      "url": "https://github.com/raexera/identik",
-      "highlights": [
-        "Developed a blockchain-based identity management system using Motoko on the Internet Computer (ICP)."
-      ],
-      "technologies": ["Motoko", "Web3", "ICP"]
-    },
-    {
       "name": "Yoru",
       "description": "Event-Driven Linux Workspace Automation",
       "url": "https://github.com/raexera/yoru",
