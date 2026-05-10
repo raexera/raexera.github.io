@@ -44,7 +44,8 @@
         "Executed production root cause analysis (RCA) utilizing advanced Linux systems analysis, including syscall tracing and kernel auditing.",
         "Developed custom CLI tooling in Go and Python for infrastructure automation.",
         "Conducted bare-metal capacity planning and production load testing for high-throughput AI services using k6.",
-        "Hardened cluster security via network policies, container scanning, and least-privilege IAM roles."
+        "Hardened cluster security via network policies, container scanning, and least-privilege IAM roles.",
+        "Managed Wibu CodeMeter infrastructure to enforce cryptographic licensing, DRM, and intellectual property protection for proprietary AI models."
       ]
     },
     {
