@@ -2,8 +2,8 @@
   "basics": {
     "name": "Rayhan Kafi Pratama",
     "nickname": "raexera",
-    "label": "Platform & DevSecOps Engineer",
-    "summary": "Platform Engineer specializing in hybrid multi-cloud and bare-metal infrastructure. Experienced in low-level Linux debugging, distributed systems, and building custom internal developer platforms (IDP) using Go and Python. Advocate for Immutable Infrastructure (NixOS) and Reproducible Builds.",
+    "label": "DevSecOps Engineer",
+    "summary": "DevSecOps Engineer specializing in hybrid multi-cloud and bare-metal infrastructure. Experienced in low-level Linux debugging, distributed systems, and building custom internal developer platforms (IDP) using Go and Python. Advocate for Immutable Infrastructure (NixOS) and Reproducible Builds.",
     "location": {
       "city": "Bandung",
       "countryCode": "ID",
@@ -37,7 +37,7 @@
       "url": "https://verihubs.com",
       "startDate": "2025-08-01",
       "endDate": null,
-      "summary": "Managing hybrid infrastructure across bare-metal and multi-cloud environments, focusing on robust platform engineering solutions.",
+      "summary": "Managing hybrid infrastructure across bare-metal and multi-cloud environments, focusing on robust DevSecOps solutions.",
       "responsibilities": [
         "Orchestrated hybrid Kubernetes clusters across Tencent Cloud, AWS, GCP, and bare-metal environments.",
         "Engineered an automated P0 incident alerting pipeline using Gatus, Incident.io, and Macrodroid.",

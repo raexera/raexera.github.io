@@ -3,7 +3,7 @@ import type { Site, Links } from "@/types";
 export const SITE: Site = {
   TITLE: "ラエクセラ",
   DESCRIPTION:
-    "DevSecOps & Platform Engineer specializing in hybrid multi-cloud infrastructure and distributed systems.",
+    "DevSecOps Engineer specializing in hybrid multi-cloud infrastructure and distributed systems.",
   AUTHOR: "Rayhan Kafi Pratama",
   REPO_URL: "https://github.com/raexera/raexera.github.io",
 };
