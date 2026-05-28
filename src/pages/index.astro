@@ -4,7 +4,6 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { SITE } from "@/consts";
 import { basics, skills } from "@cv";
 
-// Added nickname to the extraction
 const { name, nickname, label, summary, socials } = basics;
 
 const extractSkills = (obj: any): string[] => {
