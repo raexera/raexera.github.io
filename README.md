@@ -1,4 +1,4 @@
-# RXR
+# ラエクセラ
 
 Source code for my personal website. A highly opinionated, minimalist portfolio template built with a strict monochromatic aesthetic.
 

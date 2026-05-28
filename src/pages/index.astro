@@ -4,7 +4,8 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { SITE } from "@/consts";
 import { basics, skills } from "@cv";
 
-const { name, label, summary, socials } = basics;
+// Added nickname to the extraction
+const { name, nickname, label, summary, socials } = basics;
 
 const extractSkills = (obj: any): string[] => {
   let result: string[] = [];
@@ -46,11 +47,19 @@ const finalSkills = Array.from(new Set(extractSkills(skills).filter(Boolean)));
           >
             {name}
           </h1>
-          <h2
-            class="mt-4 text-xl font-medium tracking-tight text-muted-foreground sm:text-2xl"
-          >
-            {label}
-          </h2>
+          <div class="mt-4 flex flex-wrap items-center gap-3">
+            <h2
+              class="text-xl font-medium tracking-tight text-muted-foreground sm:text-2xl"
+            >
+              {label}
+            </h2>
+            <span class="text-border">/</span>
+            <span
+              class="font-mono text-lg font-medium text-muted-foreground sm:text-xl"
+            >
+              @{nickname}
+            </span>
+          </div>
         </div>
         <div
           class="flex flex-col justify-center rounded-2xl border border-border bg-card p-8 transition-colors hover:border-border/80 hover:bg-muted/10 sm:p-10 md:col-span-2"
@@ -86,12 +95,12 @@ const finalSkills = Array.from(new Set(extractSkills(skills).filter(Boolean)));
           class="relative flex flex-col justify-center overflow-hidden rounded-2xl border border-border bg-card py-8 transition-colors hover:border-border/80 hover:bg-muted/10 md:col-span-3"
         >
           <div class="marquee-mask flex w-full overflow-hidden">
-            <div class="flex w-max animate-marquee">
+            <div class="animate-marquee flex w-max">
               {
                 [...Array(2)].map(() => (
                   <div class="flex shrink-0 items-center gap-6 pr-6">
                     {finalSkills.map((skill) => (
-                      <div class="flex shrink-0 items-center justify-center rounded-lg border border-border bg-muted/20 px-5 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground hover:border-border/80">
+                      <div class="flex shrink-0 items-center justify-center rounded-lg border border-border bg-muted/20 px-5 py-3 text-sm font-medium text-muted-foreground transition-colors hover:border-border/80 hover:bg-muted hover:text-foreground">
                         {skill}
                       </div>
                     ))}
