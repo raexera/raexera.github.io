@@ -3,7 +3,7 @@
     "name": "Rayhan Kafi Pratama",
     "nickname": "raexera",
     "label": "DevSecOps Engineer",
-    "summary": "DevSecOps Engineer specializing in hybrid multi-cloud and bare-metal infrastructure. Experienced in low-level Linux debugging, distributed systems, and building custom internal developer platforms (IDP) using Go and Python. Linux enthusiast and advocate for Immutable Infrastructure (NixOS) and Reproducible Builds, with a strong commitment to open-source contributions.",
+    "summary": "DevSecOps Engineer specializing in hybrid multi-cloud and on-premise infrastructure, alongside distributed systems. Experienced in low-level Linux debugging and building custom internal developer platforms (IDP) using Go and Python. Linux enthusiast and advocate for Immutable Infrastructure (NixOS) and Reproducible Builds, with a strong commitment to open-source contributions.",
     "location": {
       "city": "Bandung",
       "countryCode": "ID"
@@ -36,13 +36,13 @@
       "url": "https://verihubs.com",
       "startDate": "2025-08-01",
       "endDate": null,
-      "summary": "Managing hybrid infrastructure across bare-metal and multi-cloud environments, focusing on robust DevSecOps solutions.",
+      "summary": "Managing hybrid multi-cloud and on-premise infrastructure, focusing on robust DevSecOps solutions and platform reliability.",
       "responsibilities": [
-        "Orchestrated hybrid Kubernetes clusters across Tencent Cloud, AWS, GCP, and bare-metal environments.",
+        "Orchestrated hybrid Kubernetes clusters across Tencent Cloud, AWS, GCP, and on-premise environments.",
         "Engineered an automated P0 incident alerting pipeline using Gatus, Incident.io, and Macrodroid.",
         "Executed production root cause analysis (RCA) utilizing advanced Linux systems analysis, including syscall tracing and kernel auditing.",
         "Developed custom CLI tooling in Go and Python for infrastructure automation.",
-        "Conducted bare-metal capacity planning and production load testing for high-throughput AI services using k6.",
+        "Conducted cluster capacity planning and production load testing for high-throughput AI services using k6.",
         "Hardened cluster security via network policies, container scanning, and least-privilege IAM roles.",
         "Managed Wibu CodeMeter infrastructure to enforce cryptographic licensing, DRM, and intellectual property protection for proprietary AI models."
       ]
@@ -104,10 +104,10 @@
   "skills": {
     "programming_languages": ["Go", "Python", "Shell/Bash", "Nix", "SQL"],
     "cloud_platforms": [
-      "Tencent Cloud (TKE)",
       "AWS (EKS, EC2)",
       "Google Cloud (GKE)",
-      "Bare Metal"
+      "Tencent Cloud (TKE)",
+      "On-Premise"
     ],
     "infrastructure_devops": {
       "orchestration": ["Kubernetes", "Docker"],
@@ -158,7 +158,7 @@
       "url": "https://github.com/raexera/yuki",
       "highlights": [
         "Architected a fully reproducible, declarative system configuration utilizing Nix Flakes and Home Manager.",
-        "Managed immutable developer workspace provisioning, ensuring zero configuration drift across bare-metal machines."
+        "Managed immutable developer workspace provisioning, ensuring zero configuration drift across physical workstations."
       ],
       "technologies": ["Nix", "NixOS", "Infrastructure as Code", "Shell"]
     }
