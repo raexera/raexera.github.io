@@ -110,7 +110,7 @@ const ResumeDocument = () => {
         <Text style={styles.subHeader}>
           {basics.location.city}, {basics.location.countryCode} |{" "}
           {basics.socials
-            .map((s: any) =>
+            .map((s: { url: string }) =>
               s.url.replace("https://", "").replace("mailto:", ""),
             )
             .join("  |  ")}
@@ -122,47 +122,76 @@ const ResumeDocument = () => {
         {/* Experience */}
         <Text style={styles.sectionTitle}>EXPERIENCE</Text>
         <View style={styles.line} />
-        {work.map((w: any, i: number) => (
-          <View key={i} style={styles.entryBlock}>
-            <View style={styles.entryHeader}>
-              <Text style={styles.jobTitle}>{w.position}</Text>
-              <Text style={styles.dateRight}>
-                {formatDate(w.startDate)} - {formatDate(w.endDate)}
-              </Text>
-            </View>
-            <Text style={styles.jobCompany}>
-              {w.name} - {w.location}
-            </Text>
-            {w.summary && <Text style={styles.entrySummary}>{w.summary}</Text>}
-            {w.responsibilities && (
-              <View style={styles.bulletList}>
-                {w.responsibilities.map((r: string, j: number) => (
-                  <View key={j} style={styles.bulletRow}>
-                    <Text style={styles.bullet}>•</Text>
-                    <Text style={styles.bulletText}>{r}</Text>
-                  </View>
-                ))}
+        {work.map(
+          (
+            w: {
+              position: string;
+              startDate: string | null;
+              endDate: string | null;
+              name: string;
+              location: string;
+              summary?: string;
+              responsibilities?: string[];
+            },
+            i: number,
+          ) => (
+            <View key={i} style={styles.entryBlock}>
+              <View style={styles.entryHeader}>
+                <Text style={styles.jobTitle}>{w.position}</Text>
+                <Text style={styles.dateRight}>
+                  {formatDate(w.startDate)} - {formatDate(w.endDate)}
+                </Text>
               </View>
-            )}
-          </View>
-        ))}
+              <Text style={styles.jobCompany}>
+                {w.name} - {w.location}
+              </Text>
+              {w.summary && (
+                <Text style={styles.entrySummary}>{w.summary}</Text>
+              )}
+              {w.responsibilities && (
+                <View style={styles.bulletList}>
+                  {w.responsibilities.map((r: string, j: number) => (
+                    <View key={j} style={styles.bulletRow}>
+                      <Text style={styles.bullet}>•</Text>
+                      <Text style={styles.bulletText}>{r}</Text>
+                    </View>
+                  ))}
+                </View>
+              )}
+            </View>
+          ),
+        )}
         {/* Education */}
         <Text style={styles.sectionTitle}>EDUCATION</Text>
         <View style={styles.line} />
-        {education.map((e: any, i: number) => (
-          <View key={i} style={styles.entryBlock}>
-            <View style={styles.entryHeader}>
-              <Text style={styles.jobTitle}>{e.institution}</Text>
-              <Text style={styles.dateRight}>
-                {formatDate(e.startDate)} - {formatDate(e.endDate)}
+        {education.map(
+          (
+            e: {
+              institution: string;
+              startDate: string | null;
+              endDate: string | null;
+              studyType: string;
+              area: string;
+              summary?: string;
+            },
+            i: number,
+          ) => (
+            <View key={i} style={styles.entryBlock}>
+              <View style={styles.entryHeader}>
+                <Text style={styles.jobTitle}>{e.institution}</Text>
+                <Text style={styles.dateRight}>
+                  {formatDate(e.startDate)} - {formatDate(e.endDate)}
+                </Text>
+              </View>
+              <Text style={styles.jobCompany}>
+                {e.studyType} in {e.area}
               </Text>
+              {e.summary && (
+                <Text style={styles.entrySummary}>{e.summary}</Text>
+              )}
             </View>
-            <Text style={styles.jobCompany}>
-              {e.studyType} in {e.area}
-            </Text>
-            {e.summary && <Text style={styles.entrySummary}>{e.summary}</Text>}
-          </View>
-        ))}
+          ),
+        )}
         {/* Skills */}
         <Text style={styles.sectionTitle}>SKILLS</Text>
         <View style={styles.line} />

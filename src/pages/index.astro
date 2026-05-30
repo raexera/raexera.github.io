@@ -6,6 +6,7 @@ import { basics, skills } from "@cv";
 
 const { name, nickname, label, summary, socials } = basics;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const extractSkills = (obj: any): string[] => {
   let result: string[] = [];
   for (const key in obj) {

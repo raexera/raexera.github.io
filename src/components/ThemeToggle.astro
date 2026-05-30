@@ -19,7 +19,7 @@ const { id } = Astro.props;
 
 <script is:inline define:vars={{ id }}>
   const setToggleListener = () => {
-    let toggleBtn = document.getElementById(id);
+    const toggleBtn = document.getElementById(id);
     const handleToggleClick = () => {
       const element = document.documentElement;
 

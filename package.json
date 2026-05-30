@@ -4,11 +4,11 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write . --plugin=prettier-plugin-astro"
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
@@ -21,7 +21,6 @@
     "astro-icon": "^1.1.5",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
-    "prettier-plugin-tailwindcss": "^0.8.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "sharp": "^0.34.5",
@@ -31,8 +30,14 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.4",
+    "@typescript-eslint/eslint-plugin": "^8.60.0",
+    "@typescript-eslint/parser": "^8.60.0",
+    "eslint": "^10.4.0",
+    "eslint-plugin-astro": "^1.7.0",
     "prettier": "^3.8.3",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "typescript-eslint": "^8.60.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
