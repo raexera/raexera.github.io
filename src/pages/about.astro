@@ -2,6 +2,7 @@
 import Awards from "@/components/Awards.astro";
 import Education from "@/components/Education.astro";
 import Experience from "@/components/Experience.astro";
+import Publication from "@/components/Publication.astro";
 import Skills from "@/components/Skills.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import DownloadCVButton from "@/components/DownloadCV";
@@ -31,7 +32,10 @@ import { SITE } from "@/consts";
       <Skills />
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
         <Education />
-        <Awards />
+        <div class="flex flex-col gap-4">
+          <Awards />
+          <Publication />
+        </div>
       </div>
     </div>
   </div>

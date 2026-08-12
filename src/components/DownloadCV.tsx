@@ -100,7 +100,7 @@ const formatDate = (dateString: string | null) => {
 };
 
 const ResumeDocument = () => {
-  const { basics, work, education, skills } = cv;
+  const { basics, work, education, skills, publications } = cv;
 
   return (
     <Document>
@@ -115,10 +115,12 @@ const ResumeDocument = () => {
             )
             .join("  |  ")}
         </Text>
+
         {/* Summary */}
         <Text style={styles.sectionTitle}>SUMMARY</Text>
         <View style={styles.line} />
         <Text style={styles.textBlock}>{basics.summary}</Text>
+
         {/* Experience */}
         <Text style={styles.sectionTitle}>EXPERIENCE</Text>
         <View style={styles.line} />
@@ -161,6 +163,7 @@ const ResumeDocument = () => {
             </View>
           ),
         )}
+
         {/* Education */}
         <Text style={styles.sectionTitle}>EDUCATION</Text>
         <View style={styles.line} />
@@ -192,6 +195,43 @@ const ResumeDocument = () => {
             </View>
           ),
         )}
+
+        {/* Publications */}
+        {publications && publications.length > 0 && (
+          <>
+            <Text style={styles.sectionTitle}>PUBLICATIONS</Text>
+            <View style={styles.line} />
+            {publications.map(
+              (
+                p: {
+                  name: string;
+                  publisher: string;
+                  releaseDate: string | null;
+                  summary?: string;
+                },
+                i: number,
+              ) => (
+                <View key={i} style={styles.entryBlock}>
+                  <View style={styles.entryHeader}>
+                    <Text
+                      style={{ ...styles.jobTitle, flex: 1, paddingRight: 16 }}
+                    >
+                      {p.name}
+                    </Text>
+                    <Text style={styles.dateRight}>
+                      {formatDate(p.releaseDate)}
+                    </Text>
+                  </View>
+                  <Text style={styles.jobCompany}>{p.publisher}</Text>
+                  {p.summary && (
+                    <Text style={styles.entrySummary}>{p.summary}</Text>
+                  )}
+                </View>
+              ),
+            )}
+          </>
+        )}
+
         {/* Skills */}
         <Text style={styles.sectionTitle}>SKILLS</Text>
         <View style={styles.line} />
