@@ -1,85 +1,171 @@
 ---
 import Section from "./Section.astro";
-import { education } from "@cv";
+import { education, publications } from "@cv";
 ---
 
-<Section className={Astro.props.className} title="Education">
-  <ul class="space-y-6">
-    {
-      education.map(
-        ({ institution, startDate, endDate, area, url, summary }) => {
-          const startYear = new Date(startDate).getFullYear();
-          const endYear = endDate ? new Date(endDate).getFullYear() : "Present";
-          const years = `${startYear} - ${endYear}`;
+<>
+  <Section className={Astro.props.className} title="Education">
+    <ul class="space-y-6">
+      {
+        education.map(
+          ({ institution, startDate, endDate, area, url, summary }) => {
+            const startYear = new Date(startDate).getFullYear();
+            const endYear = endDate
+              ? new Date(endDate).getFullYear()
+              : "Present";
+            const years = `${startYear} - ${endYear}`;
 
-          return (
-            <li class="flex gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="mt-0.5 hidden h-5 w-5 shrink-0 text-muted-foreground md:block"
-              >
-                <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
-                <path d="M22 10v6" />
-                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
-              </svg>
-              <div class="flex w-full flex-col gap-1">
-                <div class="flex flex-col items-start justify-between gap-2 sm:flex-row">
-                  <div class="text-base leading-snug font-medium text-foreground">
-                    {url ? (
-                      <a
-                        class="inline-flex items-center transition-colors hover:text-muted-foreground"
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {institution}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          class="ml-1 h-4 w-4"
-                          aria-hidden="true"
+            return (
+              <li class="flex gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="mt-0.5 hidden h-5 w-5 shrink-0 text-muted-foreground md:block"
+                >
+                  <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                  <path d="M22 10v6" />
+                  <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+                </svg>
+                <div class="flex w-full flex-col gap-1">
+                  <div class="flex flex-col items-start justify-between gap-2 sm:flex-row">
+                    <div class="text-base leading-snug font-medium text-foreground">
+                      {url ? (
+                        <a
+                          class="inline-flex items-center transition-colors hover:text-muted-foreground"
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
-                          <path
-                            fill-rule="evenodd"
-                            d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      </a>
-                    ) : (
-                      <span>{institution}</span>
+                          {institution}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="ml-1 h-4 w-4"
+                            aria-hidden="true"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                        </a>
+                      ) : (
+                        <span>{institution}</span>
+                      )}
+                    </div>
+                    <time class="shrink-0 text-xs font-medium text-muted-foreground sm:mt-0.5">
+                      {years}
+                    </time>
+                  </div>
+                  <p class="text-sm text-muted-foreground">{area}</p>
+                  {summary && (
+                    <div class="mt-2 text-sm">
+                      <ul class="space-y-1 text-muted-foreground">
+                        {Array.isArray(summary) ? (
+                          summary.map((item) => <li>{item}</li>)
+                        ) : (
+                          <li>{summary}</li>
+                        )}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </li>
+            );
+          },
+        )
+      }
+    </ul>
+  </Section>
+
+  {
+    publications && publications.length > 0 && (
+      <Section className={Astro.props.className} title="Publications">
+        <ul class="space-y-6">
+          {publications.map(
+            ({ name, publisher, releaseDate, url, summary }) => {
+              const date = new Date(releaseDate).toLocaleDateString("en-US", {
+                month: "short",
+                year: "numeric",
+              });
+
+              return (
+                <li class="flex gap-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="mt-0.5 hidden h-5 w-5 shrink-0 text-muted-foreground md:block"
+                  >
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                    <line x1="10" y1="9" x2="8" y2="9" />
+                  </svg>
+                  <div class="flex w-full flex-col gap-1">
+                    <div class="flex flex-col items-start justify-between gap-2 sm:flex-row">
+                      <div class="text-base leading-snug font-medium text-foreground">
+                        {url ? (
+                          <a
+                            class="inline-flex items-center transition-colors hover:text-muted-foreground"
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {name}
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              class="ml-1 h-4 w-4 shrink-0"
+                              aria-hidden="true"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                clip-rule="evenodd"
+                              />
+                            </svg>
+                          </a>
+                        ) : (
+                          <span>{name}</span>
+                        )}
+                      </div>
+                      <time class="shrink-0 text-xs font-medium text-muted-foreground sm:mt-0.5">
+                        {date}
+                      </time>
+                    </div>
+                    <p class="text-sm font-medium text-muted-foreground">
+                      {publisher}
+                    </p>
+                    {summary && (
+                      <div class="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {summary}
+                      </div>
                     )}
                   </div>
-                  <time class="shrink-0 text-xs font-medium text-muted-foreground sm:mt-0.5">
-                    {years}
-                  </time>
-                </div>
-                <p class="text-sm text-muted-foreground">{area}</p>
-                {summary && (
-                  <div class="mt-2 text-sm">
-                    <ul class="space-y-1 text-muted-foreground">
-                      {Array.isArray(summary) ? (
-                        summary.map((item) => <li>{item}</li>)
-                      ) : (
-                        <li>{summary}</li>
-                      )}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            </li>
-          );
-        },
-      )
-    }
-  </ul>
-</Section>
+                </li>
+              );
+            },
+          )}
+        </ul>
+      </Section>
+    )
+  }
+</>

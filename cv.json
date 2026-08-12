@@ -38,11 +38,11 @@
       "endDate": null,
       "summary": "Managing hybrid multi-cloud and on-premise infrastructure, focusing on robust DevSecOps solutions and platform reliability.",
       "responsibilities": [
-        "Orchestrated hybrid Kubernetes clusters across Tencent Cloud, AWS, GCP, and on-premise environments.",
+        "Orchestrated hybrid Kubernetes clusters, including GPU-accelerated node pools, across Tencent Cloud, AWS, GCP, and on-premise environments.",
         "Engineered an automated P0 incident alerting pipeline using Gatus, Incident.io, and Macrodroid.",
         "Executed production root cause analysis (RCA) utilizing advanced Linux systems analysis, including syscall tracing and kernel auditing.",
         "Developed custom CLI tooling in Go and Python for infrastructure automation.",
-        "Conducted cluster capacity planning and production load testing for high-throughput AI services using k6.",
+        "Conducted capacity planning, GPU resource allocation, and production load testing for high-throughput AI inference services using k6.",
         "Hardened cluster security via network policies, container scanning, and least-privilege IAM roles.",
         "Managed Wibu CodeMeter infrastructure to enforce cryptographic licensing, DRM, and intellectual property protection for proprietary AI models."
       ]
@@ -85,8 +85,17 @@
       "area": "Computer Science",
       "studyType": "Bachelor",
       "startDate": "2022-09-01",
-      "endDate": null,
-      "summary": "Currently in Final Year (Semester 8). Specializing in Systems Engineering and Cloud Architecture. Researching multi-tenant web generator architectures for MSMEs."
+      "endDate": "2026-08-01",
+      "summary": "Completed final thesis. Specialized in Systems Engineering and Cloud Architecture. Researched and developed multi-tenant web generator architectures for MSMEs, resulting in a published academic paper."
+    }
+  ],
+  "publications": [
+    {
+      "name": "Design and Development of a No-Code Web Generator Platform for MSME Business Digitalization: A System Usability Scale Evaluation",
+      "publisher": "International Conference on ICT for Smart Society (ICISS) 2026",
+      "releaseDate": "2026-08-26",
+      "url": "https://iciss.goesmart.id",
+      "summary": "Co-authored peer-reviewed research on MSME digitalization platforms. Engineered the official presentation slides and produced the pre-recorded video presentation required for the IEEE conference proceedings."
     }
   ],
   "awards": [
@@ -104,9 +113,9 @@
   "skills": {
     "programming_languages": ["Go", "Python", "Shell/Bash", "Nix", "SQL"],
     "cloud_platforms": [
+      "Tencent Cloud (TKE)",
       "AWS (EKS, EC2)",
       "Google Cloud (GKE)",
-      "Tencent Cloud (TKE)",
       "On-Premise"
     ],
     "infrastructure_devops": {
@@ -126,11 +135,12 @@
       "description": "Multi-Tenant Web Generator for MSMEs",
       "url": "https://mylinx.tech/",
       "highlights": [
+        "Led full-stack development and managed the complete end-to-end deployment lifecycle, from initial system architecture planning to production rollout.",
         "Architected a scalable multi-tenant platform enabling MSMEs to deploy customized e-commerce storefronts and portfolios via dynamic subdomain routing.",
         "Engineered real-time storefront customization features and a secure checkout flow integrated seamlessly with WhatsApp.",
         "Containerized the application and deployed the production environment using Docker and Nginx."
       ],
-      "technologies": ["PHP", "Laravel", "Docker", "Nginx"]
+      "technologies": ["PHP", "Laravel", "Docker", "Nginx", "Full-Stack"]
     },
     {
       "name": "Shusseki",
