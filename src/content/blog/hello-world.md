@@ -1,6 +1,6 @@
 ---
 title: "Hello, World"
-description: "Welcome to my corner of the internet — notes on infrastructure, security, and distributed systems."
+description: "Welcome to my corner of the internet — notes of my life, work, code, and whatever else is worth sharing."
 pubDate: 2026-08-01
 updatedDate: 2026-08-26
 tags:
@@ -20,20 +20,21 @@ This blog is my public notebook. Some posts will be _opinionated_, others incomp
 
 ## What to expect
 
-### The recurring themes
+This blog is deliberately general. No single niche, no editorial calendar — I write about whatever I want to remember, teach, or share.
 
-The topics I keep circling back to:
+### The kinds of things I'll write
 
-- **Infrastructure** — Terraform, Kubernetes, and the glue in between.
-  - Provisioning and state management
-  - Cluster operations at a small scale
-- **Security** — the boring, unglamorous kind that keeps systems running.
-- **Distributed systems** — queues, consensus, and failure modes.
-- **Tooling** — the small scripts that save hours.
+- **Work** — infrastructure, security, and the systems I operate every day.
+  - Terraform, Kubernetes, and CI pipelines
+  - The boring engineering that keeps things running
+- **Technical** — deep dives into problems I solved the hard way.
+- **Tips & tricks** — small things that save an hour here and there.
+- **Code** — snippets, tools, and experiments worth keeping.
+- **Notes of my life** — hobbies, thoughts, and whatever else is worth remembering.
 
-#### Why these?
+#### The only rule
 
-They're the parts of my job that are hardest to get right and easiest to get wrong.
+If it's worth remembering or sharing, it's worth a post.
 
 ## Why write in public?
 
