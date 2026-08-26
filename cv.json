@@ -3,7 +3,7 @@
     "name": "Rayhan Kafi Pratama",
     "nickname": "raexera",
     "label": "DevSecOps Engineer",
-    "summary": "DevSecOps Engineer specializing in hybrid multi-cloud and on-premise infrastructure, alongside distributed systems. Experienced in low-level Linux debugging and building custom internal developer platforms (IDP) using Go and Python. Linux enthusiast and advocate for Immutable Infrastructure (NixOS) and Reproducible Builds, with a strong commitment to open-source contributions.",
+    "summary": "DevSecOps Engineer with expertise in hybrid multi-cloud and on-premise infrastructure, distributed systems, and low-level Linux debugging. Skilled in building internal developer platforms (IDPs) using Go and Python. Advocate for immutable infrastructure (NixOS) and reproducible builds, with a strong commitment to open-source contributions.",
     "location": {
       "city": "Bandung",
       "countryCode": "ID"
@@ -36,15 +36,15 @@
       "url": "https://verihubs.com",
       "startDate": "2025-08-01",
       "endDate": null,
-      "summary": "Managing hybrid multi-cloud and on-premise infrastructure, focusing on robust DevSecOps solutions and platform reliability.",
+      "summary": "Manage hybrid multi-cloud and on-premise infrastructure with a focus on DevSecOps and platform reliability.",
       "responsibilities": [
-        "Orchestrated hybrid Kubernetes clusters, including GPU-accelerated node pools, across Tencent Cloud, AWS, GCP, and on-premise environments.",
+        "Managed Kubernetes clusters across Tencent Cloud, AWS, GCP, and on-premise, including GPU-accelerated node pools.",
         "Engineered an automated P0 incident alerting pipeline using Gatus, Incident.io, and Macrodroid.",
-        "Executed production root cause analysis (RCA) utilizing advanced Linux systems analysis, including syscall tracing and kernel auditing.",
-        "Developed custom CLI tooling in Go and Python for infrastructure automation.",
-        "Conducted capacity planning, GPU resource allocation, and production load testing for high-throughput AI inference services using k6.",
-        "Hardened cluster security via network policies, container scanning, and least-privilege IAM roles.",
-        "Managed Wibu CodeMeter infrastructure to enforce cryptographic licensing, DRM, and intellectual property protection for proprietary AI models."
+        "Performed production root cause analysis using advanced Linux systems analysis, including syscall tracing and kernel auditing.",
+        "Developed custom CLI tools in Go and Python for infrastructure automation.",
+        "Conducted capacity planning, GPU resource allocation, and load testing for high-throughput AI inference services.",
+        "Hardened cluster security through network policies, container scanning, and least-privilege IAM roles.",
+        "Managed Wibu CodeMeter infrastructure for cryptographic licensing and DRM enforcement of proprietary AI models."
       ]
     },
     {
@@ -55,12 +55,12 @@
       "url": "https://verihubs.com",
       "startDate": "2025-02-01",
       "endDate": "2025-08-01",
-      "summary": "Developed high-performance Go services and laid the groundwork for automated MLOps pipelines.",
+      "summary": "Developed high-performance Go services and established foundational MLOps pipelines.",
       "responsibilities": [
-        "Architected foundational MLOps pipelines for automated AI model training and deployment.",
-        "Developed high-concurrency RESTful Go APIs for internal multi-face recognition auto-tagging systems.",
+        "Designed MLOps pipelines for automated AI model training and deployment.",
+        "Developed high-concurrency RESTful Go APIs for multi-face recognition auto-tagging systems.",
         "Optimized SQL schemas and queries for large-scale biometric data processing.",
-        "Containerized legacy applications, bridging application code and infrastructure deployment."
+        "Containerized legacy applications to streamline deployment."
       ]
     },
     {
@@ -71,7 +71,7 @@
       "url": "https://gdg.community.dev/gdg-on-campus-binus-university-bandung-bandung-indonesia",
       "startDate": "2024-10-01",
       "endDate": "2025-10-01",
-      "summary": "Core contributor for community event backend systems.",
+      "summary": "Core backend contributor for community event systems.",
       "responsibilities": [
         "Designed backend architectures for event registration systems.",
         "Mentored junior members on Go best practices and cloud-native concepts."
@@ -86,16 +86,16 @@
       "studyType": "Bachelor",
       "startDate": "2022-09-01",
       "endDate": "2026-08-01",
-      "summary": "Specialized in Systems Engineering and Cloud Architecture. Researched and developed multi-tenant web generator architectures for MSMEs, resulting in a published academic paper."
+      "summary": "Focused on Systems Engineering and Cloud Architecture; researched and developed multi-tenant web generator architectures for MSMEs, resulting in a publication."
     }
   ],
   "publications": [
     {
       "name": "Design and Development of a No-Code Web Generator Platform for MSME Business Digitalization: A System Usability Scale Evaluation",
-      "publisher": "International Conference on ICT for Smart Society (ICISS) 2026",
+      "publisher": "IEEE International Conference on ICT for Smart Society (ICISS) 2026",
       "releaseDate": "2026-08-26",
       "url": "https://iciss.goesmart.id",
-      "summary": "Co-authored peer-reviewed research on MSME digitalization platforms. Engineered the official presentation slides and produced the pre-recorded video presentation required for the IEEE conference proceedings."
+      "summary": "Lead systems architect and second author. Engineered the evaluated platform and authored the presentation slides and pre-recorded video."
     }
   ],
   "awards": [
@@ -120,7 +120,7 @@
     ],
     "infrastructure_devops": {
       "orchestration": ["Kubernetes", "Docker"],
-      "iac": ["Terraform", "NixOS", "Ansible"],
+      "iac": ["Terraform", "Ansible", "Nix"],
       "ci_cd": ["GitHub Actions", "GitOps"],
       "os": ["Linux", "NixOS"]
     },
@@ -133,22 +133,20 @@
     {
       "name": "MyLinx",
       "description": "Multi-Tenant Web Generator for MSMEs",
-      "url": "https://mylinx.tech/",
+      "url": "https://github.com/raexera/mylinx",
       "highlights": [
-        "Led full-stack development and managed the complete end-to-end deployment lifecycle, from initial system architecture planning to production rollout.",
-        "Architected a scalable multi-tenant platform enabling MSMEs to deploy customized e-commerce storefronts and portfolios via dynamic subdomain routing.",
-        "Engineered real-time storefront customization features and a secure checkout flow integrated seamlessly with WhatsApp.",
-        "Containerized the application and deployed the production environment using Docker and Nginx."
+        "Led end-to-end development of the platform, encompassing full-stack architecture, infrastructure, and CI/CD pipelines.",
+        "Established a scalable multi-tenant environment enabling MSMEs to deploy customized e-commerce storefronts and portfolios via dynamic subdomain routing.",
+        "Implemented real-time storefront customization and a secure WhatsApp-integrated checkout flow."
       ],
-      "technologies": ["PHP", "Laravel", "Docker", "Nginx", "Full-Stack"]
+      "technologies": ["PHP", "Laravel", "Docker", "Nginx"]
     },
     {
       "name": "Shusseki",
       "description": "Biometric Attendance System",
       "url": "https://github.com/raexera/shusseki",
       "highlights": [
-        "Built a Python-based facial recognition pipeline achieving 95% accuracy.",
-        "Optimized image processing latency for real-time logging."
+        "Engineered a Python-based facial recognition pipeline with 95% accuracy and optimized real-time logging performance."
       ],
       "technologies": ["Python", "OpenCV", "Dlib", "SQL"]
     },
@@ -157,8 +155,7 @@
       "description": "Event-Driven Linux Workspace Automation",
       "url": "https://github.com/raexera/yoru",
       "highlights": [
-        "Engineered a highly optimized, low-overhead Linux environment utilizing Arch Linux and AwesomeWM.",
-        "Developed custom Lua modules for system resource monitoring, process management, and workflow automation."
+        "Engineered a low-overhead Arch Linux environment with AwesomeWM and custom Lua modules for system monitoring and automation."
       ],
       "technologies": ["Linux", "Lua", "Shell", "AwesomeWM"]
     },
@@ -167,8 +164,7 @@
       "description": "Declarative Infrastructure & Immutable Workspace",
       "url": "https://github.com/raexera/yuki",
       "highlights": [
-        "Architected a fully reproducible, declarative system configuration utilizing Nix Flakes and Home Manager.",
-        "Managed immutable developer workspace provisioning, ensuring zero configuration drift across physical workstations."
+        "Architected a reproducible NixOS configuration with Nix Flakes and Home Manager to eliminate configuration drift."
       ],
       "technologies": ["Nix", "NixOS", "Infrastructure as Code", "Shell"]
     }
