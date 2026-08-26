@@ -123,7 +123,7 @@ A deliberately small stack:
 ## How a post ships
 
 ```mermaid
-flowchart LR
+flowchart TB
   A[Markdown] --> B[git push]
   B --> C[GitHub Actions]
   C --> D[astro build]
