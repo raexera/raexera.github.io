@@ -1,6 +1,6 @@
 ---
 title: "Hello, World"
-description: "The one post to read before writing — a living reference for every element this blog supports."
+description: "Welcome to my corner of the internet — notes on infrastructure, security, and distributed systems."
 pubDate: 2026-08-01
 updatedDate: 2026-08-26
 tags:
@@ -8,79 +8,49 @@ tags:
   - writing
 ---
 
-Welcome to the reference post. Everything below is a working example of a feature you can use in your own posts. Keep this open while you write.
+> Every blog has a first post. This is mine — and yes, I'm starting with the oldest cliché in the book.
 
-## Frontmatter
+It's a cliché for a reason. `Hello, World` is the first program most of us ever ran, and this is the first thing I'm publishing here. Consider it a handshake: I'll write, you read, and we'll figure out the rest as we go.
 
-Every post starts with YAML frontmatter. Only `title`, `description`, and `pubDate` are required.
+## Who am I?
 
-```yaml title="src/content/blog/example.md"
----
-title: "Post title"
-description: "A one-line summary shown in cards and meta tags."
-pubDate: 2026-08-01
-updatedDate: 2026-08-26 # optional — shows "Updated …" in the header
-tags: # optional — rendered as pills
-  - meta
-  - writing
-draft: false # optional — hides the post when true
----
-```
+I'm Rayhan, a **DevSecOps engineer** who spends most days between Terraform, Kubernetes, and whichever CI pipeline is on fire this week.
 
-## Headings
+This blog is my public notebook. Some posts will be _opinionated_, others incomplete, and plenty will be ~~wrong~~ revisited as I learn better. That's deliberate — writing in the open means getting corrected, and that's exactly how I want it.
 
-Start at `##`. The post title is already rendered as the page `#`, so never use a top-level heading in the body.
+## What to expect
 
-### Third-level heading
+### The recurring themes
 
-#### Fourth-level heading
+The topics I keep circling back to:
 
-## Text
+- **Infrastructure** — Terraform, Kubernetes, and the glue in between.
+  - Provisioning and state management
+  - Cluster operations at a small scale
+- **Security** — the boring, unglamorous kind that keeps systems running.
+- **Distributed systems** — queues, consensus, and failure modes.
+- **Tooling** — the small scripts that save hours.
 
-You can write **bold**, _italic_, ~~strikethrough~~, and `inline code`.
+#### Why these?
 
-Links are underlined and follow the theme: [Astro](https://astro.build) powers this site. A bare URL like https://astro.build becomes a link automatically.
+They're the parts of my job that are hardest to get right and easiest to get wrong.
 
-> Blockquotes render as a subtle callout, useful for asides and pull quotes.
->
-> They span multiple paragraphs.
+## Why write in public?
 
-## Lists
+1. Writing forces clarity. If I can't explain it, I don't understand it.
+2. A public trail beats a private wiki when someone asks "where did you see that?"
+3. Smarter people might correct me, and that's a feature, not a bug.
 
-Unordered:
+## The plan
 
-- One
-- Two
-  - Nested item
-  - Another nested item
-- Three
+- [x] Launch the blog
+- [x] Set up code highlighting
+- [ ] Publish at least once a month
+- [ ] Write up my homelab setup
 
-Ordered:
+## A taste of the content
 
-1. First step
-2. Second step
-3. Third step
-
-Task list:
-
-- [x] Ship the blog
-- [x] Document every feature
-- [ ] Write more posts
-
-## Tables
-
-GFM tables are styled with hairline borders and centered alignment where specified.
-
-| Language | Use case          | Highlighting |
-| -------- | ----------------- | :----------: |
-| `ts`     | Tooling, apps     |     Yes      |
-| `bash`   | Commands, CI      |     Yes      |
-| `yaml`   | Config, pipelines |     Yes      |
-| `json`   | Data, APIs        |     Yes      |
-
-## Code blocks
-
-A basic block has no title:
+Posts will lean on code over prose. The kind of TypeScript I'd write to sort a list of posts:
 
 ```ts
 type Post = {
@@ -93,66 +63,57 @@ const latest = (posts: Post[]): Post =>
   [...posts].sort((a, b) => b.published.getTime() - a.published.getTime())[0];
 ```
 
-Give a block a filename with `title="…"`:
+The kind of config I stare at every day:
 
-```yaml title=".github/workflows/plan.yml"
-name: terraform
+```yaml title=".github/workflows/deploy.yml"
+name: deploy
 on:
-  pull_request:
-    paths: ["infra/**"]
+  push:
+    branches: [main]
 
 jobs:
-  plan:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: terraform plan -out=tfplan
-        working-directory: infra
+      - run: pnpm install
+      - run: pnpm build
 ```
 
-Shell commands:
+The shell one-liners I actually type:
 
 ```bash
-pnpm install
-pnpm dev
-pnpm build
+kubectl get pods --sort-by=.metadata.creationTimestamp
 ```
 
-Diff blocks highlight additions and removals:
+And when I move infrastructure around, the diff usually looks like this:
 
 ```diff
   resource "google_container_cluster" "primary" {
-    name = "primary"
--   initial_node_count = 3
-+   enable_autopilot = true
+    name     = "primary"
+-   location = "asia-southeast1"
++   location = "asia-southeast2"
   }
 ```
 
-More languages:
+## What I write with
 
-```go
-func main() {
-    messages := make(chan string)
-    go func() { messages <- "ping" }()
-    fmt.Println(<-messages)
-}
-```
+A deliberately small stack:
 
-```python
-def handler(event, context):
-    return {"status": 200, "body": "ok"}
-```
+| Tool     | Role                | Why                |
+| -------- | ------------------- | ------------------ |
+| Astro    | Site framework      | Static by default  |
+| Markdown | Content             | Portable, readable |
+| Shiki    | Syntax highlighting | Accurate, fast     |
 
-## Images
-
-Images are constrained to the reading column, with rounded corners and a hairline border.
+## The fine print
 
 ![Static by default, dynamic when needed](/assets/blog/static-by-default.svg)
 
-## Horizontal rules
+This site is built to be fast and quiet — no trackers, no popups, no "subscribe to my newsletter" banner. Just words and code, rendered as plain [HTML](https://en.wikipedia.org/wiki/HTML).
 
-A horizontal rule is a thin, full-width divider:
+If you want to reach me, GitHub is easiest: https://github.com/raexera
 
 ---
 
-That's everything. When in doubt, read the source of this post in `src/content/blog/hello-world.md`.
+Thanks for reading. The next post is already in the works.
