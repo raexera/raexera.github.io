@@ -51,34 +51,47 @@ If it's worth remembering or sharing, it's worth a post.
 
 ## A taste of the content
 
-Posts will lean on code over prose. The kind of TypeScript I'd write to sort a list of posts:
+Posts will lean on code over prose. The kind of Go I'd write to sort a list of posts:
 
-```ts
-type Post = {
-  title: string;
-  published: Date;
-  tags: string[];
-};
+```go
+type Post struct {
+	Title     string
+	Published time.Time
+	Tags      []string
+}
 
-const latest = (posts: Post[]): Post =>
-  [...posts].sort((a, b) => b.published.getTime() - a.published.getTime())[0];
+func latest(posts []Post) Post {
+	sort.Slice(posts, func(i, j int) bool {
+		return posts[i].Published.After(posts[j].Published)
+	})
+	return posts[0]
+}
 ```
 
-The kind of config I stare at every day:
+The kind of manifest I stare at every day:
 
-```yaml title=".github/workflows/deploy.yml"
-name: deploy
-on:
-  push:
-    branches: [main]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: pnpm install
-      - run: pnpm build
+```yaml title="deployment.yaml"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog
+  labels:
+    app: blog
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: blog
+  template:
+    metadata:
+      labels:
+        app: blog
+    spec:
+      containers:
+        - name: blog
+          image: raexera/blog:latest
+          ports:
+            - containerPort: 8080
 ```
 
 The shell one-liners I actually type:
