@@ -107,9 +107,17 @@ A deliberately small stack:
 | Markdown | Content             | Portable, readable |
 | Shiki    | Syntax highlighting | Accurate, fast     |
 
+## What I type on
+
+I have a slight obsession with HHKB-layout keyboards, both MX and Topre. Here's the current daily driver:
+
+![My mechanical keyboard setup](./assets/keyboard.jpg)
+
+Custom switches, keycaps, and the endless hunt for the perfect _clack_ — a hobby that never quite feels finished.
+
 ## The fine print
 
-![Static by default, dynamic when needed](/assets/blog/static-by-default.svg)
+![Static by default, dynamic when needed](./assets/static-by-default.svg)
 
 This site is built to be fast and quiet — no trackers, no popups, no "subscribe to my newsletter" banner. Just words and code, rendered as plain [HTML](https://en.wikipedia.org/wiki/HTML).
 
