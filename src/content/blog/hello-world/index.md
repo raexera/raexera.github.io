@@ -121,7 +121,7 @@ Custom switches, keycaps, and the endless hunt for the perfect _clack_ — a hob
 
 This site is built to be fast and quiet — no trackers, no popups, no "subscribe to my newsletter" banner. Just words and code, rendered as plain [HTML](https://en.wikipedia.org/wiki/HTML).
 
-If you want to reach me, GitHub is easiest: https://github.com/raexera
+If you want to reach me, email is easiest: [raexera@gmail.com](mailto:raexera@gmail.com)
 
 ---
 
