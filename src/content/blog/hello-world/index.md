@@ -14,7 +14,7 @@ It's a cliché for a reason. `Hello, World` is the first program most of us ever
 
 ## Who am I?
 
-I'm Rayhan, a **DevSecOps engineer** who spends most days between Terraform, Kubernetes, and whichever CI pipeline is on fire this week.
+I'm Rayhan, also known online as [raexera](https://github.com/raexera), a **DevSecOps engineer** who spends most days between Terraform, Kubernetes, and whichever CI pipeline is on fire this week.
 
 This blog is my public notebook. Some posts will be _opinionated_, others incomplete, and plenty will be ~~wrong~~ revisited as I learn better. That's deliberate: writing in the open means getting corrected, and that's exactly how I want it.
 
