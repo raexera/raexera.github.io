@@ -1,6 +1,6 @@
 ---
 title: "Hello, World"
-description: "Welcome to my corner of the internet — notes of my life, work, code, and whatever else is worth sharing."
+description: "Welcome to my corner of the internet: notes of my life, work, code, and whatever else is worth sharing."
 pubDate: 2026-08-01
 updatedDate: 2026-08-26
 tags:
@@ -8,7 +8,7 @@ tags:
   - writing
 ---
 
-> Every blog has a first post. This is mine — and yes, I'm starting with the oldest cliché in the book.
+> Every blog has a first post. This is mine, and yes, I'm starting with the oldest cliché in the book.
 
 It's a cliché for a reason. `Hello, World` is the first program most of us ever ran, and this is the first thing I'm publishing here. Consider it a handshake: I'll write, you read, and we'll figure out the rest as we go.
 
@@ -16,21 +16,21 @@ It's a cliché for a reason. `Hello, World` is the first program most of us ever
 
 I'm Rayhan, a **DevSecOps engineer** who spends most days between Terraform, Kubernetes, and whichever CI pipeline is on fire this week.
 
-This blog is my public notebook. Some posts will be _opinionated_, others incomplete, and plenty will be ~~wrong~~ revisited as I learn better. That's deliberate — writing in the open means getting corrected, and that's exactly how I want it.
+This blog is my public notebook. Some posts will be _opinionated_, others incomplete, and plenty will be ~~wrong~~ revisited as I learn better. That's deliberate: writing in the open means getting corrected, and that's exactly how I want it.
 
 ## What to expect
 
-This blog is deliberately general. No single niche, no editorial calendar — I write about whatever I want to remember, teach, or share.
+This blog is deliberately general. No single niche, no editorial calendar; I write about whatever I want to remember, teach, or share.
 
 ### The kinds of things I'll write
 
-- **Work** — infrastructure, security, and the systems I operate every day.
+- **Work**: infrastructure, security, and the systems I operate every day.
   - Terraform, Kubernetes, and CI pipelines
   - The boring engineering that keeps things running
-- **Technical** — deep dives into problems I solved the hard way.
-- **Tips & tricks** — small things that save an hour here and there.
-- **Code** — snippets, tools, and experiments worth keeping.
-- **Notes of my life** — hobbies, thoughts, and whatever else is worth remembering.
+- **Technical**: deep dives into problems I solved the hard way.
+- **Tips & tricks**: small things that save an hour here and there.
+- **Code**: snippets, tools, and experiments worth keeping.
+- **Notes of my life**: hobbies, thoughts, and whatever else is worth remembering.
 
 #### The only rule
 
@@ -113,13 +113,13 @@ I have a slight obsession with HHKB-layout keyboards, both MX and Topre. Here's 
 
 ![My mechanical keyboard setup](./assets/keyboard.jpg)
 
-Custom switches, keycaps, and the endless hunt for the perfect _clack_ — a hobby that never quite feels finished.
+Custom switches, keycaps, and the endless hunt for the perfect _clack_, a hobby that never quite feels finished.
 
 ## The fine print
 
 ![Static by default, dynamic when needed](./assets/static-by-default.svg)
 
-This site is built to be fast and quiet — no trackers, no popups, no "subscribe to my newsletter" banner. Just words and code, rendered as plain [HTML](https://en.wikipedia.org/wiki/HTML).
+This site is built to be fast and quiet: no trackers, no popups, no "subscribe to my newsletter" banner. Just words and code, rendered as plain [HTML](https://en.wikipedia.org/wiki/HTML).
 
 If you want to reach me, email is easiest: [raexera@gmail.com](mailto:raexera@gmail.com)
 

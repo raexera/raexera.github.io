@@ -123,7 +123,7 @@ header.scrolled {
   @apply border-border bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/60;
 }
 
-/* --- Blog prose — seamlessness with the existing theme --- */
+/* --- Blog prose: seamlessness with the existing theme --- */
 
 .prose {
   --tw-prose-body: var(--foreground);
@@ -177,7 +177,7 @@ header.scrolled {
   text-align: center;
 }
 
-/* Inline code — a subtle pill matching the site's badges */
+/* Inline code: a subtle pill matching the site's badges */
 .prose :where(code):not(:where(pre code)) {
   color: var(--foreground);
   background-color: var(--muted);
