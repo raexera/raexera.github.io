@@ -1,8 +1,10 @@
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
+import { unified } from "@astrojs/markdown-remark";
 import icon from "astro-icon";
 import astroExpressiveCode from "astro-expressive-code";
 import tailwindcss from "@tailwindcss/vite";
+import rehypeMermaid from "rehype-mermaid";
 import { defineConfig } from "astro/config";
 
 // https://astro.build/config
@@ -56,6 +58,32 @@ export default defineConfig({
       },
     }),
   ],
+  markdown: {
+    processor: unified({
+      gfm: true,
+      smartypants: true,
+      rehypePlugins: [
+        [
+          rehypeMermaid,
+          {
+            strategy: "inline-svg",
+            mermaidConfig: {
+              theme: "base",
+              themeVariables: {
+                background: "transparent",
+                primaryColor: "transparent",
+                primaryTextColor: "#a3a3a3",
+                primaryBorderColor: "#525252",
+                lineColor: "#525252",
+                fontSize: "14px",
+                fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif",
+              },
+            },
+          },
+        ],
+      ],
+    }),
+  },
   vite: {
     plugins: [tailwindcss()],
   },

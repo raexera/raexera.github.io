@@ -120,6 +120,17 @@ A deliberately small stack:
 | Markdown | Content             | Portable, readable |
 | Shiki    | Syntax highlighting | Accurate, fast     |
 
+## How a post ships
+
+```mermaid
+flowchart LR
+  A[Markdown] --> B[git push]
+  B --> C[GitHub Actions]
+  C --> D[astro build]
+  D --> E[GitHub Pages]
+  E --> F[raexera.is-a.dev]
+```
+
 ## What I type on
 
 I have a slight obsession with HHKB-layout keyboards, both MX and Topre. Here's the current daily driver:
