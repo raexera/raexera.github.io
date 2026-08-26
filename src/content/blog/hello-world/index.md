@@ -149,7 +149,7 @@ The source lives at https://github.com/raexera/raexera.github.io.
 
 If you want to reach me, email is easiest: [raexera@gmail.com](mailto:raexera@gmail.com)
 
-[^1]: Clack is that sharp, high-pitched, loud keyboard sound. Pure clacky supremacy, not the bassy "thock" that sounds like boiling water going *blub blub blub*. With ABS keycaps and Cherry MX switches on a foamless board. You will get that crisp, snappy clack every time you type.
+[^1]: Clack is that sharp, high-pitched, loud keyboard sound. Pure clacky supremacy, not the bassy 'thock' that sounds like boiling water going *blub blub blub*. With ABS keycaps and Cherry MX switches on a foamless board, you get that crisp, snappy clack every time you type.
 
 ---
 
