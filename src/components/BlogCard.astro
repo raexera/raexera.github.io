@@ -1,0 +1,46 @@
+---
+import type { CollectionEntry } from "astro:content";
+import PostMeta from "@/components/PostMeta.astro";
+import Tag from "@/components/Tag.astro";
+import { getReadingTime } from "@/lib/blog";
+
+type Props = {
+  post: CollectionEntry<"blog">;
+};
+
+const { post } = Astro.props;
+const { title, description, pubDate, tags } = post.data;
+---
+
+<a
+  href={`/blog/${post.id}/`}
+  class="group flex h-full flex-col gap-4 rounded-2xl border border-border bg-card p-6 transition-colors hover:border-border/80 hover:bg-muted/10 sm:p-8"
+>
+  <PostMeta
+    pubDate={pubDate}
+    readingTime={getReadingTime(post.body ?? "")}
+    className="text-xs font-medium"
+  />
+
+  <div class="flex flex-col gap-2">
+    <h2
+      class="text-xl font-semibold tracking-tight text-foreground transition-colors group-hover:text-foreground sm:text-2xl"
+    >
+      {title}
+    </h2>
+    <p class="text-sm leading-relaxed text-muted-foreground">{description}</p>
+  </div>
+
+  {
+    tags.length > 0 && (
+      <div class="mt-auto flex flex-wrap gap-2 pt-2">
+        {tags.map((tag) => (
+          <Tag
+            name={tag}
+            className="transition-colors group-hover:border-border/80 group-hover:bg-muted group-hover:text-foreground"
+          />
+        ))}
+      </div>
+    )
+  }
+</a>

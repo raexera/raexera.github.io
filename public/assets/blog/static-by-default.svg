@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <rect x="0" y="0" width="1200" height="1" fill="#262626"/>
+  <rect x="0" y="629" width="1200" height="1" fill="#262626"/>
+  <text x="80" y="120" fill="#737373" font-family="monospace" font-size="24">// building for the edge</text>
+  <text x="80" y="360" fill="#fafafa" font-family="Arial, sans-serif" font-size="96" font-weight="bold">Static by default,</text>
+  <text x="80" y="470" fill="#fafafa" font-family="Arial, sans-serif" font-size="96" font-weight="bold">dynamic when needed.</text>
+  <rect x="80" y="540" width="120" height="3" fill="#fafafa"/>
+</svg>

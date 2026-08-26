@@ -1,0 +1,64 @@
+---
+import { render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PostMeta from "@/components/PostMeta.astro";
+import Tag from "@/components/Tag.astro";
+import { getPublishedPosts, getReadingTime } from "@/lib/blog";
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+type Props = {
+  post: CollectionEntry<"blog">;
+};
+
+const { post } = Astro.props;
+const { title, description, pubDate, updatedDate, tags } = post.data;
+const { Content } = await render(post);
+const readingTime = getReadingTime(post.body ?? "");
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="container mx-auto max-w-3xl py-24 sm:py-32">
+    <header class="mb-12 flex flex-col gap-6">
+      <PostMeta
+        pubDate={pubDate}
+        updatedDate={updatedDate}
+        readingTime={readingTime}
+        className="text-sm"
+      />
+
+      <h1 class="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+        {title}
+      </h1>
+
+      {
+        description && (
+          <p class="text-lg leading-relaxed text-muted-foreground">
+            {description}
+          </p>
+        )
+      }
+
+      {
+        tags.length > 0 && (
+          <div class="flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <Tag name={tag} />
+            ))}
+          </div>
+        )
+      }
+    </header>
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

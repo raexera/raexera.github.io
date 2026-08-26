@@ -1,0 +1,40 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import BlogCard from "@/components/BlogCard.astro";
+import { getPublishedPosts } from "@/lib/blog";
+
+const posts = await getPublishedPosts();
+---
+
+<BaseLayout
+  title="Blog"
+  description="Writing on infrastructure, security, and distributed systems."
+>
+  <div class="container mx-auto max-w-5xl py-24 sm:py-32">
+    <div class="mb-12 flex flex-col gap-4">
+      <h1 class="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
+        Blog
+      </h1>
+      <p class="text-lg text-muted-foreground">
+        Writing on infrastructure, security, and distributed systems.
+      </p>
+    </div>
+
+    {
+      posts.length === 0 ? (
+        <div class="flex flex-col items-center justify-center gap-2 rounded-2xl border border-border bg-card p-16 text-center">
+          <p class="text-lg font-medium text-foreground">No posts yet.</p>
+          <p class="text-sm text-muted-foreground">
+            Check back soon for new writing.
+          </p>
+        </div>
+      ) : (
+        <div class="grid w-full grid-cols-1 gap-4">
+          {posts.map((post) => (
+            <BlogCard post={post} />
+          ))}
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>

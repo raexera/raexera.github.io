@@ -122,3 +122,73 @@ header {
 header.scrolled {
   @apply border-border bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/60;
 }
+
+/* --- Blog prose — seamlessness with the existing theme --- */
+
+.prose {
+  --tw-prose-body: var(--foreground);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-lead: var(--muted-foreground);
+  --tw-prose-links: var(--foreground);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-counters: var(--muted-foreground);
+  --tw-prose-bullets: var(--muted-foreground);
+  --tw-prose-hr: var(--border);
+  --tw-prose-quotes: var(--foreground);
+  --tw-prose-quote-borders: var(--border);
+  --tw-prose-captions: var(--muted-foreground);
+  --tw-prose-code: var(--foreground);
+  --tw-prose-pre-code: var(--foreground);
+  --tw-prose-pre-bg: var(--muted);
+  --tw-prose-th-borders: var(--border);
+  --tw-prose-td-borders: var(--border);
+}
+
+.prose :where(a) {
+  text-decoration-line: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--border);
+  transition: text-decoration-color 0.2s ease;
+}
+
+.prose :where(a:hover) {
+  text-decoration-color: var(--foreground);
+}
+
+.prose :where(blockquote) {
+  font-style: normal;
+  color: var(--muted-foreground);
+  border-left-color: var(--border);
+}
+
+.prose :where(blockquote p:first-of-type)::before,
+.prose :where(blockquote p:last-of-type)::after {
+  content: none;
+}
+
+.prose :where(img) {
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  margin-inline: auto;
+}
+
+.prose :where(figcaption) {
+  color: var(--muted-foreground);
+  text-align: center;
+}
+
+/* Inline code — a subtle pill matching the site's badges */
+.prose :where(code):not(:where(pre code)) {
+  color: var(--foreground);
+  background-color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  padding: 0.125rem 0.375rem;
+  font-weight: 500;
+  font-size: 0.875em;
+}
+
+.prose :where(code):not(:where(pre code))::before,
+.prose :where(code):not(:where(pre code))::after {
+  content: none;
+}

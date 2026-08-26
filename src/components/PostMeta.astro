@@ -1,0 +1,31 @@
+---
+import { formatDate, formatDateISO } from "@/lib/blog";
+
+type Props = {
+  pubDate: Date;
+  readingTime: number;
+  updatedDate?: Date;
+  className?: string;
+};
+
+const { pubDate, readingTime, updatedDate, className = "" } = Astro.props;
+---
+
+<div
+  class:list={[
+    "flex flex-wrap items-center gap-3 text-muted-foreground",
+    className,
+  ]}
+>
+  <time datetime={formatDateISO(pubDate)}>{formatDate(pubDate)}</time>
+  <span class="text-border">·</span>
+  <span>{readingTime} min read</span>
+  {
+    updatedDate && (
+      <>
+        <span class="text-border">·</span>
+        <span>Updated {formatDate(updatedDate)}</span>
+      </>
+    )
+  }
+</div>
