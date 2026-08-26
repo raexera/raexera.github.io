@@ -40,7 +40,7 @@ If it's worth remembering or sharing, it's worth a post.
 
 1. Writing forces clarity. If I can't explain it, I don't understand it.
 2. A public trail beats a private wiki when someone asks "where did you see that?"
-3. Smarter people might correct me, and that's a feature, not a bug.
+3. Smarter people might correct me, and that's a feature, not a bug.[^1]
 
 ## The plan
 
@@ -145,7 +145,11 @@ Custom switches, keycaps, and the endless hunt for the perfect _clack_, a hobby 
 
 This site is built to be fast and quiet: no trackers, no popups, no "subscribe to my newsletter" banner. Just words and code, rendered as plain [HTML](https://en.wikipedia.org/wiki/HTML).
 
+The source lives at https://github.com/raexera/raexera.github.io.
+
 If you want to reach me, email is easiest: [raexera@gmail.com](mailto:raexera@gmail.com)
+
+[^1]: This is how a footnote renders, with a backlink to the reference above.
 
 ---
 
