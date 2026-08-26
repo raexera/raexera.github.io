@@ -1,4 +1,5 @@
 import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 import astroExpressiveCode from "astro-expressive-code";
 import tailwindcss from "@tailwindcss/vite";
@@ -10,6 +11,7 @@ export default defineConfig({
   integrations: [
     react(),
     icon(),
+    sitemap(),
     astroExpressiveCode({
       themes: ["github-light", "github-dark"],
       useDarkModeMediaQuery: false,

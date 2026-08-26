@@ -21,7 +21,7 @@ jobs:
         with:
           path: .
           node-version: 22
-          package-manager: pnpm@latest
+          package-manager: pnpm@11.0.8
   deploy:
     needs: build
     runs-on: ubuntu-latest

@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^6.0.4",
+    "@astrojs/sitemap": "^3.7.3",
     "@react-pdf/renderer": "^4.8.1",
     "astro": "^7.2.6",
     "astro-expressive-code": "^0.44.1",
