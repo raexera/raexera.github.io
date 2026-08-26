@@ -13,6 +13,7 @@ overrides:
   nanoid@<3.3.8: '>=3.3.8'
   undici@>=6.0.0 <6.21.1: '>=6.21.1'
   undici@>=6.0.0 <6.21.2: '>=6.21.2'
+  vscode-languageserver-textdocument@>=1.0.14: 1.0.13
   yaml@>=2.0.0 <2.8.3: '>=2.8.3'
 
 importers:
@@ -2871,9 +2872,6 @@ packages:
   vscode-languageserver-textdocument@1.0.13:
     resolution: {integrity: sha512-nx0ZHwMGIsVkzFG3/VLeJYBLTaFBRuNdGDvevvjuoayU5EOS2fEYazOhtCM3PI9ClMMg5igc0uwXtAq4tJj+Dw==}
 
-  vscode-languageserver-textdocument@1.0.14:
-    resolution: {integrity: sha512-EQyqJMi552E4ZTf46izQ4Fj6XquqxCySR3J5ZSD1SisMf6RfpeOWHxGBE8Gr6V0/3GHIGdAzDn8F8+1nTGCnoQ==}
-
   vscode-languageserver-types@3.17.5:
     resolution: {integrity: sha512-Ld1VelNuX9pdF39h2Hgaeb5hEZM2Z3jUrrMgWQAu82jMtZp7p3vJT3BzToKtZI7NgQssZje5o0zryOrhQvzQAg==}
 
@@ -4107,7 +4105,7 @@ snapshots:
     dependencies:
       emmet: 2.4.11
       jsonc-parser: 2.3.1
-      vscode-languageserver-textdocument: 1.0.14
+      vscode-languageserver-textdocument: 1.0.13
       vscode-languageserver-types: 3.18.0
       vscode-uri: 3.2.0
 
@@ -5687,8 +5685,6 @@ snapshots:
       vscode-languageserver-types: 3.18.0
 
   vscode-languageserver-textdocument@1.0.13: {}
-
-  vscode-languageserver-textdocument@1.0.14: {}
 
   vscode-languageserver-types@3.17.5: {}
 

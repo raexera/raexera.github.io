@@ -39,12 +39,5 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "typescript-eslint": "^8.68.0"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@tsparticles/engine",
-      "esbuild",
-      "sharp"
-    ]
   }
 }
