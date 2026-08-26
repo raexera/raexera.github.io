@@ -4,7 +4,7 @@ export const SITE: Site = {
   TITLE: "ラエクセラ",
   DESCRIPTION:
     "DevSecOps Engineer specializing in hybrid multi-cloud infrastructure and distributed systems.",
-  AUTHOR: "Rayhan Kafi Pratama",
+  AUTHOR: "raexera",
 };
 
 export const LINKS: Links = [
