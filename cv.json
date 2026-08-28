@@ -82,11 +82,11 @@
     {
       "institution": "Bina Nusantara University",
       "url": "https://binus.ac.id",
-      "area": "Computer Science",
-      "studyType": "Bachelor",
+      "area": "Computer Science (S.Kom)",
+      "studyType": "Bachelor (S1)",
       "startDate": "2022-09-01",
       "endDate": "2026-08-01",
-      "summary": "Focused on Systems Engineering and Cloud Architecture; researched and developed multi-tenant web generator architectures for MSMEs, resulting in a publication."
+      "summary": "Graduated with a Sarjana Komputer (S.Kom) degree. Focused on Systems Engineering and Cloud Architecture; researched and developed multi-tenant web generator architectures for MSMEs, resulting in a publication."
     }
   ],
   "publications": [
