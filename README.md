@@ -1,4 +1,4 @@
-# ᮛᮆᮊᮦᮞᮨᮛ
+# ᮛᮈᮟᮨᮛ
 
 [![Deploy to GitHub Pages](https://github.com/raexera/raexera.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/raexera/raexera.github.io/actions/workflows/deploy.yml)
 
