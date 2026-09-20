@@ -122,13 +122,8 @@ A deliberately small stack:
 
 ## How a post ships
 
-```mermaid
-flowchart TB
-  A[Markdown] --> B[git push]
-  B --> C[GitHub Actions]
-  C --> D[astro build]
-  D --> E[GitHub Pages]
-  E --> F[raexera.is-a.dev]
+```d2
+Markdown -> "git push" -> "GitHub Actions" -> "astro build" -> "GitHub Pages" -> "raexera.is-a.dev"
 ```
 
 ## What I type on
@@ -149,7 +144,7 @@ The source lives at https://github.com/raexera/raexera.github.io.
 
 If you want to reach me, email is easiest: [raexera@gmail.com](mailto:raexera@gmail.com)
 
-[^1]: Clack is that sharp, high-pitched, loud keyboard sound. Pure clacky supremacy, not the bassy 'thock' that sounds like boiling water going *blub blub blub*. With ABS keycaps and Cherry MX switches on a foamless board, you get that crisp, snappy clack every time you type.
+[^1]: Clack is that sharp, high-pitched, loud keyboard sound. Pure clacky supremacy, not the bassy 'thock' that sounds like boiling water going _blub blub blub_. With ABS keycaps and Cherry MX switches on a foamless board, you get that crisp, snappy clack every time you type.
 
 ---
 

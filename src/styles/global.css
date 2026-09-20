@@ -193,14 +193,18 @@ header.scrolled {
   content: none;
 }
 
-/* Mermaid diagrams: centered, full-width, and readable on both themes */
-.prose svg[id^="mermaid-"] {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-inline: auto;
+/* D2 diagrams: centered, and readable on both themes */
+.prose .d2-diagram {
+  display: flex;
+  justify-content: center;
+  margin-block: 1.5rem;
 }
 
-html.dark .prose svg[id^="mermaid-"] {
+.prose .d2-diagram svg {
+  max-width: 100%;
+  height: auto;
+}
+
+html.dark .prose .d2-diagram svg {
   filter: invert(1);
 }
