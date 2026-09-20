@@ -4,7 +4,7 @@ import { unified } from "@astrojs/markdown-remark";
 import icon from "astro-icon";
 import astroExpressiveCode from "astro-expressive-code";
 import tailwindcss from "@tailwindcss/vite";
-import rehypeMermaid from "rehype-mermaid";
+import rehypeD2 from "./src/lib/rehype-d2.mjs";
 import { defineConfig } from "astro/config";
 
 // https://astro.build/config
@@ -62,31 +62,7 @@ export default defineConfig({
     processor: unified({
       gfm: true,
       smartypants: true,
-      rehypePlugins: [
-        [
-          rehypeMermaid,
-          {
-            strategy: "inline-svg",
-            mermaidConfig: {
-              theme: "base",
-              themeVariables: {
-                background: "transparent",
-                primaryColor: "transparent",
-                primaryTextColor: "#0a0a0a",
-                primaryBorderColor: "#737373",
-                lineColor: "#737373",
-                fontSize: "18px",
-                fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif",
-              },
-              flowchart: {
-                nodeSpacing: 30,
-                rankSpacing: 40,
-                padding: 10,
-              },
-            },
-          },
-        ],
-      ],
+      rehypePlugins: [[rehypeD2, {}]],
     }),
   },
   vite: {
