@@ -200,11 +200,11 @@ header.scrolled {
   margin-block: 1.5rem;
 }
 
-.prose .d2-diagram svg {
+.prose .d2-diagram > svg {
   max-width: 100%;
   height: auto;
 }
 
-html.dark .prose .d2-diagram svg {
+html.dark .prose .d2-diagram > svg {
   filter: invert(1);
 }
